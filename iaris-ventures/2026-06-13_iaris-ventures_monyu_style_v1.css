@@ -530,7 +530,7 @@ section:nth-child(even) { background: var(--bg2); }
   text-decoration: none;
 }
 .cta-button:hover {
-  background: var(--accent-light;
+  background: var(--accent-light);
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(255,0,85,0.35);
 }
@@ -559,7 +559,7 @@ footer {
 .footer-logo { height: 36px; margin-bottom: 12px; }
 footer p { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 4px; }
 
-/* ── BACK TO TOP
+/* ── BACK TO TOP ── */
 #back-to-top {
   position: fixed; bottom: 28px; right: 28px; z-index: 900;
   background: var(--accent); color: #fff;
@@ -570,8 +570,8 @@ footer p { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 4px; }
   opacity: 0; transition: opacity 0.3s, transform 0.3s;
   transform: translateY(12px);
 }
-#hack-to-top.visible { opacity: 1; transform: translateY(0); }
-#hack-to-top:hover { background: var(--accent-light); }
+#back-to-top.visible { opacity: 1; transform: translateY(0); }
+#back-to-top:hover { background: var(--accent-light); }
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
