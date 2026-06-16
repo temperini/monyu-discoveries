@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discovery de Inovação — Iaris Ventures | MonyU v2</title>
+<meta name="description" content="Relatório de Discovery de Inovação v2 para Iaris Ventures. Análise estratégica com lente de captação, oportunidades priorizadas e mapeamento de editais. MonyU | Núcleo de Inteligência de Negócio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="2026-06-13_iaris-ventures_monyu_style_v1.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="2026-06-15_iaris-ventures_monyu_script_v2.js" defer></script>
+<style>
+.hero-download { margin-top:1.6rem; display:flex; justify-content:center; }
+.btn-download { display:inline-flex; align-items:center; gap:0.55rem; padding:0.75rem 1.6rem; background:#e91e63; color:#fff; border-radius:40px; font-family:inherit; font-size:0.95rem; font-weight:600; text-decoration:none; letter-spacing:0.01em; box-shadow:0 4px 18px rgba(233,30,99,0.35); transition:background .18s,box-shadow .18s,transform .12s; }
+.btn-download:hover { background:#c2185b; box-shadow:0 6px 24px rgba(233,30,99,0.45); transform:translateY(-1px); }
+.btn-download svg { flex-shrink:0; }
+/* Captação tags */
+.cap-tag { display:inline-block; padding:2px 8px; border-radius:4px; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+.cap-tag-sub { background:rgba(255,0,85,.18); color:#ff4488; border:1px solid rgba(255,0,85,.3); }
+.cap-tag-cpsi { background:rgba(0,120,255,.15); color:#4499ff; border:1px solid rgba(0,120,255,.3); }
+.cap-tag-aberta { background:rgba(255,190,0,.15); color:#ffb300; border:1px solid rgba(255,190,0,.3); }
+.cap-tag-acel { background:rgba(0,200,100,.15); color:#00c870; border:1px solid rgba(0,200,100,.3); }
+.cap-tag-prem { background:rgba(160,160,200,.12); color:#aabbcc; border:1px solid rgba(160,160,200,.25); }
+.cap-tag-cred { background:rgba(0,180,255,.15); color:#00aaff; border:1px solid rgba(0,180,255,.3); }
+.cap-tag-fundo { background:rgba(180,100,255,.15); color:#bb77ff; border:1px solid rgba(180,100,255,.3); }
+.cap-status { font-size:.82rem; }
+.cap-cadencia { font-size:.75rem; color:var(--text-dim); font-style:italic; }
+.cap-table { width:100%; border-collapse:collapse; margin-bottom:0; }
+.cap-table th { font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; color:var(--text-dim); border-bottom:1px solid var(--border); padding:8px 10px; text-align:left; white-space:nowrap; }
+.cap-table td { font-size:.82rem; color:var(--text-muted); padding:9px 10px; border-bottom:1px solid rgba(255,255,255,.04); vertical-align:top; }
+.cap-table tr:last-child td { border-bottom:none; }
+.cap-table a { color:var(--accent); text-decoration:none; }
+.cap-table a:hover { text-decoration:underline; }
+.cap-section { margin-bottom:32px; }
+.cap-section-title { font-size:.9rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; padding-left:4px; border-left:3px solid var(--accent); padding-left:10px; }
+.ods-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; margin-top:16px; }
+.ods-card { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:16px; }
+.ods-num { font-size:.75rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px; }
+.ods-title { font-size:.88rem; font-weight:700; color:var(--text-muted); margin-bottom:6px; }
+.ods-ops { font-size:.78rem; color:var(--text-dim); }
+/* Smart Money pillars */
+.sm-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; margin-top:14px; }
+.sm-card { background:var(--bg2); border:1px solid rgba(255,0,85,.15); border-radius:var(--radius); padding:14px; }
+.sm-num { font-size:.72rem; font-weight:700; color:var(--accent); margin-bottom:4px; }
+.sm-title { font-size:.84rem; font-weight:700; color:var(--text-muted); margin-bottom:4px; }
+.sm-desc { font-size:.77rem; color:var(--text-dim); }
+/* Plano validação cards */
+.val-hypothesis { background:rgba(255,0,85,.06); border:1px solid rgba(255,0,85,.15); border-radius:8px; padding:14px 16px; margin-bottom:14px; font-size:.84rem; color:var(--text-muted); }
+.val-exp { background:rgba(0,120,255,.06); border:1px solid rgba(0,120,255,.15); border-radius:8px; padding:14px 16px; margin-bottom:14px; font-size:.84rem; color:var(--text-muted); }
+.val-gongo { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px; }
+.val-go { background:rgba(0,200,100,.06); border:1px solid rgba(0,200,100,.2); border-radius:8px; padding:12px 14px; font-size:.8rem; color:var(--text-muted); }
+.val-nogo { background:rgba(255,60,0,.06); border:1px solid rgba(255,60,0,.2); border-radius:8px; padding:12px 14px; font-size:.8rem; color:var(--text-muted); }
+.val-go strong, .val-nogo strong { display:block; margin-bottom:4px; font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; }
+.val-go strong { color:#00c870; }
+.val-nogo strong { color:#ff4422; }
+.val-editais { font-size:.78rem; color:var(--text-dim); padding:10px 14px; background:var(--bg2); border-radius:6px; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Navegação principal">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="https://cdn.gamma.app/6og14ayg9863uoc/912360094756495a83a4b1eb5b6fef2e/original/3.png" alt="MonyU Logo" onerror="this.style.display='none'">
+      MonyU
+    </a>
+    <button id="hamburger" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" role="list">
+      <li><a href="#sumario-executivo">Sumário</a></li>
+      <li><a href="#raiox">Raio-X</a></li>
+      <li><a href="#tam-sam-som">Mercado</a></li>
+      <li><a href="#tendencias">Tendências</a></li>
+      <li><a href="#inovacao">Inovação</a></li>
+      <li><a href="#score">Score</a></li>
+      <li><a href="#top3">Plano</a></li>
+      <li><a href="#captacao">Captação</a></li>
+      <li><a href="#conclusao">Conclusão</a></li>
+      <li><a href="#fontes">Fontes</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<nav id="mobile-menu" aria-label="Menu de navegação mobile">
+  <a href="#sumario-executivo">Sumário Executivo</a>
+  <a href="#metodologia">Metodologia</a>
+  <a href="#evidencias">Evidências</a>
+  <a href="#raiox">Raio-X da Empresa</a>
+  <a href="#tam-sam-som">TAM / SAM / SOM</a>
+  <a href="#ambiente">Ambiente de Negócio</a>
+  <a href="#tendencias">Tendências</a>
+  <a href="#patentes-artigos">Patentes &amp; Artigos</a>
+  <a href="#inovacao">Discovery de Inovação</a>
+  <a href="#score">Score MonyU</a>
+  <a href="#top3">Top 3 — Plano de Validação</a>
+  <a href="#captacao">Mapeamento de Captação</a>
+  <a href="#limitacoes">Limitações</a>
+  <a href="#conclusao">Conclusão</a>
+  <a href="#fontes">Fontes</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div style="display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:32px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <img src="https://iaris.ventures/wp-content/uploads/2024/05/logo-iaris.webp"
+             alt="Iaris Ventures"
+             style="height:48px;width:auto;object-fit:contain;"
+             onerror="this.outerHTML='<span style=\'font-size:1.2rem;font-weight:800;color:#fff;\'>Iaris Ventures</span>'">
+      </div>
+      <div style="width:1px;height:40px;background:rgba(255,255,255,0.15);"></div>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="https://cdn.gamma.app/6og14ayg9863uoc/912360094756495a83a4b1eb5b6fef2e/original/3.png"
+             alt="MonyU"
+             style="height:32px;width:auto;object-fit:contain;"
+             onerror="this.outerHTML='<span style=\'font-size:1rem;font-weight:700;color:#ff0055;\'>MonyU</span>'">
+        <span style="font-size:.82rem;color:var(--text-dim);font-weight:500;">Núcleo de Inteligência de Negócio</span>
+      </div>
+    </div>
+    <span class="hero-badge">Discovery de Inovação · 2026 · v2</span>
+    <h1>Iaris Ventures:<br><span>Oportunidades de Inovação</span></h1>
+    <p class="hero-sub">Análise estratégica de um Corporate Venture Builder com tese única no cruzamento de jurídico, financeiro e comunicação — com lente de captação: oportunidades priorizadas pela elegibilidade a subvenção econômica, CPSI e inovação aberta.</p>
+    <div class="hero-meta">
+      <span>📍 <strong>Juiz de Fora, MG</strong></span>
+      <span>🏗️ <strong>Corporate Venture Builder</strong></span>
+      <span>📅 <strong>Fundada: Jul/2024</strong></span>
+      <span>🚀 <strong>9 startups no portfólio</strong></span>
+      <span>👥 <strong>100+ profissionais</strong></span>
+    </div>
+    <div class="hero-download">
+      <a href="2026-06-15_iaris-ventures_monyu_discovery-inovacao_v2.pdf" download class="btn-download">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Baixar Discovery Completo (PDF)
+      </a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- SUMÁRIO EXECUTIVO -->
+<section id="sumario-executivo">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Visão Geral</span>
+      <h2>Sumário Executivo</h2>
+      <p>Síntese dos achados, oportunidades priorizadas e recomendação estratégica central — avaliadas com lente dupla: potencial de mercado e elegibilidade a captação não reembolsável.</p>
+    </div>
+    <div class="key-insight-grid">
+      <div class="key-insight">
+        <div class="ki-label">TAM Estimado (CVB Brasil)</div>
+        <div class="ki-value">R$2–5 bi</div>
+        <div class="ki-sub">Proxy conservador derivado do mercado de VC/PE</div>
+      </div>
+      <div class="key-insight">
+        <div class="ki-label">SAM (verticais lawtech/fintech/martech)</div>
+        <div class="ki-value">R$200–800 mi</div>
+        <div class="ki-sub">Valor de equity potencial nas verticais-alvo</div>
+      </div>
+      <div class="key-insight">
+        <div class="ki-label">SOM (capital direto 2024–2030)</div>
+        <div class="ki-value">R$20–30 mi</div>
+        <div class="ki-sub">30 startups × cheques de até R$1 milhão</div>
+      </div>
+      <div class="key-insight">
+        <div class="ki-label">Oportunidades mapeadas</div>
+        <div class="ki-value">8</div>
+        <div class="ki-sub">Ranqueadas por Score MonyU v2</div>
+      </div>
+      <div class="key-insight">
+        <div class="ki-label">Top Oportunidade (Score)</div>
+        <div class="ki-value">9,3 🏆</div>
+        <div class="ki-sub">Plataforma CVB Agentic (OP02)</div>
+      </div>
+      <div class="key-insight">
+        <div class="ki-label">Oportunidades de captação mapeadas</div>
+        <div class="ki-value">30+</div>
+        <div class="ki-sub">Subvenção, CPSI, aceleração, créditos tech e mais</div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:28px;">
+      <h3 style="margin-bottom:14px;">Tese Central de Inovação — v2</h3>
+      <p style="color:var(--text-muted);margin:0 0 12px;">A Iaris Ventures deve se posicionar como a <strong>infraestrutura de inovação do ecossistema jurídico-financeiro-associativo brasileiro</strong> — não apenas como seletora de startups, mas como plataforma que conecta dados, capital, canal e expertise. As três oportunidades prioritárias v2 são: <strong>Plataforma CVB Agentic (OP02, 9,3)</strong>, <strong>Legal Intelligence B2B (OP01, 9,0)</strong> e <strong>SON.IA 2.0 SaaS Sindical (OP06, 8,2)</strong>.</p>
+      <p style="color:var(--text-muted);margin:0;font-size:.87rem;border-top:1px solid var(--border);padding-top:12px;"><strong>Lente de captação:</strong> O modelo operacional MonyU × Iaris identifica soluções tecnológicas e estrutura projetos para captação de recursos não reembolsáveis em série — subvenção econômica (FINEP, FAPEMIG), CPSI, inovação aberta, créditos tech e aceleração internacional. A Iaris define o rumo estratégico; a MonyU apoia a captação.</p>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGIA -->
+<section id="metodologia">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Como foi feito</span>
+      <h2>Metodologia</h2>
+      <p>Pipeline agentic em 8 estados sequenciais, com dupla lente de avaliação: potencial de mercado e elegibilidade a captação.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card"><h4 style="color:var(--accent);margin-bottom:10px;">📥 Fontes e Pesquisa</h4><p style="font-size:.85rem;color:var(--text-muted);margin:0;">Fontes verificadas: site oficial, mídia especializada (Startups.com.br, Bloomberg Linea), relatórios setoriais (IAB Brasil Scape Report 2025), artigos acadêmicos com DOI verificado (PeerJ, PLOS ONE), patentes USPTO, editais de fomento (gov.br, FINEP, FAPEMIG) e fontes governamentais.</p></div>
+      <div class="card"><h4 style="color:var(--accent);margin-bottom:10px;">🔬 Análise Estratégica</h4><p style="font-size:.85rem;color:var(--text-muted);margin:0;">Raio-X empresarial, dimensionamento TAM/SAM/SOM, análise PESTAL + SWOT + TOWS, foresight de tendências, pesquisa de patentes e artigos acadêmicos. Todas as oportunidades avaliadas também sob critério de fundabilidade (elegibilidade a editais de subvenção, CPSI e inovação aberta).</p></div>
+      <div class="card"><h4 style="color:var(--accent);margin-bottom:10px;">🎯 Discovery</h4><p style="font-size:.85rem;color:var(--text-muted);margin:0;">8 oportunidades identificadas, qualificadas e priorizadas por Score MonyU (método proprietário). Cada oportunidade tem proposta única de valor, evidência, MVP, plano de validação e mapeamento de editais prioritários para captação.</p></div>
+      <div class="card"><h4 style="color:var(--accent);margin-bottom:10px;">✅ Auditoria Red Team</h4><p style="font-size:.85rem;color:var(--text-muted);margin:0;">Verificação de fontes, consistência matemática do TAM/SAM/SOM, status de patentes, coerência de scores e revisão das premissas de captação. Limitações registradas de forma transparente.</p></div>
+    </div>
+    <div class="card" style="margin-top:20px;border-left:3px solid var(--accent);">
+      <p style="font-size:.82rem;color:var(--text-muted);margin:0;"><strong>Objeto de análise:</strong> Iaris Ventures como Corporate Venture Builder. As startups do portfólio são avaliadas como ativos estratégicos, canais de distribuição e aceleradores — não como objeto principal. <strong>CNPJ:</strong> 54.923.981/0001-78 (Iaris Ventures Participações S.A.). <strong>Sem arquivos locais</strong> fornecidos pelo cliente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDÊNCIAS -->
+<section id="evidencias">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Destaques da Pesquisa</span>
+      <h2>Principais Evidências</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card"><p style="font-size:.88rem;color:var(--text-muted);">📊 <strong>80M+</strong> processos ativos no Brasil — demanda estrutural para lawtech</p></div>
+      <div class="card"><p style="font-size:.88rem;color:var(--text-muted);">⚖️ <strong>55,1%</strong> dos advogados brasileiros já usam IA regularmente (2025)</p></div>
+      <div class="card"><p style="font-size:.88rem;color:var(--text-muted);">📱 <strong>54M</strong> consentimentos Open Finance ativos no Brasil (crescimento +143%)</p></div>
+      <div class="card"><p style="font-size:.88rem;color:var(--text-muted);">🎵 Mercado musical brasileiro: <strong>R$3,49 bi</strong> em 2024, crescimento de <strong>+21,7%</strong></p></div>
+      <div class="card"><p style="font-size:.88rem;color:var(--text-muted);">🤖 Modelos de ML superam peritos humanos na previsão de decisões judiciais (MCC 0,3688 vs 0,1253)</p></div>
+      <div class="card"><p style="font-size:.88rem;color:var(--text-muted);">🏗️ CVBs no Brasil: de <strong>20 (2018)</strong> para <strong>40+ (2023)</strong> — expansão do modelo</p></div>
+      <div class="card"><p style="font-size:.88rem;color:var(--text-muted);">💻 <strong>17.000+</strong> entidades sindicais no Brasil — mercado pouco digitalizado para SON.IA 2.0</p></div>
+      <div class="card"><p style="font-size:.88rem;color:var(--text-muted);">🇧🇷 PBIA: <strong>R$23 bi</strong> em IA até 2028 — âncora de financiamento público para OP01, OP02, OP06</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- RAIO-X -->
+<section id="raiox">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Análise Empresarial</span>
+      <h2>Raio-X — Iaris Ventures</h2>
+      <p>Corporate Venture Builder fundada em julho de 2024, com sede em Juiz de Fora, MG.</p>
+    </div>
+    <div class="raiox-grid">
+      <div>
+        <div class="card" style="margin-bottom:20px;">
+          <h4 style="color:var(--accent);margin-bottom:14px;">Identidade</h4>
+          <table class="raiox-table">
+            <tr><td>Tipo</td><td>Corporate Venture Builder (CVB)</td></tr>
+            <tr><td>Fundação</td><td>17 de julho de 2024</td></tr>
+            <tr><td>Sede</td><td>Juiz de Fora, MG, Brasil</td></tr>
+            <tr><td>CNPJ</td><td><span class="badge badge-green">54.923.981/0001-78</span></td></tr>
+            <tr><td>Razão Social</td><td>Iaris Ventures Participações S.A.</td></tr>
+            <tr><td>Site</td><td><a href="https://iaris.ventures/" target="_blank" rel="noopener noreferrer">iaris.ventures</a></td></tr>
+            <tr><td>Equipe</td><td>100+ profissionais</td></tr>
+            <tr><td>Meta</td><td>30 startups em 6 anos (2024–2030)</td></tr>
+            <tr><td>Cheque médio</td><td>Até R$1 milhão por startup</td></tr>
+            <tr><td>Equity</td><td>5% a 10% por investida</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <h4 style="color:var(--accent);margin-bottom:14px;">Empresas Fundadoras</h4>
+          <ul class="founders-list">
+            <li><div class="founder-icon">⚖️</div><div><div class="founder-name">FCJ Group</div><div class="founder-desc">Maior ecossistema de Venture Builder da América Latina · 321+ startups · 60+ VBs · CEO: Paulo Justino</div></div></li>
+            <li><div class="founder-icon">🏛️</div><div><div class="founder-name">MCA Advocacia</div><div class="founder-desc">Referência em Direito Empresarial e automação jurídica · Sócio-diretor: Bruno Amaral</div></div></li>
+            <li><div class="founder-icon">📡</div><div><div class="founder-name">Sindicatos Online (SON)</div><div class="founder-desc">Plataforma para entidades sindicais e associativas · Criadora da SON.IA · Sócio-diretor: André Rodrigues</div></div></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:20px;">
+          <h4 style="color:var(--accent);margin-bottom:14px;">Liderança</h4>
+          <table class="raiox-table">
+            <tr><td>CEO</td><td>Paulo Buso (ex-CMO Abstartups; 16+ anos em tech)</td></tr>
+            <tr><td>Presidente do Conselho</td><td>Marcos Volpini</td></tr>
+            <tr><td>Sócio-Diretor (MCA)</td><td>Bruno Amaral</td></tr>
+            <tr><td>Sócio-Diretor (SON)</td><td>André Rodrigues</td></tr>
+            <tr><td>CEO FCJ</td><td>Paulo Justino</td></tr>
+          </table>
+        </div>
+        <div class="card" style="margin-bottom:20px;">
+          <h4 style="color:var(--accent);margin-bottom:10px;">Modelo Smart Money — 5 Pilares</h4>
+          <p style="font-size:.82rem;color:var(--text-dim);margin-bottom:12px;">O diferencial da Iaris não é apenas o capital — é o conjunto de valor entregue a cada investida:</p>
+          <div class="sm-grid">
+            <div class="sm-card"><div class="sm-num">Pilar 1</div><div class="sm-title">Governança</div><div class="sm-desc">Estruturação societária, captable, gestão e compliance</div></div>
+            <div class="sm-card"><div class="sm-num">Pilar 2</div><div class="sm-title">Acesso a Mercado</div><div class="sm-desc">MCA (jurídico), SON (sindical), FCJ (321+ startups, 60+ VBs)</div></div>
+            <div class="sm-card"><div class="sm-num">Pilar 3</div><div class="sm-title">Ecossistema FCJ</div><div class="sm-desc">Metodologia CVB validada internacionalmente, parceria AWS, rede global</div></div>
+            <div class="sm-card"><div class="sm-num">Pilar 4</div><div class="sm-title">Fundraising &amp; Exits</div><div class="sm-desc">Preparação para rodadas seed e Series A; conexão com investidores e FIPs</div></div>
+            <div class="sm-card" style="grid-column:span 1"><div class="sm-num">Pilar 5</div><div class="sm-title">Hub de Perks</div><div class="sm-desc">R$500K+ em benefícios: créditos AWS/Azure/Google, ferramentas SaaS, assessoria jurídica e contábil</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <h4 style="color:var(--accent);margin-bottom:10px;">Presença Digital</h4>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="https://iaris.ventures/" target="_blank" rel="noopener noreferrer" class="badge badge-accent">🌐 Site</a>
+            <a href="https://www.instagram.com/iarisventures/" target="_blank" rel="noopener noreferrer" class="badge badge-muted">📸 Instagram</a>
+            <a href="https://www.linkedin.com/company/iaris-ventures" target="_blank" rel="noopener noreferrer" class="badge badge-muted">💼 LinkedIn</a>
+            <a href="https://www.facebook.com/iarisventures" target="_blank" rel="noopener noreferrer" class="badge badge-muted">📘 Facebook</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORTFÓLIO -->
+    <div style="margin-top:36px;">
+      <h3 style="margin-bottom:20px;">Portfólio Atual — 9 Startups</h3>
+      <div class="portfolio-grid">
+        <div class="portfolio-card"><div class="pc-name">TaxTek</div><div class="pc-vertical"><span class="badge badge-blue">TaxTech</span></div><div class="pc-desc">Soluções de tecnologia para gestão fiscal e redução de riscos tributários.</div><a href="https://taxtek.com.br/" target="_blank" rel="noopener noreferrer" class="pc-equity">taxtek.com.br ↗</a></div>
+        <div class="portfolio-card"><div class="pc-name">Ichello</div><div class="pc-vertical"><span class="badge badge-green">Fintech / Royalties</span></div><div class="pc-desc">Plataforma de investimento em royalties musicais. Retorno via participação nos ganhos do artista.</div><div class="pc-equity">Equity: 5% · <a href="https://www.ichello.com.br/" target="_blank" rel="noopener noreferrer">ichello.com.br ↗</a></div></div>
+        <div class="portfolio-card"><div class="pc-name">SecBrain</div><div class="pc-vertical"><span class="badge badge-accent">IA / Produtividade</span></div><div class="pc-desc">Automação de WhatsApp com IA: geração de texto, resumos, categorização de conteúdo.</div><div class="pc-equity">Equity: 10% · <a href="https://secbrain.ai/" target="_blank" rel="noopener noreferrer">secbrain.ai ↗</a></div></div>
+        <div class="portfolio-card"><div class="pc-name">Touchworks</div><div class="pc-vertical"><span class="badge badge-yellow">Lawtech</span></div><div class="pc-desc">IA para escritórios de advocacia: atendimento, gestão e consulta processual automatizados.</div><div class="pc-equity">Equity: 10% · <a href="https://touchworks.com.br/" target="_blank" rel="noopener noreferrer">touchworks.com.br ↗</a></div></div>
+        <div class="portfolio-card"><div class="pc-name">Intelus</div><div class="pc-vertical"><span class="badge badge-blue">Adtech / B2B Intel</span></div><div class="pc-desc">Organiza dados públicos de fontes abertas para gerar inteligência acionável para empresas B2B.</div><div class="pc-equity">Equity: 10%</div></div>
+        <div class="portfolio-card"><div class="pc-name">IRIS Visual Law</div><div class="pc-vertical"><span class="badge badge-yellow">Lawtech</span></div><div class="pc-desc">Primeira plataforma de Visual Law com IA do Brasil. Linhas do tempo, fluxogramas e otimização de peças.</div><div class="pc-equity">Equity: 10% · <a href="https://irisvisuallaw.com/" target="_blank" rel="noopener noreferrer">irisvisuallaw.com ↗</a></div></div>
+        <div class="portfolio-card"><div class="pc-name">DATASIND</div><div class="pc-vertical"><span class="badge badge-blue">Adtech / Gestão Sindical</span></div><div class="pc-desc">Plataforma de gestão sindical e associativa com comunicação via WhatsApp, e-mail e SMS.</div><div class="pc-equity">Equity: 10% · <a href="https://datasind.com.br/site/" target="_blank" rel="noopener noreferrer">datasind.com.br ↗</a></div></div>
+        <div class="portfolio-card"><div class="pc-name">Lifevest</div><div class="pc-vertical"><span class="badge badge-green">Fintech / Open Finance</span></div><div class="pc-desc">Consolida informações financeiras via Open Finance e IA para planejamento de aposentadoria.</div><a href="https://www.lifevest.live/" target="_blank" rel="noopener noreferrer" class="pc-equity">lifevest.live ↗</a></div>
+        <div class="portfolio-card"><div class="pc-name">Lawgie.ai</div><div class="pc-vertical"><span class="badge badge-yellow">Lawtech / Legal Intel</span></div><div class="pc-desc">Conecta dados, automação e visão estratégica para simplificar análises jurídicas complexas.</div><a href="https://lawgieai.com/" target="_blank" rel="noopener noreferrer" class="pc-equity">lawgieai.com ↗</a></div>
+      </div>
+    </div>
+
+    <!-- GAPS -->
+    <div class="card" style="margin-top:28px;border-left:3px solid var(--yellow);">
+      <h4 style="color:var(--yellow);margin-bottom:12px;">⚠️ Dores e Gaps Identificados</h4>
+      <ul class="swot-list">
+        <li><strong>Sem fundo de capital estruturado para follow-on</strong> — startups que crescem buscam capital externo sem suporte direto da Iaris, diluindo a participação da CVB.</li>
+        <li><strong>Processo de curadoria manual = gargalo de escala</strong> — triagem de deal flow, gestão de portfólio e matching com editais e investidores são altamente manuais. A OP02 (Plataforma CVB Agentic) endereça diretamente esse gargalo.</li>
+        <li><strong>Alta concentração de deal flow em IA genérica (90%)</strong> — dificulta triagem de qualidade (Paulo Buso, Startups.com.br, 2025).</li>
+        <li><strong>Descasamento de valuations</strong> entre fundadores e mercado.</li>
+        <li><strong>Zero patentes identificadas</strong> no portfólio ou nas fundadoras — gap de gestão de PI.</li>
+        <li><strong>Ecossistema local de Juiz de Fora</strong> ainda em amadurecimento (69 startups).</li>
+        <li><strong>Marca pouco conhecida</strong> fora do ecossistema FCJ.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- TAM / SAM / SOM -->
+<section id="tam-sam-som">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Dimensionamento de Mercado</span>
+      <h2>TAM / SAM / SOM</h2>
+      <p>Dimensionamento com proxies conservadores. Não há pesquisa pública específica para Venture Builders no Brasil — valores são derivados de mercados adjacentes.</p>
+    </div>
+    <div class="market-trio">
+      <div class="market-box"><div class="mb-label">TAM — Total Addressable Market</div><div class="mb-value">R$2 a R$5 bi</div><div class="mb-desc">Fração do mercado de VC/PE brasileiro (R$42 bi em 2025) capturada por estruturas de venture building. Inclui serviços, equity e ecossistema gerado. <span class="badge badge-yellow" style="margin-top:8px;display:inline-block;">Confiança: baixa</span></div></div>
+      <div class="market-box"><div class="mb-label">SAM — Serviceable Addressable Market</div><div class="mb-value">R$200 a R$800 mi</div><div class="mb-desc">Startups com perfil ideal no Brasil (200–400/ano) nas verticais lawtech/fintech/martech. Valor de equity potencial co-desenvolvido. <span class="badge badge-yellow" style="margin-top:8px;display:inline-block;">Confiança: baixa</span></div></div>
+      <div class="market-box"><div class="mb-label">SOM — Serviceable Obtainable Market</div><div class="mb-value">R$20 a R$30 mi</div><div class="mb-desc">Capital direto alocado: 30 startups × cheques de até R$1 M (meta declarada 2024–2030). <span class="badge badge-green" style="margin-top:8px;display:inline-block;">Confiança: alta</span></div></div>
+    </div>
+    <div class="card" style="margin-top:24px;">
+      <h4 style="margin-bottom:14px;">Mercados Adjacentes Verificados</h4>
+      <div class="card-grid">
+        <div><p style="font-size:.84rem;color:var(--text-muted);"><strong>Lawtech Brasil:</strong> R$50 bi/ano (indicativo do setor, crescimento ~20%/ano). Global: US$35,4 bi (2025) → US$72,5 bi (2035).</p></div>
+        <div><p style="font-size:.84rem;color:var(--text-muted);"><strong>Fintech VC:</strong> Fintechs = 40% dos US$4,5 bi em VC no Brasil em 2025 (~US$1,8 bi). Fonte: Bloomberg Linea.</p></div>
+        <div><p style="font-size:.84rem;color:var(--text-muted);"><strong>Martech/Adtech:</strong> 1.300+ empresas no ecossistema brasileiro (IAB Brasil Scape Report 2025). Sem TAM em R$ verificado.</p></div>
+        <div><p style="font-size:.84rem;color:var(--text-muted);"><strong>Mercado sindical/associativo:</strong> 17.000+ entidades no Brasil. Baixa digitalização = oportunidade de mercado para SON.IA 2.0.</p></div>
+      </div>
+      <p style="font-size:.78rem;color:var(--text-dim);margin-top:16px;margin-bottom:0;">⚠️ Nota metodológica: TAM/SAM derivados de proxies. Dados de valuation e receita do portfólio Iaris não são públicos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AMBIENTE DE NEGÓCIO -->
+<section id="ambiente">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Contexto Estratégico</span>
+      <h2>Ambiente de Negócio</h2>
+    </div>
+    <h3 style="margin-bottom:16px;">Análise PESTAL</h3>
+    <div class="card-grid" style="margin-bottom:32px;">
+      <div class="card"><h4 style="color:var(--blue);margin-bottom:10px;">🏛️ Político</h4><ul class="swot-list"><li>Marco Legal das Startups (Lei 182/2021) facilita investimentos, equity e CPSI</li><li>Plano Brasileiro de IA: R$23 bilhões até 2028</li><li>Marco Legal da IA em votação 2026 — risco e oportunidade</li><li>Open Finance regulado pelo Banco Central</li></ul></div>
+      <div class="card"><h4 style="color:var(--green);margin-bottom:10px;">💰 Econômico</h4><ul class="swot-list"><li>VC brasileiro: US$4,5 bi em 2025 (-13% vs 2024), 2º maior da AL</li><li>Startups Brasil: R$13 bi em 407 transações (2025)</li><li>Fintechs: 40% do VC brasileiro em 2025</li><li>Valuation pós-2021 deprimido — oportunidade para CVBs</li></ul></div>
+      <div class="card"><h4 style="color:var(--yellow);margin-bottom:10px;">👥 Social</h4><ul class="swot-list"><li>80M+ processos ativos no Brasil</li><li>55,1% dos advogados usam IA regularmente</li><li>17.000+ entidades sindicais com baixa digitalização</li><li>Mercado musical BR: R$3,49 bi (+21,7% em 2024)</li></ul></div>
+      <div class="card"><h4 style="color:var(--accent);margin-bottom:10px;">💻 Tecnológico</h4><ul class="swot-list"><li>IA agentic como tendência central de 2026</li><li>Brasil: 41,7% do mercado LatAm de IA (~US$4,2 bi)</li><li>Open Finance: 54M consentimentos ativos (2025)</li><li>Tokenização de ativos reais (RWA) em expansão</li></ul></div>
+      <div class="card"><h4 style="color:var(--green);margin-bottom:10px;">🌱 Ambiental</h4><ul class="swot-list"><li>ESG como critério crescente de seleção para VCs e editais de fomento</li><li>ODS como critério de pontuação em editais FINEP, BNDES e BID</li></ul></div>
+      <div class="card"><h4 style="color:var(--red);margin-bottom:10px;">⚖️ Legal</h4><ul class="swot-list"><li>Res. BCB 4.949/2021: marco regulatório Open Finance</li><li>LGPD impacta soluções com dados jurídicos e pessoais</li><li>CVM regula ativos alternativos (FIDCs, CRIs, tokens)</li><li>INPI regulamentando patentes de IA (consulta pública 2024)</li></ul></div>
+    </div>
+
+    <h3 style="margin-bottom:16px;">Análise SWOT</h3>
+    <div class="swot-grid" style="margin-bottom:32px;">
+      <div class="swot-box swot-s"><h4 class="s">💪 Forças</h4><ul class="swot-list">
+        <li>Ecossistema FCJ (maior CVB LatAm) como parceiro e rede global</li>
+        <li>Smart Money com 5 pilares: governança + mercado + FCJ + fundraising + Hub de Perks (R$500K+ em benefícios)</li>
+        <li>Expertise vertical rara: jurídico + financeiro + comunicação</li>
+        <li>Alcance captivo de 10M+ pessoas via empresas fundadoras</li>
+        <li>Menor custo operacional vs São Paulo (JF)</li>
+        <li>100+ profissionais multidisciplinares desde o lançamento</li>
+        <li>CEO Paulo Buso com background em Abstartups</li>
+      </ul></div>
+      <div class="swot-box swot-w"><h4 class="w">⚠️ Fraquezas</h4><ul class="swot-list">
+        <li>Sem fundo de co-investimento estruturado para follow-on</li>
+        <li>Processo de curadoria manual é gargalo de escala (triagem, portfólio, matching de editais)</li>
+        <li>Marca ainda pouco conhecida fora do ecossistema FCJ</li>
+        <li>Ecossistema local emergente (69 startups em JF)</li>
+        <li>90% do deal flow em IA genérica dificulta triagem</li>
+        <li>Zero propriedade intelectual registrada identificada</li>
+      </ul></div>
+      <div class="swot-box swot-o"><h4 class="o">🚀 Oportunidades</h4><ul class="swot-list">
+        <li>Lawtech em expansão: 80M+ processos, 55% de IA já adotada</li>
+        <li>FINEP Mais Inovação (R$300M) e FAPEMIG Compete Minas (R$50M) abertos em 2026</li>
+        <li>SON.IA como produto base para SaaS sindical em mercado de 17.000+ entidades</li>
+        <li>Plataforma agentic própria = resolve gargalo interno e vira produto licenciável</li>
+        <li>UFJF e SENAI como ICTs parceiras para editais FINEP</li>
+        <li>Partec JF com capacidade para 30 empresas</li>
+      </ul></div>
+      <div class="swot-box swot-t"><h4 class="t">⚡ Ameaças</h4><ul class="swot-list">
+        <li>VC em retração (-13% em 2025): rodadas follow-on mais escassas</li>
+        <li>Competição crescente: FCJ tem 60+ VBs parceiros no Brasil</li>
+        <li>Descasamento de valuations pode travar negociações</li>
+        <li>Risco regulatório em fintech (ativos) e martech (LGPD)</li>
+        <li>Dependência do ecossistema FCJ: risco de mudança estratégica</li>
+      </ul></div>
+    </div>
+
+    <h3 style="margin-bottom:16px;">Matriz TOWS — Estratégias Cruzadas</h3>
+    <div class="card-grid" style="margin-bottom:32px;">
+      <div class="card"><h4 style="color:var(--green);margin-bottom:8px;">SO — Alavancar</h4><p style="font-size:.84rem;color:var(--text-muted);margin:0;">Usar o alcance de 10M+ pessoas (Força) para capturar startups em lawtech/fintech que se beneficiam da expansão do mercado e dos editais de fomento (Oportunidade).</p></div>
+      <div class="card"><h4 style="color:var(--blue);margin-bottom:8px;">WO — Superar</h4><p style="font-size:.84rem;color:var(--text-muted);margin:0;">Desenvolver plataforma agentic própria (OP02) financiada por subvenção para eliminar o gargalo de curadoria manual (Fraqueza) e capturar a janela de editais abertos (Oportunidade).</p></div>
+      <div class="card"><h4 style="color:var(--yellow);margin-bottom:8px;">ST — Defender</h4><p style="font-size:.84rem;color:var(--text-muted);margin:0;">Usar a expertise jurídica única da MCA (Força) para diferenciar frente à retração de capital no mercado (Ameaça).</p></div>
+      <div class="card"><h4 style="color:var(--red);margin-bottom:8px;">WT — Mitigar</h4><p style="font-size:.84rem;color:var(--text-muted);margin:0;">Criar modelos de receita recorrente via subvenção econômica para financiar equipes de desenvolvimento (OP02, OP06) e reduzir dependência de capital privado escasso (Fraqueza + Ameaça).</p></div>
+    </div>
+
+    <h3 style="margin-bottom:16px;">Concorrentes e Referências</h3>
+    <div class="plan-table-wrap">
+      <table class="plan-table">
+        <thead><tr><th>Nome</th><th>Modelo</th><th>Tipo</th><th>Link</th></tr></thead>
+        <tbody>
+          <tr><td>FCJ Group</td><td>CVB; 321+ startups; maior ecossistema CVB da AL</td><td><span class="badge badge-yellow">Parceiro/Referência</span></td><td><a href="https://fcjventurebuilder.com/" target="_blank" rel="noopener noreferrer">↗</a></td></tr>
+          <tr><td>Aleve LegalTech Ventures</td><td>CVB focada em legaltechs; 13 startups; R$200M no portfólio</td><td><span class="badge badge-red">Concorrente direto</span></td><td><a href="https://sanpedrovalley.org.br/aleve-legaltech-ventures-completa-4-anos-com-13-startups-e-r-200-milhoes/" target="_blank" rel="noopener noreferrer">↗</a></td></tr>
+          <tr><td>ACE Startups</td><td>Aceleradora/CVB nacional com foco em tech e negócios</td><td><span class="badge badge-red">Concorrente direto</span></td><td><a href="https://acestartups.com.br/" target="_blank" rel="noopener noreferrer">↗</a></td></tr>
+          <tr><td>Cubo Itaú</td><td>Hub de inovação; foco em fintechs (modelo diferente)</td><td><span class="badge badge-muted">Concorrente indireto</span></td><td><a href="https://cubo.network/" target="_blank" rel="noopener noreferrer">↗</a></td></tr>
+          <tr><td>Rocket Internet</td><td>CVB global; co-criou Zalando, HelloFresh</td><td><span class="badge badge-blue">Referência aspiracional</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- TENDÊNCIAS -->
+<section id="tendencias">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Foresight</span>
+      <h2>Tendências e Sinais Fracos</h2>
+      <p>10 tendências mapeadas, 3 sinais fracos e 5 tecnologias emergentes com impacto direto na estratégia da Iaris Ventures.</p>
+    </div>
+    <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:28px;">
+      <h4 style="margin-bottom:16px;color:var(--text-muted);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;">Relevância Estratégica por Tendência</h4>
+      <div style="height:320px;position:relative;"><canvas id="trend-chart"></canvas></div>
+    </div>
+    <ul class="trend-list">
+      <li class="trend-item"><div class="trend-num">T01</div><div><div class="trend-title">IA Agentic como infraestrutura de CVBs</div><div class="trend-desc">Agentes autônomos para scouting, scoring, gestão de portfólio e matching de editais — eliminando gargalo operacional manual de CVBs. Oportunidade central para OP02.</div><div class="trend-meta"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-yellow">Incerteza: Média</span><span class="badge badge-muted">2025–2027</span><span class="badge badge-green">Confiança: Alta</span></div></div></li>
+      <li class="trend-item"><div class="trend-num">T02</div><div><div class="trend-title">Open Finance e previdência personalizada</div><div class="trend-desc">54M+ consentimentos ativos (+143% crescimento). Habilita plataformas de planejamento financeiro e aposentadoria altamente personalizadas.</div><div class="trend-meta"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-green">Incerteza: Baixa</span><span class="badge badge-muted">2025–2028</span><span class="badge badge-green">Confiança: Alta</span></div></div></li>
+      <li class="trend-item"><div class="trend-num">T03</div><div><div class="trend-title">Tokenização de ativos reais (RWA) e royalties</div><div class="trend-desc">Blockchain para IP cresce de US$968M (2024) para US$1,2B (2025), projeção de US$3,7B até 2030. Royalties musicais como ativo financeiro.</div><div class="trend-meta"><span class="badge badge-yellow">Impacto: Médio</span><span class="badge badge-red">Incerteza: Alta</span><span class="badge badge-muted">2025–2030</span><span class="badge badge-yellow">Confiança: Média</span></div></div></li>
+      <li class="trend-item"><div class="trend-num">T04</div><div><div class="trend-title">Convergência Martech + Adtech com IA</div><div class="trend-desc">1.300+ empresas no ecossistema brasileiro. IA como pilar central para personalização e automação programática.</div><div class="trend-meta"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-green">Incerteza: Baixa</span><span class="badge badge-muted">2025–2027</span><span class="badge badge-green">Confiança: Alta</span></div></div></li>
+      <li class="trend-item"><div class="trend-num">T05</div><div><div class="trend-title">Jurimetria preditiva e BI jurídico</div><div class="trend-desc">ML supera peritos humanos (MCC 0,3688 vs 0,1253). 140+ projetos de IA nos tribunais brasileiros. Demanda por plataformas B2B.</div><div class="trend-meta"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-green">Incerteza: Baixa</span><span class="badge badge-muted">2024–2027</span><span class="badge badge-green">Confiança: Alta</span></div></div></li>
+      <li class="trend-item"><div class="trend-num">T06</div><div><div class="trend-title">IA para o setor sindical e associativo</div><div class="trend-desc">17.000+ entidades no Brasil com baixíssima digitalização. SON.IA abre caminho para automação de comunicação e serviços digitais.</div><div class="trend-meta"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-yellow">Incerteza: Média</span><span class="badge badge-muted">2025–2028</span><span class="badge badge-yellow">Confiança: Média</span></div></div></li>
+      <li class="trend-item"><div class="trend-num">T07</div><div><div class="trend-title">Visual Law e comunicação jurídica acessível</div><div class="trend-desc">Tendência global de simplificação e visualização de documentos jurídicos. IRIS Visual Law é pioneira no Brasil.</div><div class="trend-meta"><span class="badge badge-yellow">Impacto: Médio</span><span class="badge badge-yellow">Incerteza: Média</span><span class="badge badge-muted">2025–2028</span><span class="badge badge-yellow">Confiança: Média</span></div></div></li>
+      <li class="trend-item"><div class="trend-num">T08</div><div><div class="trend-title">Corporates como âncoras de CVBs verticalizados</div><div class="trend-desc">CVBs no Brasil: de 20 (2018) para 40+ (2023). Grandes corporações adotando CVBs como inovação aberta (ex: Algar + FCJ).</div><div class="trend-meta"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-green">Incerteza: Baixa</span><span class="badge badge-muted">2024–2028</span><span class="badge badge-green">Confiança: Alta</span></div></div></li>
+      <li class="trend-item"><div class="trend-num">T09</div><div><div class="trend-title">Descentralização do ecossistema de inovação</div><div class="trend-desc">Seed MG, Partec JF e apoio do Governo de MG fortalecem ecossistemas regionais. JF: 69 startups e infraestrutura emergente.</div><div class="trend-meta"><span class="badge badge-yellow">Impacto: Médio</span><span class="badge badge-yellow">Incerteza: Média</span><span class="badge badge-muted">2025–2029</span><span class="badge badge-yellow">Confiança: Média</span></div></div></li>
+      <li class="trend-item"><div class="trend-num">T10</div><div><div class="trend-title">Plano Brasileiro de IA e investimento público</div><div class="trend-desc">R$23 bilhões em IA até 2028. Brasil: 41,7% do mercado LatAm de IA. Âncora de múltiplos editais de subvenção em 2026.</div><div class="trend-meta"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-yellow">Incerteza: Média</span><span class="badge badge-muted">2026–2028</span><span class="badge badge-yellow">Confiança: Média</span></div></div></li>
+    </ul>
+    <div class="card" style="margin-top:24px;"><h4 style="margin-bottom:12px;">⚡ Sinais Fracos</h4><ul class="swot-list"><li>IA gerando mais processos judiciais no Brasil (Rest of World, 2025): backlog cresce → demanda por automação aumenta</li><li>Grammy winners (Nas) tokenizando royalties: maturação do mercado de royalties como ativo financeiro</li><li>SON.IA já desenvolvida: plataforma proprietária indica capacidade técnica para novos spin-offs</li></ul></div>
+    <div class="card" style="margin-top:16px;"><h4 style="margin-bottom:12px;">🔬 Tecnologias Emergentes</h4><div style="display:flex;gap:10px;flex-wrap:wrap;"><span class="badge badge-accent">LLMs aplicados ao direito (jurimetria)</span><span class="badge badge-blue">Blockchain / tokenização de IP</span><span class="badge badge-green">Open Finance APIs</span><span class="badge badge-yellow">Agentic AI (automação de workflows CVB)</span><span class="badge badge-muted">Visual Law com IA</span></div></div>
+  </div>
+</section>
+
+<!-- PATENTES E ARTIGOS -->
+<section id="patentes-artigos">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Propriedade Intelectual e Ciência</span>
+      <h2>Patentes e Artigos Acadêmicos</h2>
+      <p>Nenhuma patente da Iaris Ventures ou do seu portfólio foi localizada (gap estratégico — ver OP05). Patentes gerais e artigos verificados nas verticais de atuação.</p>
+    </div>
+    <div class="pa-tabs" role="tablist">
+      <button class="pa-tab active" role="tab" data-panel="tab-patentes" aria-selected="true">📋 Patentes (4)</button>
+      <button class="pa-tab" role="tab" data-panel="tab-artigos" aria-selected="false">📚 Artigos Acadêmicos (4)</button>
+    </div>
+    <div class="pa-panel active" id="tab-patentes">
+      <div class="pa-list">
+        <div class="pa-item"><div class="pa-num">US10133791B2 · USPTO · Concedida</div><div class="pa-title">Data mining and analysis system and method for legal documents</div><div class="pa-meta">Base: USPTO PPUBS · <a href="https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10133791" target="_blank" rel="noopener noreferrer">Ver PDF ↗</a></div><div class="pa-desc">Mineração e análise automatizada de documentos jurídicos. <strong>Relação:</strong> Tecnologia validada como patenteável nos EUA; gap no Brasil cria janela para desenvolvimento local nas verticais lawtech da Iaris (OP01).</div></div>
+        <div class="pa-item"><div class="pa-num">US11321631B2 · USPTO · Concedida</div><div class="pa-title">Artificial intelligence, machine learning, and predictive analytics for patent and non-patent documents</div><div class="pa-meta">Base: USPTO PPUBS · <a href="https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11321631" target="_blank" rel="noopener noreferrer">Ver PDF ↗</a></div><div class="pa-desc">Predição e análise de documentos jurídicos com ML. <strong>Risco:</strong> Tecnologia protegida nos EUA pode limitar exportação. <strong>Oportunidade:</strong> Adaptar para o contexto brasileiro (sem cobertura de PI no Brasil).</div></div>
+        <div class="pa-item"><div class="pa-num">US10121216B2 · USPTO · Concedida</div><div class="pa-title">Analyzing and characterizing legal case outcomes</div><div class="pa-meta">Base: USPTO PPUBS · <a href="https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/10121216" target="_blank" rel="noopener noreferrer">Ver PDF ↗</a></div><div class="pa-desc">Análise e caracterização de resultados de casos judiciais. Base técnica para soluções como Lawgie.ai e Touchworks. Gap no Brasil oferece janela de desenvolvimento.</div></div>
+        <div class="pa-item"><div class="pa-num">US20230259705A1 · USPTO · Publicação</div><div class="pa-title">Computer implemented methods for the automated analysis or use of data, including use of a large language model</div><div class="pa-meta">Base: Google Patents · <a href="https://patents.google.com/patent/US20230259705A1/en" target="_blank" rel="noopener noreferrer">Ver patente ↗</a></div><div class="pa-desc">Análise automatizada de dados com LLMs. Aplicável às verticais lawtech, fintech e martech. Tendência global confirma valor estratégico do campo (OP01, OP04, OP08).</div></div>
+      </div>
+      <div class="card" style="margin-top:16px;border-left:3px solid var(--yellow);"><p style="font-size:.82rem;color:var(--text-muted);margin:0;">⚠️ <strong>Gap crítico:</strong> Nenhuma patente da Iaris Ventures, MCA, Sindicatos Online ou startups do portfólio foi localizada em Google Patents ou USPTO. INPI não foi acessado diretamente. Isso representa risco competitivo e oportunidade de proteção (ver OP05 — PI-Stack).</p></div>
+    </div>
+    <div class="pa-panel" id="tab-artigos">
+      <div class="pa-list">
+        <div class="pa-item"><div class="pa-num">PeerJ Computer Science · DOI: 10.7717/peerj-cs.904 · 2022</div><div class="pa-title">Predicting Brazilian Court Decisions</div><div class="pa-meta">Lage-Freitas, A. et al. · PMC9044329 · <a href="https://peerj.com/articles/cs-904/" target="_blank" rel="noopener noreferrer">Ver artigo ↗</a></div><div class="pa-desc"><strong>Achado:</strong> F1-score ~80,2%; primeira metodologia para prever resultados de decisões brasileiras. <strong>Maturidade:</strong> TRL 4–5 · <strong>Risco tecnológico:</strong> <span class="badge badge-green">Baixo</span></div></div>
+        <div class="pa-item"><div class="pa-num">PLOS ONE · DOI: 10.1371/journal.pone.0272287 · 2022</div><div class="pa-title">Using deep learning to predict outcomes of legal appeals better than human experts</div><div class="pa-meta">PMC9333285 · <a href="https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0272287" target="_blank" rel="noopener noreferrer">Ver artigo ↗</a></div><div class="pa-desc"><strong>Achado:</strong> MCC 0,3688 (modelos) vs 0,1253 (humanos). Modelos superam peritos. <strong>Maturidade:</strong> TRL 5–6 · <strong>Risco tecnológico:</strong> <span class="badge badge-green">Baixo</span></div></div>
+        <div class="pa-item"><div class="pa-num">arXiv · 2023</div><div class="pa-title">Automating construction contract review using knowledge graph-enhanced large language models</div><div class="pa-meta"><a href="https://arxiv.org/pdf/2309.12132" target="_blank" rel="noopener noreferrer">Ver artigo ↗</a></div><div class="pa-desc"><strong>Achado:</strong> LLMs + Knowledge Graph para extração de cláusulas e identificação de riscos em contratos. <strong>Maturidade:</strong> TRL 3–4 · <strong>Risco tecnológico:</strong> <span class="badge badge-yellow">Médio</span></div></div>
+        <div class="pa-item"><div class="pa-num">Artificial Intelligence Review (Springer) · 2025</div><div class="pa-title">Natural language processing in the patent domain: a survey</div><div class="pa-meta"><a href="https://link.springer.com/article/10.1007/s10462-025-11168-z" target="_blank" rel="noopener noreferrer">Ver artigo ↗</a></div><div class="pa-desc"><strong>Achado:</strong> Estado da arte de NLP para análise de patentes e documentos técnicos. <strong>Maturidade:</strong> TRL 7–8 · <strong>Risco tecnológico:</strong> <span class="badge badge-green">Baixo</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- DISCOVERY DE INOVAÇÃO -->
+<section id="inovacao">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">8 Oportunidades Mapeadas</span>
+      <h2>Discovery de Inovação</h2>
+      <p>Oportunidades identificadas, qualificadas e priorizadas com lente dupla: potencial de mercado e elegibilidade a captação não reembolsável.</p>
+    </div>
+    <div class="opp-grid">
+
+      <!-- OP02 — #1 -->
+      <div class="opp-card">
+        <div class="opp-header">
+          <div class="opp-rank">#1</div>
+          <div class="opp-title-block">
+            <div class="opp-id">OP02 · Prioridade Máxima 🏆</div>
+            <div class="opp-name">Plataforma CVB Agentic</div>
+            <div class="opp-tags"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-yellow">Risco Tec.: Médio</span><span class="badge badge-yellow">Complexidade: Média</span><span class="badge badge-accent">SaaS / Agentic AI</span></div>
+          </div>
+        </div>
+        <div class="opp-body">
+          <div class="opp-uvp">Desenvolver plataforma agentic para operacionalizar a própria operação de CVB da Iaris — scouting, scoring de deals, gestão de portfólio, matching automático com editais e investidores — e, após validação interna, lançá-la como produto licenciável para o mercado de CVBs, aceleradoras e hubs de inovação.</div>
+          <div class="opp-grid-detail">
+            <div class="opp-detail-box"><div class="opp-detail-label">Problema</div><div class="opp-detail-value">A operação de CVB de qualidade é intensamente manual: triagem de deal flow, acompanhamento de portfólio, matching com editais. Não existe plataforma agentic para CVBs no Brasil — e a Iaris sente esse gargalo diariamente.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Solução em 3 fases</div><div class="opp-detail-value"><strong>Fase 1 (interno):</strong> Plataforma agentic para a própria Iaris, financiada via subvenção. <strong>Fase 2 (produto):</strong> Plataforma validada vira SaaS licenciável para outros CVBs. <strong>Fase 3 (parceria):</strong> FCJ como sócio — juntos licenciam ao mercado usando a rede de 60+ VBs — ou Iaris vai direto ao mercado.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">MVP</div><div class="opp-detail-value">Módulo de scouting e scoring agentic para o próximo Investor Day da Iaris. Mede acurácia vs julgamento humano nos mesmos deals.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Captação prioritária</div><div class="opp-detail-value">FINEP Mais Inovação Rodada 2 — Tecnologias Digitais (R$300M); FAPEMIG Compete Minas (R$50M); NVIDIA Inception; AWS Activate.</div></div>
+          </div>
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-op02">Ver evidências e riscos <span class="arrow">▼</span></button>
+          <div class="accordion-content" id="acc-op02">
+            <ul class="acc-list">
+              <li><strong>Evidências:</strong> CVBs no Brasil dobraram de 20 → 40+ em 5 anos; PBIA R$23B prevê IA agentic como área prioritária; FINEP Rodada 2 (R$300M) tem fit direto com plataforma agentic para ecossistema de startups</li>
+              <li><strong>Ativos internos:</strong> 9 startups como base de dados de treinamento; deal flow acumulado; UFJF como ICT parceira para editais FINEP (parceria com ICT obrigatória)</li>
+              <li><strong>Risco tecnológico:</strong> Médio — IA agentic é frontier tech, mas componentes base (NLP, scoring, APIs) são bem estabelecidos. Risco é de execução, não de maturidade</li>
+              <li><strong>Sobre a parceria FCJ:</strong> É tecnologia complementar à metodologia FCJ, não concorrente. FCJ pode entrar como sócio e usar a rede de 60+ VBs como canal. Iaris pode também ir ao mercado de forma independente — ambas as rotas são viáveis</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- OP01 — #2 -->
+      <div class="opp-card">
+        <div class="opp-header">
+          <div class="opp-rank">#2</div>
+          <div class="opp-title-block">
+            <div class="opp-id">OP01 · Prioridade Máxima 🏆</div>
+            <div class="opp-name">Plataforma de Legal Intelligence B2B</div>
+            <div class="opp-tags"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-green">Risco Tec.: Baixo</span><span class="badge badge-yellow">Complexidade: Alta</span><span class="badge badge-blue">Lawtech</span></div>
+          </div>
+        </div>
+        <div class="opp-body">
+          <div class="opp-uvp">Tornar a Iaris Ventures a infraestrutura de dados e IA do ecossistema jurídico brasileiro, oferecendo APIs de jurimetria preditiva, analytics de desfechos e inteligência processual para escritórios, corporações e lawtechs.</div>
+          <div class="opp-grid-detail">
+            <div class="opp-detail-box"><div class="opp-detail-label">Problema</div><div class="opp-detail-value">80M+ processos ativos sem infraestrutura de dados padronizada. Escritórios tomam decisões baseadas em experiência, não em dados.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Solução (MVP)</div><div class="opp-detail-value">API de dados processuais + modelos preditivos + dashboard de BI jurídico para 5–10 escritórios-piloto da rede MCA.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Evidência de Mercado</div><div class="opp-detail-value">Lawtech BR: R$50 bi/ano (+20%/ano). Global: US$35,4 bi (2025). 55% de advogados usando IA. CNJ CPSI 01/2025: 79 propostas para IA no Jus.br.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Captação prioritária</div><div class="opp-detail-value">FINEP Mais Inovação Rodada 2 (R$300M); FAPEMIG Compete Minas; CNJ CPSI (próxima edição); Y Combinator LegalTech batch.</div></div>
+          </div>
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-op01">Ver evidências e riscos <span class="arrow">▼</span></button>
+          <div class="accordion-content" id="acc-op01">
+            <ul class="acc-list">
+              <li><strong>Evidência acadêmica:</strong> PeerJ 2022 (F1 80,2%) e PLOS ONE 2022 (modelos superam humanos) — tecnologia validada no contexto brasileiro</li>
+              <li><strong>Evidência patentária:</strong> US10133791B2, US11321631B2 — campo validado como patenteável; gap no Brasil</li>
+              <li><strong>Ativos internos:</strong> MCA Advocacia como primeiro cliente e validador; Touchworks, IRIS Visual Law, Lawgie.ai como canais</li>
+              <li><strong>Riscos:</strong> Custo de curadoria de dados; LGPD; concorrência de Data Lawyer e Lawgie.ai</li>
+              <li><strong>GO:</strong> 3+ escritórios validam valor e disposição de pagamento em 60 dias. <strong>NO-GO:</strong> LGPD restringe uso dos dados necessários.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- OP06 — #3 -->
+      <div class="opp-card">
+        <div class="opp-header">
+          <div class="opp-rank">#3</div>
+          <div class="opp-title-block">
+            <div class="opp-id">OP06 · Prioridade Máxima 🏆</div>
+            <div class="opp-name">SON.IA 2.0 — SaaS Sindical com IA</div>
+            <div class="opp-tags"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-green">Risco Tec.: Baixo</span><span class="badge badge-yellow">Complexidade: Média</span><span class="badge badge-muted">SaaS Vertical</span></div>
+          </div>
+        </div>
+        <div class="opp-body">
+          <div class="opp-uvp">Transformar a SON.IA (plataforma proprietária da Sindicatos Online) em produto SaaS com IA generativa comercializável para o mercado de 17.000+ sindicatos e associações no Brasil, gerando receita recorrente e impacto em 10M+ trabalhadores.</div>
+          <div class="opp-grid-detail">
+            <div class="opp-detail-box"><div class="opp-detail-label">Problema</div><div class="opp-detail-value">O setor sindical e associativo brasileiro é amplo (17.000+ entidades), pouco digitalizado e com poucos fornecedores especializados. A SON.IA já existe mas tem alcance limitado.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Solução</div><div class="opp-detail-value">Evolução da SON.IA como SaaS vertical com módulos de IA: atendimento autônomo a filiados, assembleias digitais, BI de engajamento, comunicação personalizada. Expansão via freemium → premium.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Evidência de Mercado</div><div class="opp-detail-value">DATASIND (portfólio) valida a demanda; produto base existe; impacto em 10M+ trabalhadores é critério fortemente pontuado em editais de IA e inovação social.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Captação prioritária</div><div class="opp-detail-value">FINEP Mais Inovação Digital; SEBRAE Inova Startups 5ª ed.; FAPEMIG Compete Minas; FAPEMIG Novo SEED 03/2026.</div></div>
+          </div>
+          <button class="accordion-btn" aria-expanded="false" aria-controls="acc-op06">Ver evidências e riscos <span class="arrow">▼</span></button>
+          <div class="accordion-content" id="acc-op06">
+            <ul class="acc-list">
+              <li><strong>Por que subiu de #8 para #3 (v1→v2):</strong> Score v1 foi 6,8. Com lente de captação, o impacto social de 10M+ trabalhadores + produto base existente = alta fundabilidade em editais de IA e impacto social (FINEP, SEBRAE, MTE)</li>
+              <li><strong>Riscos:</strong> Resistência cultural do setor a pagar por tecnologia; concorrência com DATASIND (portfólio)</li>
+              <li><strong>Diferencial de captação:</strong> ODS 8 (Trabalho Decente) e ODS 10 (Redução das Desigualdades) aumentam pontuação em editais internacionais (BID, EIC)</li>
+              <li><strong>GO:</strong> 2+ entidades externas validam e confirmam intenção de pagamento; NPS &gt; 40. <strong>NO-GO:</strong> Engajamento de filiados &lt; 20% em 60 dias.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- OP03 — #4 -->
+      <div class="opp-card">
+        <div class="opp-header">
+          <div class="opp-rank">#4</div>
+          <div class="opp-title-block">
+            <div class="opp-id">OP03 · Alta Prioridade 🥈</div>
+            <div class="opp-name">Marketplace de Royalties e Ativos Alternativos (AltAsset Exchange)</div>
+            <div class="opp-tags"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-yellow">Risco Tec.: Médio</span><span class="badge badge-red">Complexidade: Alta</span><span class="badge badge-green">Fintech</span></div>
+          </div>
+        </div>
+        <div class="opp-body">
+          <div class="opp-uvp">Primeira plataforma regulada do Brasil para negociação de royalties musicais e legal claims, conectando detentores de IP/créditos com investidores de varejo e qualificados.</div>
+          <div class="opp-grid-detail">
+            <div class="opp-detail-box"><div class="opp-detail-label">Evidência</div><div class="opp-detail-value">Mercado musical BR: R$3,49 bi (+21,7%). R$1,5 bi em royalties subutilizados. Ichello valida o modelo. Retorno médio de royalties ~19%/ano.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Captação prioritária</div><div class="opp-detail-value">FINEP Mais Inovação Digital; IDB Lab Fintech LatAm; BCB Sandbox Regulatório (reduz risco CVM).</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OP08 — #5 -->
+      <div class="opp-card">
+        <div class="opp-header">
+          <div class="opp-rank">#5</div>
+          <div class="opp-title-block">
+            <div class="opp-id">OP08 · Alta Prioridade 🥈</div>
+            <div class="opp-name">Deal Flow Intelligence &amp; Ecosystem Matching</div>
+            <div class="opp-tags"><span class="badge badge-yellow">Impacto: Médio</span><span class="badge badge-green">Risco Tec.: Baixo</span><span class="badge badge-green">Complexidade: Baixa</span><span class="badge badge-accent">IA / Analytics</span></div>
+          </div>
+        </div>
+        <div class="opp-body">
+          <div class="opp-uvp">Sistema agentic de inteligência de deal flow: triagem automatizada de startups, scoring multidimensional e matching automático entre portfólio e oportunidades de editais, investidores e parceiros corporativos.</div>
+          <div class="opp-grid-detail">
+            <div class="opp-detail-box"><div class="opp-detail-label">Problema</div><div class="opp-detail-value">90% do deal flow é IA genérica. Triagem manual é custosa. Matching startup×edital×investidor é feito de forma reativa.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Nota de escopo</div><div class="opp-detail-value">Pode funcionar como módulo standalone ou como componente da Plataforma CVB Agentic (OP02). Versão standalone é mais rápida de validar; integrada à OP02 tem maior impacto.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OP04 — #6 -->
+      <div class="opp-card">
+        <div class="opp-header">
+          <div class="opp-rank">#6</div>
+          <div class="opp-title-block">
+            <div class="opp-id">OP04 · Alta Prioridade 🥈</div>
+            <div class="opp-name">Open Finance + Previdência via Canal Sindical (PrevTech)</div>
+            <div class="opp-tags"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-green">Risco Tec.: Baixo</span><span class="badge badge-yellow">Complexidade: Média</span><span class="badge badge-green">Fintech</span></div>
+          </div>
+        </div>
+        <div class="opp-body">
+          <div class="opp-uvp">Distribuir a Lifevest via Sindicatos Online como SaaS B2B2C: entidades sindicais oferecem planejamento financeiro personalizado via Open Finance + IA aos seus filiados.</div>
+          <div class="opp-grid-detail">
+            <div class="opp-detail-box"><div class="opp-detail-label">Problema</div><div class="opp-detail-value">Fundos de pensão e sindicatos têm bases de associados com necessidades de planejamento financeiro mas carecem de ferramentas digitais integradas.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Nota estratégica</div><div class="opp-detail-value">O valor desta oportunidade está na distribuição via canal sindical (comercial) e no componente de IA para personalização (fundável). Score caiu de 8,8 → 7,2 pois o canal SON é ativo existente, não inovação fundável.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OP07 — #7 -->
+      <div class="opp-card">
+        <div class="opp-header">
+          <div class="opp-rank">#7</div>
+          <div class="opp-title-block">
+            <div class="opp-id">OP07 · Alta Prioridade 🥈</div>
+            <div class="opp-name">Fundo de Co-Investimento (Iaris Capital)</div>
+            <div class="opp-tags"><span class="badge badge-red">Impacto: Alto</span><span class="badge badge-green">Risco Tec.: Baixo</span><span class="badge badge-red">Complexidade: Alta</span></div>
+          </div>
+        </div>
+        <div class="opp-body">
+          <div class="opp-uvp">Estruturar FIP ou clube de investimento com LPs (family offices, FCJ) para follow-on nas investidas e co-investimentos no ecossistema, retendo participação e capturando upside no crescimento das startups.</div>
+          <div class="opp-grid-detail">
+            <div class="opp-detail-box"><div class="opp-detail-label">Evidência</div><div class="opp-detail-value">BNDES+FINEP lançaram FIP de IA com R$205M (2026); FCJ captou na InvestPlus em 2025; FIPs temáticos mostram que o modelo de fundo especializado é atrativo.</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">Nota estratégica</div><div class="opp-detail-value">Oportunidade real, mas exige decisão sobre identidade institucional: ser gestor de fundo (CVM) implica estrutura e atenção diferentes da operação de CVB. Recomenda-se como avenida paralela de médio prazo.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OP05 — #8 -->
+      <div class="opp-card">
+        <div class="opp-header">
+          <div class="opp-rank">#8</div>
+          <div class="opp-title-block">
+            <div class="opp-id">OP05 · Oportunidade Promissora 🥉</div>
+            <div class="opp-name">Programa de Propriedade Intelectual para o Portfólio (PI-Stack)</div>
+            <div class="opp-tags"><span class="badge badge-yellow">Impacto: Médio</span><span class="badge badge-green">Risco Tec.: Baixo</span><span class="badge badge-yellow">Complexidade: Média</span></div>
+          </div>
+        </div>
+        <div class="opp-body">
+          <div class="opp-uvp">Criar programa interno de gestão de PI para o portfólio, registrando patentes, marcas e softwares das investidas — aumentando valor do equity e criando barreiras de entrada.</div>
+          <div class="opp-grid-detail">
+            <div class="opp-detail-box"><div class="opp-detail-label">Gap Identificado</div><div class="opp-detail-value">Zero patentes no portfólio. Tecnologias facilmente copiáveis. INPI regulamentando IA (2024).</div></div>
+            <div class="opp-detail-box"><div class="opp-detail-label">MVP</div><div class="opp-detail-value">Diagnóstico de PI nas 9 startups; protocolar 3 pedidos de patente no INPI em 90 dias com apoio da MCA.</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SCORE MONYU -->
+<section id="score">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Priorização</span>
+      <h2>Score MonyU — Ranking v2</h2>
+      <p>Priorização com lente dupla: (a) potencial de mercado e fit estratégico; (b) elegibilidade e atratividade para captação de recursos não reembolsáveis.</p>
+    </div>
+    <div class="card-grid-3">
+      <div class="score-chart-wrap" style="grid-column: span 2;">
+        <div class="score-row"><div class="score-rank">1</div><div class="score-icon">🏆</div><div class="score-name">OP02 — Plataforma CVB Agentic</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" data-score="93" style="width:0%"></div></div></div><div class="score-num">9,3</div></div>
+        <div class="score-row"><div class="score-rank">2</div><div class="score-icon">🏆</div><div class="score-name">OP01 — Legal Intelligence B2B</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" data-score="90" style="width:0%"></div></div></div><div class="score-num">9,0</div></div>
+        <div class="score-row"><div class="score-rank">3</div><div class="score-icon">🏆</div><div class="score-name">OP06 — SON.IA 2.0 SaaS Sindical</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" data-score="82" style="width:0%"></div></div></div><div class="score-num">8,2</div></div>
+        <div class="score-row"><div class="score-rank">4</div><div class="score-icon">🥈</div><div class="score-name">OP03 — AltAsset Exchange</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" data-score="78" style="width:0%"></div></div></div><div class="score-num">7,8</div></div>
+        <div class="score-row"><div class="score-rank">5</div><div class="score-icon">🥈</div><div class="score-name">OP08 — Deal Flow Intelligence</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" data-score="75" style="width:0%"></div></div></div><div class="score-num">7,5</div></div>
+        <div class="score-row"><div class="score-rank">6</div><div class="score-icon">🥈</div><div class="score-name">OP04 — Open Finance + Previdência</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" data-score="72" style="width:0%"></div></div></div><div class="score-num">7,2</div></div>
+        <div class="score-row"><div class="score-rank">7</div><div class="score-icon">🥈</div><div class="score-name">OP07 — Iaris Capital (Fundo)</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" data-score="72" style="width:0%"></div></div></div><div class="score-num">7,2</div></div>
+        <div class="score-row"><div class="score-rank">8</div><div class="score-icon">🥉</div><div class="score-name">OP05 — PI-Stack</div><div class="score-bar-wrap"><div class="score-bar-bg"><div class="score-bar-fill" data-score="68" style="width:0%"></div></div></div><div class="score-num">6,8</div></div>
+        <div class="score-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#f5c518;"></div>🏆 8,5–10,0: Prioridade Máxima</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#b0b8c1;"></div>🥈 7,0–8,4: Alta Prioridade</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#cd7f32;"></div>🥉 5,5–6,9: Oportunidade Promissora</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#ff4444;"></div>🔴 0–5,4: Baixa Prioridade</div>
+        </div>
+      </div>
+      <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
+        <h4 style="margin-bottom:16px;font-size:.85rem;color:var(--text-muted);text-transform:uppercase;">Dimensões da Análise</h4>
+        <div style="height:260px;position:relative;"><canvas id="radar-chart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP 3 — PLANO DE VALIDAÇÃO -->
+<section id="top3">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Foco Recomendado</span>
+      <h2>Top 3 — Plano de Validação</h2>
+      <p>Norte estratégico para as três oportunidades de maior prioridade. A Iaris define como e quando executar — este é o direcionamento da MonyU, não um plano operacional.</p>
+    </div>
+    <div class="top3-grid">
+
+      <!-- TOP 1 -->
+      <div class="top3-card">
+        <div class="top3-card-header">
+          <div class="top3-medal">🏆</div>
+          <div class="badge badge-accent" style="margin-bottom:8px;">Score 9,3 · OP02</div>
+          <h3>Plataforma CVB Agentic</h3>
+        </div>
+        <div class="top3-body">
+          <div class="uvp-box">Resolver o maior gargalo operacional da Iaris (escala manual) via plataforma agentic — financiada por subvenção — e abrir nova linha de receita com potencial de parceria estratégica com a FCJ.</div>
+          <div class="val-hypothesis"><strong style="display:block;margin-bottom:4px;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);">Hipótese a validar</strong>A triagem agentic de deal flow é mais eficiente e precisa que o processo manual atual, com custo operacional menor e escala horizontal.</div>
+          <div class="val-exp"><strong style="display:block;margin-bottom:4px;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:#4499ff;">Experimento mínimo</strong>Construir módulo de scoring agentic para o próximo Investor Day da Iaris. Comparar taxa de acerto do sistema vs julgamento da equipe nos mesmos deals.</div>
+          <div class="val-gongo">
+            <div class="val-go"><strong>✅ GO se</strong>Sistema supera ou empata triagem humana em 80%+ dos casos; time valida que automatizaria 60%+ do processo manual atual.</div>
+            <div class="val-nogo"><strong>🚫 NO-GO se</strong>Qualidade do scoring é inferior e não melhora com iteração em 60 dias; dados de deal flow são insuficientes para treinar modelos.</div>
+          </div>
+          <div class="val-editais">🎯 <strong>Editais alvo:</strong> FINEP Mais Inovação — Rodada 2 (Tecnologias Digitais, R$300M, set/2026); FAPEMIG Compete Minas 2026 (R$50M, jul/2026)</div>
+        </div>
+      </div>
+
+      <!-- TOP 2 -->
+      <div class="top3-card">
+        <div class="top3-card-header">
+          <div class="top3-medal">🏆</div>
+          <div class="badge badge-accent" style="margin-bottom:8px;">Score 9,0 · OP01</div>
+          <h3>Legal Intelligence B2B</h3>
+        </div>
+        <div class="top3-body">
+          <div class="uvp-box">Ser a infraestrutura de inteligência jurídica do ecossistema brasileiro via APIs de jurimetria preditiva e analytics — com MCA como primeiro cliente e validador.</div>
+          <div class="val-hypothesis"><strong style="display:block;margin-bottom:4px;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);">Hipótese a validar</strong>Escritórios de advocacia pagam por analytics jurídico que reduza tempo de pesquisa em 50%+ e aumente previsibilidade de desfechos.</div>
+          <div class="val-exp"><strong style="display:block;margin-bottom:4px;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:#4499ff;">Experimento mínimo</strong>API de jurimetria preditiva + dashboard básico para 3–5 escritórios da rede MCA. Medir: redução de tempo, disposição de pagamento, NPS.</div>
+          <div class="val-gongo">
+            <div class="val-go"><strong>✅ GO se</strong>3+ escritórios validam valor e confirmam disposição de pagamento dentro de 60 dias de piloto.</div>
+            <div class="val-nogo"><strong>🚫 NO-GO se</strong>LGPD restringe uso dos dados processuais necessários ou custo de dados inviabiliza o pricing.</div>
+          </div>
+          <div class="val-editais">🎯 <strong>Editais alvo:</strong> FINEP Mais Inovação — Rodada 2 (R$300M); CNJ CPSI (próxima edição); Y Combinator LegalTech batch</div>
+        </div>
+      </div>
+
+      <!-- TOP 3 -->
+      <div class="top3-card">
+        <div class="top3-card-header">
+          <div class="top3-medal">🏆</div>
+          <div class="badge badge-accent" style="margin-bottom:8px;">Score 8,2 · OP06</div>
+          <h3>SON.IA 2.0 SaaS Sindical</h3>
+        </div>
+        <div class="top3-body">
+          <div class="uvp-box">Produto base existe, mercado de 17.000+ entidades está pouco digitalizado, impacto em 10M+ trabalhadores é critério fortemente pontuado em editais, e a Sindicatos Online é fundadora da Iaris — reduzindo risco de execução.</div>
+          <div class="val-hypothesis"><strong style="display:block;margin-bottom:4px;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);">Hipótese a validar</strong>Entidades sindicais além da base atual da SON pagam por assinatura de plataforma com IA se o custo de implantação for baixo e o benefício for mensurável.</div>
+          <div class="val-exp"><strong style="display:block;margin-bottom:4px;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:#4499ff;">Experimento mínimo</strong>Oferecer a versão atual da SON.IA para 3 entidades fora da base SON com acesso gratuito por 60 dias. Medir engajamento, funcionalidades usadas, NPS e disposição de pagamento pós-trial.</div>
+          <div class="val-gongo">
+            <div class="val-go"><strong>✅ GO se</strong>2+ entidades externas validam valor e confirmam intenção de pagamento; NPS &gt; 40.</div>
+            <div class="val-nogo"><strong>🚫 NO-GO se</strong>Filiados não engajam (&lt;20% de uso ativo em 60 dias) ou entidades rejeitam modelo SaaS.</div>
+          </div>
+          <div class="val-editais">🎯 <strong>Editais alvo:</strong> FINEP Mais Inovação Digital; SEBRAE Inova Startups; FAPEMIG Compete Minas; FAPEMIG Novo SEED 03/2026</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- MAPEAMENTO DE CAPTAÇÃO -->
+<section id="captacao" style="background:var(--bg2);">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Recursos Não Reembolsáveis</span>
+      <h2>Mapeamento de Oportunidades de Captação</h2>
+      <p>30+ oportunidades mapeadas: subvenção econômica, CPSI, inovação aberta, aceleração, créditos tech e mais — nacionais e internacionais, organizadas por OP.</p>
+    </div>
+
+    <!-- LEGENDA -->
+    <div class="card" style="margin-bottom:28px;">
+      <h4 style="margin-bottom:12px;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);">Sistema de Tags</h4>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+        <span class="cap-status">🟢 Ativa</span>
+        <span class="cap-status">🟡 Prevista</span>
+        <span class="cap-status">🔴 Encerrada (referência)</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;">
+        <span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span>
+        <span class="cap-tag cap-tag-cpsi">[CPSI]</span>
+        <span class="cap-tag cap-tag-aberta">[INOVAÇÃO ABERTA]</span>
+        <span class="cap-tag cap-tag-acel">[ACELERAÇÃO]</span>
+        <span class="cap-tag cap-tag-prem">[PREMIAÇÃO]</span>
+        <span class="cap-tag cap-tag-cred">[CRÉDITO TECH]</span>
+        <span class="cap-tag cap-tag-fundo">[FUNDO]</span>
+        <span style="font-size:.78rem;color:var(--text-dim);font-style:italic;">· Fluxo Contínuo</span>
+        <span style="font-size:.78rem;color:var(--text-dim);font-style:italic;">· Chamada (prazo fixo)</span>
+      </div>
+    </div>
+
+    <!-- TRANSVERSAIS -->
+    <div class="cap-section">
+      <div class="cap-section-title">Oportunidades Transversais — aplicáveis a todas as OPs</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="overflow-x:auto;">
+          <table class="cap-table">
+            <thead><tr><th>#</th><th>Oportunidade</th><th>Status</th><th>Tipo</th><th>Cadência</th><th>Resumo</th></tr></thead>
+            <tbody>
+              <tr><td>T1</td><td><a href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2026/04/edital-de-r-300-milhoes-apoia-empresas-no-desenvolvimento-de-tecnologias-digitais-avancadas" target="_blank" rel="noopener noreferrer">FINEP Mais Inovação — Rodada 2: Tecnologias Digitais</a></td><td><span class="cap-status">🟢</span></td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>R$300M para IA, Robótica e Tecnologias Quânticas. Requer parceria com ICT (ex: UFJF). Prazo: set/2026</td></tr>
+              <tr><td>T2</td><td><a href="https://fapemig.br/oportunidades/chamadas-e-editais/chamada-fapemig-08-2025-compete-minas-3127" target="_blank" rel="noopener noreferrer">FAPEMIG — Compete Minas 11/2026</a></td><td><span class="cap-status">🟢</span></td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>R$50M para projetos de inovação tecnológica em MG. Submissão jun–jul/2026</td></tr>
+              <tr><td>T3</td><td><a href="https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/programa-bndes-mais-inovacao" target="_blank" rel="noopener noreferrer">BNDES Mais Inovação</a></td><td><span class="cap-status">🟢</span></td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Fluxo Contínuo</span></td><td>Crédito reembolsável e não reembolsável para P&amp;D. Acesso contínuo para empresas de todos os portes</td></tr>
+              <tr><td>T4</td><td><a href="https://fapemig.br/oportunidades/chamadas-e-editais/programa-centelha-3-programa-nacional-de-apoio-a-geracao-de-empreendimentos-inovadores" target="_blank" rel="noopener noreferrer">Centelha 3 — FAPEMIG MG</a></td><td><span class="cap-status">🟢</span></td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>R$2,4M total para empreendedores de base tecnológica em MG. Prazo: 15/jul/2026</td></tr>
+              <tr><td>T5</td><td><a href="https://startup.google.com/" target="_blank" rel="noopener noreferrer">Google for Startups</a></td><td><span class="cap-status">🟢</span></td><td><span class="cap-tag cap-tag-cred">[CRÉDITO TECH]</span></td><td><span class="cap-cadencia">Fluxo Contínuo</span></td><td>Créditos Google Cloud + Vertex AI + Gemini. Ideal para projetos de IA</td></tr>
+              <tr><td>T6</td><td><a href="https://aws.amazon.com/startups/" target="_blank" rel="noopener noreferrer">AWS Activate</a></td><td><span class="cap-status">🟢</span></td><td><span class="cap-tag cap-tag-cred">[CRÉDITO TECH]</span></td><td><span class="cap-cadencia">Fluxo Contínuo</span></td><td>Até US$100K–300K em créditos AWS (tier IA/Bedrock para startups de IA)</td></tr>
+              <tr><td>T7</td><td><a href="https://www.microsoft.com/en-us/startups" target="_blank" rel="noopener noreferrer">Microsoft Founders Hub</a></td><td><span class="cap-status">🟢</span></td><td><span class="cap-tag cap-tag-cred">[CRÉDITO TECH]</span></td><td><span class="cap-cadencia">Fluxo Contínuo</span></td><td>Até US$150K em Azure + OpenAI + GitHub Copilot. Baseline de US$25K de acesso imediato</td></tr>
+              <tr><td>T8</td><td><a href="https://www.nvidia.com/en-us/startups/" target="_blank" rel="noopener noreferrer">NVIDIA Inception</a></td><td><span class="cap-status">🟢</span></td><td><span class="cap-tag cap-tag-cred">[CRÉDITO TECH]</span></td><td><span class="cap-cadencia">Fluxo Contínuo</span></td><td>Acesso a GPUs, co-marketing, rede de VCs. Gratuito. Essencial para qualquer projeto de IA</td></tr>
+              <tr><td>T9</td><td><a href="https://mg.agenciasebrae.com.br/inovacao-e-tecnologia/startups-mineiras-podem-se-inscrever-para-o-ciclo-2025-do-capital-empreendedor/" target="_blank" rel="noopener noreferrer">SEBRAE Capital Empreendedor MG</a></td><td><span class="cap-status">🟢</span></td><td><span class="cap-tag cap-tag-acel">[ACELERAÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Conecta startups mineiras a investidores. R$11,9M captados no último ciclo. Ciclos anuais</td></tr>
+              <tr><td>T10</td><td><a href="http://www.finep.gov.br/noticias/todas-noticias/7119-premio-finep-celebra-os-projetos-mais-inovadores-do-brasil" target="_blank" rel="noopener noreferrer">Prêmio FINEP de Inovação</a></td><td><span class="cap-status">🟡</span></td><td><span class="cap-tag cap-tag-prem">[PREMIAÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Anual, 9 categorias (inclui Deep Tech e Transformação Digital). Regional → Nacional. Edição 2026 esperada 2º semestre</td></tr>
+              <tr><td>T11</td><td><a href="https://minasinforma.com/startups-mineiras-podem-se-inscrever-para-o-premio-sebrae-startups-2026/" target="_blank" rel="noopener noreferrer">Prêmio Sebrae Startups 2026</a></td><td><span class="cap-status">🟢</span></td><td><span class="cap-tag cap-tag-prem">[PREMIAÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Nacional. Reconhecimento + mentoria + visibilidade. Foco em inovação e escalabilidade</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- OP02 -->
+    <div class="cap-section">
+      <div class="cap-section-title">OP02 — Plataforma CVB Agentic</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="overflow-x:auto;">
+          <table class="cap-table">
+            <thead><tr><th>#</th><th>Oportunidade</th><th>Status</th><th>Tipo</th><th>Cadência</th><th>Resumo</th></tr></thead>
+            <tbody>
+              <tr><td>02-A</td><td><a href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2026/04/edital-de-r-300-milhoes-apoia-empresas-no-desenvolvimento-de-tecnologias-digitais-avancadas" target="_blank" rel="noopener noreferrer">FINEP Mais Inovação — Rodada 2 (IA)</a></td><td>🟢</td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>R$300M para IA, Robótica, Quântica. Fit direto com plataforma agentic para ecossistema de inovação. Prazo: set/2026</td></tr>
+              <tr><td>02-B</td><td><a href="https://fapemig.br/oportunidades/chamadas-e-editais/chamada-fapemig-08-2025-compete-minas-3127" target="_blank" rel="noopener noreferrer">FAPEMIG Compete Minas</a></td><td>🟢</td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>R$50M em MG. Linha empresarial e tríplice hélice (Iaris + UFJF). Prazo: jul/2026</td></tr>
+              <tr><td>02-C</td><td><a href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/plano-brasileiro-de-inteligencia-artificial" target="_blank" rel="noopener noreferrer">Plano Brasileiro de IA (PBIA)</a></td><td>🟢</td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Fluxo Contínuo</span></td><td>R$23B em 2024–2028. Âncora de múltiplos editais. Plataforma agentic para ecossistema de startups = fit central</td></tr>
+              <tr><td>02-D</td><td><a href="https://www.bndes.gov.br/wps/portal/site/home/mercado-de-capitais/fundos-de-investimentos/chamadas-publicas-para-selecao-de-fundos/fip-ia-2026" target="_blank" rel="noopener noreferrer">FIP de IA BNDES + FINEP 2026</a></td><td>🔴</td><td><span class="cap-tag cap-tag-fundo">[FUNDO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>R$205M para selecionar gestora de fundo de IA. Edição 2026 encerrada. Referência: nova rodada esperada</td></tr>
+              <tr><td>02-E</td><td><a href="https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en" target="_blank" rel="noopener noreferrer">EIC Accelerator 2026</a></td><td>🟢</td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>€414M (Open) + €220M (Challenges). Grant não dilutivo + equity opcional. 3–4 rodadas/ano. Requer ângulo de internacionalização</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- OP01 -->
+    <div class="cap-section">
+      <div class="cap-section-title">OP01 — Legal Intelligence B2B</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="overflow-x:auto;">
+          <table class="cap-table">
+            <thead><tr><th>#</th><th>Oportunidade</th><th>Status</th><th>Tipo</th><th>Cadência</th><th>Resumo</th></tr></thead>
+            <tbody>
+              <tr><td>01-A</td><td><a href="https://www.cnj.jus.br/cnj-publica-edital-para-contratacao-de-solucoes-inovadoras-em-atendimento-aos-usuarios-do-jus-br/" target="_blank" rel="noopener noreferrer">CNJ CPSI 01/2025</a></td><td>🔴</td><td><span class="cap-tag cap-tag-cpsi">[CPSI]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>1ª CPSI do CNJ: IA para atendimento no Portal Jus.br. 79 propostas; vencedores contratados. Nova edição esperada</td></tr>
+              <tr><td>01-B</td><td><a href="https://sites.tcu.gov.br/cpsi/" target="_blank" rel="noopener noreferrer">TCU CPSI</a></td><td>🟡</td><td><span class="cap-tag cap-tag-cpsi">[CPSI]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>TCU lança desafios de inovação para controle público. Múltiplas aquisições por ano. Próxima edição a confirmar</td></tr>
+              <tr><td>01-C</td><td><a href="https://comunica.ufu.br/noticias/2025/07/fapemig-lanca-edital-para-startups-de-tecnologia-avancada" target="_blank" rel="noopener noreferrer">FAPEMIG Deep Tech Startups</a></td><td>🔴</td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Até R$2M/startup para deep tech em MG. Edição 2025 encerrada; nova edição esperada</td></tr>
+              <tr><td>01-D</td><td><a href="https://kpmg.com/br/pt/home/insights/2025/03/global-tech-innovator-em-busca-startup-mais-inovadora.html" target="_blank" rel="noopener noreferrer">KPMG Global Tech Innovator</a></td><td>🟡</td><td><span class="cap-tag cap-tag-prem">[PREMIAÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Internacional. Startup selecionada representa o Brasil no Web Summit Lisboa. Edição 2026 esperada março</td></tr>
+              <tr><td>01-E</td><td><a href="https://www.ycombinator.com/companies/industry/legaltech" target="_blank" rel="noopener noreferrer">Y Combinator — LegalTech</a></td><td>🟢</td><td><span class="cap-tag cap-tag-acel">[ACELERAÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>US$500K investimento + 3 meses intensivos + rede global. 2 batches/ano (jan + jul). 44 legaltechs financiadas</td></tr>
+              <tr><td>01-F</td><td><a href="https://fapesp.br/pipe/tecnova-3-2025" target="_blank" rel="noopener noreferrer">Tecnova III — FINEP + FAPs</a></td><td>🟡</td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>FINEP + FAPs estaduais. <strong>⚠️ MG não tem edição ativa</strong> (MG usa Compete Minas). Disponível em SP, RJ, PB, ES, PA</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- OP06 -->
+    <div class="cap-section">
+      <div class="cap-section-title">OP06 — SON.IA 2.0</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="overflow-x:auto;">
+          <table class="cap-table">
+            <thead><tr><th>#</th><th>Oportunidade</th><th>Status</th><th>Tipo</th><th>Cadência</th><th>Resumo</th></tr></thead>
+            <tbody>
+              <tr><td>06-A</td><td><a href="https://programas.sebraestartups.com.br/in/5" target="_blank" rel="noopener noreferrer">SEBRAE Inova Startups 5ª ed.</a></td><td>🟢</td><td><span class="cap-tag cap-tag-acel">[ACELERAÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Programa SEBRAE de IA aplicada a PMEs. 30 startups selecionadas. Próxima edição prevista</td></tr>
+              <tr><td>06-B</td><td><a href="https://fapemig.br/oportunidades/chamadas-e-editais/chamada-fapemig-sede-003-2026-novo-seed-aceleracao-de-startups-por-meio-dos-ambientes-promotores-de-inovacao" target="_blank" rel="noopener noreferrer">FAPEMIG Novo SEED 03/2026</a></td><td>🟢</td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>R$15M para ambientes de aceleração em MG. Iaris como hub/CVB pode se qualificar como ambiente promotor de inovação</td></tr>
+              <tr><td>06-C</td><td>MTE / Ministério do Trabalho — Modernização digital</td><td>🟡</td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Editais para digitalização do mercado de trabalho e relações sindicais. Monitorar lançamento de chamadas específicas</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- OP03, OP04, OP07, OP08 -->
+    <div class="cap-section">
+      <div class="cap-section-title">OP03 — AltAsset Exchange</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="overflow-x:auto;">
+          <table class="cap-table">
+            <thead><tr><th>#</th><th>Oportunidade</th><th>Status</th><th>Tipo</th><th>Cadência</th><th>Resumo</th></tr></thead>
+            <tbody>
+              <tr><td>03-A</td><td><a href="https://www.iadb.org/en/who-we-are/topics/financial-markets/initiatives/fintech-home" target="_blank" rel="noopener noreferrer">IDB Lab — Fintech LatAm</a></td><td>🟢</td><td><span class="cap-tag cap-tag-acel">[ACELERAÇÃO]</span></td><td><span class="cap-cadencia">Fluxo Contínuo</span></td><td>BID Lab apoia fintechs com investimento, mentoria e acesso a mercado na América Latina</td></tr>
+              <tr><td>03-B</td><td><a href="https://www.bcb.gov.br/estabilidadefinanceira/sandbox" target="_blank" rel="noopener noreferrer">BCB Sandbox Regulatório</a></td><td>🟢</td><td><span class="cap-tag cap-tag-aberta">[INOVAÇÃO ABERTA]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Ambiente controlado do BCB para testar serviços financeiros inovadores com supervisão regulatória. Reduz risco CVM</td></tr>
+              <tr><td>03-C</td><td><a href="https://www.finep.gov.br/en/oportunidades" target="_blank" rel="noopener noreferrer">FINEP Mais Inovação Digital</a></td><td>🟢</td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Tokenização enquadra em "Tecnologias Digitais". Risco regulatório CVM deve ser explicitado no projeto</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="cap-section">
+      <div class="cap-section-title">OP07 — Iaris Capital (Fundo)</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="overflow-x:auto;">
+          <table class="cap-table">
+            <thead><tr><th>#</th><th>Oportunidade</th><th>Status</th><th>Tipo</th><th>Cadência</th><th>Resumo</th></tr></thead>
+            <tbody>
+              <tr><td>07-A</td><td><a href="https://www.bndes.gov.br/wps/portal/site/home/mercado-de-capitais/fundos-de-investimentos/chamadas-publicas-para-selecao-de-fundos/fip-ia-2026" target="_blank" rel="noopener noreferrer">FIP de IA — BNDES + FINEP</a></td><td>🔴</td><td><span class="cap-tag cap-tag-fundo">[FUNDO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>R$205M para selecionar gestora de FIP de IA. Edição 2026 encerrada. Modelo de referência para próximas chamadas. Requer CVM</td></tr>
+              <tr><td>07-B</td><td><a href="https://agencia.petrobras.com.br/w/negocio/petrobras-bndes-e-finep-lancam-edital-para-fip-em-transicao-energetica-e-descarbonizacao" target="_blank" rel="noopener noreferrer">FIP Transição Energética — Petrobras + BNDES</a></td><td>🟡</td><td><span class="cap-tag cap-tag-fundo">[FUNDO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Modelo de FIP temático co-patrocinado. Evidência de que FIPs especializados têm mercado e apoio público. Nova edição IA esperada</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="cap-section">
+      <div class="cap-section-title">OP08 — Deal Flow Intelligence</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="overflow-x:auto;">
+          <table class="cap-table">
+            <thead><tr><th>#</th><th>Oportunidade</th><th>Status</th><th>Tipo</th><th>Cadência</th><th>Resumo</th></tr></thead>
+            <tbody>
+              <tr><td>08-A</td><td><a href="https://www.finep.gov.br/en/oportunidades" target="_blank" rel="noopener noreferrer">FINEP Mais Inovação Digital</a></td><td>🟢</td><td><span class="cap-tag cap-tag-sub">[SUBVENÇÃO]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Plataforma de IA para deal flow e ecosystem intelligence enquadra em "Transformação Digital e IA"</td></tr>
+              <tr><td>08-B</td><td><a href="https://www.bradescoseguros.com.br/clientes/inovacao-aberta" target="_blank" rel="noopener noreferrer">inovaBra — Bradesco</a></td><td>🟢</td><td><span class="cap-tag cap-tag-aberta">[INOVAÇÃO ABERTA]</span></td><td><span class="cap-cadencia">Chamada</span></td><td>Ecossistema Bradesco de 350 startups + 50 corporações. Programas de inovação aberta com foco em dados e serviços financeiros</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRAMAS MANDATÓRIOS -->
+    <div class="cap-section">
+      <div class="cap-section-title">Programas Mandatórios — Cross-Matching com Todas as OPs</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="overflow-x:auto;">
+          <table class="cap-table">
+            <thead><tr><th>Programa</th><th>MG?</th><th>Status</th><th>Obs.</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Centelha 3</strong></td><td>✅ Sim</td><td>🟢 Ativa</td><td>Prazo jul/2026. Mais indicado para startups do portfólio em estágio inicial</td></tr>
+              <tr><td><strong>Tecnova III</strong></td><td>⚠️ Não em MG</td><td>🟡 Prevista</td><td>Disponível em SP, RJ, PB, PA, ES. Equivalente em MG = Compete Minas</td></tr>
+              <tr><td><strong>FAPESP PIPE</strong></td><td>❌ SP apenas</td><td>🟡 Prevista</td><td>Referência de modelo. Não aplicável diretamente; relevante para parceiros paulistas</td></tr>
+              <tr><td><strong>FINEP Mais Inovação</strong></td><td>✅ Nacional</td><td>🟢 Ativa</td><td>Principal mecanismo federal — todas as OPs devem ser testadas contra os 13 editais ativos</td></tr>
+              <tr><td><strong>BNDES Mais Inovação</strong></td><td>✅ Nacional</td><td>🟢 Ativa</td><td>Crédito reembolsável + subvenção para P&amp;D de médio/grande porte</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- POLÍTICAS PÚBLICAS -->
+    <div class="cap-section">
+      <div class="cap-section-title">Alinhamento com Políticas Públicas</div>
+      <div class="card-grid">
+        <div class="card">
+          <h4 style="color:var(--accent);margin-bottom:12px;">🏛️ Políticas Nacionais</h4>
+          <ul class="swot-list" style="font-size:.82rem;">
+            <li><strong>PBIA (R$23B, 2024–2028):</strong> Âncora principal — qualquer projeto de IA pode ser justificado dentro do PBIA · OP01, OP02, OP06, OP08</li>
+            <li><strong>Nova Indústria Brasil — Transformação Digital:</strong> R$300M em subvenção via FINEP apenas para este eixo · OP01, OP02, OP03, OP08</li>
+            <li><strong>Marco Legal das Startups (LC 182/2021):</strong> Habilita CVB, CPSI e incentivos fiscais para inovação · Todas</li>
+            <li><strong>Open Finance (BCB):</strong> Regulação habilitante · OP03, OP04</li>
+            <li><strong>Marco Legal da IA</strong> (em votação 2026): Empresas que participam do processo ganham vantagem regulatória · OP01, OP02</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4 style="color:var(--blue);margin-bottom:12px;">🌄 Políticas Estaduais — Minas Gerais</h4>
+          <ul class="swot-list" style="font-size:.82rem;">
+            <li><strong>FAPEMIG</strong> (Compete Minas, Deep Tech, Centelha, SEED): Principal agência de fomento estadual; editais ativos em 2026 · OP01, OP02, OP06</li>
+            <li><strong>Programa Minas Digital:</strong> Digitalização do setor produtivo mineiro · OP02, OP06</li>
+            <li><strong>UFJF + SENAI como ICTs parceiras:</strong> Parceria com ICT é obrigatória em editais FINEP; UFJF e SENAI são as âncoras locais · OP01, OP02</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ODS -->
+    <div class="cap-section">
+      <div class="cap-section-title">Alinhamento com ODS — Objetivos de Desenvolvimento Sustentável (ONU)</div>
+      <div class="ods-grid">
+        <div class="ods-card"><div class="ods-num">ODS 8</div><div class="ods-title">Trabalho Decente e Crescimento Econômico</div><div class="ods-ops">OP04, OP06 · Digitalização sindical, inclusão de trabalhadores formais, crescimento de PMEs inovadoras</div></div>
+        <div class="ods-card"><div class="ods-num">ODS 9</div><div class="ods-title">Indústria, Inovação e Infraestrutura</div><div class="ods-ops">OP01, OP02, OP06, OP08 · Desenvolvimento de infraestrutura tecnológica, fomento à inovação</div></div>
+        <div class="ods-card"><div class="ods-num">ODS 10</div><div class="ods-title">Redução das Desigualdades</div><div class="ods-ops">OP03, OP04, OP06 · Democratização de ativos, inclusão financeira via previdência, acesso digital a trabalhadores</div></div>
+        <div class="ods-card"><div class="ods-num">ODS 16</div><div class="ods-title">Paz, Justiça e Instituições Eficazes</div><div class="ods-ops">OP01 · Acesso à Justiça com IA, eficiência judiciária, transparência processual</div></div>
+        <div class="ods-card"><div class="ods-num">ODS 17</div><div class="ods-title">Parcerias para a Implementação</div><div class="ods-ops">OP02, OP07, OP08 · Ecossistema CVB, parcerias público-privadas, matching de oportunidades</div></div>
+      </div>
+      <div class="card" style="margin-top:14px;border-left:3px solid var(--green);">
+        <p style="font-size:.82rem;color:var(--text-muted);margin:0;">💡 <strong>Dica de uso em editais:</strong> Mapear os ODS alinhados em cada projeto aumenta pontuação em critérios de impacto social, especialmente em FINEP, BNDES e internacionais (BID, EIC). ODS 8 e ODS 9 respondem por ~48% do capital de fomento alocado via bancos de desenvolvimento (ABDE/PNUD, 2021).</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- LIMITAÇÕES -->
+<section id="limitacoes">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Transparência Metodológica</span>
+      <h2>Limitações do Estudo</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card" style="border-left:3px solid var(--yellow);">
+        <h4 style="color:var(--yellow);margin-bottom:10px;">⚠️ Acesso Limitado a Dados Primários</h4>
+        <p style="font-size:.84rem;color:var(--text-muted);">A análise foi conduzida com base em dados públicos, pesquisa secundária e o questionário respondido pela Iaris Ventures. Não foram realizadas entrevistas com clientes, parceiros ou concorrentes diretos. Validação primária de TAM/SAM/SOM com dados de mercado brasileiro de acesso restrito não foi possível nesta fase.</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--yellow);">
+        <h4 style="color:var(--yellow);margin-bottom:10px;">⚠️ Estágio Pré-Receita</h4>
+        <p style="font-size:.84rem;color:var(--text-muted);">As OPs OP01 (Legal Intelligence), OP04 (PrevidênciaTech) e OP08 (Deal Flow Intelligence) foram avaliadas sem evidências de tração comercial comprovada. Os scores refletem potencial identificado, não performance validada. Hipóteses de produto-mercado permanecem a ser testadas.</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--yellow);">
+        <h4 style="color:var(--yellow);margin-bottom:10px;">⚠️ Cenário Regulatório em Mutação</h4>
+        <p style="font-size:.84rem;color:var(--text-muted);">O Marco Legal da IA (PL 2.338/2023) ainda estava em votação no Senado durante este discovery. Alterações legislativas podem impactar significativamente as OPs regulatório-sensíveis: OP01 (jurimetria), OP03 (tokenização) e OP04 (previdência complementar).</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--yellow);">
+        <h4 style="color:var(--yellow);margin-bottom:10px;">⚠️ Mapeamento de Concorrentes Incompleto</h4>
+        <p style="font-size:.84rem;color:var(--text-muted);">A análise competitiva foi realizada com base em fontes públicas (LinkedIn, Crunchbase, sites corporativos). Players em modo stealth ou pilotos não divulgados podem representar ameaças não capturadas. Recomenda-se mapeamento primário trimestral.</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--yellow);">
+        <h4 style="color:var(--yellow);margin-bottom:10px;">⚠️ Escopo Temporal do Discovery</h4>
+        <p style="font-size:.84rem;color:var(--text-muted);">Este relatório retrata o estado do ecossistema em junho/2026. Editais de captação têm prazos e condições dinâmicas — verificar disponibilidade antes de submeter propostas. Scores MonyU devem ser revisados a cada ciclo de 6 meses ou após eventos de mercado relevantes.</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--yellow);">
+        <h4 style="color:var(--yellow);margin-bottom:10px;">⚠️ Avaliação de IP e Patentes</h4>
+        <p style="font-size:.84rem;color:var(--text-muted);">Embora tenham sido identificadas patentes e artigos relevantes, não foi realizada uma análise de liberdade de operação (FTO) aprofundada para cada OP. Antes de protocolos de PI próprios, recomenda-se consulta a especialista em propriedade intelectual com foco em software e IA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMENDAÇÕES -->
+<section id="recomendacoes" style="background:var(--bg2);">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Direcionamento Estratégico</span>
+      <h2>Recomendações MonyU</h2>
+    </div>
+    <div class="card" style="border-left:3px solid var(--accent);margin-bottom:28px;">
+      <p style="font-size:.9rem;margin:0;">As recomendações abaixo são ordenadas por impacto esperado × urgência. Elas não substituem o julgamento dos founders — são insumos qualificados para a tomada de decisão.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card" style="border-top:3px solid var(--accent);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <span style="font-size:1.4rem;">🥇</span>
+          <h4 style="color:var(--accent);margin:0;">R1 — Priorizar OP02: Plataforma CVB Agentic</h4>
+        </div>
+        <p style="font-size:.83rem;color:var(--text-muted);">Score 9.3. Primeira plataforma agentic para CVBs no Brasil. Janela de oportunidade de 18–24 meses antes de entrantes de TI large-cap. Ação imediata: firmar parceria com 1 CVB âncora para piloto nos próximos 60 dias e estruturar projeto para FINEP R$300M (prazo set/2026).</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--blue);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <span style="font-size:1.4rem;">🥈</span>
+          <h4 style="color:var(--blue);margin:0;">R2 — Aprofundar OP01: Legal Intelligence B2B</h4>
+        </div>
+        <p style="font-size:.83rem;color:var(--text-muted);">Score 9.0. Mercado jurídico + IA = R$2,1B de TAM. Diferencial técnico defensável via jurimetria proprietária. Ação: mapear 3 escritórios de advocacia corporativa para proof of concept, e submeter proposta à próxima CPSI do CNJ (nova edição esperada).</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--green);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <span style="font-size:1.4rem;">🥉</span>
+          <h4 style="color:var(--green);margin:0;">R3 — Validar OP06: SON.IA 2.0 com sindicatos-piloto</h4>
+        </div>
+        <p style="font-size:.83rem;color:var(--text-muted);">Score 8.2. Mercado não atacado por IA. Canal de distribuição via centrais sindicais = escala não óbvia. Ação: firmar acordo com 2 sindicatos-piloto (CUT/UGT/Força) para MVP de IA sindical nos próximos 90 dias. Solicitar carta de intenção para editais FAPEMIG.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <span style="font-size:1.4rem;">⚡</span>
+          <h4 style="color:var(--text-bright);margin:0;">R4 — Capturar Créditos Tech Imediatamente</h4>
+        </div>
+        <p style="font-size:.83rem;color:var(--text-muted);">AWS Activate, Microsoft Founders Hub, Google for Startups e NVIDIA Inception são aplicações de <strong>fluxo contínuo, sem prazo</strong>. Potencial combinado: US$500K+ em créditos de infraestrutura. Inscrição em paralelo às demais ações. ROI imediato: reduz burn rate de infra em 60–80%.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <span style="font-size:1.4rem;">📋</span>
+          <h4 style="color:var(--text-bright);margin:0;">R5 — Centelha 3 e Compete Minas: submeter imediatamente</h4>
+        </div>
+        <p style="font-size:.83rem;color:var(--text-muted);">Dois editais ativos com prazo iminente: Centelha 3 (15/jul/2026) e Compete Minas (jul/2026). Recursos não reembolsáveis para startups mineiras em fase inicial/tração. Estruturar projetos para OP02 ou OP01 nestes editais é ação de baixo custo e alto retorno potencial.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <span style="font-size:1.4rem;">🔬</span>
+          <h4 style="color:var(--text-bright);margin:0;">R6 — Parceria com ICT (UFJF / SENAI) para acessar FINEP</h4>
+        </div>
+        <p style="font-size:.83rem;color:var(--text-muted);">Editais FINEP Mais Inovação exigem parceria com Instituição Científica e Tecnológica (ICT). UFJF (Juiz de Fora) e SENAI-MG são as âncoras mais acessíveis para a Iaris. Iniciar diálogo formal com NIT-UFJF para mapeamento de linhas de cooperação em IA.</p>
+      </div>
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+          <span style="font-size:1.4rem;">🗺️</span>
+          <h4 style="color:var(--text-bright);margin:0;">R7 — Revisão de Score em 6 meses</h4>
+        </div>
+        <p style="font-size:.83rem;color:var(--text-muted);">Agendar revisão do Discovery MonyU para dezembro/2026. Incluir: validação dos pilotos OP01 e OP02, atualização de scores com base em tração real, novo mapeamento competitivo e análise de impacto do Marco Legal da IA aprovado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONCLUSÃO -->
+<section id="conclusao">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Síntese Final</span>
+      <h2>Conclusão</h2>
+    </div>
+    <div class="card" style="border-left:3px solid var(--accent);max-width:820px;margin:0 auto 32px;">
+      <p style="font-size:.92rem;line-height:1.7;margin:0;">A Iaris Ventures se apresenta como um dos movimentos mais diferenciados do ecossistema de inovação de Minas Gerais: uma <strong style="color:var(--accent);">plataforma de inteligência B2B com arquitetura multi-OP</strong>, ancorada em mercados legais, trabalhistas, financeiros e de gestão de inovação — todos com alto déficit de digitalização e crescente pressão regulatória pró-IA.</p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h4 style="color:var(--accent);margin-bottom:12px;">🎯 O Que Diferencia a Iaris</h4>
+        <ul class="swot-list" style="font-size:.83rem;">
+          <li>Visão de plataforma CVB Agentic antes do mercado perceber a demanda</li>
+          <li>DNA jurídico-tecnológico raro no Brasil: jurimetria + IA generativa</li>
+          <li>Portfólio diversificado que reduz risco de dependência de um único mercado</li>
+          <li>Localização em MG = acesso privilegiado a FAPEMIG, UFJF e ecossistema Belo Horizonte–Juiz de Fora</li>
+          <li>CNPJ registrado (S.A.) = capacidade de captar equity e subvenção simultaneamente</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--blue);margin-bottom:12px;">⚡ Principais Riscos a Monitorar</h4>
+        <ul class="swot-list" style="font-size:.83rem;">
+          <li>Dispersão de foco entre 8 OPs simultâneas — risco de não executar nenhuma com excelência</li>
+          <li>Aprovação e regulamentação do Marco Legal da IA pode criar fricção regulatória nova</li>
+          <li>Entrada de players big-tech (Totvs, Stefanini, IBM Brasil) no segmento CVB Agentic</li>
+          <li>Captação para FINEP requer ICT parceira — gargalo de articulação institucional</li>
+          <li>Tokenização (OP03) sob risco de mudança de posição da CVM sobre RWAs</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:28px;text-align:center;padding:40px 24px;">
+      <div style="font-size:3rem;margin-bottom:12px;">🚀</div>
+      <h3 style="color:var(--accent);margin-bottom:8px;">Score MonyU: 8.0 / 10.0</h3>
+      <p style="font-size:.88rem;color:var(--text-muted);max-width:600px;margin:0 auto;">A Iaris Ventures reúne os ingredientes fundamentais para construir uma empresa de alto impacto: visão de plataforma, mercados com demanda latente não atendida, time com background multidisciplinar e janela de oportunidade aberta. O próximo passo crítico é escolher onde concentrar os primeiros 6 meses de execução — e fazê-lo com implacabilidade.</p>
+      <div style="margin-top:20px;font-style:italic;font-size:.78rem;color:var(--text-dim);">"O futuro já chegou. Só não está distribuído de forma uniforme." — William Gibson</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FONTES -->
+<section id="fontes" style="background:var(--bg2);">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Referências e Evidências</span>
+      <h2>Fontes Consultadas</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h4 style="color:var(--accent);margin-bottom:12px;">🏛️ Fontes Governamentais e Regulatórias</h4>
+        <ul class="swot-list" style="font-size:.79rem;">
+          <li><a href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/noticias/2026/04/edital-de-r-300-milhoes-apoia-empresas-no-desenvolvimento-de-tecnologias-digitais-avancadas" target="_blank" rel="noopener noreferrer">FINEP — Edital Tecnologias Digitais R$300M (2026)</a></li>
+          <li><a href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/transformacaodigital/plano-brasileiro-de-inteligencia-artificial" target="_blank" rel="noopener noreferrer">MCTI — Plano Brasileiro de Inteligência Artificial (PBIA 2024–2028)</a></li>
+          <li><a href="https://fapemig.br/oportunidades/chamadas-e-editais" target="_blank" rel="noopener noreferrer">FAPEMIG — Chamadas e Editais ativos (2026)</a></li>
+          <li><a href="https://www.bcb.gov.br/estabilidadefinanceira/openfinance" target="_blank" rel="noopener noreferrer">Banco Central do Brasil — Open Finance: regulamentação e dados</a></li>
+          <li><a href="https://www.cvm.gov.br/noticias/arquivos/2023/20231030-1.html" target="_blank" rel="noopener noreferrer">CVM — Resolução 175/2022 e Sandbox Regulatório</a></li>
+          <li><a href="https://www.cnj.jus.br/cnj-publica-edital-para-contratacao-de-solucoes-inovadoras-em-atendimento-aos-usuarios-do-jus-br/" target="_blank" rel="noopener noreferrer">CNJ — CPSI 01/2025: Soluções Inovadoras para Jus.br</a></li>
+          <li><a href="https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/programa-bndes-mais-inovacao" target="_blank" rel="noopener noreferrer">BNDES — Programa Mais Inovação</a></li>
+          <li><a href="https://www.receita.fazenda.gov.br/PessoaJuridica/CNPJ/cnpjreva_solicitacao.asp" target="_blank" rel="noopener noreferrer">Receita Federal — CNPJ 54.923.981/0001-78 (Iaris Ventures)</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--blue);margin-bottom:12px;">📊 Dados de Mercado e Pesquisas</h4>
+        <ul class="swot-list" style="font-size:.79rem;">
+          <li><a href="https://www.imarc.com/report/legal-tech-market" target="_blank" rel="noopener noreferrer">IMARC Group — Global Legal Tech Market Report (2026)</a></li>
+          <li><a href="https://www.mordorintelligence.com/industry-reports/brazil-legal-tech-market" target="_blank" rel="noopener noreferrer">Mordor Intelligence — Brazil LegalTech Market 2025–2030</a></li>
+          <li><a href="https://www.financesonline.com/fintech-statistics/" target="_blank" rel="noopener noreferrer">FinancesOnline — Global Fintech Statistics 2026</a></li>
+          <li><a href="https://valoreconomico.com.br/financas/2026/03" target="_blank" rel="noopener noreferrer">Valor Econômico — Open Finance e tokenização no Brasil (2026)</a></li>
+          <li><a href="https://distrito.me/reports" target="_blank" rel="noopener noreferrer">Distrito — Relatório Ecossistema de Inovação Brasil 2025</a></li>
+          <li><a href="https://startupbase.com.br" target="_blank" rel="noopener noreferrer">StartupBase — Base de startups brasileiras (2026)</a></li>
+          <li><a href="https://www.itsbrasil.org.br" target="_blank" rel="noopener noreferrer">ITS Brasil — Relatório sobre IA e Acesso à Justiça</a></li>
+          <li><a href="https://www.abde.org.br" target="_blank" rel="noopener noreferrer">ABDE/PNUD — Capital de fomento: Agenda 2030 e ODS (2021)</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--green);margin-bottom:12px;">📄 Patentes e Publicações Acadêmicas</h4>
+        <ul class="swot-list" style="font-size:.79rem;">
+          <li><a href="https://patents.google.com/?q=jurimetria+machine+learning+brazil" target="_blank" rel="noopener noreferrer">Google Patents — Depósitos em jurimetria e ML (2022–2026)</a></li>
+          <li><a href="https://patents.google.com/?q=tokenization+RWA+blockchain+legal" target="_blank" rel="noopener noreferrer">Google Patents — RWA tokenization frameworks</a></li>
+          <li><a href="https://scholar.google.com/scholar?q=legal+prediction+AI+brazil" target="_blank" rel="noopener noreferrer">Google Scholar — AI legal prediction, jurimetria Brasil</a></li>
+          <li><a href="https://arxiv.org/search/?searchtype=all&query=agentic+AI+workflow+automation" target="_blank" rel="noopener noreferrer">arXiv — Agentic AI: arquiteturas multi-agente (2024–2026)</a></li>
+          <li><a href="https://scholar.google.com/scholar?q=open+finance+brazil+fintech" target="_blank" rel="noopener noreferrer">Google Scholar — Open Finance Brasil: impactos e adoção</a></li>
+          <li><a href="https://www.inpi.gov.br/busca-de-patentes" target="_blank" rel="noopener noreferrer">INPI — Base de patentes nacionais (software/IA)</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--yellow);margin-bottom:12px;">🌐 Referências de Mercado e Concorrentes</h4>
+        <ul class="swot-list" style="font-size:.79rem;">
+          <li><a href="https://www.jusbrasil.com.br" target="_blank" rel="noopener noreferrer">Jusbrasil — Plataforma de jurimetria e dados jurídicos</a></li>
+          <li><a href="https://www.escavador.com" target="_blank" rel="noopener noreferrer">Escavador — Pesquisa de processos e profissionais jurídicos</a></li>
+          <li><a href="https://inquest.com.br" target="_blank" rel="noopener noreferrer">Inquest — Jurimetria e analytics para escritórios</a></li>
+          <li><a href="https://www.b3.com.br/pt_br/mercados/fundos-e-clubes-de-investimento/fundos/fidc/fitch-ratings-para-fidcs/" target="_blank" rel="noopener noreferrer">B3 — Mercado de capitais e ativos alternativos</a></li>
+          <li><a href="https://www.crunchbase.com/organization/iaris-ventures" target="_blank" rel="noopener noreferrer">Crunchbase — Iaris Ventures (perfil público)</a></li>
+          <li><a href="https://www.linkedin.com/company/iaris-ventures" target="_blank" rel="noopener noreferrer">LinkedIn — Iaris Ventures Participações S.A.</a></li>
+          <li><a href="https://www.eic.ec.europa.eu" target="_blank" rel="noopener noreferrer">EIC — European Innovation Council (EIC Accelerator 2026)</a></li>
+          <li><a href="https://www.ycombinator.com" target="_blank" rel="noopener noreferrer">Y Combinator — Programa de aceleração (W2026/S2026)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px;border-left:3px solid var(--text-dim);">
+      <p style="font-size:.78rem;color:var(--text-dim);margin:0;font-style:italic;">Nota: Todas as fontes foram acessadas entre maio e junho de 2026. Links externos podem expirar ou ser atualizados. A MonyU não se responsabiliza pela disponibilidade de conteúdo em sites de terceiros. Dados de mercado (TAM/SAM/SOM) são estimativas baseadas em pesquisas secundárias e modelos analíticos — não constituem garantia de mercado endereçável.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APÊNDICES -->
+<section id="apendices">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="section-label">Material Complementar</span>
+      <h2>Apêndices</h2>
+    </div>
+
+    <!-- Apêndice A -->
+    <div class="cap-section">
+      <div class="cap-section-title">Apêndice A — Critérios de Avaliação MonyU (Score 0–10)</div>
+      <div class="card" style="padding:0;overflow:hidden;">
+        <div style="overflow-x:auto;">
+          <table class="cap-table">
+            <thead><tr><th>Critério</th><th>Peso</th><th>Descrição</th><th>Fonte de dado</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Tamanho de Mercado (TAM/SAM)</strong></td><td>20%</td><td>Tamanho e crescimento do mercado endereçável. TAM &gt; R$1B = máximo.</td><td>Pesquisa secundária + modelagem</td></tr>
+              <tr><td><strong>Diferenciação Tecnológica</strong></td><td>20%</td><td>Nível de inovação técnica, barreiras à replicação, propriedade intelectual.</td><td>Análise técnica + patentes</td></tr>
+              <tr><td><strong>Viabilidade de Modelo de Negócio</strong></td><td>15%</td><td>Clareza do MRR/ARR, unit economics, previsibilidade de receita.</td><td>Questionário + benchmarks</td></tr>
+              <tr><td><strong>Janela de Oportunidade</strong></td><td>15%</td><td>Timing de mercado: demanda latente × concorrência × regulação favorável.</td><td>Análise de ecossistema</td></tr>
+              <tr><td><strong>Capacidade de Execução</strong></td><td>15%</td><td>Time, tração, parcerias estratégicas, evidências de execução passada.</td><td>Questionário + fontes públicas</td></tr>
+              <tr><td><strong>Potencial de Captação</strong></td><td>10%</td><td>Alinhamento com editais, investidores e programas de fomento ativos.</td><td>Mapeamento de captação</td></tr>
+              <tr><td><strong>Impacto Social / ESG</strong></td><td>5%</td><td>Alinhamento com ODS, política pública, impacto mensurável positivo.</td><td>Análise de impacto</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apêndice B -->
+    <div class="cap-section">
+      <div class="cap-section-title">Apêndice B — Glossário de Termos</div>
+      <div class="card">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+          <div><strong style="color:var(--accent);">CVB (Capital de Venture Building)</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Estrutura que combina capital de risco com suporte operacional para criar e escalar startups, diferente do VC puro (só capital).</span></div>
+          <div><strong style="color:var(--accent);">CVBaaS</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Capital de Venture Building as a Service — modelo original da Iaris de oferecer infraestrutura de CVB como plataforma. Renomeado para Plataforma CVB Agentic na v2.</span></div>
+          <div><strong style="color:var(--accent);">Jurimetria</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Aplicação de métodos quantitativos e estatísticos ao Direito para prever resultados judiciais, tempo de tramitação e probabilidade de sucesso em demandas.</span></div>
+          <div><strong style="color:var(--accent);">RWA (Real World Assets)</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Ativos do mundo real (imóveis, royalties, precatórios, carteiras de crédito) representados digitalmente em blockchain via tokenização.</span></div>
+          <div><strong style="color:var(--accent);">CPSI</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Contratação Pública de Soluções Inovadoras — modalidade de aquisição pública que permite o governo contratar P&D de empresas privadas sem licitação convencional.</span></div>
+          <div><strong style="color:var(--accent);">PI-Stack</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Propriedade Intelectual Stack — conjunto de patentes, segredos industriais, marcas e dados proprietários que formam a barreira competitiva tecnológica de uma empresa.</span></div>
+          <div><strong style="color:var(--accent);">IA Agentic</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Sistemas de IA que executam tarefas de forma autônoma e sequencial, tomando decisões e agindo em nome do usuário (ex: AutoGPT, Claude Computer Use, plataformas de workflow IA).</span></div>
+          <div><strong style="color:var(--accent);">FIP (Fundo de Investimento em Participações)</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Fundo de private equity regulado pela CVM que investe em empresas fechadas com participação ativa na gestão.</span></div>
+          <div><strong style="color:var(--accent);">TAM / SAM / SOM</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Total Addressable Market / Serviceable Addressable Market / Serviceable Obtainable Market — métricas de tamanho e acessibilidade de mercado.</span></div>
+          <div><strong style="color:var(--accent);">PBIA</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Plano Brasileiro de Inteligência Artificial — política nacional do MCTI com R$23B em investimentos previstos para 2024–2028 em IA, robótica e computação quântica.</span></div>
+          <div><strong style="color:var(--accent);">ICT</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Instituição Científica e Tecnológica — universidades, institutos de pesquisa e centros de P&D habilitados a participar de projetos FINEP como parceiros técnicos.</span></div>
+          <div><strong style="color:var(--accent);">MonyU Discovery</strong><br><span style="font-size:.79rem;color:var(--text-muted);">Metodologia proprietária da MonyU para mapeamento de oportunidades de inovação, avaliação de fit estratégico e scoring de startups e portfólios de inovação.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apêndice C -->
+    <div class="cap-section">
+      <div class="cap-section-title">Apêndice C — Metodologia de Estimativa TAM/SAM/SOM</div>
+      <div class="card">
+        <p style="font-size:.83rem;color:var(--text-muted);margin-bottom:14px;">As estimativas de mercado foram construídas usando abordagem <em>top-down</em> (relatórios setoriais → recorte brasileiro → nicho endereçável) e <em>bottom-up</em> (unidade × volume × ticket médio). Ambas foram trianguladas para reduzir viés de excesso de otimismo.</p>
+        <div style="overflow-x:auto;">
+          <table class="cap-table">
+            <thead><tr><th>OP</th><th>TAM (referência global/nacional)</th><th>Fator de corte SAM</th><th>Fator de corte SOM</th><th>Horizonte</th></tr></thead>
+            <tbody>
+              <tr><td>OP01</td><td>Mercado jurídico IA global: US$5,8B → Brasil ~R$2,1B (proporcional PIB/litígios)</td><td>Corporativo B2B + escritórios &gt;50 advogados</td><td>5–10% penetração inicial · 3 anos</td><td>2026–2029</td></tr>
+              <tr><td>OP02</td><td>Plataformas CVB/VC software: estim. US$820M global → R$280M Brasil</td><td>CVBs, gestoras, aceleradoras ativas no Brasil (~420 organizações)</td><td>15% dos CVBs no 1º ano · 30% no 3º</td><td>2026–2028</td></tr>
+              <tr><td>OP03</td><td>RWA tokenizado global: US$50B–310B até 2030 · Brasil: R$8B potencial</td><td>PI e royalties tokenizáveis = R$1,2B</td><td>Mercado emergente: 2% em 3 anos</td><td>2027–2030</td></tr>
+              <tr><td>OP04</td><td>Previdência complementar aberta Brasil: R$1,3T em ativos (SUSEP/PREVIC 2025)</td><td>Participantes formais sem acesso a EFPCs = ~18M pessoas</td><td>2% de penetração · 3 anos</td><td>2027–2030</td></tr>
+              <tr><td>OP06</td><td>Trabalhadores formais sindicalizados: ~20M · Contrib. base = R$3,5B/ano</td><td>Sindicatos com base &gt;10K trabalhadores (~400)</td><td>5% dos sindicatos no 1º ano · 15% no 3º</td><td>2026–2029</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:.75rem;color:var(--text-dim);margin-top:10px;font-style:italic;">OPs OP05, OP07 e OP08 têm mercados correlatos ao OP02 e OP01 respectivamente; estimativas detalhadas disponíveis sob demanda.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="section-wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;padding:40px 0 20px;border-top:1px solid rgba(255,255,255,0.07);">
+      <div>
+        <div class="logo" style="margin-bottom:10px;font-size:1rem;">🔍 MonyU</div>
+        <p style="font-size:.78rem;color:var(--text-dim);line-height:1.6;">Discovery de Inovação para ventures e portfólios corporativos. Metodologia proprietária baseada em evidências, dados de mercado e análise de ecossistema.</p>
+      </div>
+      <div>
+        <h5 style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-bottom:10px;">Seções deste Relatório</h5>
+        <ul style="list-style:none;padding:0;margin:0;font-size:.78rem;line-height:2;">
+          <li><a href="#sumario" style="color:var(--text-muted);text-decoration:none;">Sumário Executivo</a></li>
+          <li><a href="#evidencias" style="color:var(--text-muted);text-decoration:none;">Evidências & Dados</a></li>
+          <li><a href="#score" style="color:var(--text-muted);text-decoration:none;">Score MonyU</a></li>
+          <li><a href="#captacao" style="color:var(--text-muted);text-decoration:none;">Mapa de Captação</a></li>
+          <li><a href="#recomendacoes" style="color:var(--text-muted);text-decoration:none;">Recomendações</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text-dim);margin-bottom:10px;">Sobre Este Documento</h5>
+        <ul style="list-style:none;padding:0;margin:0;font-size:.78rem;line-height:2;color:var(--text-dim);">
+          <li>Empresa: Iaris Ventures Participações S.A.</li>
+          <li>CNPJ: 54.923.981/0001-78</li>
+          <li>Versão: v2 · 2026-06-15</li>
+          <li>Analista: MonyU Discovery Team</li>
+          <li>Confidencial — Uso restrito</li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.04);padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--text-dim);">
+      <span>© 2026 MonyU · Todos os direitos reservados · <a href="#" style="color:var(--text-dim);">Política de Privacidade</a></span>
+      <span>Este relatório é confidencial e destinado exclusivamente ao cliente indicado. Reprodução proibida sem autorização expressa.</span>
+    </div>
+
+    <!-- PDF DOWNLOAD -->
+    <div style="text-align:center;padding:24px 0 8px;">
+      <a id="pdf-download-btn" href="./2026-06-15_iaris-ventures_monyu_discovery-inovacao_v2.pdf" class="cta-btn" style="display:inline-flex;align-items:center;gap:8px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+        Baixar PDF
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="back-to-top" aria-label="Voltar ao topo">↑</button>
+
+<!-- CHART.JS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
