@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Discovery de Inovação - MonyU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --monyu-black: #000000;
+            --monyu-surface-1: #101010;
+            --monyu-surface-2: #1A1A1A;
+            --monyu-pink: #FF0055;
+            --monyu-orange: #FF7300;
+            --monyu-yellow: #FFCC00;
+            --monyu-editorial: #F5F5F5;
+            --monyu-text-dim: #A0A0A0;
+            --monyu-border: #333333;
+        }
+
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+
+        body {
+            background-color: var(--monyu-black);
+            color: var(--monyu-editorial);
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--monyu-border);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .header-meta {
+            text-align: right;
+            font-size: 12px;
+            color: var(--monyu-text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: var(--monyu-editorial);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: var(--monyu-pink);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--monyu-pink);
+            padding-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            font-size: 16px;
+            color: var(--monyu-orange);
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: var(--monyu-text-dim);
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            color: var(--monyu-editorial);
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            font-size: 13px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--monyu-border);
+        }
+
+        th {
+            background-color: var(--monyu-surface-1);
+            color: var(--monyu-editorial);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--monyu-surface-1);
+        }
+
+        tr:hover {
+            background-color: var(--monyu-surface-2);
+        }
+
+        .rank-top {
+            color: var(--monyu-pink);
+            font-weight: 700;
+        }
+
+        .card {
+            background-color: var(--monyu-surface-1);
+            border: 1px solid var(--monyu-border);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: var(--monyu-surface-2);
+            color: var(--monyu-yellow);
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+        }
+
+        .card-list li {
+            font-size: 13px;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card-list li::before {
+            content: "•";
+            color: var(--monyu-pink);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--monyu-border);
+            text-align: center;
+            font-size: 11px;
+            color: var(--monyu-text-dim);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        
+        .accent-text {
+            color: var(--monyu-orange);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjQsMzExKSIgZD0ibTAgMGgxN2wxMyA0IDExIDcgNyA3IDEwIDEzIDE0IDE4IDEwIDEzIDQtMiAxMS0xNCAxMy0xNiAxMS0xNCA5LTggMTItNiA4LTJoMTdsMTMgNCA5IDUgMTAgOSA2IDkgNCA5IDIgMTB2MTQxbC0zIDEyLTYgMTEtMTAgMTEtMTMgOC05IDMtNyAxLTE3LTEtMTItNC0xMC02LTctNy02LTEyLTItMTAgMTQtMTkgMTMtMTggNC01IDEtMy02IDUtOSAxMS0xNCAxNC0xMyA5LTExIDRoLTEwbC0xMS00LTExLTgtMTMtMTItOS0xMS02LTctMSAxIDEyIDE3IDE0IDE5IDUgNy0yIDEwLTYgMTItOCA4LTE0IDctMTYgM2gtOGwtMTEtMi0xNC03LTExLTEwLTctMTEtNC0xMS0xLTV2LTE0MmwzLTEyIDUtMTAgOS0xMCA4LTYgMTEtNXoiIGZpbGw9IiNGRTAwNTgiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjc0LDMwOCkiIGQ9Im0wIDBoMTlsMTMgNCAxMCA2IDEwIDkgMTAgMTAgOCA3IDM0IDM0IDMtMS0xMy0xOS02LTkgMi05IDYtMTEgMTEtMTEgMTItNyAxMC0zaDIwbDE0IDUgMTAgNyA4IDggNyAxMiAzIDExIDEgMTB2MTI4bC0yIDE2LTUgMTItOCAxMC0xMSA4LTEyIDUtNSAxaC0xOWwtMTMtNC0xMC02LTgtOC04LTctNDUtNDVoLTJsMSA1IDE2IDI1IDEgMi00IDExLTYgOS0xMCAxMC0xNCA3LTggMmgtMTlsLTE1LTUtMTAtNy03LTctNi0xMC00LTExLTEtNnYtMTQzbDMtMTIgNi0xMSA5LTEwIDktNiAxMi01eiIgZmlsbD0iI0ZFMDA1OCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0OTEsMzA1KSIgZD0ibTAgMGgyM2wxNCAyIDIwIDYgMjEgMTEgMTQgMTEgMTMgMTMgMTAgMTQgMTAgMjEgNSAxNyAyIDE0djI0bC00IDIwLTYgMTYtOCAxNS0xMSAxNC0xNCAxNC0xMCA3LTE0IDgtMTIgNS0xMyA0LTExIDItMTEgMWgtMTJsLTIxLTMtMTYtNS0xNy04LTEzLTktMTItMTEtOC04LTktMTMtOC0xNS02LTE4LTMtMTd2LTI3bDQtMTkgNi0xNiA5LTE2IDEwLTEzIDEzLTEzIDE0LTEwIDEyLTcgMTktN3oiIGZpbGw9IiNGRTAwNTgiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE3MSwzMDYpIiBkPSJtMCAwaDhsMTUgMyAxMSA2IDkgOCA3IDExIDQgMTEgMSA2djExbC0zIDEyLTcgMTQtMTYgMjctMTIgMjF2N2wxIDJoN2w0LTQgMTUtMjYgMTctMjkgOS0xMCAxMS03IDExLTQgNS0xaDEzbDEyIDMgMTEgNiA4IDcgNyAxMSA0IDEwIDEgNXYxN2wtMyAxMC03IDE0LTkgMTUtMTQgMjQtMTIgMjAtMTEgMTMtMTEgMTAtMTQgOS0xOCA4LTE2IDQtOCAxaC0yM2wtMTUtMy0xNS01LTE0LTctMTItOS04LTctOS0xMS03LTEwLTgtMTctNS0xOC0xLTd2LTI4bDQtMTggNy0xNyAxNC0yNCAxNy0yOSA5LTE1IDUtNiAxMy05IDEyLTR6IiBmaWxsPSIjRkY3MzAwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkyMCwzMDcpIiBkPSJtMCAwaDlsMTIgMyAxMiA2IDE2IDE1IDEyIDEzIDUgNCAyMy0yMyA0LTUgMTAtNyAxMy01IDctMWg5bDEzIDMgMTAgNSAxMiAxMSA3IDExIDQgMTN2MTlsLTQgMTMtNiAxMC0xMSAxMi0yNyAyNy03IDgtNCA0LTEgNTUtNCAxMy03IDExLTggOC0xMSA3LTEzIDRoLTE3bC0xMy00LTExLTYtMTAtMTAtNy0xMi0zLTExLTEtNTUtOC04LTctOC0zMS0zMS03LTEwLTUtMTMtMS00di0xOWw1LTE1IDctMTAgNy03IDktNiAxMi00eiIgZmlsbD0iI0ZFMDA1OCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzI3LDExMikiIGQ9Im0wIDAgMTQgMSAxNyA2IDEwIDcgMTAgMTAgOCAxNCAzIDkgMSA2djE3bC00IDE0LTYgMTItMTEgMTItMTAgNy0xMiA1LTkgMmgtMjBsLTE5LTctMTEtOC05LTEwLTgtMTYtMi03LTEtOHYtMTFsMy0xMyA4LTE2IDktMTAgOS03IDEwLTUgMTEtM3oiIGZpbGw9IiNGRkNCMDAiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTQ0OSwxNDYpIiBkPSJtMCAwaDlsMTEgNCA4IDYgNyA4IDQgOSAxIDZ2MTBsLTMgMTEtNiA4LTUgNS01IDQtOCAzLTYgMWgtMTFsLTEzLTUtMTAtOS02LTEwLTItMTB2LThsMi04IDUtMTAgOC04IDEwLTV6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzOTksMjI2KSIgZD0ibTAgMGgxNGw5IDQgOCA2IDUgOSAyIDd2MTBsLTQgMTEtOCA5LTEwIDUtNCAxaC0xMGwtMTAtMy02LTQtOC0xMS0yLTd2LTEzbDQtMTAgNy04IDEwLTV6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDczNCw2MjYpIiBkPSJtMCAwaDI2bDkgNCAzIDV2MTBsLTQgNS0yIDIgNiA1IDIgNi0xIDctMyA1LTkgNGgtMjdsLTItMS0xLTN2LTQ1em03IDh2MTRoMThsNC00di02bC00LTR6bTAgMjJ2MTVoMTlsNC0zdi04bC0zLTMtMi0xeiIgZmlsbD0iIzBDMDAwNCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5ODksNjI2KSIgZD0ibTAgMGgyM2wxMSA0IDcgOCAzIDh2MTNsLTQgMTAtOCA3LTkgM2gtMjRsLTItM3YtNDd6bTcgOHYzN2gxNWw4LTQgNC03di0xNWwtNS04LTctM3oiIGZpbGw9IiMwMTAwMDAiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTk5LDYyNikiIGQ9Im0wIDBoMjNsMTEgNCA3IDggMyA4djEzbC00IDEwLTggNy05IDNoLTI0bC0yLTN2LTQ3em03IDh2MzdoMTVsOC00IDQtN3YtMTVsLTUtOC03LTN6IiBmaWxsPSIjMDEwMDAwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU0Miw2MjYpIiBkPSJtMCAwaDVsNyA4IDEyIDE2IDggMTB2Mmgydi0zNWwxLTFoNmwyIDN2NDdsLTIgM2gtNmwtMTItMTUtMTUtMjAtMSAzMy0yIDJoLTVsLTItMnYtNDl6IiBmaWxsPSIjMDEwMDAwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM1OCw2MjYpIiBkPSJtMCAwaDZsMTEgMTQgMTAgMTMgNiA4IDEtMzMgMi0yaDVsMiAydjQ5bC0yIDJoLTVsLTctOC0xMy0xNy03LTl2LTJoLTJ2MzVsLTEgMWgtNmwtMi00di00NXoiIGZpbGw9IiMwOTAwMDMiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQ3LDYyNikiIGQ9Im0wIDBoNWw5IDExIDEzIDE3IDUgNyAxLTMyIDItM2g1bDIgMnY1MGwtMSAxaC02bC0xMC0xMi05LTEyLTgtMTEtMSAzMi0yIDNoLTZsLTEtMXYtNTB6IiBmaWxsPSIjMDEwMDAwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgwNSw2MjUpIiBkPSJtMCAwIDEyIDIgNiA0IDYgNyAyIDZ2MTdsLTQgOS04IDctNCAyLTEyIDEtMTAtMy03LTYtNC04LTEtNXYtMTFsMy0xMCA2LTcgOC00em0tMiA4LTggNC00IDh2MTVsNCA4IDcgNGg4bDYtMyA0LTUgMi03di05bC0zLTktNi01LTMtMXoiIGZpbGw9IiMwNDAwMDEiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjc1LDYyNSkiIGQ9Im0wIDAgMTIgMiA2IDQgNiA3IDIgNnYxN2wtNCA5LTggNy00IDItMTIgMS0xMC0zLTctNi00LTgtMS01di0xMWwzLTEwIDYtNyA4LTR6bS0yIDgtOCA0LTQgOHYxNWw0IDggNyA0aDhsNi0zIDQtNSAyLTd2LTlsLTMtOS02LTUtMy0xeiIgZmlsbD0iIzA0MDAwMSIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjU1LDI0MykiIGQ9Im0wIDAgNSAxIDE0IDgtMyAzLTIyIDExaC0ydjJsNSAyIDggNS0yIDItNTcgMTgtMy0xIDIzLTE1IDEwLTctMTAtNiAzLTMgMjItMTR6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzNDYsMjk1KSIgZD0ibTAgMCAxMiA2IDUgM3YybC0yNiAxMyAxMyA4LTEgMi01NiAxOC00LTEgMzAtMjBoMmwtMy0zLTctNHYtMmwxNi0xMHoiIGZpbGw9IiNmYzAiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODYwLDYyNikiIGQ9Im0wIDBoNmwzIDMgMTcgMzYgNCA5LTIgNWgtNWwtNS04LTEtNC0yNyAxLTUgMTAtMSAxaC01bC0yLTIgMS02IDE4LTM4IDMtNnptMyAxMS05IDIwdjJoMTlsLTItNi03LTE2eiIgZmlsbD0iIzA0MDAwMSIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDQ1LDYyNikiIGQ9Im0wIDBoMzJsMiAyLTEgNS0yIDFoLTI0djE0aDIybDMgMXY2bC0yIDFoLTIzdjE1aDI0bDMgMi0xIDUtMSAxaC0zMmwtMi0ydi00OXoiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEyNyw2MjYpIiBkPSJtMCAwaDZsNSA4IDE4IDM4djZsLTcgMS01LTEwdi0ybC0yNyAxLTUgMTAtMSAxaC01bC0yLTIgMS02IDE0LTMwIDctMTR6bTIgMTItOCAxOHYzaDE5bC03LTE3LTItNHoiIGZpbGw9IiMwMzAwMDEiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIwLDYyNikiIGQ9Im0wIDBoNmw1IDggMTQgMzAgNCA5LTEgNS0xIDFoLTVsLTUtOXYtM2gtMjhsLTMgOS0yIDNoLTVsLTItMiAxLTcgMTgtMzggMy01em0yIDEyLTkgMjFoMjBsLTktMjF6IiBmaWxsPSIjMDMwMDAxIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwNCw2MjYpIiBkPSJtMCAwaDZsOSAxNyAxMyAyOCAxIDYtMiAyaC01bC0zLTQtMy03LTI3LTEtMiA2LTQgNmgtNWwtMi01IDE2LTM0IDYtMTN6bTIgMTEtOSAyMHYyaDE5bC0zLTktNi0xM3oiIGZpbGw9IiMwMjAwMDAiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE4MSw2MjUpIiBkPSJtMCAwIDEwIDEgMTAgNSAxIDYtNCAyLTExLTVoLThsLTUgMi0xIDJ2Nmw5IDQgMTMgNCA2IDUgMiA1LTEgOC01IDYtNyAzLTUgMS0xMy0xLTEwLTUtMS02IDEtMSA3IDEgOCAzaDlsNS0yIDEtNy01LTMtMTUtNC02LTQtMy0zLTEtOSA0LTggNi00eiIgZmlsbD0iIzA2MDAwMiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MTQsNjI1KSIgZD0ibTAgMCAxMCAxIDkgNCAyIDJ2NWwtNCAyLTctNC00LTFoLThsLTYgMnY3bDMgMyAxNyA1IDYgNCAzIDMgMSA5LTMgNi01IDQtOSAzLTEzLTEtOC0zLTQtNCAxLTUgMy0xIDggNCA0IDFoMTBsNS0zdi02bC01LTMtMTQtNC02LTMtNC01LTEtNiAyLTcgOC03eiIgZmlsbD0iIzA2MDAwMiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzQwLDEzNykiIGQ9Im0wIDAgNSAxIDEgMy0xIDUgOCA3IDEgNi0yIDItNC0xLTUtNi04LTMtNyAxdjdsNSA1IDExIDggMiA0djhsLTQgNi01IDNoLTEwbC0yIDZoLTVsLTEtMSAxLTgtNS0yLTctOCAxLTQgNS0xIDQgNSA3IDQgNyAxIDMtMSAxLTYtNS01LTgtNi01LTYtMS01IDMtOCA1LTQgMTItMnoiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDM1LDYyNSkiIGQ9Im0wIDAgMTIgMiA3IDQgMSA1LTMgMy0xMy01LTkgMS01IDMtMyA3djE1bDQgOCA3IDNoN2w5LTRoNWwxIDUtNCA0LTcgMy0xMSAxLTEwLTMtOC03LTQtMTB2LTE1bDQtMTAgOC03IDUtMnoiIGZpbGw9IiMwNDAwMDEiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgzLDYyNikiIGQ9Im0wIDBoMzFsMiAxdjZsLTIgMWgtMjR2MTRoMjJsMyAyLTEgNS0xIDFoLTIzdjIybC0xIDFoLTZsLTItMnYtNDl6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwODksNjI2KSIgZD0ibTAgMGg2bDIgM3Y0N2wtMiAzaC02bC0yLTJ2LTQ5eiIgZmlsbD0iIzAxMDAwMCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5NjcsNjI2KSIgZD0ibTAgMGg2bDIgM3Y0N2wtMiAzaC02bC0yLTJ2LTQ5eiIgZmlsbD0iIzAxMDAwMCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0NjUsNjI2KSIgZD0ibTAgMGg2bDIgMnY0OWwtMiAyaC02bC0yLTN2LTQ3eiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMjUsNjI2KSIgZD0ibTAgMGg2bDIgMnY0OWwtMiAyaC02bC0yLTR2LTQ1eiIgZmlsbD0iIzE2MDAwNyIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDQ4LDE1OSkiIGQ9Im0wIDAgNCAydjNsNyAxIDIgMnYzaC0xNXY2bDEzIDIgNSA1djZsLTUgNWgtMnY1aC00bC0xLTRoLTdsLTMtMnYtNGwxMSAxIDQtMnYtNGwtMTMtMy00LTR2LTdsNS01aDJ2LTV6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE0MDAsMjM5KSIgZD0ibTAgMCA3IDMgNCAyLTEgM2gtN2wtMyAxdjRsMTEgMSA0IDN2N2wtNCA0LTEgNC0zLTF2LTJoLTZsLTMtMiAxLTNoOGwzLTItMS0zLTExLTEtMy0yLTEtNiA0LTV6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyODcsMzQ3KSIgZD0ibTAgMCAyIDF6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExOTcsMjk1KSIgZD0ibTAgMCIgZmlsbD0iI2ZjMCIvPgo8L3N2Zz4K" alt="MonyU">
+            </div>
+            <div class="header-meta">
+                Antonella Satyro<br>
+                <span class="accent-text">Líderes que Curam T&D</span>
+            </div>
+        </header>
+
+        <h1>Discovery de Inovação</h1>
+        <p>Relatório de Consolidação e Priorização de Oportunidades Tecnológicas.</p>
+
+        <h2>1. Contexto e Universo de Oportunidades</h2>
+        <p>Abaixo, a consolidação inteligente das teses mapeadas, fundindo oportunidades com alto grau de sobreposição entre o portfólio da cliente e as demandas do mercado de T&D.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Oportunidade Estratégica</th>
+                    <th>Origem / Sinergias</th>
+                    <th>Foco Principal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="highlight">Camada de Evidência e Transferência</span></td>
+                    <td>O01 + Transferência 90</td>
+                    <td>Mensuração quantitativa do ROI e impacto da liderança no trabalho B2B.</td>
+                </tr>
+                <tr>
+                    <td><span class="highlight">Companion Interativo</span></td>
+                    <td>O04 (Exclusivo)</td>
+                    <td>Conversão da audiência do doc-reality em esteira de produtos de liderança.</td>
+                </tr>
+                <tr>
+                    <td><span class="highlight">Jornada Adaptativa com IA</span></td>
+                    <td>O02 + Trilha Adaptativa + Copiloto</td>
+                    <td>Copiloto assistivo que estende a mentoria e personaliza conteúdos por líder.</td>
+                </tr>
+                <tr>
+                    <td><span class="highlight">Content Ops Inclusivo</span></td>
+                    <td>O05 + Híbrido Inclusivo</td>
+                    <td>Escala de conteúdos com acessibilidade e esteira automatizada.</td>
+                </tr>
+                <tr>
+                    <td><span class="highlight">Sistema Operacional de Jornadas</span></td>
+                    <td>O06 + EventOps</td>
+                    <td>Orquestração logística de imersões e eventos.</td>
+                </tr>
+                <tr>
+                    <td><span class="highlight">Role-play de Liderança</span></td>
+                    <td>O03 + Simulação</td>
+                    <td>Treinamento seguro de conversas difíceis com supervisão.</td>
+                </tr>
+                <tr>
+                    <td><span class="highlight">Sinais de Cultura & Decisão</span></td>
+                    <td>O07 + Decisão Segura</td>
+                    <td>Analytics organizacional sem vigilância abusiva.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>2. Ranking Estratégico MonyU</h2>
+        <p>As teses foram classificadas pela sua aderência ao <span class="highlight">core da cliente</span> (Mentorias de Liderança), viabilidade, captação de recursos e escalabilidade.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Oportunidade</th>
+                    <th>Core</th>
+                    <th>Funding</th>
+                    <th>Viabilidade</th>
+                    <th>Nota MonyU</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank-top">1º</td>
+                    <td class="highlight">Camada de Evidência e Transferência</td>
+                    <td>Alto</td>
+                    <td>Alto</td>
+                    <td>Alta</td>
+                    <td class="rank-top">8.8</td>
+                </tr>
+                <tr>
+                    <td class="rank-top">2º</td>
+                    <td class="highlight">Companion Interativo "O Despertar"</td>
+                    <td>Alto</td>
+                    <td>Médio</td>
+                    <td>Média</td>
+                    <td class="rank-top">8.4</td>
+                </tr>
+                <tr>
+                    <td class="rank-top">3º</td>
+                    <td class="highlight">Jornada Adaptativa com IA Responsável</td>
+                    <td>Alto</td>
+                    <td>Alto</td>
+                    <td>Baixa (Risco Técnico)</td>
+                    <td class="rank-top">8.2</td>
+                </tr>
+                <tr>
+                    <td>4º</td>
+                    <td>Content Ops e Experiência Híbrida</td>
+                    <td>Médio</td>
+                    <td>Médio</td>
+                    <td>Alta</td>
+                    <td>7.6</td>
+                </tr>
+                <tr>
+                    <td>5º</td>
+                    <td>Role-play de Liderança</td>
+                    <td>Alto</td>
+                    <td>Médio</td>
+                    <td>Baixa</td>
+                    <td>7.0</td>
+                </tr>
+                <tr>
+                    <td>6º</td>
+                    <td>Sistema Operacional de Jornadas</td>
+                    <td>Baixo</td>
+                    <td>Baixo</td>
+                    <td>Alta</td>
+                    <td>6.8</td>
+                </tr>
+                <tr>
+                    <td>7º</td>
+                    <td>Sinais de Cultura e Grafo de Competências</td>
+                    <td>Médio</td>
+                    <td>Baixo</td>
+                    <td>Baixa</td>
+                    <td>6.2</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3. Plano de Ação TOP 3</h2>
+
+        <div class="card">
+            <h3><span class="badge">TOP 1</span> Camada de Evidência e Transferência (Impact Layer)</h3>
+            <p><strong>Tese Executiva:</strong> Criar um motor analítico que comprova quantitativamente a transferência de competências comportamentais para o fluxo de trabalho, provando que a mentoria de liderança gera mudança real no negócio B2B, sem usar vigilância excessiva.</p>
+            <ul class="card-list">
+                <li><span class="highlight">Proposta de Valor:</span> Transformar o T&D de liderança de "gasto corporativo" em "investimento com ROI auditável", garantindo a retenção e renovação de contratos high-ticket.</li>
+                <li><span class="highlight">Potencial Real e Financeiro:</span> Acessar de forma competitiva o mercado contestável de liderança B2B (estimado entre R$ 10,35 e R$ 12,18 bilhões/ano no BR). Comprovando resultados, a cliente fortalece seu SOM projetado de <strong>R$ 1,26 a R$ 6,00 milhões em 18-24 meses</strong>, justificando vendas de R$ 50k a R$ 200k por programa para empresas.</li>
+                <li><span class="highlight">Aderência ao Core:</span> 100% alinhado. Materializa o ROI do método "Líderes que Curam".</li>
+                <li><span class="highlight">Captação (Funding):</span> Rota estrutural muito favorável em EMBRAPII-Sebrae ou Lei do Bem, por inovar na mensuração de aprendizagem.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3><span class="badge">TOP 2</span> Companion Interativo "O Despertar do Líder"</h3>
+            <p><strong>Tese Executiva:</strong> Desenvolver uma aplicação interativa (web/mobile) atrelada diretamente ao doc-reality, que desafia os espectadores a praticarem liderança no dia a dia, convertendo audiência passiva em leads ativos.</p>
+            <ul class="card-list">
+                <li><span class="highlight">Proposta de Valor:</span> Usar o ativo audiovisual como motor nacional de aquisição com CAC quase zero, criando um funil de vendas altamente qualificado.</li>
+                <li><span class="highlight">Potencial Real e Financeiro:</span> Capturar a atenção no app permite monetizar a audiência B2C e prospectar RHs B2B. A receita derivada pode representar 30-40% do faturamento projetado, tracionando a marca para alcançar a banda superior do SOM (R$ 6,0 milhões).</li>
+                <li><span class="highlight">Aderência ao Core:</span> Exclusivo da Antonella Satyro. Conecta o ativo audiovisual à esteira de produtos de T&D.</li>
+                <li><span class="highlight">Captação (Funding):</span> Possível em Inovacred (Finep), contanto que o software seja orçado de forma segregada.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3><span class="badge">TOP 3</span> Jornada Adaptativa com IA Responsável</h3>
+            <p><strong>Tese Executiva:</strong> Criar um copiloto digital de IA treinado estritamente no método da cliente, que acompanha o líder após as mentorias, personalizando desafios e estendendo a curva de aprendizagem.</p>
+            <ul class="card-list">
+                <li><span class="highlight">Proposta de Valor:</span> Escalar o cérebro e a curadoria da Antonella sem comprometer a agenda, transformando um serviço pontual em um produto digital recorrente.</li>
+                <li><span class="highlight">Potencial Real e Financeiro:</span> Insere o negócio no modelo SaaS. Pode gerar licenciamento de assentos B2B, adicionando R$ 500k a R$ 1,5M incrementais anuais com margens acima de 70%.</li>
+                <li><span class="highlight">Risco Tecnológico:</span> Elevado devido a alucinações de LLM e segurança de IP, o que justifica e viabiliza a captação de <strong>Recursos Não Reembolsáveis</strong> (Subvenção Econômica em editais de IA da Finep ou CNPq).</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            MonyU Intelligence &copy; 2026. Documento Classificado: Estratégia de Inovação.
+        </div>
+    </div>
+</body>
+</html>
