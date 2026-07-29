@@ -1,0 +1,1199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="author" content="Aurora - Discovery de Inovação | Centro de Inteligência de Negócios MonyU">
+  <meta name="description" content="Discovery estratégico de locação elétrica e ecossistema de mobilidade produtiva para motoristas GIG e frotas empresariais">
+  <meta name="theme-color" content="#07111F">
+  <link rel="preload" as="image" href="assets/hero-mobilidade-que-nao-pode-parar.webp" type="image/webp" fetchpriority="high">
+  <title>Mobilidade que não pode parar — MonyU</title>
+  <style>
+    :root {
+      --ink:#07111F; --navy:#0B1E35; --navy-2:#102A48; --magenta:#FF0055;
+      --lime:#C7FF4A; --cyan:#27D8FF; --paper:#F4F7FA; --white:#fff;
+      --muted:#9EB2C6; --line:rgba(255,255,255,.12); --shadow:0 24px 70px rgba(1,8,18,.34);
+      --radius:24px; --max:1240px; --ease:cubic-bezier(.2,.8,.2,1);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{margin:0;background:var(--ink);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.2;background-image:linear-gradient(rgba(39,216,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(39,216,255,.04) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,#000,transparent 80%);z-index:-1}
+    ::selection{background:var(--magenta);color:white}
+    a{color:inherit;text-decoration:none} button{font:inherit} img{max-width:100%;display:block}
+    .skip-link{position:fixed;left:16px;top:-80px;z-index:999;background:var(--lime);color:var(--ink);padding:12px 18px;border-radius:10px;font-weight:800;transition:.2s}
+    .skip-link:focus{top:16px}
+    .progress{position:fixed;top:0;left:0;width:0;height:3px;background:linear-gradient(90deg,var(--magenta),var(--lime),var(--cyan));z-index:1000}
+    .container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
+    .topbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(7,17,31,.83);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08)}
+    .nav{height:76px;display:flex;align-items:center;gap:28px}
+    .brand{display:flex;align-items:center;gap:16px;min-width:max-content}
+    .brand img{width:116px;height:auto}
+    .brand-copy{border-left:1px solid var(--line);padding-left:16px;display:flex;flex-direction:column;font-size:11px;line-height:1.35;color:var(--muted)}
+    .brand-copy strong{color:#fff;font-size:12px}
+    .nav-links{display:flex;align-items:center;gap:6px;margin-left:auto}
+    .nav-links a{padding:10px 12px;border-radius:999px;color:#C7D4E1;font-size:13px;font-weight:700;transition:.25s}
+    .nav-links a:hover,.nav-links a:focus-visible{color:white;background:rgba(255,255,255,.08)}
+    .nav-cta{background:var(--magenta)!important;color:white!important}
+    .menu-btn{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:transparent;color:white;place-items:center}
+    .hero{padding:128px 0 72px;min-height:780px;display:grid;align-items:center;position:relative;overflow:hidden}
+    .hero::after{content:"";position:absolute;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(255,0,85,.18),transparent 66%);right:-240px;top:120px;filter:blur(4px);z-index:-1}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(480px,1.05fr);gap:54px;align-items:center}
+    .status{display:inline-flex;align-items:center;gap:10px;background:rgba(199,255,74,.1);border:1px solid rgba(199,255,74,.25);color:var(--lime);padding:8px 13px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+    .status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 20px var(--lime)}
+    h1{font-size:clamp(44px,6vw,83px);line-height:.96;letter-spacing:-.055em;margin:24px 0 25px;max-width:760px}
+    h1 em{font-style:normal;color:var(--lime)}
+    .hero-copy>p{font-size:clamp(17px,2vw,21px);color:#BDD0E0;max-width:680px}
+    .hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;border-radius:13px;font-weight:850;border:1px solid transparent;transition:.25s var(--ease)}
+    .btn:hover{transform:translateY(-2px)} .btn-primary{background:var(--magenta);color:white;box-shadow:0 16px 35px rgba(255,0,85,.25)} .btn-secondary{border-color:var(--line);background:rgba(255,255,255,.04)}
+    .hero-visual{position:relative;border-radius:30px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.13);transform:perspective(1400px) rotateY(-3deg) rotateX(1deg)}
+    .hero-visual::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1),inset 0 -120px 120px rgba(7,17,31,.3);pointer-events:none}
+    .hero-visual img{width:100%;aspect-ratio:16/9;object-fit:cover}
+    .floating-note{position:absolute;right:24px;bottom:24px;z-index:2;background:rgba(7,17,31,.86);backdrop-filter:blur(14px);padding:13px 16px;border-radius:14px;border:1px solid var(--line);font-size:13px}
+    .floating-note strong{display:block;color:var(--lime)}
+    .metric-strip{display:grid;grid-template-columns:repeat(4,1fr);margin-top:54px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:rgba(255,255,255,.035)}
+    .metric{padding:22px;border-right:1px solid var(--line)} .metric:last-child{border:0}
+    .metric strong{font-size:28px;letter-spacing:-.04em;display:block;color:var(--cyan)} .metric span{font-size:12px;color:var(--muted);display:block}
+    section{padding:104px 0;position:relative}
+    .section-light{background:var(--paper);color:var(--ink)}
+    .section-heading{max-width:800px;margin-bottom:48px} .kicker,.eyebrow{color:var(--magenta);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.13em}
+    .section-heading h2{font-size:clamp(34px,4.8vw,62px);line-height:1.02;letter-spacing:-.045em;margin:12px 0 16px}
+    .section-heading p{font-size:18px;color:var(--muted);max-width:720px} .section-light .section-heading p{color:#526478}
+    .decision-panel{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .decision-main{padding:38px;border-radius:var(--radius);background:linear-gradient(145deg,var(--navy-2),var(--navy));border:1px solid var(--line);position:relative;overflow:hidden}
+    .decision-main::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:var(--magenta);filter:blur(110px);right:-20px;top:-20px;opacity:.65}
+    .decision-main h3{font-size:31px;line-height:1.1;margin:13px 0} .decision-main p{color:#B9C9D7;font-size:18px}
+    .why-grid{display:grid;gap:12px}
+    .why-item{display:flex;gap:13px;padding:18px;border-radius:17px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:#D7E2EB}
+    .why-item svg{color:var(--lime);flex:0 0 auto}
+    .evidence-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .evidence-card{min-height:220px;padding:25px;border-radius:19px;background:white;border:1px solid #DCE5ED;box-shadow:0 12px 35px rgba(7,17,31,.07);position:relative}
+    .evidence-index{font-size:12px;font-weight:900;color:var(--magenta)} .evidence-card h3{font-size:20px;line-height:1.15;margin:27px 0 10px} .evidence-card p{color:#56687A;margin:0}
+    .boundary{margin-top:20px;border-left:4px solid var(--magenta);background:#fff;padding:20px 24px;border-radius:0 14px 14px 0;color:#34495D}
+    .filter-bar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:25px}
+    .filter-btn{padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:transparent;color:#C8D5E0;font-weight:800;cursor:pointer}
+    .filter-btn.active{background:var(--magenta);border-color:var(--magenta);color:white}
+    .findings-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .finding-card{padding:27px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.02));transition:.3s}
+    .finding-card.is-hidden{display:none} .finding-top{display:flex;align-items:center;justify-content:space-between}
+    .finding-number{font-size:25px;font-weight:950;color:rgba(255,255,255,.28)} .finding-card h3{font-size:21px;line-height:1.2}
+    .finding-card>p{color:#AEC0D0} .pill{display:inline-flex;align-items:center;padding:5px 9px;border-radius:999px;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.07em;background:rgba(255,255,255,.08)}
+    .pill.direto{color:var(--lime);background:rgba(199,255,74,.12)} .pill.indireto,.pill.cyan{color:var(--cyan);background:rgba(39,216,255,.11)} .pill.lime{color:#415800;background:rgba(199,255,74,.75);margin:3px}
+    .impact-box{padding:14px;background:rgba(39,216,255,.07);border-radius:12px;border-left:2px solid var(--cyan);display:flex;flex-direction:column;gap:4px}
+    .impact-box strong{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)} .impact-box span{font-size:14px}
+    .ecosystem-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:42px;align-items:center}
+    .ecosystem-map{min-height:560px;position:relative;border:1px solid var(--line);border-radius:28px;background:radial-gradient(circle at 50% 50%,rgba(39,216,255,.13),transparent 45%),rgba(255,255,255,.02);overflow:hidden}
+    .ecosystem-map::before,.ecosystem-map::after{content:"";position:absolute;border:1px dashed rgba(39,216,255,.25);border-radius:50%;inset:90px} .ecosystem-map::after{inset:180px;border-color:rgba(199,255,74,.35)}
+    .ecosystem-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:150px;height:150px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--magenta);box-shadow:0 0 70px rgba(255,0,85,.35);padding:20px;font-size:18px;font-weight:950;line-height:1.05}
+    .ecosystem-node{position:absolute;z-index:2;width:165px;padding:14px;border-radius:15px;background:rgba(11,30,53,.94);border:1px solid var(--line);box-shadow:var(--shadow);display:grid;grid-template-columns:auto 1fr;gap:2px 9px;align-items:center}
+    .ecosystem-node svg{color:var(--cyan);grid-row:1/3} .ecosystem-node strong{font-size:13px} .ecosystem-node span{font-size:10px;color:var(--muted)}
+    .n1{left:5%;top:12%}.n2{right:5%;top:12%}.n3{right:3%;top:44%}.n4{right:7%;bottom:9%}.n5{left:7%;bottom:9%}.n6{left:3%;top:44%}
+    .check-list{list-style:none;padding:0;margin:0;display:grid;gap:11px} .check-list li{display:flex;gap:10px;align-items:flex-start} .check-list svg{color:var(--lime);flex:0 0 auto;margin-top:2px}
+    .section-light .check-list svg{color:var(--magenta)}
+    .market-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .market-card{padding:30px;border:1px solid #DDE5EC;border-radius:22px;background:#fff;box-shadow:0 15px 40px rgba(7,17,31,.07);min-width:0}
+    .market-card h3{margin-top:0;font-size:24px} .big-number{font-size:clamp(54px,8vw,88px);font-weight:950;letter-spacing:-.06em;color:var(--magenta);line-height:1}
+    .slider-wrap{margin:32px 0} input[type=range]{width:100%;accent-color:var(--magenta)} .slider-labels{display:flex;justify-content:space-between;color:#647488;font-size:12px}
+    .sim-output{padding:20px;border-radius:16px;background:var(--ink);color:white;display:flex;justify-content:space-between;align-items:end;gap:14px} .sim-output strong{font-size:37px;color:var(--lime);line-height:1}
+    .formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#EAF0F5;color:#263B4E;padding:16px;border-radius:13px;font-size:13px;overflow:auto}
+    .archetype-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .mini-card{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.035)} .mini-card h3{margin:8px 0 16px;font-size:19px} .mini-card p{font-size:13px;color:#AEC0D0}
+    .whitespace{margin:28px 0;padding:28px;border-radius:20px;background:linear-gradient(90deg,rgba(255,0,85,.16),rgba(39,216,255,.09));border:1px solid rgba(255,0,85,.25);font-size:20px}
+    .contradiction-grid{display:grid;gap:10px} .contradiction-row{display:grid;grid-template-columns:1fr 1fr 1.3fr;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+    .contradiction-row>div{padding:17px;background:rgba(255,255,255,.025);display:flex;flex-direction:column;gap:5px} .contradiction-row>div+div{border-left:1px solid var(--line)} .contradiction-row span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em} .contradiction-row strong{font-size:13px} .contradiction-row .conflict{background:rgba(255,0,85,.06)} .contradiction-row .decision{background:rgba(199,255,74,.06)}
+    .details-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+    details{border-radius:15px} summary{cursor:pointer;list-style:none} summary::-webkit-details-marker{display:none}
+    .detail-card{border:1px solid #DDE5EC;background:#fff;overflow:hidden} .detail-card summary{padding:18px 20px;font-weight:850;display:flex;gap:13px;align-items:center} .detail-card summary::after{content:"+";margin-left:auto;color:var(--magenta);font-size:22px} .detail-card[open] summary::after{content:"−"} .detail-card summary span{font-size:10px;text-transform:uppercase;color:var(--magenta);letter-spacing:.08em}
+    .detail-body{padding:0 20px 20px;color:#526478} .callout-small{background:#EFF4F8;padding:13px;border-radius:10px}
+    .alerts-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:25px} .alert-card{display:flex;gap:13px;padding:22px;border:1px solid #F0D8E1;border-radius:17px;background:#FFF8FB} .alert-dot{width:10px;height:10px;border-radius:50%;background:var(--magenta);margin-top:7px;box-shadow:0 0 0 6px rgba(255,0,85,.1);flex:0 0 auto} .alert-card h3{margin:0 0 8px} .alert-card p{color:#5B6B7D} .alert-card strong{font-size:13px}
+    .horizon-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px} .horizon-tab{text-align:left;padding:18px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.03);color:white;cursor:pointer} .horizon-tab span{display:block;color:var(--cyan);font-size:11px;font-weight:850} .horizon-tab strong{display:block;margin-top:5px} .horizon-tab.active{border-color:var(--lime);background:rgba(199,255,74,.09)}
+    .horizon-panel{margin-top:12px;padding:28px;border-radius:20px;background:var(--navy);border:1px solid var(--line);display:grid;grid-template-columns:.35fr .65fr;align-items:center;gap:20px} .horizon-panel b{font-size:44px;color:var(--lime)} .horizon-panel h3{font-size:26px;margin:0} .horizon-panel p{color:#B4C5D4}
+    .trend-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:28px} .trend-card{padding:20px;border:1px solid var(--line);border-radius:17px;background:rgba(255,255,255,.03)} .trend-card>span{color:rgba(255,255,255,.25);font-weight:900} .trend-card h3{font-size:17px} .trend-card p{color:#AFC0CF;font-size:14px}
+    .scenario-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:stretch} .scenario-map{min-height:520px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;position:relative} .scenario-map::before,.scenario-map::after{position:absolute;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.1em} .scenario-map::before{content:"Interoperabilidade de dados →";bottom:-25px;left:50%;transform:translateX(-50%)} .scenario-map::after{content:"Previsibilidade regulatória →";left:-74px;top:50%;transform:rotate(-90deg) translateY(-50%)}
+    .scenario-card{border:1px solid var(--line);border-radius:18px;padding:22px;text-align:left;color:white;background:rgba(255,255,255,.03);cursor:pointer;transition:.25s} .scenario-card:hover,.scenario-card.active{border-color:var(--cyan);background:rgba(39,216,255,.1);transform:translateY(-2px)} .scenario-card span{font-size:11px;color:var(--muted)} .scenario-card strong{display:block;font-size:20px;margin-top:8px}
+    .scenario-readout{display:flex;flex-direction:column;justify-content:center;padding:32px;border-radius:22px;background:linear-gradient(145deg,var(--navy-2),var(--navy));border:1px solid var(--line)} .scenario-readout h3{font-size:30px;margin:9px 0} .scenario-readout p{color:#B8C8D6}
+    .patent-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px} .patent-score{padding:35px;border-radius:23px;background:var(--ink);color:white} .patent-score strong{font-size:82px;line-height:.9;color:var(--cyan)} .patent-score p{color:#B6C7D6} .white-space-list{display:grid;grid-template-columns:1fr 1fr;gap:10px} .white-space-list div{padding:16px;border-radius:14px;background:white;border:1px solid #DEE7EE;font-weight:750}
+    .fund-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px} .fund-card{padding:20px;border:1px solid var(--line);border-radius:19px;background:rgba(255,255,255,.03);display:grid;grid-template-columns:72px 1fr;gap:17px} .fund-score{width:68px;height:68px;border-radius:50%;display:grid;place-content:center;text-align:center;background:conic-gradient(var(--lime) calc(var(--fit)*1%),rgba(255,255,255,.08) 0);position:relative;color:var(--ink)} .fund-score::before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--ink)} .fund-score span,.fund-score small{position:relative;z-index:1;color:white} .fund-score span{font-size:22px;font-weight:950;line-height:1} .fund-score small{font-size:9px} .fund-meta{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--muted);font-size:11px} .fund-card h3{font-size:17px;line-height:1.15} .fund-card p{font-size:13px;color:#BCD0DE} .fund-card>div>small{color:#8299AD}
+    .opportunities{display:grid;gap:11px} .opportunity-card{border:1px solid #DCE5ED;background:white;overflow:hidden} .opportunity-card summary{padding:18px;display:grid;grid-template-columns:50px 1fr auto;gap:15px;align-items:center} .rank-badge{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--ink);color:var(--lime);font-weight:950} .op-title{display:flex;flex-direction:column} .op-title small{color:#647588;margin-top:3px} .score-chip{font-weight:950;color:var(--magenta);font-size:22px} .op-body{border-top:1px solid #E3EAF0;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:15px;color:#4C6073} .op-body p{margin:5px 0} .label{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--magenta);font-weight:900} .op-tags{grid-column:1/-1}
+    .score-board{display:grid;gap:8px} .score-row{width:100%;display:grid;grid-template-columns:34px minmax(220px,1.15fr) 1fr 55px;gap:13px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.025);color:white;text-align:left;cursor:pointer} .score-row:hover,.score-row:focus-visible{background:rgba(255,255,255,.07)} .score-rank{color:#6F8699;font-weight:950} .score-name{font-weight:800} .score-track{height:9px;border-radius:999px;background:rgba(255,255,255,.09);overflow:hidden} .score-track i{display:block;width:var(--w);height:100%;background:linear-gradient(90deg,var(--magenta),var(--lime));border-radius:inherit;transform-origin:left;animation:grow 1.2s var(--ease) both} .score-row>strong{color:var(--lime);text-align:right} .score-readout{margin-top:13px;min-height:56px;padding:16px 18px;border-radius:13px;background:rgba(39,216,255,.07);border-left:2px solid var(--cyan);color:#BFD1DE}
+    .top-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px} .top-card{padding:27px;border:1px solid #DDE6ED;border-radius:21px;background:white;position:relative;overflow:hidden;box-shadow:0 16px 38px rgba(7,17,31,.08)} .top-card::before{content:"";position:absolute;height:4px;left:0;right:0;top:0;background:linear-gradient(90deg,var(--magenta),var(--lime),var(--cyan))} .top-rank{font-size:72px;line-height:.85;font-weight:950;color:#E6EDF2} .top-score{position:absolute;right:23px;top:25px;color:var(--magenta);font-size:25px;font-weight:950} .top-score small{font-size:11px} .top-card h3{font-size:24px;line-height:1.1} .top-card>p,.top-card details p{color:#586A7D} .top-card details{margin-top:18px;border-top:1px solid #E0E7ED;padding-top:15px} .top-card details summary{font-weight:850;color:var(--magenta)}
+    .recommendation-list{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px} .recommendation-list li{display:grid;grid-template-columns:48px 1fr;gap:13px;padding:20px;border-radius:17px;border:1px solid var(--line);background:rgba(255,255,255,.03)} .recommendation-list li>span{font-size:25px;font-weight:950;color:var(--magenta)} .recommendation-list strong{font-size:17px} .recommendation-list p{margin:5px 0;color:#AFC1D0}
+    .verdict{padding:43px;border-radius:27px;background:linear-gradient(125deg,var(--magenta),#9D0036 55%,var(--navy));box-shadow:var(--shadow)} .verdict .kicker{color:var(--lime)} .verdict h2{font-size:clamp(38px,6vw,72px);margin:12px 0;letter-spacing:-.05em;line-height:.95} .verdict>p{font-size:20px;max-width:850px} .conditions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:25px} .conditions div{display:flex;gap:9px;padding:12px;border-radius:11px;background:rgba(7,17,31,.22)} .conditions svg{color:var(--lime);flex:0 0 auto}
+    .limit-grid{columns:2;column-gap:20px} .limit-item{break-inside:avoid;margin:0 0 10px;padding:16px 18px;border-radius:14px;border:1px solid #DDE5ED;background:white;color:#536579;display:flex;gap:11px} .limit-item span{color:var(--magenta);font-weight:950}
+    .reference-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px} .reference{position:relative;min-height:112px;padding:17px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);display:flex;flex-direction:column;transition:.25s} .reference:hover{border-color:var(--cyan);transform:translateY(-2px)} .reference span{font-size:10px;color:var(--cyan);text-transform:uppercase;font-weight:850;letter-spacing:.08em} .reference strong{font-size:13px;margin-top:9px;padding-right:24px} .reference svg{position:absolute;right:15px;top:15px;color:#6F879A}
+    .cta-panel{padding:45px;border-radius:28px;background:var(--paper);color:var(--ink);display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center} .cta-panel h2{font-size:clamp(32px,5vw,56px);line-height:1;margin:8px 0} .cta-panel p{color:#57697C;font-size:18px} .cta-actions{display:flex;flex-direction:column;gap:10px;min-width:270px}
+    footer{padding:50px 0;border-top:1px solid var(--line)} .footer-grid{display:grid;grid-template-columns:1fr auto;gap:30px;align-items:end} .footer-logo{width:140px;margin-bottom:18px} .signature{font-size:14px;color:#B8C9D8} .signature strong{display:block;color:white;font-size:16px} .footer-meta{text-align:right;color:#7F95A8;font-size:12px}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s var(--ease),transform .65s var(--ease)} .reveal.visible{opacity:1;transform:none}
+    @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+    @media (max-width:1080px) {
+      .nav-links{position:fixed;inset:76px 14px auto;background:#0A1A2D;border:1px solid var(--line);border-radius:18px;padding:12px;display:none;flex-direction:column;align-items:stretch;box-shadow:var(--shadow)} .nav-links.open{display:flex} .nav-links a{padding:13px 15px} .menu-btn{display:grid}
+      .hero-grid{grid-template-columns:1fr;gap:40px} .hero-visual{transform:none;max-width:900px} .hero{padding-top:116px} .ecosystem-layout,.scenario-layout,.patent-grid{grid-template-columns:1fr} .archetype-grid{grid-template-columns:1fr 1fr} .reference-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:760px) {
+      .container{width:min(calc(100% - 26px),var(--max))} .brand-copy{display:none} .brand img{width:104px} .nav{height:68px} .nav-links{inset:68px 10px auto}
+      .hero{min-height:auto;padding:102px 0 55px} h1{font-size:48px} .hero-grid{gap:30px} .hero-visual{border-radius:18px} .floating-note{position:static;border-radius:0;border:0;border-top:1px solid var(--line)}
+      .metric-strip{grid-template-columns:1fr 1fr;margin-top:30px} .metric:nth-child(2){border-right:0} .metric:nth-child(-n+2){border-bottom:1px solid var(--line)} section{padding:75px 0}
+      .decision-panel,.market-grid,.findings-grid,.details-grid,.alerts-grid,.fund-grid,.top-grid{grid-template-columns:1fr} .evidence-grid{grid-template-columns:1fr} .evidence-card{min-height:auto}
+      .ecosystem-map{min-height:700px} .ecosystem-map::before{inset:120px 45px} .ecosystem-map::after{inset:240px 70px} .ecosystem-core{width:130px;height:130px} .ecosystem-node{width:145px} .n1{left:5%;top:7%}.n2{right:5%;top:7%}.n3{right:2%;top:29%}.n4{right:7%;bottom:7%}.n5{left:7%;bottom:7%}.n6{left:2%;top:29%}
+      .archetype-grid,.trend-grid{grid-template-columns:1fr} .contradiction-row{grid-template-columns:1fr} .contradiction-row>div+div{border-left:0;border-top:1px solid var(--line)} .horizon-tabs{grid-template-columns:1fr} .horizon-panel{grid-template-columns:1fr} .scenario-map{min-height:560px} .scenario-map::after{display:none}
+      .opportunity-card summary{grid-template-columns:46px 1fr} .score-chip{grid-column:2} .op-body{grid-template-columns:1fr} .score-row{grid-template-columns:30px 1fr 48px} .score-track{grid-column:2/4;grid-row:2} .recommendation-list,.conditions{grid-template-columns:1fr}
+      .limit-grid{columns:1} .reference-grid{grid-template-columns:1fr} .cta-panel,.footer-grid{grid-template-columns:1fr} .cta-actions{min-width:0} .footer-meta{text-align:left}
+    }
+    @media (max-width:430px) {
+      h1{font-size:42px} .hero-actions .btn{width:100%} .metric{padding:17px} .metric strong{font-size:23px} .decision-main{padding:26px} .section-heading h2{font-size:36px}
+      .ecosystem-map{min-height:810px} .ecosystem-core{top:49%} .ecosystem-node{width:calc(100% - 34px);left:17px!important;right:auto!important} .n1{top:4%}.n2{top:16%}.n3{top:28%}.n6{top:61%}.n5{top:73%;bottom:auto}.n4{top:85%;bottom:auto}
+      .scenario-map{grid-template-columns:1fr;grid-template-rows:auto;min-height:auto} .scenario-map::before{display:none} .white-space-list{grid-template-columns:1fr} .fund-card{grid-template-columns:1fr} .fund-score{width:62px;height:62px} .verdict{padding:22px} .verdict h2{font-size:30px} .sim-output{flex-direction:column;align-items:flex-start} .market-card{padding:24px}
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important} .reveal{opacity:1;transform:none}
+    }
+    @media print {
+      .topbar,.progress,.hero-actions,.filter-bar,.menu-btn{display:none!important} body{background:white;color:#111} .hero{padding-top:20px} section{break-inside:avoid} .reveal{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <header class="topbar">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="brand" href="#topo" aria-label="MonyU — voltar ao início">
+        <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNTYzIDkzOCIgd2lkdGg9IjE1NjMiIGhlaWdodD0iOTM4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjQsMzExKSIgZD0ibTAgMGgxN2wxMyA0IDExIDcgNyA3IDEwIDEzIDE0IDE4IDEwIDEzIDQtMiAxMS0xNCAxMy0xNiAxMS0xNCA5LTggMTItNiA4LTJoMTdsMTMgNCA5IDUgMTAgOSA2IDkgNCA5IDIgMTB2MTQxbC0zIDEyLTYgMTEtMTAgMTEtMTMgOC05IDMtNyAxLTE3LTEtMTItNC0xMC02LTctNy02LTEyLTItMTAgMTQtMTkgMTMtMTggNC01IDEtMy02IDUtOSAxMS0xNCAxNC0xMyA5LTExIDRoLTEwbC0xMS00LTExLTgtMTMtMTItOS0xMS02LTctMSAxIDEyIDE3IDE0IDE5IDUgNy0yIDEwLTYgMTItOCA4LTE0IDctMTYgM2gtOGwtMTEtMi0xNC03LTExLTEwLTctMTEtNC0xMS0xLTV2LTE0MmwzLTEyIDUtMTAgOS0xMCA4LTYgMTEtNXoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjc0LDMwOCkiIGQ9Im0wIDBoMTlsMTMgNCAxMCA2IDEwIDkgMTAgMTAgOCA3IDM0IDM0IDMtMS0xMy0xOS02LTkgMi05IDYtMTEgMTEtMTEgMTItNyAxMC0zaDIwbDE0IDUgMTAgNyA4IDggNyAxMiAzIDExIDEgMTB2MTI4bC0yIDE2LTUgMTItOCAxMC0xMSA4LTEyIDUtNSAxaC0xOWwtMTMtNC0xMC02LTgtOC04LTctNDUtNDVoLTJsMSA1IDE2IDI1IDEgMi00IDExLTYgOS0xMCAxMC0xNCA3LTggMmgtMTlsLTE1LTUtMTAtNy03LTctNi0xMC00LTExLTEtNnYtMTQzbDMtMTIgNi0xMSA5LTEwIDktNiAxMi01eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0OTEsMzA1KSIgZD0ibTAgMGgyM2wxNCAyIDIwIDYgMjEgMTEgMTQgMTEgMTMgMTMgMTAgMTQgMTAgMjEgNSAxNyAyIDE0djI0bC00IDIwLTYgMTYtOCAxNS0xMSAxNC0xNCAxNC0xMCA3LTE0IDgtMTIgNS0xMyA0LTExIDItMTEgMWgtMTJsLTIxLTMtMTYtNS0xNy04LTEzLTktMTItMTEtOC04LTktMTMtOC0xNS02LTE4LTMtMTd2LTI3bDQtMTkgNi0xNiA5LTE2IDEwLTEzIDEzLTEzIDE0LTEwIDEyLTcgMTktN3oiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE3MSwzMDYpIiBkPSJtMCAwaDhsMTUgMyAxMSA2IDkgOCA3IDExIDQgMTEgMSA2djExbC0zIDEyLTcgMTQtMTYgMjctMTIgMjF2N2wxIDJoN2w0LTQgMTUtMjYgMTctMjkgOS0xMCAxMS03IDExLTQgNS0xaDEzbDEyIDMgMTEgNiA4IDcgNyAxMSA0IDEwIDEgNXYxN2wtMyAxMC03IDE0LTkgMTUtMTQgMjQtMTIgMjAtMTEgMTMtMTEgMTAtMTQgOS0xOCA4LTE2IDQtOCAxaC0yM2wtMTUtMy0xNS01LTE0LTctMTItOS04LTctOS0xMS03LTEwLTgtMTctNS0xOC0xLTd2LTI4bDQtMTggNy0xNyAxNC0yNCAxNy0yOSA5LTE1IDUtNiAxMy05IDEyLTR6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkyMCwzMDcpIiBkPSJtMCAwaDlsMTIgMyAxMiA2IDE2IDE1IDEyIDEzIDUgNCAyMy0yMyA0LTUgMTAtNyAxMy01IDctMWg5bDEzIDMgMTAgNSAxMiAxMSA3IDExIDQgMTN2MTlsLTQgMTMtNiAxMC0xMSAxMi0yNyAyNy03IDgtNCA0LTEgNTUtNCAxMy03IDExLTggOC0xMSA3LTEzIDRoLTE3bC0xMy00LTExLTYtMTAtMTAtNy0xMi0zLTExLTEtNTUtOC04LTctOC0zMS0zMS03LTEwLTUtMTMtMS00di0xOWw1LTE1IDctMTAgNy03IDktNiAxMi00eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzI3LDExMikiIGQ9Im0wIDAgMTQgMSAxNyA2IDEwIDcgMTAgMTAgOCAxNCAzIDkgMSA2djE3bC00IDE0LTYgMTItMTEgMTItMTAgNy0xMiA1LTkgMmgtMjBsLTE5LTctMTEtOC05LTEwLTgtMTYtMi03LTEtOHYtMTFsMy0xMyA4LTE2IDktMTAgOS03IDEwLTUgMTEtM3oiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTQ0OSwxNDYpIiBkPSJtMCAwaDlsMTEgNCA4IDYgNyA4IDQgOSAxIDZ2MTBsLTMgMTEtNiA4LTUgNS01IDQtOCAzLTYgMWgtMTFsLTEzLTUtMTAtOS02LTEwLTItMTB2LThsMi04IDUtMTAgOC04IDEwLTV6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzOTksMjI2KSIgZD0ibTAgMGgxNGw5IDQgOCA2IDUgOSAyIDd2MTBsLTQgMTEtOCA5LTEwIDUtNCAxaC0xMGwtMTAtMy02LTQtOC0xMS0yLTd2LTEzbDQtMTAgNy04IDEwLTV6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDczNCw2MjYpIiBkPSJtMCAwaDI2bDkgNCAzIDV2MTBsLTQgNS0yIDIgNiA1IDIgNi0xIDctMyA1LTkgNGgtMjdsLTItMS0xLTN2LTQ1em03IDh2MTRoMThsNC00di02bC00LTR6bTAgMjJ2MTVoMTlsNC0zdi04bC0zLTMtMi0xeiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5ODksNjI2KSIgZD0ibTAgMGgyM2wxMSA0IDcgOCAzIDh2MTNsLTQgMTAtOCA3LTkgM2gtMjRsLTItM3YtNDd6bTcgOHYzN2gxNWw4LTQgNC03di0xNWwtNS04LTctM3oiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTk5LDYyNikiIGQ9Im0wIDBoMjNsMTEgNCA3IDggMyA4djEzbC00IDEwLTggNy05IDNoLTI0bC0yLTN2LTQ3em03IDh2MzdoMTVsOC00IDQtN3YtMTVsLTUtOC03LTN6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU0Miw2MjYpIiBkPSJtMCAwaDVsNyA4IDEyIDE2IDggMTB2Mmgydi0zNWwxLTFoNmwyIDN2NDdsLTIgM2gtNmwtMTItMTUtMTUtMjAtMSAzMy0yIDJoLTVsLTItMnYtNDl6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM1OCw2MjYpIiBkPSJtMCAwaDZsMTEgMTQgMTAgMTMgNiA4IDEtMzMgMi0yaDVsMiAydjQ5bC0yIDJoLTVsLTctOC0xMy0xNy03LTl2LTJoLTJ2MzVsLTEgMWgtNmwtMi00di00NXoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQ3LDYyNikiIGQ9Im0wIDBoNWw5IDExIDEzIDE3IDUgNyAxLTMyIDItM2g1bDIgMnY1MGwtMSAxaC02bC0xMC0xMi05LTEyLTgtMTEtMSAzMi0yIDNoLTZsLTEtMXYtNTB6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgwNSw2MjUpIiBkPSJtMCAwIDEyIDIgNiA0IDYgNyAyIDZ2MTdsLTQgOS04IDctNCAyLTEyIDEtMTAtMy03LTYtNC04LTEtNXYtMTFsMy0xMCA2LTcgOC00em0tMiA4LTggNC00IDh2MTVsNCA4IDcgNGg4bDYtMyA0LTUgMi03di05bC0zLTktNi01LTMtMXoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjc1LDYyNSkiIGQ9Im0wIDAgMTIgMiA2IDQgNiA3IDIgNnYxN2wtNCA5LTggNy00IDItMTIgMS0xMC0zLTctNi00LTgtMS01di0xMWwzLTEwIDYtNyA4LTR6bS0yIDgtOCA0LTQgOHYxNWw0IDggNyA0aDhsNi0zIDQtNSAyLTd2LTlsLTMtOS02LTUtMy0xeiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjU1LDI0MykiIGQ9Im0wIDAgNSAxIDE0IDgtMyAzLTIyIDExaC0ydjJsNSAyIDggNS0yIDItNTcgMTgtMy0xIDIzLTE1IDEwLTctMTAtNiAzLTMgMjItMTR6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzNDYsMjk1KSIgZD0ibTAgMCAxMiA2IDUgM3YybC0yNiAxMyAxMyA4LTEgMi01NiAxOC00LTEgMzAtMjBoMmwtMy0zLTctNHYtMmwxNi0xMHoiIGZpbGw9IiNmYzAiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODYwLDYyNikiIGQ9Im0wIDBoNmwzIDMgMTcgMzYgNCA5LTIgNWgtNWwtNS04LTEtNC0yNyAxLTUgMTAtMSAxaC01bC0yLTIgMS02IDE4LTM4IDMtNnptMyAxMS05IDIwdjJoMTlsLTItNi03LTE2eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDQ1LDYyNikiIGQ9Im0wIDBoMzJsMiAyLTEgNS0yIDFoLTI0djE0aDIybDMgMXY2bC0yIDFoLTIzdjE1aDI0bDMgMi0xIDUtMSAxaC0zMmwtMi0ydi00OXoiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEyNyw2MjYpIiBkPSJtMCAwaDZsNSA4IDE4IDM4djZsLTcgMS01LTEwdi0ybC0yNyAxLTUgMTAtMSAxaC01bC0yLTIgMS02IDE0LTMwIDctMTR6bTIgMTItOCAxOHYzaDE5bC03LTE3LTItNHoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIwLDYyNikiIGQ9Im0wIDBoNmw1IDggMTQgMzAgNCA5LTEgNS0xIDFoLTVsLTUtOXYtM2gtMjhsLTMgOS0yIDNoLTVsLTItMiAxLTcgMTgtMzggMy01em0yIDEyLTkgMjFoMjBsLTktMjF6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwNCw2MjYpIiBkPSJtMCAwaDZsOSAxNyAxMyAyOCAxIDYtMiAyaC01bC0zLTQtMy03LTI3LTEtMiA2LTQgNmgtNWwtMi01IDE2LTM0IDYtMTN6bTIgMTEtOSAyMHYyaDE5bC0zLTktNi0xM3oiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE4MSw2MjUpIiBkPSJtMCAwIDEwIDEgMTAgNSAxIDYtNCAyLTExLTVoLThsLTUgMi0xIDJ2Nmw5IDQgMTMgNCA2IDUgMiA1LTEgOC01IDYtNyAzLTUgMS0xMy0xLTEwLTUtMS02IDEtMSA3IDEgOCAzaDlsNS0yIDEtNy01LTMtMTUtNC02LTQtMy0zLTEtOSA0LTggNi00eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MTQsNjI1KSIgZD0ibTAgMCAxMCAxIDkgNCAyIDJ2NWwtNCAyLTctNC00LTFoLThsLTYgMnY3bDMgMyAxNyA1IDYgNCAzIDMgMSA5LTMgNi01IDQtOSAzLTEzLTEtOC0zLTQtNCAxLTUgMy0xIDggNCA0IDFoMTBsNS0zdi02bC01LTMtMTQtNC02LTMtNC01LTEtNiAyLTcgOC03eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzQwLDEzNykiIGQ9Im0wIDAgNSAxIDEgMy0xIDUgOCA3IDEgNi0yIDItNC0xLTUtNi04LTMtNyAxdjdsNSA1IDExIDggMiA0djhsLTQgNi01IDNoLTEwbC0yIDZoLTVsLTEtMSAxLTgtNS0yLTctOCAxLTQgNS0xIDQgNSA3IDQgNyAxIDMtMSAxLTYtNS01LTgtNi01LTYtMS01IDMtOCA1LTQgMTItMnoiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDM1LDYyNSkiIGQ9Im0wIDAgMTIgMiA3IDQgMSA1LTMgMy0xMy01LTkgMS01IDMtMyA3djE1bDQgOCA3IDNoN2w5LTRoNWwxIDUtNCA0LTcgMy0xMSAxLTEwLTMtOC03LTQtMTB2LTE1bDQtMTAgOC03IDUtMnoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgzLDYyNikiIGQ9Im0wIDBoMzFsMiAxdjZsLTIgMWgtMjR2MTRoMjJsMyAyLTEgNS0xIDFoLTIzdjIybC0xIDFoLTZsLTItMnYtNDl6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwODksNjI2KSIgZD0ibTAgMGg2bDIgM3Y0N2wtMiAzaC02bC0yLTJ2LTQ5eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5NjcsNjI2KSIgZD0ibTAgMGg2bDIgM3Y0N2wtMiAzaC02bC0yLTJ2LTQ5eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0NjUsNjI2KSIgZD0ibTAgMGg2bDIgMnY0OWwtMiAyaC02bC0yLTN2LTQ3eiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMjUsNjI2KSIgZD0ibTAgMGg2bDIgMnY0OWwtMiAyaC02bC0yLTR2LTQ1eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDQ4LDE1OSkiIGQ9Im0wIDAgNCAydjNsNyAxIDIgMnYzaC0xNXY2bDEzIDIgNSA1djZsLTUgNWgtMnY1aC00bC0xLTRoLTdsLTMtMnYtNGwxMSAxIDQtMnYtNGwtMTMtMy00LTR2LTdsNS01aDJ2LTV6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE0MDAsMjM5KSIgZD0ibTAgMCA3IDMgNCAyLTEgM2gtN2wtMyAxdjRsMTEgMSA0IDN2N2wtNCA0LTEgNC0zLTF2LTJoLTZsLTMtMiAxLTNoOGwzLTItMS0zLTExLTEtMy0yLTEtNiA0LTV6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyODcsMzQ3KSIgZD0ibTAgMCAyIDF6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExOTcsMjk1KSIgZD0ibTAgMCIgZmlsbD0iI2ZjMCIvPgo8L3N2Zz4K" alt="MonyU">
+        <span class="brand-copy"><strong>Aurora - Discovery de Inovação</strong>Centro de Inteligência de Negócios MonyU</span>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks" aria-label="Abrir menu"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <div class="nav-links" id="navLinks">
+        <a href="#sumario-executivo">Tese</a><a href="#evidencias">Evidências</a><a href="#tam-sam-som">Mercado</a>
+        <a href="#tfa">Futuro</a><a href="#score">Score</a><a href="#top-3">Top 3</a>
+        <a class="nav-cta" href="Discovery_Mobilidade_Eletrica_GIG_MonyU_V33.pdf" download>PDF</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="topo">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <span class="status">GO CONDICIONADO • TESE ELÉTRICA</span>
+            <h1>Do aluguel ao <em>ecossistema</em> de continuidade produtiva.</h1>
+            <p>A oportunidade está em operar um ecossistema de continuidade produtiva: veículo elétrico, energia, manutenção, assistência, carro reserva, inteligência de renda líquida e uma base de apoio que transforme tempo de recarga em tempo útil.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="Discovery_Mobilidade_Eletrica_GIG_MonyU_V33.pdf" download><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg> Baixar relatório completo em PDF</a>
+              <a class="btn btn-secondary" href="#sumario-executivo">Explorar o Discovery <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </div>
+          <figure class="hero-visual reveal">
+            <img src="assets/hero-mobilidade-que-nao-pode-parar.webp" width="1672" height="941" decoding="async" fetchpriority="high" alt="Mobilidade elétrica conectada em São Paulo, em composição visual da MonyU">
+            <figcaption class="floating-note"><strong>São Paulo → Brasil</strong>Piloto por cluster, escala por evidência.</figcaption>
+          </figure>
+        </div>
+        <div class="metric-strip reveal">
+          <div class="metric"><strong>878 mil</strong><span>pessoas no Brasil usando apps de transporte particular no trabalho principal</span></div><div class="metric"><strong>R$ 61,7 bi</strong><span>receita do setor brasileiro de locação</span></div><div class="metric"><strong>1,72 mi</strong><span>automóveis e comerciais leves na frota do setor</span></div><div class="metric"><strong>54%</strong><span>da frota setorial em gestão, terceirização e assinatura</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sumario-executivo">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">01 • Sumário executivo</span><h2>O motorista só deveria dirigir. A operação precisa cuidar de todo o resto.</h2><p>A decisão estratégica em uma frase: vender disponibilidade, energia e clareza — não apenas um carro.</p></header>
+        <div class="decision-panel">
+          <article class="decision-main reveal">
+            <span class="eyebrow">Decisão recomendada</span><h3>Começar em São Paulo com piloto elétrico de baixa imobilização, recarga predominantemente parceira e um micro-hub. Validar Uptime Prime, VoltShift EcoHub e Linha Clara antes de galpão amplo ou frota em escala.</h3>
+            <p>mobilidade elétrica como contexto-base, condicionada a TCO e recarga por cluster</p>
+          </article>
+          <div class="why-grid"><div class="why-item reveal"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Integra energia, carro e renda líquida em uma experiência única.</span></div><div class="why-item reveal"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Converte recarga, descanso e manutenção em um mesmo ciclo operacional.</span></div><div class="why-item reveal"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Cria uma promessa de uptime mais valiosa que desconto semanal.</span></div><div class="why-item reveal"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Gera dados de bateria, turno e risco que podem se tornar produto B2B.</span></div><div class="why-item reveal"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Faz sustentabilidade ser mensurável, não apenas discurso de propulsão.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light" id="metodologia">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">02 • Metodologia</span><h2>Profundidade com fronteiras claras</h2><p>Análise de demanda, oferta, regulação, energia, tecnologia, patentes, ciência e funding, acrescida de leitura crítica e anonimizada de um documento, uma peça visual e anotações confidenciais de um projeto do setor.</p></header>
+        <div class="metric-strip" style="background:#fff;border-color:#dce5ed">
+          <div class="metric reveal" style="border-color:#dce5ed"><strong>103</strong><span>fontes verificadas</span></div><div class="metric reveal" style="border-color:#dce5ed"><strong>10</strong><span>famílias de patentes</span></div><div class="metric reveal" style="border-color:#dce5ed"><strong>10</strong><span>artigos acadêmicos</span></div><div class="metric reveal" style="border-color:#dce5ed"><strong>8</strong><span>oportunidades de inovação</span></div>
+        </div>
+        <div class="market-grid" style="margin-top:22px">
+          <div class="market-card reveal"><h3>Regras de qualidade</h3><ul class="check-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>fontes oficiais para números e regras críticas</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>dupla checagem de alegações de alto impacto</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>preço tratado como fotografia dinâmica</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>lacunas regionais preservadas, sem falsa precisão</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>análise de patentes não apresentada como liberdade de operação</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>material confidencial tratado como hipótese, nunca como evidência independente</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>modelo, versão, adesivação, seguro e garantia revalidados para uso comercial</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>TCO elétrico calculado por turno e cluster, não por média nacional</span></li></ul></div>
+          <div class="market-card reveal"><h3>Fronteira da evidência</h3><p>O modelo do cliente é contexto estratégico, não validação. Preço, retenção, ociosidade, SLA, hub, dupla operação e receitas adjacentes continuam hipóteses até medição em São Paulo.</p><div class="formula">fato verificado ≠ inferência ≠ hipótese a testar</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light" id="evidencias" style="padding-top:0">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">03 • Evidências</span><h2>O que o mercado já permite afirmar</h2><p>Dez sinais que mudam a formulação da oportunidade e evitam atalhos perigosos.</p></header>
+        <div class="evidence-grid">
+        <article class="evidence-card reveal">
+          <span class="evidence-index">01</span>
+          <h3>Demanda relevante, mas não igual a clientes</h3>
+          <p>O universo oficial de 878 mil é referência nacional de trabalho principal; não revela quantos precisam ou desejam alugar.</p>
+        </article>
+        <article class="evidence-card reveal">
+          <span class="evidence-index">02</span>
+          <h3>Pressão de renda e jornada</h3>
+          <p>Trabalhadores plataformizados tinham rendimento mensal médio de R$ 2.766 e jornada média de 45,9 horas semanais; custo fixo opaco amplia o risco.</p>
+        </article>
+        <article class="evidence-card reveal">
+          <span class="evidence-index">03</span>
+          <h3>Oferta já madura</h3>
+          <p>Especialistas e grandes locadoras já oferecem veículos, integrações, faixas de quilometragem e opções de permanência.</p>
+        </article>
+        <article class="evidence-card reveal">
+          <span class="evidence-index">04</span>
+          <h3>Frotas são mercado próprio</h3>
+          <p>A escala da gestão e terceirização comprova a adjacência B2B, mas exige operação, contrato e resultado separados.</p>
+        </article>
+        <article class="evidence-card reveal">
+          <span class="evidence-index">05</span>
+          <h3>IoT cria possibilidade, não vantagem automática</h3>
+          <p>Conectividade e telemática permitem prevenção e explicação; a vantagem nasce da qualidade da decisão e da governança.</p>
+        </article>
+        <article class="evidence-card reveal">
+          <span class="evidence-index">06</span>
+          <h3>Elétrico depende do turno</h3>
+          <p>Energia por quilômetro pode ser menor, mas recarga, fila, downtime, bateria e residual definem o TCO real.</p>
+        </article>
+        <article class="evidence-card reveal">
+          <span class="evidence-index">07</span>
+          <h3>São Paulo já possui categorias eletrificadas</h3>
+          <p>A Uber lançou a categoria elétrica na capital e a 99 mantém categoria eletrificada com variantes do BYD Dolphin em sua lista pública.</p>
+        </article>
+        <article class="evidence-card reveal">
+          <span class="evidence-index">08</span>
+          <h3>Envelopamento integral colide com a Uber</h3>
+          <p>A página oficial de requisitos para São Paulo informa que carros adesivados não são aceitos. A identidade da frota precisa de outro desenho.</p>
+        </article>
+        <article class="evidence-card reveal">
+          <span class="evidence-index">09</span>
+          <h3>Garantia comercial não é igual à garantia comum</h3>
+          <p>O manual oficial diferencia uso comercial e reduz a cobertura total do veículo, com regras próprias para bateria e componentes.</p>
+        </article>
+        <article class="evidence-card reveal">
+          <span class="evidence-index">10</span>
+          <h3>Recarga define a produtividade</h3>
+          <p>A economia por quilômetro só se converte em renda quando potência, fila, tarifa, deslocamento e janela de carga preservam o turno.</p>
+        </article></div>
+        <div class="boundary reveal"><strong>Limite de interpretação.</strong> O modelo do cliente é contexto estratégico, não validação. Preço, retenção, ociosidade, SLA, hub, dupla operação e receitas adjacentes continuam hipóteses até medição em São Paulo.</div>
+      </div>
+    </section>
+
+    <section id="raiox">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">04 • Raio-X do modelo</span><h2>A locação é a porta. O produto é o ecossistema.</h2><p>Acessar um elétrico elegível, carregado e disponível para trabalhar com renda líquida previsível, sem administrar sozinho manutenção, seguro, pneus, revisão, assistência e recarga.</p></header>
+        <div class="ecosystem-layout">
+          <div>
+            <span class="eyebrow">Dores que a operação precisa absorver</span>
+            <ul class="check-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>aluguel fixo versus receita variável</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>custo e janela de recarga</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>autonomia real por turno</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>carro parado significa renda interrompida</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>cobranças, danos e franquias pouco comparáveis</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>manutenção, pneus e garantia de uso comercial</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>fadiga e falta de base de apoio</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>documentação e elegibilidade por plataforma</span></li></ul>
+            <div class="boundary" style="background:rgba(255,255,255,.04);color:#c2d0dc;margin-top:28px"><strong>Promessa com limite.</strong> A frase &#x27;o motorista só precisa dirigir&#x27; funciona como princípio de experiência; não elimina deveres do condutor nem cria garantia de renda.</div>
+          </div>
+          <div class="ecosystem-map reveal" aria-label="Arquitetura do ecossistema de mobilidade produtiva">
+            <div class="ecosystem-core">motorista<br>em movimento</div><div class="ecosystem-node n1"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4.8 13.2h6.1L10 22l8.2-11.2h-6.1L13 2Z"/></svg><strong>Energia</strong><span>recarga, bateria e janela do turno</span></div><div class="ecosystem-node n2"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 20 6v5c0 5.2-3.3 8.4-8 10-4.7-1.6-8-4.8-8-10V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg><strong>Uptime</strong><span>manutenção, assistência e reserva</span></div><div class="ecosystem-node n3"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><strong>Renda</strong><span>custos, rotas e decisões explicáveis</span></div><div class="ecosystem-node n4"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M5 20V9l7-5 7 5v11"/><path d="M9 20v-6h6v6M8 10h8"/></svg><strong>Base</strong><span>descanso, higiene e suporte</span></div><div class="ecosystem-node n5"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18h2.5a2.5 2.5 0 0 0 0-5H9.8a2.5 2.5 0 0 1 0-5H16"/></svg><strong>Dados</strong><span>telemetria, risco e governança</span></div><div class="ecosystem-node n6"><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4C12 4 6 8.4 6 14c0 3.3 2.7 6 6 6 5.6 0 8-7 8-16Z"/><path d="M4 22c1.5-6 5.5-10 12-13"/></svg><strong>Impacto</strong><span>energia, água, pneus e circularidade</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achados-contexto">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">05 • Leitura crítica anonimizada</span><h2>O contexto mudou a tese — e também expôs seus riscos</h2><p>Achados derivados do modelo analisado, sempre tratados como hipóteses de mercado e sem identificação do negócio de origem.</p></header>
+        <div class="filter-bar" role="group" aria-label="Filtrar achados por impacto">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">Todos</button>
+          <button class="filter-btn" data-filter="direto" aria-pressed="false">Impacto direto</button>
+          <button class="filter-btn" data-filter="indireto" aria-pressed="false">Impacto indireto</button>
+        </div>
+        <div class="findings-grid">
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">01</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>A tese de ecossistema é mais defensável que a de locação isolada.</h3>
+          <p>Seguro, manutenção, recarga, suporte, carro reserva, ganhos e benefícios formam uma proposta coerente de continuidade produtiva. A locação vira porta de entrada, não a totalidade do valor.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>O Discovery deve avaliar uma plataforma de mobilidade produtiva elétrica, não somente diária ou semanalidade de aluguel.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">02</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>O hub físico pode ser vantagem operacional, mas também o maior vetor de capital imobilizado.</h3>
+          <p>Carregadores, lavagem, descanso, alimentação, inspeção, pneus e manutenção comprimem downtime quando sincronizados. Sem densidade de frota e localização correta, transformam-se em aluguel, energia e equipe ociosos.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Comparar hub próprio, micro-hubs e rede de parceiros; o piloto não deve presumir galpão completo.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">03</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>A recarga é parte do produto e da economia unitária, não infraestrutura acessória.</h3>
+          <p>Potência instalada, demanda contratada, tarifa, simultaneidade, fila, janela de carga e indisponibilidade determinam quantas horas produtivas restam ao motorista.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>VoltShift passa de oportunidade futura a capacidade central, com TCO por turno, agenda de carga e health score da bateria.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">04</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>A promessa de carro reserva é poderosa e operacionalmente cara.</h3>
+          <p>SLA curto cria confiança, mas exige contingência, logística, localização, seguro, chave, limpeza e capacidade de atendimento. Compensação automática só é sustentável com causa, território e teto bem definidos.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Uptime Prime permanece a oportunidade líder; SLA deve ser testado por zonas e níveis de serviço, não prometido nacionalmente no lançamento.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">05</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>O envelopamento integral imaginado é incompatível com a regra pública atual da Uber para São Paulo.</h3>
+          <p>A página oficial de requisitos informa que carros adesivados não são aceitos. A 99 aceita variantes do BYD Dolphin em sua categoria eletrificada, mas a elegibilidade e a política de publicidade devem ser confirmadas por plataforma.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Retirar plotagem integral da frota-base. A identidade deve migrar para aplicativo, hub, kit interno removível e pontos de contato compatíveis.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">06</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>O BYD Dolphin é plausível para parte do ecossistema, mas não deve ser tratado como escolha definitiva sem RFP e teste comparativo.</h3>
+          <p>O modelo aparece na lista pública da categoria eletrificada da 99, mas categoria, versão, plataforma, autonomia real, recarga, seguro, garantia comercial e residual precisam ser validados.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>O piloto deve comparar versões e veículos equivalentes; padronização monomodelo só após dados de turno, oficina, bateria e revenda.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">07</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>A garantia para uso comercial muda materialmente o risco de frota.</h3>
+          <p>O manual oficial da montadora diferencia uso comercial: a garantia total do veículo elétrico é menor que a de uso não comercial, enquanto bateria e componentes possuem regras próprias.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Incluir matriz de garantia por componente, provisão pós-garantia e negociação formal para uso intensivo na compra da frota.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">08</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>A dupla operação por turnos é uma hipótese de alto potencial e alto risco.</h3>
+          <p>Mais utilização pode elevar receita por ativo, porém comprime a janela de recarga, acelera quilometragem e desgaste, aumenta trocas de turno, limpeza, atribuição de danos, risco securitário e fadiga operacional.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Tratar como experimento separado com shadow scheduling antes de compartilhamento real; medir margem incremental após energia, limpeza, dano e depreciação.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">09</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>A inteligência de rotas e horários é valiosa, mas não pode prometer ganhos.</h3>
+          <p>Recomendações dependem de dados de plataforma, sazonalidade, eventos, segurança, custo de reposicionamento e competição. Direcionar muitos motoristas ao mesmo ponto pode destruir a própria vantagem.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Linha Clara deve trabalhar com probabilidades, intervalos, custo líquido e explicação; vedar linguagem de renda garantida.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">10</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>Benefícios de saúde e proteção ampliam retenção, mas não são o núcleo inicial.</h3>
+          <p>Plano odontológico, assistência funerária, alimentação e recompensas podem aumentar percepção de cuidado; exigem parceiros autorizados, consentimento, custo de uso e desenho que não esconda venda casada.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Estruturar carteira modular e opt-in após validar valor básico de carro, energia, uptime e transparência.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="indireto">
+          <div class="finding-top">
+            <span class="finding-number">11</span>
+            <span class="pill indireto">Impacto indireto</span>
+          </div>
+          <h3>Serviços financeiros são adjacência regulada, não receita fácil.</h3>
+          <p>Conta, antecipação, crédito, score e financiamento demandam parceiro regulado, governança, prevenção de sobre-endividamento, explicação e análise consumerista.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Passaporte financeiro e transição para propriedade ficam em camada posterior, por parceria, sem custódia financeira própria no piloto.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="indireto">
+          <div class="finding-top">
+            <span class="finding-number">12</span>
+            <span class="pill indireto">Impacto indireto</span>
+          </div>
+          <h3>A base de descanso pode converter tempo de recarga em experiência de valor.</h3>
+          <p>O tempo parado deixa de ser perda pura quando coincide com descanso, alimentação, higiene, atendimento e manutenção. A experiência precisa respeitar segurança, saúde e preferência do motorista.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Mensurar valor de dwell time: tempo de carga aproveitado, satisfação, fadiga percebida e retenção.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="indireto">
+          <div class="finding-top">
+            <span class="finding-number">13</span>
+            <span class="pill indireto">Impacto indireto</span>
+          </div>
+          <h3>Lavagem inteligente precisa ser lida como operação ambiental.</h3>
+          <p>Uso de água, efluentes, produtos, drenagem e separação de resíduos adicionam licenças, equipamentos e manutenção. Sustentabilidade não pode se limitar à propulsão elétrica.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Avaliar lavagem a seco, reúso e parceiros certificados; incluir água, resíduos e rastreabilidade no score ambiental.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">14</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>O modelo estreita o mercado atendível inicial.</h3>
+          <p>Nem todo motorista do universo nacional possui jornada, quilometragem, rota, categoria, disciplina de recarga ou renda compatíveis com um elétrico.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>O SAM deve filtrar intensidade de uso, categoria elegível, acesso a recarga, perfil de turno e aceitação da rotina energética.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="indireto">
+          <div class="finding-top">
+            <span class="finding-number">15</span>
+            <span class="pill indireto">Impacto indireto</span>
+          </div>
+          <h3>A sustentabilidade precisa ser medida por ciclo de vida e operação.</h3>
+          <p>Emissão zero no escapamento não basta. Energia, utilização, bateria, pneus, água, manutenção e residual definem o impacto real.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Adicionar CO2e por km, origem da energia, consumo de água, vida da bateria e circularidade como métricas auditáveis.</span></div>
+        </article>
+        <article class="finding-card reveal" data-impact="direto">
+          <div class="finding-top">
+            <span class="finding-number">16</span>
+            <span class="pill direto">Impacto direto</span>
+          </div>
+          <h3>A expansão deve seguir densidade energética e operacional, não apenas demanda de corridas.</h3>
+          <p>Uma cidade atraente para aplicativos pode ser ruim para EV se não houver recarga, potência, oficina, seguro, rota e residual adequados.</p>
+          <div class="impact-box"><strong>Impacto no Discovery</strong><span>Criar score de cluster combinando demanda, tarifa, rede de carga, manutenção, regulação, categoria premium e parceiro local.</span></div>
+        </article></div>
+      </div>
+    </section>
+
+    <section class="section-light" id="tam-sam-som">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">06 • TAM, SAM e SOM</span><h2>O universo é grande. O mercado elétrico inicial é seletivo.</h2><p>O envelope testa sensibilidade; não mede penetração da locação e não deve ser usado como previsão de vendas.</p></header>
+        <div class="market-grid">
+          <article class="market-card reveal">
+            <span class="eyebrow">Referência nacional</span><div class="big-number">878 mil</div>
+            <p>trabalho principal em apps de transporte particular, excluindo táxi, 3º trimestre de 2024.</p>
+            <div class="slider-wrap">
+              <label for="marketRange"><strong>Envelope hipotético: <span id="rangePct">10%</span></strong></label>
+              <input id="marketRange" type="range" min="5" max="15" step="1" value="10">
+              <div class="slider-labels"><span>5% prudente</span><span>10% referência</span><span>15% expansivo</span></div>
+            </div>
+            <div class="sim-output"><span>Sensibilidade nacional<br><small>não é previsão de vendas</small></span><strong id="rangeValue">87.800</strong></div>
+          </article>
+          <article class="market-card reveal">
+            <span class="eyebrow">São Paulo</span><h3>a dimensionar com dados primários</h3>
+            <p>Não foi encontrado número oficial comparável de motoristas ativos na cidade nem taxa observada de necessidade de locação.</p><div class="formula">motoristas ativos deduplicados × necessidade de locação × elegibilidade elétrica × acesso à recarga × qualificação econômica</div>
+            <h3 style="margin-top:28px">Filtro SAM elétrico</h3><ul class="check-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>categoria e versão aceitas pela plataforma</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>quilometragem e duração do turno</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>acesso viável à recarga</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>tolerância à rotina energética</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>renda e custo líquido compatíveis</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>zona de atendimento e assistência</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>seguro para uso comercial</span></li></ul>
+          </article>
+        </div>
+        <div class="market-grid" style="margin-top:18px">
+          <article class="market-card reveal"><span class="eyebrow">SOM</span><h3>Capacidade paga, não desejo abstrato</h3><div class="formula">mínimo(demanda qualificada capturável; capacidade operacional paga)</div><p>Não publicar SOM numérico antes de medir frota mobilizável, conversão, churn e utilização.</p></article>
+          <article class="market-card reveal"><span class="eyebrow">Frotas empresariais</span><h3>mercado separado</h3><p>Não somar empresas ou frota corporativa ao universo de motoristas.</p><p><strong>Unidade:</strong> veículos leves terceirizáveis em organizações qualificadas</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ambiente">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">07 • Ambiente competitivo</span><h2>Onde a diferenciação ainda pode ser construída</h2><p>O espaço mais interessante combina renda líquida, SLA de substituição, orquestração de recarga e base de apoio. A oferta observada comunica elétricos e aluguel, mas não torna esse sistema completo e mensurável.</p></header>
+        <div class="archetype-grid">
+        <article class="mini-card reveal">
+          <span class="eyebrow">especialista GIG</span>
+          <h3>Kovi</h3>
+          <p><strong>Força:</strong> produto e experiência dedicados</p>
+          <p><strong>Contraposição:</strong> transparência de resultado e SLA verificável</p>
+        </article>
+        <article class="mini-card reveal">
+          <span class="eyebrow">grande locadora integrada</span>
+          <h3>Zarp Localiza, Movida, Unidas</h3>
+          <p><strong>Força:</strong> capital, capilaridade, manutenção e residual</p>
+          <p><strong>Contraposição:</strong> orquestração multioperador e software independente</p>
+        </article>
+        <article class="mini-card reveal">
+          <span class="eyebrow">canal da plataforma</span>
+          <h3>Uber Vehicle Solutions</h3>
+          <p><strong>Força:</strong> originação dentro da jornada</p>
+          <p><strong>Contraposição:</strong> portabilidade e redução de concentração</p>
+        </article>
+        <article class="mini-card reveal">
+          <span class="eyebrow">propriedade financiada</span>
+          <h3>BNDES Move Motoristas</h3>
+          <p><strong>Força:</strong> saída da locação para perfis elegíveis</p>
+          <p><strong>Contraposição:</strong> escada transparente de permanência ou compra</p>
+        </article></div>
+        <div class="whitespace reveal"><span class="eyebrow">Espaço estratégico</span><br>O espaço mais interessante combina renda líquida, SLA de substituição, orquestração de recarga e base de apoio. A oferta observada comunica elétricos e aluguel, mas não torna esse sistema completo e mensurável.</div>
+        <h3>Contradições que exigem decisão</h3><div class="contradiction-grid">
+        <div class="contradiction-row reveal">
+          <div><span>Ideia</span><strong>frota integralmente envelopada</strong></div>
+          <div class="conflict"><span>Tensão</span><strong>vedação pública da Uber a carros adesivados</strong></div>
+          <div class="decision"><span>Decisão</span><strong>usar identidade no hub, aplicativo e elementos removíveis previamente aprovados</strong></div>
+        </div>
+        <div class="contradiction-row reveal">
+          <div><span>Ideia</span><strong>mais utilização sempre melhora o ativo</strong></div>
+          <div class="conflict"><span>Tensão</span><strong>dupla operação reduz janela de recarga e acelera desgaste</strong></div>
+          <div class="decision"><span>Decisão</span><strong>simular e testar por turno antes de compartilhar veículos</strong></div>
+        </div>
+        <div class="contradiction-row reveal">
+          <div><span>Ideia</span><strong>hub completo desde o início</strong></div>
+          <div class="conflict"><span>Tensão</span><strong>capex e ociosidade podem consumir a margem da frota</strong></div>
+          <div class="decision"><span>Decisão</span><strong>começar por micro-hub e parceiros</strong></div>
+        </div>
+        <div class="contradiction-row reveal">
+          <div><span>Ideia</span><strong>múltiplas receitas desde o lançamento</strong></div>
+          <div class="conflict"><span>Tensão</span><strong>complexidade regulatória e operacional dispersa foco</strong></div>
+          <div class="decision"><span>Decisão</span><strong>sequenciar benefícios e finanças depois do core</strong></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="section-light" id="politicas-publicas">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">08 • Políticas públicas e regulação</span><h2>Compliance como capacidade de produto</h2><p>Compliance não é checklist de lançamento; é uma capacidade operacional que acompanha condutor, veículo, contrato, dados e cidade.</p></header>
+        <div class="details-grid">
+        <details class="detail-card reveal">
+          <summary><span>federal</span>competência municipal e piso nacional</summary>
+          <div class="detail-body">
+            <p>Cada município regulamenta e fiscaliza o transporte remunerado privado individual, observados requisitos nacionais mínimos.</p>
+            <p class="callout-small"><strong>Implicação:</strong> Manter motor regulatório versionado por cidade e impedir expansão sem validação local.</p>
+          </div>
+        </details>
+        <details class="detail-card reveal">
+          <summary><span>municipal sao paulo</span>fronteira locadora versus intermediadora</summary>
+          <div class="detail-body">
+            <p>Fornecimento de veículo e gestão de frota devem permanecer separados da intermediação de viagens, salvo credenciamento aplicável.</p>
+            <p class="callout-small"><strong>Implicação:</strong> Desenhar papéis, integrações e funcionalidades antes do produto.</p>
+          </div>
+        </details>
+        <details class="detail-card reveal">
+          <summary><span>municipal sao paulo</span>regularidade do condutor e do veículo</summary>
+          <div class="detail-body">
+            <p>CONDUAPP, CSVAPP, CNH com EAR, documentação, inspeção, idade e autorização do proprietário precisam estar válidos quando aplicáveis.</p>
+            <p class="callout-small"><strong>Implicação:</strong> Vincular contrato, condutor, veículo e chave a um gate de elegibilidade.</p>
+          </div>
+        </details>
+        <details class="detail-card reveal">
+          <summary><span>federal</span>contrato e consumidor</summary>
+          <div class="detail-body">
+            <p>Preço total, caução, quilometragem, manutenção, danos, franquias, cancelamento e cobranças adicionais devem ser claros.</p>
+            <p class="callout-small"><strong>Implicação:</strong> Resumo contratual, simulador de custo total e contestação viram recursos centrais da proposta.</p>
+          </div>
+        </details>
+        <details class="detail-card reveal">
+          <summary><span>federal</span>dados e decisão automatizada</summary>
+          <div class="detail-body">
+            <p>Telemática, biometria, localização e score exigem base legal, minimização, segurança, direitos do titular e revisão contestável.</p>
+            <p class="callout-small"><strong>Implicação:</strong> Governança e explicabilidade precisam nascer junto do modelo.</p>
+          </div>
+        </details>
+        <details class="detail-card reveal">
+          <summary><span>setorial</span>seguro e proteção</summary>
+          <div class="detail-body">
+            <p>Cobertura deve ser compatível com uso comercial em aplicativo, condutor, território e forma de contratação.</p>
+            <p class="callout-small"><strong>Implicação:</strong> Validar wording e teste de sinistro antes de escalar.</p>
+          </div>
+        </details></div>
+        <div class="alerts-grid">
+        <article class="alert-card reveal">
+          <span class="alert-dot"></span>
+          <div><h3>Publicidade no veículo</h3><p>Carros adesivados não são aceitos pela Uber em São Paulo segundo a página oficial consultada.</p>
+          <strong>Não envelopar a frota-base sem aprovação formal por plataforma e cidade.</strong></div>
+        </article>
+        <article class="alert-card reveal">
+          <span class="alert-dot"></span>
+          <div><h3>Uso comercial e garantia</h3><p>A montadora diferencia cobertura do veículo elétrico em uso comercial.</p>
+          <strong>Contratar e provisionar por componente, quilometragem e intensidade.</strong></div>
+        </article>
+        <article class="alert-card reveal">
+          <span class="alert-dot"></span>
+          <div><h3>Incentivos elétricos</h3><p>A legislação municipal possui histórico de vigência e alterações.</p>
+          <strong>Revalidar crédito de IPVA e rodízio antes de usar no TCO ou na comunicação.</strong></div>
+        </article>
+        <article class="alert-card reveal">
+          <span class="alert-dot"></span>
+          <div><h3>Energia, lavagem e hub</h3><p>Potência, instalação, segurança, água, efluentes e uso do solo dependem do endereço.</p>
+          <strong>Due diligence técnica, elétrica, ambiental e imobiliária por micro-hub.</strong></div>
+        </article></div>
+      </div>
+    </section>
+
+    <section id="tfa">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">09 • Technology Future Analysis</span><h2>Eletrificar é redesenhar carro, energia e turno</h2><p>Três horizontes conectam o piloto paulistano à possibilidade de escala nacional.</p></header>
+        <div class="horizon-tabs" role="tablist">
+        <button class="horizon-tab active" role="tab"
+          aria-selected="true" aria-controls="horizon-panel"
+          data-index="0">
+          <span>2026–2028</span><strong>Provar o turno elétrico</strong>
+        </button>
+        <button class="horizon-tab " role="tab"
+          aria-selected="false" aria-controls="horizon-panel"
+          data-index="1">
+          <span>2029–2031</span><strong>Escalar por clusters energéticos</strong>
+        </button>
+        <button class="horizon-tab " role="tab"
+          aria-selected="false" aria-controls="horizon-panel"
+          data-index="2">
+          <span>2032–2035</span><strong>Orquestrar mobilidade e energia</strong>
+        </button></div>
+        <div class="horizon-panel reveal" id="horizon-panel" role="tabpanel">
+          <b id="horizonPeriod">2026–2028</b>
+          <div><h3 id="horizonName">Provar o turno elétrico</h3><p id="horizonFocus">veículo, energia, bateria, micro-hub, uptime, dados e demanda qualificada</p></div>
+        </div>
+        <div class="trend-grid"><article class="trend-card reveal"><span>01</span><h3>Telemática ubíqua</h3><p>reduz assimetria operacional, mas amplia responsabilidade de governança</p></article><article class="trend-card reveal"><span>02</span><h3>Seguro baseado em uso</h3><p>pode alinhar exposição e preço se houver explicação e calibração local</p></article><article class="trend-card reveal"><span>03</span><h3>Manutenção preditiva</h3><p>move a operação de oficina reativa para proteção de uptime</p></article><article class="trend-card reveal"><span>04</span><h3>Eletrificação assimétrica</h3><p>ganha onde turno, recarga e residual fecham o TCO</p></article><article class="trend-card reveal"><span>05</span><h3>Veículo definido por software</h3><p>aumenta atualização, dados e superfície de cibersegurança</p></article><article class="trend-card reveal"><span>06</span><h3>Automação de direção</h3><p>deve ser monitorada por sinais, sem assumir adoção ampla até 2035</p></article></div>
+      </div>
+    </section>
+
+    <section id="cenarios">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">10 • Cenários</span><h2>Quatro futuros, uma operação que precisa resistir</h2><p>Selecione um cenário para revelar sua implicação estratégica.</p></header>
+        <div class="scenario-layout">
+          <div class="scenario-map">
+        <button class="scenario-card q1 reveal" type="button"
+          data-title="Confiança conectada" data-logic="dados interoperáveis + regulação previsível"
+          data-implication="FleetGuard vira infraestrutura de risco e disponibilidade">
+          <span>dados interoperáveis + regulação previsível</span><strong>Confiança conectada</strong>
+        </button>
+        <button class="scenario-card q2 reveal" type="button"
+          data-title="Ilhas de escala" data-logic="dados fragmentados + regulação previsível"
+          data-implication="ganham operadores com integração e presença local">
+          <span>dados fragmentados + regulação previsível</span><strong>Ilhas de escala</strong>
+        </button>
+        <button class="scenario-card q3 reveal" type="button"
+          data-title="Mobilidade sob tensão" data-logic="dados interoperáveis + regulação instável"
+          data-implication="flexibilidade contratual e compliance versionado são vantagem">
+          <span>dados interoperáveis + regulação instável</span><strong>Mobilidade sob tensão</strong>
+        </button>
+        <button class="scenario-card q4 reveal" type="button"
+          data-title="Frota fraturada" data-logic="dados fragmentados + regulação instável"
+          data-implication="crescimento nacional perde atratividade; foco volta a clusters rentáveis">
+          <span>dados fragmentados + regulação instável</span><strong>Frota fraturada</strong>
+        </button></div>
+          <aside class="scenario-readout reveal" aria-live="polite"><span class="eyebrow">Cenário selecionado</span><h3 id="scenarioTitle">Selecione um cenário</h3><p id="scenarioLogic">Interaja com a matriz.</p><strong id="scenarioImplication"></strong></aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light" id="roadmap-tecnologico">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">11 • Roadmap tecnológico</span><h2>Capacidades antes de escala</h2><p>O futuro desejado começa com instrumentação confiável desde o primeiro piloto.</p></header>
+        <div class="market-grid">
+          <article class="market-card reveal"><h3>Movimentos sem arrependimento</h3><ul class="check-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>arquitetura multi-OEM e multioperador de recarga</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>telemetria de energia e saúde da bateria desde o piloto</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>SLA de uptime por zona e causa</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>RFP comparativa de veículo, seguro, garantia e assistência</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>micro-hub modular antes de galpão amplo</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>TCO e renda líquida por coorte</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>identidade visual compatível com as plataformas</span></li></ul></article>
+          <article class="market-card reveal"><h3>Sinais para avançar</h3><ul class="check-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>acesso padronizado a dados de veículos e plataformas</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>produtos de seguro vinculados ao motorista e ao uso</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>custo total de recarga pública por cluster</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>participação de elétricos em registros e frota</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>regras brasileiras para decisão automatizada e biometria</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>permissões comerciais de condução autônoma em mercados comparáveis</span></li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light" id="patentes-artigos" style="padding-top:0">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">12 • Patentes e ciência</span><h2>Tecnologia ocupada; combinação ainda diferenciável</h2><p>A ciência apoia TCO por cenário, gestão de carga, prognóstico e fairness. Não prova que um modelo específico, um hub ou a dupla operação sejam rentáveis em São Paulo sem piloto comparativo.</p></header>
+        <div class="patent-grid">
+          <article class="patent-score reveal"><span class="eyebrow">Famílias revisadas</span><strong>10</strong><p>O espaço genérico de alocação de veículos, chaves digitais, telemática, manutenção, seguro e carga elétrica já é ocupado.</p><small>A busca é exploratória e não substitui análise jurídica de liberdade de operação.</small></article>
+          <div><h3>Espaços de investigação</h3><div class="white-space-list"><div class="reveal">locação elétrica GIG orientada à renda líquida</div><div class="reveal">score explicável combinando exposição, energia e bateria</div><div class="reveal">manutenção ligada à renda preservada e carro reserva</div><div class="reveal">micro-hub que sincroniza recarga, descanso, lavagem e assistência</div><div class="reveal">dupla operação com troca de turno, inspeção e carga auditáveis</div><div class="reveal">circularidade de bateria, pneus, água e residual</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="captacao">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">13 • Inteligência de captação</span><h2>Financiar inovação, não esconder capex</h2><p>Financiar tecnologia de energia, bateria, dados e uptime; estruturar veículos, carregadores e imóvel em capital separado.</p></header>
+        <div class="fund-grid">
+        <article class="fund-card reveal" style="--fit:91">
+          <div class="fund-score"><span>91</span><small>fit</small></div>
+          <div>
+            <div class="fund-meta"><span class="pill cyan">aberta com urgencia extrema</span><span>2026-07-29</span></div>
+            <h3>FAPESP PIPE Jornada Tecnológica — chamada geral</h3>
+            <p>MVP de Motor de Renda Líquida, previsão de churn e inadimplência, manutenção preditiva e passaporte de conformidade.</p>
+            <small>Startup ou pequena empresa elegível e sediada no Estado de São Paulo.</small>
+          </div>
+        </article>
+        <article class="fund-card reveal" style="--fit:88">
+          <div class="fund-score"><span>88</span><small>fit</small></div>
+          <div>
+            <div class="fund-meta"><span class="pill cyan">prevista</span><span>2026-08-03</span></div>
+            <h3>FAPESP PIPE Jornada — Transição Energética</h3>
+            <p>EV Shift Optimizer: TCO real por turno, recarga, degradação de bateria e roteamento para frotas GIG/B2B.</p>
+            <small>Detalhes e prazo só podem ser confirmados após publicação oficial.</small>
+          </div>
+        </article>
+        <article class="fund-card reveal" style="--fit:82">
+          <div class="fund-score"><span>82</span><small>fit</small></div>
+          <div>
+            <div class="fund-meta"><span class="pill cyan">prevista</span><span>2026-09-08</span></div>
+            <h3>FAPESP PIPE Jornada — Indústria do Futuro</h3>
+            <p>Fleet Risk OS com digital twin operacional, telemática, IA, manutenção preditiva e cibersegurança.</p>
+            <small>Aderência final depende do edital ainda não publicado.</small>
+          </div>
+        </article>
+        <article class="fund-card reveal" style="--fit:80">
+          <div class="fund-score"><span>80</span><small>fit</small></div>
+          <div>
+            <div class="fund-meta"><span class="pill cyan">programa ativo oportunidades dependem de chamada</span><span>fluxo contínuo/condicionado</span></div>
+            <h3>Finep MOVER</h3>
+            <p>Telemática automotiva, ADAS/segurança, software embarcado, IoT, IA e cibersegurança para frotas conectadas.</p>
+            <small>A empresa deve demonstrar posição na cadeia automotiva ou construir consórcio/parceria elegível.</small>
+          </div>
+        </article>
+        <article class="fund-card reveal" style="--fit:86">
+          <div class="fund-score"><span>86</span><small>fit</small></div>
+          <div>
+            <div class="fund-meta"><span class="pill cyan">fluxo por negociacao com unidade</span><span>fluxo contínuo/condicionado</span></div>
+            <h3>EMBRAPII MOVER</h3>
+            <p>Piloto de datalogger, manutenção preditiva, risco de condução, otimização energética e cibersegurança veicular.</p>
+            <small>Requer projeto de PD&amp;I contratado com Unidade Embrapii competente.</small>
+          </div>
+        </article>
+        <article class="fund-card reveal" style="--fit:68">
+          <div class="fund-score"><span>68</span><small>fit</small></div>
+          <div>
+            <div class="fund-meta"><span class="pill cyan">linha ativa</span><span>fluxo contínuo/condicionado</span></div>
+            <h3>BNDES Mais Inovação — Investimento Automático</h3>
+            <p>Digitalização de operação de locadora ou frota: software, sistemas, telemática, treinamento e consultoria.</p>
+            <small>Depende de plano de digitalização no Brasil Mais Produtivo e análise do agente financeiro.</small>
+          </div>
+        </article>
+        <article class="fund-card reveal" style="--fit:42">
+          <div class="fund-score"><span>42</span><small>fit</small></div>
+          <div>
+            <div class="fund-meta"><span class="pill cyan">linha temporaria ativa</span><span>2026-09-15</span></div>
+            <h3>BNDES Move Motoristas</h3>
+            <p>Alternativa de propriedade para motoristas maduros; possível canal de transição de locação para compra.</p>
+            <small>É crédito ao motorista/cooperativa, não funding de PD&amp;I da empresa.</small>
+          </div>
+        </article>
+        <article class="fund-card reveal" style="--fit:24">
+          <div class="fund-score"><span>24</span><small>fit</small></div>
+          <div>
+            <div class="fund-meta"><span class="pill cyan">aberta</span><span>2026-08-31</span></div>
+            <h3>Finep Mais Inovação Brasil — Mobilidade Sustentável Rodada 2</h3>
+            <p>Somente se a solução se reposicionar de forma material para micromobilidade ou integração multimodal elegível.</p>
+            <small>O escopo oficial divulgado não inclui diretamente automóveis rodoviários de locação.</small>
+          </div>
+        </article></div>
+        <div class="whitespace reveal"><span class="eyebrow">Sinal competitivo</span><br>BNDES Move Motoristas é simultaneamente ameaça à locação, possível parceria e mecanismo de transição para propriedade.</div>
+      </div>
+    </section>
+
+    <section class="section-light" id="inovacao">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">14 • Portfólio de inovação</span><h2>Oito oportunidades, um sistema coerente</h2><p>Abra cada oportunidade para ver solução, hipótese crítica e experimento conceitual.</p></header>
+        <div class="opportunities">
+        <details class="opportunity-card reveal" open>
+          <summary>
+            <span class="rank-badge">01</span>
+            <span class="op-title"><strong>Uptime Prime — energia e carro disponíveis</strong><small>Vender continuidade produtiva com manutenção, assistência, recarga de contingência e substituição por SLA zonal.</small></span>
+            <span class="score-chip">9.12</span>
+          </summary>
+          <div class="op-body">
+            <div><span class="label">Solução</span><p>Central de suporte, triagem remota, manutenção preditiva, assistência móvel, rede de oficinas e veículo substituto compatível.</p></div>
+            <div><span class="label">Hipótese crítica</span><p>Motoristas pagam ou permanecem mais quando o SLA reduz horas improdutivas a custo menor que o churn e a compensação evitados.</p></div>
+            <div><span class="label">Experimento conceitual</span><p>Operar SLA por duas zonas de São Paulo, com 20–40 elétricos, assistência móvel e contingência compartilhada; medir causas e custo por ocorrência.</p></div>
+            <div class="op-tags"><span class="pill cyan">OBD/telemática</span><span class="pill cyan">modelos de falha</span><span class="pill cyan">otimização de agenda e estoque</span><span class="pill cyan">digital twin operacional</span></div>
+          </div>
+        </details>
+        <details class="opportunity-card reveal" open>
+          <summary>
+            <span class="rank-badge">02</span>
+            <span class="op-title"><strong>VoltShift EcoHub — recarga, turno e base de apoio</strong><small>Fazer o elétrico vencer no turno real ao sincronizar TCO, recarga, bateria, descanso, lavagem e manutenção em uma rede de micro-hubs e parceiros.</small></span>
+            <span class="score-chip">8.96</span>
+          </summary>
+          <div class="op-body">
+            <div><span class="label">Solução</span><p>Motor de TCO por turno, agenda de recarga, health score da bateria e desenho de rede que compara hub próprio, micro-hub e parceiros.</p></div>
+            <div><span class="label">Hipótese crítica</span><p>Em clusters escolhidos, a economia total supera prêmio do ativo e custo do tempo de recarga, e o micro-hub aumenta retenção sem ociosidade estrutural.</p></div>
+            <div><span class="label">Experimento conceitual</span><p>Comparar 20 elétricos e 20 equivalentes por 12 semanas, usando recarga parceira e um micro-hub; medir turno, energia, bateria, água, downtime e satisfação.</p></div>
+            <div class="op-tags"><span class="pill cyan">otimização de recarga</span><span class="pill cyan">previsão de demanda</span><span class="pill cyan">battery health</span><span class="pill cyan">tarifas dinâmicas</span><span class="pill cyan">roteamento</span></div>
+          </div>
+        </details>
+        <details class="opportunity-card reveal" open>
+          <summary>
+            <span class="rank-badge">03</span>
+            <span class="op-title"><strong>Linha Clara — renda líquida, energia e benefícios</strong><small>Transformar aluguel, recarga e jornada em um cockpit simples de renda líquida, ponto de equilíbrio, energia, suporte e benefícios opt-in.</small></span>
+            <span class="score-chip">8.88</span>
+          </summary>
+          <div class="op-body">
+            <div><span class="label">Solução</span><p>Contrato modular, cockpit de renda líquida, custo de energia, agenda de carga, alertas de break-even, benefícios opcionais e contestação de cobrança.</p></div>
+            <div><span class="label">Hipótese crítica</span><p>Transparência de renda líquida, recarga e plano adaptável reduz churn e atraso sem induzir sobretrabalho ou excluir perfis vulneráveis.</p></div>
+            <div><span class="label">Experimento conceitual</span><p>Piloto elétrico com 20–40 motoristas, três jornadas contratuais e cockpit de renda líquida/energia; comparar uso assistido e básico.</p></div>
+            <div class="op-tags"><span class="pill cyan">integração consentida de dados de corridas</span><span class="pill cyan">motor de regras</span><span class="pill cyan">previsão probabilística</span><span class="pill cyan">open finance opcional</span><span class="pill cyan">explicabilidade de preço e risco</span></div>
+          </div>
+        </details>
+        <details class="opportunity-card reveal" >
+          <summary>
+            <span class="rank-badge">04</span>
+            <span class="op-title"><strong>FleetGuard OS — risco, bateria e compliance</strong><small>Unificar telemática, saúde de bateria, manutenção, elegibilidade e risco em decisões explicáveis para GIG e frotas empresariais.</small></span>
+            <span class="score-chip">8.82</span>
+          </summary>
+          <div class="op-body">
+            <div><span class="label">Solução</span><p>Camada multi-OEM de telemática, score contestável, health score de bateria, alertas de manutenção, compliance municipal e APIs B2B.</p></div>
+            <div><span class="label">Hipótese crítica</span><p>A combinação de exposição, comportamento, energia e saúde do ativo reduz perdas e downtime sem gerar discriminação material.</p></div>
+            <div><span class="label">Experimento conceitual</span><p>Dois design partners, 300–500 veículos, três módulos iniciais: onboarding, alertas de risco e manutenção.</p></div>
+            <div class="op-tags"><span class="pill cyan">APIs</span><span class="pill cyan">motor de regras</span><span class="pill cyan">IA de anomalias</span><span class="pill cyan">IoT</span><span class="pill cyan">identidade digital</span><span class="pill cyan">arquitetura multi-tenant</span></div>
+          </div>
+        </details>
+        <details class="opportunity-card reveal" >
+          <summary>
+            <span class="rank-badge">05</span>
+            <span class="op-title"><strong>CicloMax — bateria, garantia e residual</strong><small>Comprar, manter e desmobilizar cada elétrico com base em saúde de bateria, cobertura comercial, uso real e residual probabilístico.</small></span>
+            <span class="score-chip">8.28</span>
+          </summary>
+          <div class="op-body">
+            <div><span class="label">Solução</span><p>Digital twin econômico por veículo com garantia por componente, condição da bateria, falhas, pneus, custo acumulado e canal de remarketing.</p></div>
+            <div><span class="label">Hipótese crítica</span><p>Decisão veículo a veículo captura mais residual e evita custo pós-garantia do que uma política fixa por idade ou quilometragem.</p></div>
+            <div><span class="label">Experimento conceitual</span><p>Backtest em 200 históricos de veículos e decisões shadow de venda por três meses.</p></div>
+            <div class="op-tags"><span class="pill cyan">digital twin</span><span class="pill cyan">visão computacional de inspeção</span><span class="pill cyan">previsão de residual</span><span class="pill cyan">otimização de portfólio</span></div>
+          </div>
+        </details>
+        <details class="opportunity-card reveal" >
+          <summary>
+            <span class="rank-badge">06</span>
+            <span class="op-title"><strong>Passaporte Drive — elegibilidade multi-plataforma</strong><small>Manter veículo, condutor, seguro, contrato e cidade sincronizados antes de liberar a chave.</small></span>
+            <span class="score-chip">8.02</span>
+          </summary>
+          <div class="op-body">
+            <div><span class="label">Solução</span><p>Passaporte versionado de documentos, categoria, modelo, cor, publicidade, uso comercial, seguro e município.</p></div>
+            <div><span class="label">Hipótese crítica</span><p>Um gate de elegibilidade reduz bloqueios e onboarding sem coletar dados excessivos.</p></div>
+            <div><span class="label">Experimento conceitual</span><p>Carteira de cinco credenciais para São Paulo, validada com uma locadora e consentimento granular.</p></div>
+            <div class="op-tags"><span class="pill cyan">credenciais verificáveis</span><span class="pill cyan">assinatura digital</span><span class="pill cyan">APIs públicas</span><span class="pill cyan">gestão de consentimento</span></div>
+          </div>
+        </details>
+        <details class="opportunity-card reveal" >
+          <summary>
+            <span class="rank-badge">07</span>
+            <span class="op-title"><strong>Escada Livre — aluguel com saída para propriedade</strong><small>Criar uma jornada explícita em que bom histórico de locação vira elegibilidade para compra, devolução programada ou troca de veículo.</small></span>
+            <span class="score-chip">7.91</span>
+          </summary>
+          <div class="op-body">
+            <div><span class="label">Solução</span><p>Conta de reputação contratual, trilhas de transição, simulação comparável de custo total e encaminhamento para crédito elegível.</p></div>
+            <div><span class="label">Hipótese crítica</span><p>Uma opção de saída clara melhora aquisição e retenção o suficiente para compensar a migração de bons clientes para propriedade.</p></div>
+            <div><span class="label">Experimento conceitual</span><p>Oferecer simulação e três caminhos de saída a uma coorte madura, sem decisão automática de crédito.</p></div>
+            <div class="op-tags"><span class="pill cyan">ledger de histórico</span><span class="pill cyan">simulação TCO</span><span class="pill cyan">open finance opcional</span><span class="pill cyan">matching de crédito</span></div>
+          </div>
+        </details>
+        <details class="opportunity-card reveal" >
+          <summary>
+            <span class="rank-badge">08</span>
+            <span class="op-title"><strong>Flux Pool — dupla operação e ativos compartilhados</strong><small>Testar janelas de dupla operação e frota B2B ociosa somente quando recarga, inspeção, limpeza, seguro e atribuição de dano fecharem a conta.</small></span>
+            <span class="score-chip">7.58</span>
+          </summary>
+          <div class="op-body">
+            <div><span class="label">Solução</span><p>Simulação de agenda de turnos, troca digital, inspeção antes/depois, agenda de carga e liquidação por janela.</p></div>
+            <div><span class="label">Hipótese crítica</span><p>A margem incremental de um segundo turno permanece positiva após energia, limpeza, desgaste, dano, seguro e menor vida útil.</p></div>
+            <div><span class="label">Experimento conceitual</span><p>Simular turnos em shadow mode por oito semanas; liberar no máximo 10 veículos em piloto fechado se os gates forem atendidos.</p></div>
+            <div class="op-tags"><span class="pill cyan">otimização de ativos</span><span class="pill cyan">telemática</span><span class="pill cyan">inspeção por visão computacional</span><span class="pill cyan">motor de elegibilidade</span><span class="pill cyan">smart scheduling</span></div>
+          </div>
+        </details></div>
+      </div>
+    </section>
+
+    <section id="score">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">15 • MonyU Score</span><h2>Prioridade comparativa, não atalho decisório</h2><p>O score organiza decisão comparativa; não substitui experimento, economia unitária nem validação jurídica.</p></header>
+        <div class="score-board">
+        <button class="score-row reveal" type="button" data-rationale="Protege o ativo mais sensível do motorista — tempo produtivo — e transforma assistência e carro reserva em promessa verificável.">
+          <span class="score-rank">01</span>
+          <span class="score-name">Uptime Prime — energia e carro disponíveis</span>
+          <span class="score-track"><i style="--w:91.2%"></i></span>
+          <strong>9.12</strong>
+        </button>
+        <button class="score-row reveal" type="button" data-rationale="É o núcleo da tese elétrica: sem energia, bateria e hub dimensionados, toda a proposta perde margem e horas produtivas.">
+          <span class="score-rank">02</span>
+          <span class="score-name">VoltShift EcoHub — recarga, turno e base de apoio</span>
+          <span class="score-track"><i style="--w:89.6%"></i></span>
+          <strong>8.96</strong>
+        </button>
+        <button class="score-row reveal" type="button" data-rationale="Converte a complexidade do ecossistema em uma experiência simples e transparente para o motorista.">
+          <span class="score-rank">03</span>
+          <span class="score-name">Linha Clara — renda líquida, energia e benefícios</span>
+          <span class="score-track"><i style="--w:88.8%"></i></span>
+          <strong>8.88</strong>
+        </button>
+        <button class="score-row reveal" type="button" data-rationale="É a infraestrutura invisível das três líderes e a rota de monetização B2B, mas depende de dados de operação.">
+          <span class="score-rank">04</span>
+          <span class="score-name">FleetGuard OS — risco, bateria e compliance</span>
+          <span class="score-track"><i style="--w:88.2%"></i></span>
+          <strong>8.82</strong>
+        </button>
+        <button class="score-row reveal" type="button" data-rationale="Garantia comercial, bateria e residual podem definir a margem do elétrico, exigindo histórico antes de automação.">
+          <span class="score-rank">05</span>
+          <span class="score-name">CicloMax — bateria, garantia e residual</span>
+          <span class="score-track"><i style="--w:82.8%"></i></span>
+          <strong>8.28</strong>
+        </button>
+        <button class="score-row reveal" type="button" data-rationale="Evita bloqueios e conflitos de plataforma, inclusive publicidade incompatível, com valor operacional imediato.">
+          <span class="score-rank">06</span>
+          <span class="score-name">Passaporte Drive — elegibilidade multi-plataforma</span>
+          <span class="score-track"><i style="--w:80.2%"></i></span>
+          <strong>8.02</strong>
+        </button>
+        <button class="score-row reveal" type="button" data-rationale="A transição para propriedade fortalece confiança, mas depende de parceiro financeiro e maturidade de dados.">
+          <span class="score-rank">07</span>
+          <span class="score-name">Escada Livre — aluguel com saída para propriedade</span>
+          <span class="score-track"><i style="--w:79.1%"></i></span>
+          <strong>7.91</strong>
+        </button>
+        <button class="score-row reveal" type="button" data-rationale="Dupla operação pode elevar utilização, mas comprime recarga e amplia dano, desgaste, seguro e complexidade de troca de turno.">
+          <span class="score-rank">08</span>
+          <span class="score-name">Flux Pool — dupla operação e ativos compartilhados</span>
+          <span class="score-track"><i style="--w:75.8%"></i></span>
+          <strong>7.58</strong>
+        </button></div>
+        <div class="score-readout" id="scoreReadout" aria-live="polite">Selecione uma oportunidade para ler a justificativa.</div>
+      </div>
+    </section>
+
+    <section class="section-light" id="top-3">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">16 • Top 3</span><h2>O trio que sustenta a promessa</h2><p>Uptime, energia e clareza formam o núcleo mínimo do ecossistema elétrico.</p></header>
+        <div class="top-grid">
+        <article class="top-card reveal">
+          <div class="top-rank">1</div>
+          <div class="top-score">9.12<small>/10</small></div>
+          <span class="eyebrow">promessa operacional</span>
+          <h3>Uptime Prime — energia e carro disponíveis</h3>
+          <p>Protege o ativo mais sensível do motorista — tempo produtivo — e transforma assistência e carro reserva em promessa verificável.</p>
+          <details>
+            <summary>Como validar</summary>
+            <p><strong>Hipótese:</strong> Motoristas pagam ou permanecem mais quando o SLA reduz horas improdutivas a custo menor que o churn e a compensação evitados.</p>
+            <p><strong>Experimento:</strong> Operar SLA por duas zonas de São Paulo, com 20–40 elétricos, assistência móvel e contingência compartilhada; medir causas e custo por ocorrência.</p>
+            <div class="tag-row"><span class="pill lime">uptime</span><span class="pill lime">tempo de assistência</span><span class="pill lime">tempo de substituição</span><span class="pill lime">renda preservada</span><span class="pill lime">custo de contingência</span><span class="pill lime">falhas por componente</span><span class="pill lime">satisfação pós-incidente</span></div>
+          </details>
+        </article>
+        <article class="top-card reveal">
+          <div class="top-rank">2</div>
+          <div class="top-score">8.96<small>/10</small></div>
+          <span class="eyebrow">energia, recarga e base de apoio</span>
+          <h3>VoltShift EcoHub — recarga, turno e base de apoio</h3>
+          <p>É o núcleo da tese elétrica: sem energia, bateria e hub dimensionados, toda a proposta perde margem e horas produtivas.</p>
+          <details>
+            <summary>Como validar</summary>
+            <p><strong>Hipótese:</strong> Em clusters escolhidos, a economia total supera prêmio do ativo e custo do tempo de recarga, e o micro-hub aumenta retenção sem ociosidade estrutural.</p>
+            <p><strong>Experimento:</strong> Comparar 20 elétricos e 20 equivalentes por 12 semanas, usando recarga parceira e um micro-hub; medir turno, energia, bateria, água, downtime e satisfação.</p>
+            <div class="tag-row"><span class="pill lime">TCO por km</span><span class="pill lime">renda líquida por hora</span><span class="pill lime">horas produtivas</span><span class="pill lime">custo energético</span><span class="pill lime">fila e carga</span><span class="pill lime">saúde da bateria</span><span class="pill lime">CO2e por km</span><span class="pill lime">água por lavagem</span><span class="pill lime">utilização do hub</span></div>
+          </details>
+        </article>
+        <article class="top-card reveal">
+          <div class="top-rank">3</div>
+          <div class="top-score">8.88<small>/10</small></div>
+          <span class="eyebrow">experiência e contrato do motorista</span>
+          <h3>Linha Clara — renda líquida, energia e benefícios</h3>
+          <p>Converte a complexidade do ecossistema em uma experiência simples e transparente para o motorista.</p>
+          <details>
+            <summary>Como validar</summary>
+            <p><strong>Hipótese:</strong> Transparência de renda líquida, recarga e plano adaptável reduz churn e atraso sem induzir sobretrabalho ou excluir perfis vulneráveis.</p>
+            <p><strong>Experimento:</strong> Piloto elétrico com 20–40 motoristas, três jornadas contratuais e cockpit de renda líquida/energia; comparar uso assistido e básico.</p>
+            <div class="tag-row"><span class="pill lime">renda líquida após locação e energia</span><span class="pill lime">custo energético por km</span><span class="pill lime">horas produtivas</span><span class="pill lime">churn</span><span class="pill lime">atraso</span><span class="pill lime">satisfação</span><span class="pill lime">decisões explicadas</span><span class="pill lime">disparidade de preço e aprovação</span></div>
+          </details>
+        </article></div>
+      </div>
+    </section>
+
+    <section id="recomendacoes">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">17 • Recomendações</span><h2>Sequenciar para aprender antes de imobilizar</h2><p>As recomendações transformam a tese em uma sequência de decisões testáveis.</p></header>
+        <ol class="recommendation-list"><li class="reveal"><span>01</span><div><strong>Validar o turno elétrico</strong><p>Medir renda líquida, energia, fila, carga, autonomia, downtime e residual por coorte.</p></div></li><li class="reveal"><span>02</span><div><strong>Começar por micro-hub</strong><p>Comparar recarga parceira, micro-hub e hub próprio antes de comprometer capital imobiliário.</p></div></li><li class="reveal"><span>03</span><div><strong>Vender uptime</strong><p>Assistência, manutenção e carro reserva formam o principal SLA; testar por zona e causa.</p></div></li><li class="reveal"><span>04</span><div><strong>Não envelopar a frota-base</strong><p>Levar a identidade para aplicativo, base e materiais removíveis compatíveis com cada plataforma.</p></div></li><li class="reveal"><span>05</span><div><strong>Comparar veículos</strong><p>Tratar o BYD Dolphin como candidato; validar versão, garantia comercial, seguro, oficina, recarga e residual.</p></div></li><li class="reveal"><span>06</span><div><strong>Simplificar a experiência</strong><p>Linha Clara deve mostrar renda líquida, energia, ponto de equilíbrio, cobrança e contestação.</p></div></li><li class="reveal"><span>07</span><div><strong>Sequenciar o ecossistema</strong><p>Benefícios, recompensas e finanças entram depois que carro, energia e uptime funcionarem.</p></div></li><li class="reveal"><span>08</span><div><strong>Simular a dupla operação</strong><p>Só compartilhar turnos após shadow scheduling provar margem depois de carga, limpeza, dano e desgaste.</p></div></li><li class="reveal"><span>09</span><div><strong>Medir sustentabilidade</strong><p>Acompanhar CO2e, energia, água, pneus, bateria e circularidade por quilômetro.</p></div></li><li class="reveal"><span>10</span><div><strong>Escalar por clusters</strong><p>Demanda, recarga, seguro, oficina, regulação e parceiro local precisam fechar juntos.</p></div></li></ol>
+      </div>
+    </section>
+
+    <section id="conclusao">
+      <div class="container">
+        <article class="verdict reveal">
+          <span class="kicker">18 • Conclusão executiva</span><h2>GO CONDICIONADO — PILOTO ELÉTRICO</h2><p>A tese é mais forte como ecossistema de continuidade produtiva elétrica do que como locadora. O potencial está em tirar complexidade do motorista sem escondê-la da economia unitária.</p>
+          <div class="conditions"><div><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>TCO e renda líquida superiores na coorte escolhida</span></div><div><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>recarga confiável e compatível com o turno</span></div><div><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>garantia comercial, seguro e manutenção provisionados</span></div><div><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>SLA de uptime sustentável por zona</span></div><div><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>micro-hub com utilização suficiente</span></div><div><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>elegibilidade comprovada sem publicidade incompatível</span></div><div><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>governança de dados, explicação e ausência de disparidade material</span></div><div><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>sustentabilidade medida por ciclo de vida</span></div></div>
+          <p><strong>Regra de decisão:</strong> Só avançar para galpão amplo, frota monomodelo, dupla operação e expansão nacional quando as oito condições forem demonstradas com dados de São Paulo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-light" id="limitacoes">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">19 • Limitações</span><h2>O que ainda não sabemos</h2><p>As lacunas abaixo são deliberadamente visíveis porque determinam o desenho do piloto.</p></header>
+        <div class="limit-grid"><div class="limit-item reveal"><span>01</span><div>A cidade e o Estado de São Paulo não possuem, no recorte consultado, denominador público suficiente para fechar TAM, SAM e SOM com precisão.</div></div><div class="limit-item reveal"><span>02</span><div>Não houve entrevistas, survey, cotação transacional nem piloto com motoristas.</div></div><div class="limit-item reveal"><span>03</span><div>Preços e condições de concorrentes são fotografias públicas da data de corte.</div></div><div class="limit-item reveal"><span>04</span><div>Não há histórico próprio de conversão, churn, inadimplência, sinistro, manutenção, residual ou custo de capital.</div></div><div class="limit-item reveal"><span>05</span><div>A busca de patentes é exploratória e não constitui liberdade de operação.</div></div><div class="limit-item reveal"><span>06</span><div>A evidência acadêmica internacional exige calibração local.</div></div><div class="limit-item reveal"><span>07</span><div>A elegibilidade para funding depende da futura proponente e da revalidação de cada instrumento.</div></div><div class="limit-item reveal"><span>08</span><div>O mapa regulatório não substitui parecer jurídico.</div></div><div class="limit-item reveal"><span>09</span><div>O material confidencial analisado contém hipóteses e números não verificados; nenhum foi tratado como fato de mercado.</div></div><div class="limit-item reveal"><span>10</span><div>A escolha de um modelo específico de veículo ainda requer RFP, teste comparativo e validação de uso comercial.</div></div><div class="limit-item reveal"><span>11</span><div>A capacidade elétrica, a tarifa e as licenças do hub dependem de endereço e projeto.</div></div><div class="limit-item reveal"><span>12</span><div>Ganhos promocionais comunicados por plataformas não equivalem a renda líquida garantida.</div></div><div class="limit-item reveal"><span>13</span><div>Incentivos municipais para elétricos exigem revalidação temporal antes do TCO.</div></div></div>
+      </div>
+    </section>
+
+    <section id="fontes">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">20 • Fontes selecionadas</span><h2>Rastreabilidade para revisar e decidir</h2><p>Referências públicas críticas da edição executiva. O relatório integral apresenta o contexto completo.</p></header>
+        <div class="reference-grid">
+        <a class="reference reveal" href="https://www.ibge.gov.br/estatisticas/sociais/populacao/17270-pnad-continua.html?edicao=44741" target="_blank" rel="noreferrer">
+          <span>IBGE</span><strong>Trabalho por meio de plataformas digitais 2024</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://agenciadenoticias.ibge.gov.br/media/com_mediaibge/arquivos/59722d4ac24bd853f52f54f12b9514f7.pdf" target="_blank" rel="noreferrer">
+          <span>IBGE</span><strong>Apresentação oficial — trabalho por plataformas</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.abla.com.br/noticia/anuario-abla-2026-frota-do-setor-de-locacao-ultrapassa-17-milhao-de-automoveis-" target="_blank" rel="noreferrer">
+          <span>ABLA</span><strong>Anuário ABLA 2026</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.abla.com.br/setor-de-locacao" target="_blank" rel="noreferrer">
+          <span>ABLA</span><strong>Setor de locação</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.uber.com/br/pt-br/drive/vehicle-solutions/" target="_blank" rel="noreferrer">
+          <span>Uber</span><strong>Soluções de veículos para motoristas</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.kovi.com.br/aluguel-carro-motorista-app-sao-paulo" target="_blank" rel="noreferrer">
+          <span>Kovi</span><strong>Aluguel para motorista de aplicativo em São Paulo</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://zarp.localiza.com/ofertas/aluguel-de-carros-para-uber-tiete" target="_blank" rel="noreferrer">
+          <span>Localiza</span><strong>Oferta Zarp em São Paulo</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://motoristadeapp.movida.com.br/regulamento" target="_blank" rel="noreferrer">
+          <span>Movida</span><strong>Regulamento para motorista de aplicativo</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://legislacao.prefeitura.sp.gov.br/resolucao-comite-municipal-de-uso-do-viario-cmuv-16-de-11-de-julho-de-2017/consolidado" target="_blank" rel="noreferrer">
+          <span>Prefeitura de São Paulo</span><strong>Resolução CMUV 16/2017 consolidada</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://legislacao.prefeitura.sp.gov.br/resolucao-secretaria-municipal-de-mobilidade-urbana-e-transporte-smt-37-de-5-de-dezembro-de-2025/consolidado" target="_blank" rel="noreferrer">
+          <span>Prefeitura de São Paulo</span><strong>Resolução SMT 37/2025 consolidada</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.epe.gov.br/pt/publicacoes-dados-abertos/publicacoes/plano-decenal-de-expansao-de-energia-2035" target="_blank" rel="noreferrer">
+          <span>EPE</span><strong>Plano Decenal de Expansão de Energia 2035</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.iea.org/reports/global-ev-outlook-2026" target="_blank" rel="noreferrer">
+          <span>IEA</span><strong>Global EV Outlook 2026</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.gov.br/susep/pt-br/assuntos/open-insurance/" target="_blank" rel="noreferrer">
+          <span>Susep</span><strong>Open Insurance</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/programa-move-motoristas/programa-bndes-move-motoristas/" target="_blank" rel="noreferrer">
+          <span>BNDES</span><strong>Programa BNDES Move Motoristas</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://fapesp.br/pipejornada" target="_blank" rel="noreferrer">
+          <span>FAPESP</span><strong>PIPE Jornada</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.finep.gov.br/apoio-e-financiamento-externa/programas-e-linhas/programa-mover" target="_blank" rel="noreferrer">
+          <span>Finep</span><strong>Programa MOVER</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://doi.org/10.1016/j.ejor.2021.06.023" target="_blank" rel="noreferrer">
+          <span>European Journal of Operational Research</span><strong>Fairness in credit scoring</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://doi.org/10.1016/j.ymssp.2017.11.016" target="_blank" rel="noreferrer">
+          <span>Mechanical Systems and Signal Processing</span><strong>Machinery health prognostics</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://doi.org/10.1016/j.energy.2023.129094" target="_blank" rel="noreferrer">
+          <span>Energy</span><strong>Electric fleet charging management</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.uber.com/br/pt-br/newsroom/uber-green-chega-as-ruas-de-sao-paulo/" target="_blank" rel="noreferrer">
+          <span>Uber</span><strong>Uber Green chega às ruas de São Paulo</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://99app.com/motorista/categorias/veiculos-eletricos/" target="_blank" rel="noreferrer">
+          <span>99</span><strong>99electric-Pro</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.uber.com/br/pt-br/drive/requirements/?city=sao-paulo" target="_blank" rel="noreferrer">
+          <span>Uber</span><strong>Requisitos para motoristas em São Paulo</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.byd.com/content/dam/byd-site/br/new_models_2026/Dolphin%20-%20Ficha%20Tecnica%20-%20jul25%20v2.pdf" target="_blank" rel="noreferrer">
+          <span>BYD Brasil</span><strong>Dolphin — ficha técnica</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://www.byd.com/content/dam/byd-site/br/manuais-auto-byd/updates-24-06-2025/EV_MG_25045_scr_Site.pdf" target="_blank" rel="noreferrer">
+          <span>BYD Brasil</span><strong>Manual de Manutenção e Garantia — veículos elétricos</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a>
+        <a class="reference reveal" href="https://legislacao.prefeitura.sp.gov.br/lei-15997-de-27-de-maio-de-2014/consolidado" target="_blank" rel="noreferrer">
+          <span>Prefeitura de São Paulo</span><strong>Lei Municipal 15.997/2014 — consolidada</strong><svg class="icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/></svg>
+        </a></div>
+      </div>
+    </section>
+
+    <section class="section-light" id="apendices">
+      <div class="container">
+        <header class="section-heading reveal"><span class="kicker">21 • Apêndices</span><h2>Como ler o estudo</h2><p>Definições, fronteiras e hipóteses que protegem a qualidade da decisão.</p></header>
+        <div class="details-grid">
+        <details class="detail-card reveal">
+          <summary><span>Apêndice</span>Definições de mercado</summary>
+          <div class="detail-body"><ul class="check-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>TAM: universo potencial sob hipótese explícita</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>SAM: parcela atendível e qualificada</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>SOM: contratos capturáveis limitados pela operação</span></li></ul></div>
+        </details>
+        <details class="detail-card reveal">
+          <summary><span>Apêndice</span>Regra de leitura</summary>
+          <div class="detail-body"><ul class="check-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>fato: sustentado por fonte verificada</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>inferência: interpretação conectada a evidências</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>hipótese: precisa de validação primária</span></li></ul></div>
+        </details>
+        <details class="detail-card reveal">
+          <summary><span>Apêndice</span>Fronteira BlaBlaCar</summary>
+          <div class="detail-body"><ul class="check-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>carona intermunicipal é adjacência de mobilidade compartilhada</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>não deve ser somada automaticamente ao mercado urbano de ride-hailing</span></li></ul></div>
+        </details>
+        <details class="detail-card reveal">
+          <summary><span>Apêndice</span>Hipóteses do contexto elétrico</summary>
+          <div class="detail-body"><ul class="check-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>hub próprio versus micro-hub versus rede parceira</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>um ou dois motoristas por veículo</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>benefícios integrados e programa de recompensas</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>transição futura para propriedade</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>lavagem inteligente e base de descanso</span></li></ul></div>
+        </details>
+        <details class="detail-card reveal">
+          <summary><span>Apêndice</span>Regra de anonimização</summary>
+          <div class="detail-body"><ul class="check-list"><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>o contexto confidencial não identifica empresa, solução ou fundador</span></li><li><svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>a análise permanece de mercado e não reproduz a marca avaliada</span></li></ul></div>
+        </details></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta-panel reveal">
+          <div><span class="eyebrow">Próximo passo</span><h2>Avançar para o Projeto Matriz</h2><p>Transformar a tese priorizada em arquitetura de produto, experimento, operação e tese de captação.</p></div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://wa.me/5585991577137" target="_blank" rel="noreferrer">Avançar para o Projeto Matriz <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn" style="border-color:#CBD6DF" href="Discovery_Mobilidade_Eletrica_GIG_MonyU_V33.pdf" download><svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg> Baixar relatório completo em PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><img class="footer-logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxNTYzIDkzOCIgd2lkdGg9IjE1NjMiIGhlaWdodD0iOTM4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjQsMzExKSIgZD0ibTAgMGgxN2wxMyA0IDExIDcgNyA3IDEwIDEzIDE0IDE4IDEwIDEzIDQtMiAxMS0xNCAxMy0xNiAxMS0xNCA5LTggMTItNiA4LTJoMTdsMTMgNCA5IDUgMTAgOSA2IDkgNCA5IDIgMTB2MTQxbC0zIDEyLTYgMTEtMTAgMTEtMTMgOC05IDMtNyAxLTE3LTEtMTItNC0xMC02LTctNy02LTEyLTItMTAgMTQtMTkgMTMtMTggNC01IDEtMy02IDUtOSAxMS0xNCAxNC0xMyA5LTExIDRoLTEwbC0xMS00LTExLTgtMTMtMTItOS0xMS02LTctMSAxIDEyIDE3IDE0IDE5IDUgNy0yIDEwLTYgMTItOCA4LTE0IDctMTYgM2gtOGwtMTEtMi0xNC03LTExLTEwLTctMTEtNC0xMS0xLTV2LTE0MmwzLTEyIDUtMTAgOS0xMCA4LTYgMTEtNXoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjc0LDMwOCkiIGQ9Im0wIDBoMTlsMTMgNCAxMCA2IDEwIDkgMTAgMTAgOCA3IDM0IDM0IDMtMS0xMy0xOS02LTkgMi05IDYtMTEgMTEtMTEgMTItNyAxMC0zaDIwbDE0IDUgMTAgNyA4IDggNyAxMiAzIDExIDEgMTB2MTI4bC0yIDE2LTUgMTItOCAxMC0xMSA4LTEyIDUtNSAxaC0xOWwtMTMtNC0xMC02LTgtOC04LTctNDUtNDVoLTJsMSA1IDE2IDI1IDEgMi00IDExLTYgOS0xMCAxMC0xNCA3LTggMmgtMTlsLTE1LTUtMTAtNy03LTctNi0xMC00LTExLTEtNnYtMTQzbDMtMTIgNi0xMSA5LTEwIDktNiAxMi01eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0OTEsMzA1KSIgZD0ibTAgMGgyM2wxNCAyIDIwIDYgMjEgMTEgMTQgMTEgMTMgMTMgMTAgMTQgMTAgMjEgNSAxNyAyIDE0djI0bC00IDIwLTYgMTYtOCAxNS0xMSAxNC0xNCAxNC0xMCA3LTE0IDgtMTIgNS0xMyA0LTExIDItMTEgMWgtMTJsLTIxLTMtMTYtNS0xNy04LTEzLTktMTItMTEtOC04LTktMTMtOC0xNS02LTE4LTMtMTd2LTI3bDQtMTkgNi0xNiA5LTE2IDEwLTEzIDEzLTEzIDE0LTEwIDEyLTcgMTktN3oiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE3MSwzMDYpIiBkPSJtMCAwaDhsMTUgMyAxMSA2IDkgOCA3IDExIDQgMTEgMSA2djExbC0zIDEyLTcgMTQtMTYgMjctMTIgMjF2N2wxIDJoN2w0LTQgMTUtMjYgMTctMjkgOS0xMCAxMS03IDExLTQgNS0xaDEzbDEyIDMgMTEgNiA4IDcgNyAxMSA0IDEwIDEgNXYxN2wtMyAxMC03IDE0LTkgMTUtMTQgMjQtMTIgMjAtMTEgMTMtMTEgMTAtMTQgOS0xOCA4LTE2IDQtOCAxaC0yM2wtMTUtMy0xNS01LTE0LTctMTItOS04LTctOS0xMS03LTEwLTgtMTctNS0xOC0xLTd2LTI4bDQtMTggNy0xNyAxNC0yNCAxNy0yOSA5LTE1IDUtNiAxMy05IDEyLTR6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkyMCwzMDcpIiBkPSJtMCAwaDlsMTIgMyAxMiA2IDE2IDE1IDEyIDEzIDUgNCAyMy0yMyA0LTUgMTAtNyAxMy01IDctMWg5bDEzIDMgMTAgNSAxMiAxMSA3IDExIDQgMTN2MTlsLTQgMTMtNiAxMC0xMSAxMi0yNyAyNy03IDgtNCA0LTEgNTUtNCAxMy03IDExLTggOC0xMSA3LTEzIDRoLTE3bC0xMy00LTExLTYtMTAtMTAtNy0xMi0zLTExLTEtNTUtOC04LTctOC0zMS0zMS03LTEwLTUtMTMtMS00di0xOWw1LTE1IDctMTAgNy03IDktNiAxMi00eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzI3LDExMikiIGQ9Im0wIDAgMTQgMSAxNyA2IDEwIDcgMTAgMTAgOCAxNCAzIDkgMSA2djE3bC00IDE0LTYgMTItMTEgMTItMTAgNy0xMiA1LTkgMmgtMjBsLTE5LTctMTEtOC05LTEwLTgtMTYtMi03LTEtOHYtMTFsMy0xMyA4LTE2IDktMTAgOS03IDEwLTUgMTEtM3oiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTQ0OSwxNDYpIiBkPSJtMCAwaDlsMTEgNCA4IDYgNyA4IDQgOSAxIDZ2MTBsLTMgMTEtNiA4LTUgNS01IDQtOCAzLTYgMWgtMTFsLTEzLTUtMTAtOS02LTEwLTItMTB2LThsMi04IDUtMTAgOC04IDEwLTV6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzOTksMjI2KSIgZD0ibTAgMGgxNGw5IDQgOCA2IDUgOSAyIDd2MTBsLTQgMTEtOCA5LTEwIDUtNCAxaC0xMGwtMTAtMy02LTQtOC0xMS0yLTd2LTEzbDQtMTAgNy04IDEwLTV6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDczNCw2MjYpIiBkPSJtMCAwaDI2bDkgNCAzIDV2MTBsLTQgNS0yIDIgNiA1IDIgNi0xIDctMyA1LTkgNGgtMjdsLTItMS0xLTN2LTQ1em03IDh2MTRoMThsNC00di02bC00LTR6bTAgMjJ2MTVoMTlsNC0zdi04bC0zLTMtMi0xeiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5ODksNjI2KSIgZD0ibTAgMGgyM2wxMSA0IDcgOCAzIDh2MTNsLTQgMTAtOCA3LTkgM2gtMjRsLTItM3YtNDd6bTcgOHYzN2gxNWw4LTQgNC03di0xNWwtNS04LTctM3oiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTk5LDYyNikiIGQ9Im0wIDBoMjNsMTEgNCA3IDggMyA4djEzbC00IDEwLTggNy05IDNoLTI0bC0yLTN2LTQ3em03IDh2MzdoMTVsOC00IDQtN3YtMTVsLTUtOC03LTN6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU0Miw2MjYpIiBkPSJtMCAwaDVsNyA4IDEyIDE2IDggMTB2Mmgydi0zNWwxLTFoNmwyIDN2NDdsLTIgM2gtNmwtMTItMTUtMTUtMjAtMSAzMy0yIDJoLTVsLTItMnYtNDl6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDM1OCw2MjYpIiBkPSJtMCAwaDZsMTEgMTQgMTAgMTMgNiA4IDEtMzMgMi0yaDVsMiAydjQ5bC0yIDJoLTVsLTctOC0xMy0xNy03LTl2LTJoLTJ2MzVsLTEgMWgtNmwtMi00di00NXoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjQ3LDYyNikiIGQ9Im0wIDBoNWw5IDExIDEzIDE3IDUgNyAxLTMyIDItM2g1bDIgMnY1MGwtMSAxaC02bC0xMC0xMi05LTEyLTgtMTEtMSAzMi0yIDNoLTZsLTEtMXYtNTB6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDgwNSw2MjUpIiBkPSJtMCAwIDEyIDIgNiA0IDYgNyAyIDZ2MTdsLTQgOS04IDctNCAyLTEyIDEtMTAtMy03LTYtNC04LTEtNXYtMTFsMy0xMCA2LTcgOC00em0tMiA4LTggNC00IDh2MTVsNCA4IDcgNGg4bDYtMyA0LTUgMi03di05bC0zLTktNi01LTMtMXoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjc1LDYyNSkiIGQ9Im0wIDAgMTIgMiA2IDQgNiA3IDIgNnYxN2wtNCA5LTggNy00IDItMTIgMS0xMC0zLTctNi00LTgtMS01di0xMWwzLTEwIDYtNyA4LTR6bS0yIDgtOCA0LTQgOHYxNWw0IDggNyA0aDhsNi0zIDQtNSAyLTd2LTlsLTMtOS02LTUtMy0xeiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjU1LDI0MykiIGQ9Im0wIDAgNSAxIDE0IDgtMyAzLTIyIDExaC0ydjJsNSAyIDggNS0yIDItNTcgMTgtMy0xIDIzLTE1IDEwLTctMTAtNiAzLTMgMjItMTR6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEzNDYsMjk1KSIgZD0ibTAgMCAxMiA2IDUgM3YybC0yNiAxMyAxMyA4LTEgMi01NiAxOC00LTEgMzAtMjBoMmwtMy0zLTctNHYtMmwxNi0xMHoiIGZpbGw9IiNmYzAiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoODYwLDYyNikiIGQ9Im0wIDBoNmwzIDMgMTcgMzYgNCA5LTIgNWgtNWwtNS04LTEtNC0yNyAxLTUgMTAtMSAxaC01bC0yLTIgMS02IDE4LTM4IDMtNnptMyAxMS05IDIwdjJoMTlsLTItNi03LTE2eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDQ1LDYyNikiIGQ9Im0wIDBoMzJsMiAyLTEgNS0yIDFoLTI0djE0aDIybDMgMXY2bC0yIDFoLTIzdjE1aDI0bDMgMi0xIDUtMSAxaC0zMmwtMi0ydi00OXoiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEyNyw2MjYpIiBkPSJtMCAwaDZsNSA4IDE4IDM4djZsLTcgMS01LTEwdi0ybC0yNyAxLTUgMTAtMSAxaC01bC0yLTIgMS02IDE0LTMwIDctMTR6bTIgMTItOCAxOHYzaDE5bC03LTE3LTItNHoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzIwLDYyNikiIGQ9Im0wIDBoNmw1IDggMTQgMzAgNCA5LTEgNS0xIDFoLTVsLTUtOXYtM2gtMjhsLTMgOS0yIDNoLTVsLTItMiAxLTcgMTgtMzggMy01em0yIDEyLTkgMjFoMjBsLTktMjF6IiBmaWxsPSIjRkZGRkZGIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUwNCw2MjYpIiBkPSJtMCAwaDZsOSAxNyAxMyAyOCAxIDYtMiAyaC01bC0zLTQtMy03LTI3LTEtMiA2LTQgNmgtNWwtMi01IDE2LTM0IDYtMTN6bTIgMTEtOSAyMHYyaDE5bC0zLTktNi0xM3oiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE4MSw2MjUpIiBkPSJtMCAwIDEwIDEgMTAgNSAxIDYtNCAyLTExLTVoLThsLTUgMi0xIDJ2Nmw5IDQgMTMgNCA2IDUgMiA1LTEgOC01IDYtNyAzLTUgMS0xMy0xLTEwLTUtMS02IDEtMSA3IDEgOCAzaDlsNS0yIDEtNy01LTMtMTUtNC02LTQtMy0zLTEtOSA0LTggNi00eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MTQsNjI1KSIgZD0ibTAgMCAxMCAxIDkgNCAyIDJ2NWwtNCAyLTctNC00LTFoLThsLTYgMnY3bDMgMyAxNyA1IDYgNCAzIDMgMSA5LTMgNi01IDQtOSAzLTEzLTEtOC0zLTQtNCAxLTUgMy0xIDggNCA0IDFoMTBsNS0zdi02bC01LTMtMTQtNC02LTMtNC01LTEtNiAyLTcgOC03eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzQwLDEzNykiIGQ9Im0wIDAgNSAxIDEgMy0xIDUgOCA3IDEgNi0yIDItNC0xLTUtNi04LTMtNyAxdjdsNSA1IDExIDggMiA0djhsLTQgNi01IDNoLTEwbC0yIDZoLTVsLTEtMSAxLTgtNS0yLTctOCAxLTQgNS0xIDQgNSA3IDQgNyAxIDMtMSAxLTYtNS01LTgtNi01LTYtMS01IDMtOCA1LTQgMTItMnoiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDM1LDYyNSkiIGQ9Im0wIDAgMTIgMiA3IDQgMSA1LTMgMy0xMy01LTkgMS01IDMtMyA3djE1bDQgOCA3IDNoN2w5LTRoNWwxIDUtNCA0LTcgMy0xMSAxLTEwLTMtOC03LTQtMTB2LTE1bDQtMTAgOC03IDUtMnoiIGZpbGw9IiNGRkZGRkYiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTgzLDYyNikiIGQ9Im0wIDBoMzFsMiAxdjZsLTIgMWgtMjR2MTRoMjJsMyAyLTEgNS0xIDFoLTIzdjIybC0xIDFoLTZsLTItMnYtNDl6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwODksNjI2KSIgZD0ibTAgMGg2bDIgM3Y0N2wtMiAzaC02bC0yLTJ2LTQ5eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5NjcsNjI2KSIgZD0ibTAgMGg2bDIgM3Y0N2wtMiAzaC02bC0yLTJ2LTQ5eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0NjUsNjI2KSIgZD0ibTAgMGg2bDIgMnY0OWwtMiAyaC02bC0yLTN2LTQ3eiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMjUsNjI2KSIgZD0ibTAgMGg2bDIgMnY0OWwtMiAyaC02bC0yLTR2LTQ1eiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDQ4LDE1OSkiIGQ9Im0wIDAgNCAydjNsNyAxIDIgMnYzaC0xNXY2bDEzIDIgNSA1djZsLTUgNWgtMnY1aC00bC0xLTRoLTdsLTMtMnYtNGwxMSAxIDQtMnYtNGwtMTMtMy00LTR2LTdsNS01aDJ2LTV6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE0MDAsMjM5KSIgZD0ibTAgMCA3IDMgNCAyLTEgM2gtN2wtMyAxdjRsMTEgMSA0IDN2N2wtNCA0LTEgNC0zLTF2LTJoLTZsLTMtMiAxLTNoOGwzLTItMS0zLTExLTEtMy0yLTEtNiA0LTV6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyODcsMzQ3KSIgZD0ibTAgMCAyIDF6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExOTcsMjk1KSIgZD0ibTAgMCIgZmlsbD0iI2ZjMCIvPgo8L3N2Zz4K" alt="MonyU"><div class="signature"><strong>Aurora - Discovery de Inovação</strong>Centro de Inteligência de Negócios MonyU</div></div>
+      <div class="footer-meta">V33 • 29 de julho de 2026<br>São Paulo → Estado de São Paulo → Brasil<br>Documento estratégico confidencial</div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const menuBtn = document.getElementById('menuBtn');
+      const navLinks = document.getElementById('navLinks');
+      menuBtn.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+        menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      });
+      navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navLinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false');
+      }));
+
+      const progress = document.getElementById('progress');
+      const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
+      };
+      addEventListener('scroll', updateProgress, {passive:true}); updateProgress();
+
+      const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const reveals = document.querySelectorAll('.reveal');
+      if (reduceMotion || !('IntersectionObserver' in window)) reveals.forEach(el => el.classList.add('visible'));
+      else {
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        }), {threshold:.08});
+        reveals.forEach(el => observer.observe(el));
+      }
+
+      const range = document.getElementById('marketRange');
+      const pct = document.getElementById('rangePct');
+      const value = document.getElementById('rangeValue');
+      const updateRange = () => {
+        pct.textContent = range.value + '%';
+        value.textContent = Math.round(878000 * Number(range.value) / 100).toLocaleString('pt-BR');
+      };
+      range.addEventListener('input', updateRange); updateRange();
+
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(x => { x.classList.remove('active'); x.setAttribute('aria-pressed','false'); });
+        btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.finding-card').forEach(card => card.classList.toggle('is-hidden', filter !== 'all' && card.dataset.impact !== filter));
+      }));
+
+      const horizons = [{"period": "2026–2028", "name": "Provar o turno elétrico", "focus": "veículo, energia, bateria, micro-hub, uptime, dados e demanda qualificada"}, {"period": "2029–2031", "name": "Escalar por clusters energéticos", "focus": "rede multirregional, smart charging, seguro orientado a dados e B2B"}, {"period": "2032–2035", "name": "Orquestrar mobilidade e energia", "focus": "veículo definido por software, integração energética, circularidade e autonomia como cenário"}];
+      document.querySelectorAll('.horizon-tab').forEach(tab => tab.addEventListener('click', () => {
+        document.querySelectorAll('.horizon-tab').forEach(x => {x.classList.remove('active'); x.setAttribute('aria-selected','false')});
+        tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+        const h = horizons[Number(tab.dataset.index)];
+        document.getElementById('horizonPeriod').textContent = h.period;
+        document.getElementById('horizonName').textContent = h.name;
+        document.getElementById('horizonFocus').textContent = h.focus;
+      }));
+
+      const scenarioCards = document.querySelectorAll('.scenario-card');
+      scenarioCards.forEach(card => card.addEventListener('click', () => {
+        scenarioCards.forEach(x => x.classList.remove('active')); card.classList.add('active');
+        document.getElementById('scenarioTitle').textContent = card.dataset.title;
+        document.getElementById('scenarioLogic').textContent = card.dataset.logic;
+        document.getElementById('scenarioImplication').textContent = card.dataset.implication;
+      }));
+      if (scenarioCards[0]) scenarioCards[0].click();
+
+      const scoreReadout = document.getElementById('scoreReadout');
+      document.querySelectorAll('.score-row').forEach(row => row.addEventListener('click', () => {
+        scoreReadout.textContent = row.dataset.rationale;
+      }));
+    })();
+  </script>
+</body>
+</html>
