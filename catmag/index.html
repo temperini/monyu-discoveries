@@ -1,0 +1,1893 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Radar de oportunidades para CATMAG Technologies — química sustentável, biodiesel e catálise magnética.">
+  <title>CATMAG | Radar de Oportunidades</title>
+  <style>
+    :root {
+      --bg:#070708; --panel:#111113; --panel2:#161619; --ink:#f7f7f8; --muted:#a8a8b0;
+      --line:#2a2a2f; --pink:#FF0055; --orange:#FF7300; --yellow:#FFCC00;
+      --green:#30d18b; --red:#ff4d63; --max:1240px; --radius:9px;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0; color:var(--ink); background:
+      radial-gradient(circle at 85% 8%, rgba(255,0,85,.14), transparent 28rem),
+      radial-gradient(circle at 7% 32%, rgba(255,115,0,.07), transparent 30rem),
+      var(--bg); font-family:Montserrat,Inter,"Segoe UI",Arial,sans-serif; line-height:1.5;
+    }
+    a { color:inherit; }
+    .topbar {
+      position:sticky; top:0; z-index:20; border-bottom:1px solid rgba(255,255,255,.08);
+      background:rgba(7,7,8,.88); backdrop-filter:blur(18px);
+    }
+    .topbar-inner { max-width:var(--max); margin:auto; height:74px; padding:10px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brands { display:flex; align-items:center; gap:12px; }
+    .monyu-mini { width:140px; height:48px; overflow:hidden; flex:0 0 auto; }
+    .monyu-mini img { width:100%; height:100%; object-fit:contain; display:block; }
+    .brand-sep { width:1px; height:28px; background:var(--line); }
+    .catmag-mini { font-weight:900; letter-spacing:.08em; font-size:14px; }
+    .catmag-mini i { color:var(--orange); font-style:normal; }
+    .topbar nav { display:flex; gap:18px; font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+    .topbar nav a { text-decoration:none; }
+    .topbar nav a:hover { color:var(--ink); }
+    main { overflow:hidden; }
+    .hero { max-width:var(--max); margin:auto; padding:82px 24px 52px; display:grid; grid-template-columns:1.35fr .65fr; gap:56px; align-items:center; position:relative; }
+    .eyebrow { color:var(--pink); text-transform:uppercase; letter-spacing:.16em; font-size:12px; font-weight:800; }
+    h1 { margin:16px 0 20px; font-size:clamp(42px,7vw,84px); line-height:.96; letter-spacing:-.055em; max-width:820px; }
+    h1 em { color:var(--pink); font-style:normal; }
+    .lead { max-width:760px; font-size:18px; color:#c8c8cd; }
+    .profile-line { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+    .profile-line span { padding:8px 11px; border:1px solid var(--line); background:rgba(255,255,255,.025); border-radius:7px; font-size:12px; color:#d6d6da; }
+    .hero-mark {
+      min-height:360px; border:1px solid var(--line); border-radius:var(--radius); position:relative; overflow:hidden;
+      background:linear-gradient(145deg,rgba(255,0,85,.11),rgba(255,115,0,.035) 55%,rgba(255,255,255,.015));
+      display:grid; place-items:center;
+    }
+    .hero-mark:before,.hero-mark:after { content:""; position:absolute; border:1px solid rgba(255,255,255,.1); border-radius:50%; }
+    .hero-mark:before { width:280px; height:280px; }
+    .hero-mark:after { width:190px; height:190px; border-color:rgba(255,0,85,.35); }
+    .atom { position:absolute; width:8px; height:8px; background:var(--yellow); border-radius:50%; box-shadow:0 0 20px var(--yellow); top:37px; right:92px; }
+    .client-wordmark { position:relative; z-index:2; text-align:center; }
+    .client-wordmark strong { display:block; font-size:44px; letter-spacing:.03em; }
+    .client-wordmark strong b { color:var(--orange); }
+    .client-wordmark small { color:var(--muted); letter-spacing:.22em; text-transform:uppercase; }
+    .section { max-width:var(--max); margin:auto; padding:56px 24px; }
+    .section-head { display:flex; justify-content:space-between; gap:24px; align-items:end; margin-bottom:28px; }
+    .section-head h2 { margin:7px 0 0; font-size:clamp(28px,4vw,48px); letter-spacing:-.04em; }
+    .section-head p { max-width:540px; color:var(--muted); margin:0; }
+    .metrics { max-width:var(--max); padding:0 24px 48px; margin:auto; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .metric { min-height:160px; padding:24px; border:1px solid var(--line); background:var(--panel); border-radius:var(--radius); position:relative; overflow:hidden; }
+    .metric:after { content:""; position:absolute; height:2px; inset:auto 24px 0; background:linear-gradient(90deg,var(--pink),var(--orange)); }
+    .metric small { color:var(--muted); text-transform:uppercase; letter-spacing:.11em; font-size:10px; }
+    .metric strong { display:block; font-size:37px; letter-spacing:-.04em; margin-top:20px; }
+    .metric strong.long { font-size:22px; line-height:1.15; }
+    .metric p { font-size:12px; color:var(--muted); margin:8px 0 0; }
+    .decision-panel { border:1px solid rgba(255,0,85,.35); background:linear-gradient(120deg,rgba(255,0,85,.08),rgba(255,255,255,.015)); border-radius:var(--radius); padding:22px; }
+    .priority-grid { display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+    .priority-item { padding:22px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); min-height:245px; }
+    .priority-item>span { color:var(--pink); font-weight:900; font-size:23px; }
+    .priority-item small { color:var(--yellow); text-transform:uppercase; letter-spacing:.08em; }
+    .priority-item h3 { font-size:17px; margin:10px 0 8px; }
+    .priority-item p { color:var(--muted); font-size:13px; }
+    .filters { padding:18px; border:1px solid var(--line); background:rgba(17,17,19,.94); border-radius:var(--radius); margin-bottom:22px; position:sticky; top:86px; z-index:10; }
+    .filter-main { display:grid; grid-template-columns:1fr repeat(3,minmax(150px,.25fr)); gap:10px; }
+    input,select { width:100%; color:var(--ink); background:#09090b; border:1px solid var(--line); border-radius:7px; padding:12px 13px; font:inherit; font-size:13px; }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+    .chip { color:#d8d8dc; border:1px solid var(--line); background:#0b0b0d; border-radius:999px; padding:8px 11px; cursor:pointer; font:inherit; font-size:11px; text-transform:capitalize; }
+    .chip span { color:var(--muted); margin-left:4px; }
+    .chip:hover,.chip.active { border-color:var(--pink); color:#fff; background:rgba(255,0,85,.1); }
+    .results-line { display:flex; justify-content:space-between; color:var(--muted); font-size:12px; margin:14px 2px 18px; }
+    .cards { display:grid; gap:14px; }
+    .opportunity-card { border:1px solid var(--line); background:linear-gradient(160deg,var(--panel),#0d0d0f); border-radius:var(--radius); overflow:hidden; break-inside:avoid; }
+    .opportunity-card.hidden { display:none; }
+    .card-top { display:grid; grid-template-columns:54px 1fr 92px; gap:18px; padding:22px; align-items:start; }
+    .rank { color:#686870; font-size:26px; font-weight:900; font-variant-numeric:tabular-nums; }
+    .tags { display:flex; gap:7px; flex-wrap:wrap; margin-bottom:11px; }
+    .tag { border:1px solid var(--line); background:#0a0a0c; color:#bdbdc4; border-radius:999px; padding:4px 8px; font-size:9px; text-transform:uppercase; letter-spacing:.08em; }
+    .tag.status { color:var(--yellow); }
+    .tag.urgent { color:#fff; background:var(--pink); border-color:var(--pink); animation:pulse 1.8s infinite; }
+    @keyframes pulse { 50% { box-shadow:0 0 0 5px rgba(255,0,85,0); } 0%,100% { box-shadow:0 0 0 0 rgba(255,0,85,.3); } }
+    .card-heading h3 { margin:0; font-size:23px; letter-spacing:-.025em; }
+    .funder { color:var(--muted); margin:4px 0 0; font-size:12px; }
+    .score { width:82px; height:82px; border:1px solid; border-radius:50%; display:grid; place-content:center; text-align:center; }
+    .score strong { font-size:26px; line-height:1; }
+    .score span { font-size:9px; text-transform:uppercase; color:var(--muted); margin-top:5px; }
+    .score-verde { color:var(--green); border-color:rgba(48,209,139,.55); }
+    .score-amarelo { color:var(--yellow); border-color:rgba(255,204,0,.55); }
+    .score-laranja { color:var(--orange); border-color:rgba(255,115,0,.55); }
+    .score-vermelho { color:var(--red); border-color:rgba(255,77,99,.55); }
+    .card-summary-grid { display:grid; grid-template-columns:1.35fr .65fr .8fr; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .card-summary-grid>div { padding:15px 22px; border-right:1px solid var(--line); }
+    .card-summary-grid>div:last-child { border-right:0; }
+    .card-summary-grid span { display:block; color:var(--muted); font-size:9px; text-transform:uppercase; letter-spacing:.1em; margin-bottom:5px; }
+    .card-summary-grid strong { font-size:12px; line-height:1.35; display:block; }
+    .match-note { display:flex; gap:12px; padding:17px 22px; align-items:flex-start; }
+    .match-note p { margin:0; color:#d7d7dc; font-size:13px; }
+    .signal { flex:0 0 8px; height:8px; border-radius:50%; margin-top:6px; }
+    .signal-verde { background:var(--green); } .signal-amarelo { background:var(--yellow); }
+    .signal-laranja { background:var(--orange); } .signal-vermelho { background:var(--red); }
+    details { border-top:1px solid var(--line); }
+    summary { cursor:pointer; padding:13px 22px; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.09em; }
+    .details-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border-top:1px solid var(--line); }
+    .detail-block { padding:20px 22px; background:var(--panel2); }
+    .detail-block h4 { margin:0 0 10px; font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
+    .detail-block p,.detail-block li { color:#c2c2c9; font-size:12px; }
+    .detail-block ul { margin:0; padding-left:18px; }
+    .detail-block li+li { margin-top:5px; }
+    .detail-block .muted,.muted { color:var(--muted); }
+    .detail-block.caution { box-shadow:inset 3px 0 0 var(--orange); }
+    .detail-block.next-step { box-shadow:inset 3px 0 0 var(--pink); }
+    .topic-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+    .topic-row span { font-size:9px; color:#d2d2d7; border:1px solid var(--line); padding:4px 7px; border-radius:5px; }
+    .card-footer { padding:14px 22px; display:flex; gap:16px; align-items:center; justify-content:space-between; }
+    .source-links { display:flex; gap:10px; flex-wrap:wrap; }
+    .source-links a { color:var(--muted); font-size:10px; }
+    .official-link { text-decoration:none; white-space:nowrap; color:#fff; border:1px solid var(--pink); padding:9px 12px; border-radius:7px; font-size:11px; }
+    .official-link:hover { background:var(--pink); }
+    .method-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .method-card { padding:26px; border:1px solid var(--line); background:var(--panel); border-radius:var(--radius); }
+    .method-card h3 { margin-top:0; }
+    .method-card p,.method-card li { color:var(--muted); font-size:13px; }
+    .scale { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:18px; }
+    .scale div { padding:13px; border:1px solid var(--line); border-radius:7px; font-size:11px; }
+    .scale b { display:block; font-size:16px; margin-bottom:4px; }
+    .sources-list { list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+    .sources-list li { display:grid; grid-template-columns:62px 1fr auto; gap:16px; align-items:center; padding:13px 4px; border-bottom:1px solid var(--line); }
+    .sources-list li>span { color:var(--pink); font-weight:800; }
+    .sources-list b { display:block; font-size:12px; }
+    .sources-list small { color:var(--muted); }
+    .sources-list a { color:var(--muted); font-size:11px; }
+    .cta { max-width:var(--max); margin:40px auto 0; padding:0 24px 70px; }
+    .cta-panel { border:1px solid rgba(255,0,85,.5); padding:42px; border-radius:var(--radius); background:linear-gradient(120deg,rgba(255,0,85,.12),rgba(255,115,0,.05)); display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center; }
+    .cta-panel h2 { font-size:32px; margin:0 0 10px; }
+    .cta-panel p { color:#c7c7cd; margin:0; max-width:720px; }
+    .cta-button { background:var(--pink); color:#fff; text-decoration:none; font-weight:800; padding:15px 18px; border-radius:7px; text-align:center; }
+    footer { border-top:1px solid var(--line); padding:26px 24px; color:var(--muted); font-size:11px; }
+    footer>div { max-width:var(--max); margin:auto; display:flex; justify-content:space-between; gap:20px; }
+    .no-results { display:none; padding:40px; text-align:center; color:var(--muted); border:1px dashed var(--line); }
+    @media (max-width:980px) {
+      .hero { grid-template-columns:1fr; } .hero-mark { min-height:280px; }
+      .metrics { grid-template-columns:repeat(2,1fr); } .priority-grid { grid-template-columns:repeat(2,1fr); }
+      .filter-main { grid-template-columns:1fr 1fr; } .method-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width:680px) {
+      .topbar nav { display:none; } .hero { padding-top:50px; } .metrics { grid-template-columns:1fr; }
+      .priority-grid { grid-template-columns:1fr; } .filter-main { grid-template-columns:1fr; }
+      .filters { position:static; } .card-top { grid-template-columns:40px 1fr; }
+      .score { grid-column:2; width:70px; height:70px; } .card-summary-grid { grid-template-columns:1fr; }
+      .card-summary-grid>div { border-right:0; border-bottom:1px solid var(--line); }
+      .details-grid { grid-template-columns:1fr; } .card-footer { align-items:flex-start; flex-direction:column; }
+      .cta-panel { grid-template-columns:1fr; padding:28px; } footer>div { flex-direction:column; }
+      .sources-list li { grid-template-columns:48px 1fr; } .sources-list a { grid-column:2; }
+    }
+    @media print {
+      @page { size:A4; margin:13mm 11mm 15mm; }
+      :root { --bg:#fff; --panel:#fff; --panel2:#fff; --ink:#111; --muted:#555; --line:#d8d8dc; }
+      body { background:#fff !important; color:#111; font-size:10pt; print-color-adjust:exact; -webkit-print-color-adjust:exact; }
+      .topbar { position:static; background:#fff; border-bottom:3px solid var(--pink); }
+      .topbar nav,.filters,.results-line,.no-results { display:none !important; }
+      .hero { min-height:245mm; padding:35mm 8mm 20mm; grid-template-columns:1.25fr .75fr; align-content:center; page-break-after:always; }
+      .hero-mark { min-height:94mm; } h1 { font-size:50pt; }
+      .metrics { page-break-after:always; grid-template-columns:repeat(2,1fr); padding-top:18mm; }
+      .metric { min-height:52mm; } .metric strong.long { font-size:17pt; }
+      .section { padding:12mm 4mm; } .section-head h2 { font-size:28pt; }
+      .decision-panel { page-break-after:always; } .priority-grid { grid-template-columns:repeat(2,1fr); }
+      .priority-item { min-height:56mm; }
+      .opportunity-card { break-inside:auto; page-break-before:always; background:#fff; }
+      .card-top,.card-summary-grid,.match-note,summary,.card-footer { break-inside:avoid; }
+      .details-grid { grid-template-columns:repeat(2,1fr); }
+      details[open] > *:not(summary) { display:block; }
+      summary { list-style:none; color:#555; }
+      .tag { color:#333; background:#f5f5f6; }
+      .tag.urgent { color:#fff; }
+      .score span,.funder,.detail-block p,.detail-block li,.match-note p { color:#3f3f45; }
+      .source-links { display:none; } .official-link { color:#111; }
+      .method-grid { page-break-before:always; } .sources-list a { color:#333; }
+      .cta { page-break-before:always; padding-top:25mm; } .cta-panel { grid-template-columns:1fr; min-height:150mm; align-content:center; }
+      footer { border-top:3px solid var(--pink); }
+      a { text-decoration:none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brands">
+        <div class="monyu-mini"><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjEyMCA4MCAxNDE1IDQ4NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTY0LDMxMSkiIGQ9Im0wIDBoMTdsMTMgNCAxMSA3IDcgNyAxMCAxMyAxNCAxOCAxMCAxMyA0LTIgMTEtMTQgMTMtMTYgMTEtMTQgOS04IDEyLTYgOC0yaDE3bDEzIDQgOSA1IDEwIDkgNiA5IDQgOSAyIDEwdjE0MWwtMyAxMi02IDExLTEwIDExLTEzIDgtOSAzLTcgMS0xNy0xLTEyLTQtMTAtNi03LTctNi0xMi0yLTEwIDE0LTE5IDEzLTE4IDQtNSAxLTMtNiA1LTkgMTEtMTQgMTQtMTMgOS0xMSA0aC0xMGwtMTEtNC0xMS04LTEzLTEyLTktMTEtNi03LTEgMSAxMiAxNyAxNCAxOSA1IDctMiAxMC02IDEyLTggOC0xNCA3LTE2IDNoLThsLTExLTItMTQtNy0xMS0xMC03LTExLTQtMTEtMS01di0xNDJsMy0xMiA1LTEwIDktMTAgOC02IDExLTV6IiBmaWxsPSIjRkUwMDU4Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY3NCwzMDgpIiBkPSJtMCAwaDE5bDEzIDQgMTAgNiAxMCA5IDEwIDEwIDggNyAzNCAzNCAzLTEtMTMtMTktNi05IDItOSA2LTExIDExLTExIDEyLTcgMTAtM2gyMGwxNCA1IDEwIDcgOCA4IDcgMTIgMyAxMSAxIDEwdjEyOGwtMiAxNi01IDEyLTggMTAtMTEgOC0xMiA1LTUgMWgtMTlsLTEzLTQtMTAtNi04LTgtOC03LTQ1LTQ1aC0ybDEgNSAxNiAyNSAxIDItNCAxMS02IDktMTAgMTAtMTQgNy04IDJoLTE5bC0xNS01LTEwLTctNy03LTYtMTAtNC0xMS0xLTZ2LTE0M2wzLTEyIDYtMTEgOS0xMCA5LTYgMTItNXoiIGZpbGw9IiNGRTAwNTgiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDkxLDMwNSkiIGQ9Im0wIDBoMjNsMTQgMiAyMCA2IDIxIDExIDE0IDExIDEzIDEzIDEwIDE0IDEwIDIxIDUgMTcgMiAxNHYyNGwtNCAyMC02IDE2LTggMTUtMTEgMTQtMTQgMTQtMTAgNy0xNCA4LTEyIDUtMTMgNC0xMSAyLTExIDFoLTEybC0yMS0zLTE2LTUtMTctOC0xMy05LTEyLTExLTgtOC05LTEzLTgtMTUtNi0xOC0zLTE3di0yN2w0LTE5IDYtMTYgOS0xNiAxMC0xMyAxMy0xMyAxNC0xMCAxMi03IDE5LTd6IiBmaWxsPSIjRkUwMDU4Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExNzEsMzA2KSIgZD0ibTAgMGg4bDE1IDMgMTEgNiA5IDggNyAxMSA0IDExIDEgNnYxMWwtMyAxMi03IDE0LTE2IDI3LTEyIDIxdjdsMSAyaDdsNC00IDE1LTI2IDE3LTI5IDktMTAgMTEtNyAxMS00IDUtMWgxM2wxMiAzIDExIDYgOCA3IDcgMTEgNCAxMCAxIDV2MTdsLTMgMTAtNyAxNC05IDE1LTE0IDI0LTEyIDIwLTExIDEzLTExIDEwLTE0IDktMTggOC0xNiA0LTggMWgtMjNsLTE1LTMtMTUtNS0xNC03LTEyLTktOC03LTktMTEtNy0xMC04LTE3LTUtMTgtMS03di0yOGw0LTE4IDctMTcgMTQtMjQgMTctMjkgOS0xNSA1LTYgMTMtOSAxMi00eiIgZmlsbD0iI0ZGNzMwMCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MjAsMzA3KSIgZD0ibTAgMGg5bDEyIDMgMTIgNiAxNiAxNSAxMiAxMyA1IDQgMjMtMjMgNC01IDEwLTcgMTMtNSA3LTFoOWwxMyAzIDEwIDUgMTIgMTEgNyAxMSA0IDEzdjE5bC00IDEzLTYgMTAtMTEgMTItMjcgMjctNyA4LTQgNC0xIDU1LTQgMTMtNyAxMS04IDgtMTEgNy0xMyA0aC0xN2wtMTMtNC0xMS02LTEwLTEwLTctMTItMy0xMS0xLTU1LTgtOC03LTgtMzEtMzEtNy0xMC01LTEzLTEtNHYtMTlsNS0xNSA3LTEwIDctNyA5LTYgMTItNHoiIGZpbGw9IiNGRTAwNTgiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTMyNywxMTIpIiBkPSJtMCAwIDE0IDEgMTcgNiAxMCA3IDEwIDEwIDggMTQgMyA5IDEgNnYxN2wtNCAxNC02IDEyLTExIDEyLTEwIDctMTIgNS05IDJoLTIwbC0xOS03LTExLTgtOS0xMC04LTE2LTItNy0xLTh2LTExbDMtMTMgOC0xNiA5LTEwIDktNyAxMC01IDExLTN6IiBmaWxsPSIjRkZDQjAwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE0NDksMTQ2KSIgZD0ibTAgMGg5bDExIDQgOCA2IDcgOCA0IDkgMSA2djEwbC0zIDExLTYgOC01IDUtNSA0LTggMy02IDFoLTExbC0xMy01LTEwLTktNi0xMC0yLTEwdi04bDItOCA1LTEwIDgtOCAxMC01eiIgZmlsbD0iI2ZjMCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzk5LDIyNikiIGQ9Im0wIDBoMTRsOSA0IDggNiA1IDkgMiA3djEwbC00IDExLTggOS0xMCA1LTQgMWgtMTBsLTEwLTMtNi00LTgtMTEtMi03di0xM2w0LTEwIDctOCAxMC01eiIgZmlsbD0iI2ZjMCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MzQsNjI2KSIgZD0ibTAgMGgyNmw5IDQgMyA1djEwbC00IDUtMiAyIDYgNSAyIDYtMSA3LTMgNS05IDRoLTI3bC0yLTEtMS0zdi00NXptNyA4djE0aDE4bDQtNHYtNmwtNC00em0wIDIydjE1aDE5bDQtM3YtOGwtMy0zLTItMXoiIGZpbGw9IiMwQzAwMDQiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTg5LDYyNikiIGQ9Im0wIDBoMjNsMTEgNCA3IDggMyA4djEzbC00IDEwLTggNy05IDNoLTI0bC0yLTN2LTQ3em03IDh2MzdoMTVsOC00IDQtN3YtMTVsLTUtOC03LTN6IiBmaWxsPSIjMDEwMDAwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDU5OSw2MjYpIiBkPSJtMCAwaDIzbDExIDQgNyA4IDMgOHYxM2wtNCAxMC04IDctOSAzaC0yNGwtMi0zdi00N3ptNyA4djM3aDE1bDgtNCA0LTd2LTE1bC01LTgtNy0zeiIgZmlsbD0iIzAxMDAwMCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1NDIsNjI2KSIgZD0ibTAgMGg1bDcgOCAxMiAxNiA4IDEwdjJoMnYtMzVsMS0xaDZsMiAzdjQ3bC0yIDNoLTZsLTEyLTE1LTE1LTIwLTEgMzMtMiAyaC01bC0yLTJ2LTQ5eiIgZmlsbD0iIzAxMDAwMCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzNTgsNjI2KSIgZD0ibTAgMGg2bDExIDE0IDEwIDEzIDYgOCAxLTMzIDItMmg1bDIgMnY0OWwtMiAyaC01bC03LTgtMTMtMTctNy05di0yaC0ydjM1bC0xIDFoLTZsLTItNHYtNDV6IiBmaWxsPSIjMDkwMDAzIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI0Nyw2MjYpIiBkPSJtMCAwaDVsOSAxMSAxMyAxNyA1IDcgMS0zMiAyLTNoNWwyIDJ2NTBsLTEgMWgtNmwtMTAtMTItOS0xMi04LTExLTEgMzItMiAzaC02bC0xLTF2LTUweiIgZmlsbD0iIzAxMDAwMCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4MDUsNjI1KSIgZD0ibTAgMCAxMiAyIDYgNCA2IDcgMiA2djE3bC00IDktOCA3LTQgMi0xMiAxLTEwLTMtNy02LTQtOC0xLTV2LTExbDMtMTAgNi03IDgtNHptLTIgOC04IDQtNCA4djE1bDQgOCA3IDRoOGw2LTMgNC01IDItN3YtOWwtMy05LTYtNS0zLTF6IiBmaWxsPSIjMDQwMDAxIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY3NSw2MjUpIiBkPSJtMCAwIDEyIDIgNiA0IDYgNyAyIDZ2MTdsLTQgOS04IDctNCAyLTEyIDEtMTAtMy03LTYtNC04LTEtNXYtMTFsMy0xMCA2LTcgOC00em0tMiA4LTggNC00IDh2MTVsNCA4IDcgNGg4bDYtMyA0LTUgMi03di05bC0zLTktNi01LTMtMXoiIGZpbGw9IiMwNDAwMDEiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTI1NSwyNDMpIiBkPSJtMCAwIDUgMSAxNCA4LTMgMy0yMiAxMWgtMnYybDUgMiA4IDUtMiAyLTU3IDE4LTMtMSAyMy0xNSAxMC03LTEwLTYgMy0zIDIyLTE0eiIgZmlsbD0iI2ZjMCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzQ2LDI5NSkiIGQ9Im0wIDAgMTIgNiA1IDN2MmwtMjYgMTMgMTMgOC0xIDItNTYgMTgtNC0xIDMwLTIwaDJsLTMtMy03LTR2LTJsMTYtMTB6IiBmaWxsPSIjZmMwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDg2MCw2MjYpIiBkPSJtMCAwaDZsMyAzIDE3IDM2IDQgOS0yIDVoLTVsLTUtOC0xLTQtMjcgMS01IDEwLTEgMWgtNWwtMi0yIDEtNiAxOC0zOCAzLTZ6bTMgMTEtOSAyMHYyaDE5bC0yLTYtNy0xNnoiIGZpbGw9IiMwNDAwMDEiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTA0NSw2MjYpIiBkPSJtMCAwaDMybDIgMi0xIDUtMiAxaC0yNHYxNGgyMmwzIDF2NmwtMiAxaC0yM3YxNWgyNGwzIDItMSA1LTEgMWgtMzJsLTItMnYtNDl6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExMjcsNjI2KSIgZD0ibTAgMGg2bDUgOCAxOCAzOHY2bC03IDEtNS0xMHYtMmwtMjcgMS01IDEwLTEgMWgtNWwtMi0yIDEtNiAxNC0zMCA3LTE0em0yIDEyLTggMTh2M2gxOWwtNy0xNy0yLTR6IiBmaWxsPSIjMDMwMDAxIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMyMCw2MjYpIiBkPSJtMCAwaDZsNSA4IDE0IDMwIDQgOS0xIDUtMSAxaC01bC01LTl2LTNoLTI4bC0zIDktMiAzaC01bC0yLTIgMS03IDE4LTM4IDMtNXptMiAxMi05IDIxaDIwbC05LTIxeiIgZmlsbD0iIzAzMDAwMSIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1MDQsNjI2KSIgZD0ibTAgMGg2bDkgMTcgMTMgMjggMSA2LTIgMmgtNWwtMy00LTMtNy0yNy0xLTIgNi00IDZoLTVsLTItNSAxNi0zNCA2LTEzem0yIDExLTkgMjB2MmgxOWwtMy05LTYtMTN6IiBmaWxsPSIjMDIwMDAwIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDExODEsNjI1KSIgZD0ibTAgMCAxMCAxIDEwIDUgMSA2LTQgMi0xMS01aC04bC01IDItMSAydjZsOSA0IDEzIDQgNiA1IDIgNS0xIDgtNSA2LTcgMy01IDEtMTMtMS0xMC01LTEtNiAxLTEgNyAxIDggM2g5bDUtMiAxLTctNS0zLTE1LTQtNi00LTMtMy0xLTkgNC04IDYtNHoiIGZpbGw9IiMwNjAwMDIiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTE0LDYyNSkiIGQ9Im0wIDAgMTAgMSA5IDQgMiAydjVsLTQgMi03LTQtNC0xaC04bC02IDJ2N2wzIDMgMTcgNSA2IDQgMyAzIDEgOS0zIDYtNSA0LTkgMy0xMy0xLTgtMy00LTQgMS01IDMtMSA4IDQgNCAxaDEwbDUtM3YtNmwtNS0zLTE0LTQtNi0zLTQtNS0xLTYgMi03IDgtN3oiIGZpbGw9IiMwNjAwMDIiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTM0MCwxMzcpIiBkPSJtMCAwIDUgMSAxIDMtMSA1IDggNyAxIDYtMiAyLTQtMS01LTYtOC0zLTcgMXY3bDUgNSAxMSA4IDIgNHY4bC00IDYtNSAzaC0xMGwtMiA2aC01bC0xLTEgMS04LTUtMi03LTggMS00IDUtMSA0IDUgNyA0IDcgMSAzLTEgMS02LTUtNS04LTYtNS02LTEtNSAzLTggNS00IDEyLTJ6Ii8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQzNSw2MjUpIiBkPSJtMCAwIDEyIDIgNyA0IDEgNS0zIDMtMTMtNS05IDEtNSAzLTMgN3YxNWw0IDggNyAzaDdsOS00aDVsMSA1LTQgNC03IDMtMTEgMS0xMC0zLTgtNy00LTEwdi0xNWw0LTEwIDgtNyA1LTJ6IiBmaWxsPSIjMDQwMDAxIi8+CjxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE4Myw2MjYpIiBkPSJtMCAwaDMxbDIgMXY2bC0yIDFoLTI0djE0aDIybDMgMi0xIDUtMSAxaC0yM3YyMmwtMSAxaC02bC0yLTJ2LTQ5eiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDg5LDYyNikiIGQ9Im0wIDBoNmwyIDN2NDdsLTIgM2gtNmwtMi0ydi00OXoiIGZpbGw9IiMwMTAwMDAiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTY3LDYyNikiIGQ9Im0wIDBoNmwyIDN2NDdsLTIgM2gtNmwtMi0ydi00OXoiIGZpbGw9IiMwMTAwMDAiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDY1LDYyNikiIGQ9Im0wIDBoNmwyIDJ2NDlsLTIgMmgtNmwtMi0zdi00N3oiLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjI1LDYyNikiIGQ9Im0wIDBoNmwyIDJ2NDlsLTIgMmgtNmwtMi00di00NXoiIGZpbGw9IiMxNjAwMDciLz4KPHBhdGggdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTQ0OCwxNTkpIiBkPSJtMCAwIDQgMnYzbDcgMSAyIDJ2M2gtMTV2NmwxMyAyIDUgNXY2bC01IDVoLTJ2NWgtNGwtMS00aC03bC0zLTJ2LTRsMTEgMSA0LTJ2LTRsLTEzLTMtNC00di03bDUtNWgydi01eiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNDAwLDIzOSkiIGQ9Im0wIDAgNyAzIDQgMi0xIDNoLTdsLTMgMXY0bDExIDEgNCAzdjdsLTQgNC0xIDQtMy0xdi0yaC02bC0zLTIgMS0zaDhsMy0yLTEtMy0xMS0xLTMtMi0xLTYgNC01eiIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMjg3LDM0NykiIGQ9Im0wIDAgMiAxeiIgZmlsbD0iI2ZjMCIvPgo8cGF0aCB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMTk3LDI5NSkiIGQ9Im0wIDAiIGZpbGw9IiNmYzAiLz4KPC9zdmc+Cg==" alt="MonyU"></div>
+        <div class="brand-sep"></div>
+        <div class="catmag-mini">CATMAG <i>•</i> TECHNOLOGIES</div>
+      </div>
+      <nav><a href="#visao">Visão</a><a href="#prioridades">Prioridades</a><a href="#radar">Radar</a><a href="#fontes">Fontes</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="visao">
+      <div>
+        <div class="eyebrow">MonyU | Radar de Oportunidades · 29 JUL 2026</div>
+        <h1>Do laboratório à <em>indústria</em>.</h1>
+        <p class="lead">Mapa de captação, validação e escala para o CATMAG-25 — catalisador ácido heterogêneo magnético, recuperável e reutilizável, aplicado a biodiesel e oleoquímicos de base renovável.</p>
+        <div class="profile-line"><span>Camocim · Ceará</span><span>TRL 4</span><span>Química sustentável</span><span>Biodiesel</span><span>Modelo B2B2B</span></div>
+      </div>
+      <div class="hero-mark" aria-label="Identidade CATMAG">
+        <span class="atom"></span>
+        <div class="client-wordmark"><strong>CATMAG<b>•25</b></strong><small>technologies</small></div>
+      </div>
+    </section>
+
+    <section class="metrics" aria-label="Resumo executivo">
+      <div class="metric"><small>Oportunidades mapeadas</small><strong>19</strong><p>Nacionais, regionais e internacionais.</p></div>
+      <div class="metric"><small>Elegíveis / estruturáveis</small><strong>11</strong><p>Inclui casos com ressalvas formais.</p></div>
+      <div class="metric"><small>Prazo crítico</small><strong>31 JUL</strong><p>ASIPI · Innovación con Impacto.</p></div>
+      <div class="metric"><small>Potencial quantificado</small><strong class="long">R$ 10,078 mi<br>+ até US$ 5 mil</strong><p>Base conservadora; sem somar crédito, equity ou orçamentos globais.</p></div>
+    </section>
+
+    <section class="section" id="prioridades">
+      <div class="section-head"><div><div class="eyebrow">Decisão executiva</div><h2>O que fazer primeiro</h2></div><p>O maior destravador não é tecnológico: é jurídico e comercial. CNPJ, propriedade intelectual e parceiro industrial definem acesso à maior parte do radar.</p></div>
+      <div class="decision-panel"><div class="priority-grid"><div class="priority-item"><span>01</span><div><small>48 horas</small>
+        <h3>Submeter ASIPI</h3><p>Confirmar pedido de patente/titularidade, escolher categoria e concluir formulário não confidencial antes de 31/07.</p></div></div><div class="priority-item"><span>02</span><div><small>Até 05/08</small>
+        <h3>Resolver trilho jurídico e de PI</h3><p>Alinhar NIT/IFCE, inventores, titularidade, licença para spin-off e viabilidade de CNPJ no Ceará.</p></div></div><div class="priority-item"><span>03</span><div><small>Até 14/08</small>
+        <h3>Decidir Startup Ceará</h3><p>Só submeter se CNPJ ativo, certidões, representante legal, Lean Canvas e pitch puderem ficar completos no prazo.</p></div></div><div class="priority-item"><span>04</span><div><small>Até 31/08</small>
+        <h3>Atacar Finep com parceiro industrial</h3><p>Estruturar arranjo empresa de biodiesel/oleoquímica + IFCE; priorizar Transição Energética e consultar enquadramento em Economia Circular.</p></div></div><div class="priority-item"><span>05</span><div><small>Próximos 90 dias</small>
+        <h3>Fechar pacote TRL 4→6</h3><p>Orçamento, lote piloto, parceiro de teste, KPIs de conversão, recuperação magnética, ciclos de reuso, água, efluentes, custo e CO₂e.</p></div></div></div></div>
+    </section>
+
+    <section class="section" id="radar">
+      <div class="section-head"><div><div class="eyebrow">Matching verificado</div><h2>Radar completo</h2></div><p>Use os filtros para comparar chamadas abertas, fluxos contínuos e próximas janelas. Cada card traz elegibilidade, ressalvas, documentos e ação recomendada.</p></div>
+      <div class="filters" aria-label="Filtros do radar">
+        <div class="filter-main">
+          <input id="search" type="search" placeholder="Buscar por oportunidade, órgão ou tema…">
+          <select id="coverage"><option value="">Toda abrangência</option><option value="regional">Regional</option><option value="nacional">Nacional</option><option value="internacional">Internacional</option></select>
+          <select id="status"><option value="">Todo status</option><option value="aberta">Aberta</option><option value="fluxo_continuo">Fluxo contínuo</option><option value="recorrente_estimada">Janela estimada</option></select>
+          <select id="seal"><option value="">Toda aderência</option><option value="verde">Alta</option><option value="amarelo">Alta com ressalvas</option><option value="laranja">Moderada</option><option value="vermelho">Futura / baixa agora</option></select>
+        </div>
+        <div class="chips"><button class="chip active" data-filter-type="">Todos <span>19</span></button><button class="chip" data-filter-type="aceleração">aceleração <span>4</span></button><button class="chip" data-filter-type="crédito">crédito <span>4</span></button><button class="chip" data-filter-type="grant + equity">grant + equity <span>1</span></button><button class="chip" data-filter-type="incentivo fiscal">incentivo fiscal <span>1</span></button><button class="chip" data-filter-type="inovação aberta">inovação aberta <span>1</span></button><button class="chip" data-filter-type="programa de inovação">programa de inovação <span>1</span></button><button class="chip" data-filter-type="prêmio">prêmio <span>2</span></button><button class="chip" data-filter-type="serviço subsidiado">serviço subsidiado <span>1</span></button><button class="chip" data-filter-type="subvenção econômica">subvenção econômica <span>4</span></button><button class="chip" id="urgent" data-urgent-only="false">Urgentes ⏰ <span>1</span></button></div>
+      </div>
+      <div class="results-line"><span id="resultCount">19 oportunidades exibidas</span><span>Ordenadas por aderência formal, temática e de estágio</span></div>
+      <div class="cards">
+    <article class="opportunity-card" id="opp-01"
+      data-type="prêmio" data-coverage="internacional"
+      data-status="aberta" data-seal="verde"
+      data-eligibility="elegivel" data-urgent="true"
+      data-score="94" data-name="concurso innovación con impacto 2026">
+      <div class="card-top">
+        <div class="rank">01</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">prêmio</span>
+            <span class="tag">internacional</span>
+            <span class="tag status">Aberta</span>
+            <span class="tag urgent">Encerra em 2 dias</span>
+          </div>
+          <h3>Concurso Innovación con Impacto 2026</h3>
+          <p class="funder">ASIPI — Asociación Interamericana de la Propiedad Intelectual</p>
+        </div>
+        <div class="score score-verde">
+          <strong>94</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>US$ 5 mil (1º), US$ 3 mil (2º) ou US$ 1,5 mil (3º) para a categoria com pedido de patente; assistência jurídica pro bono a todos os vencedores</strong></div>
+        <div><span>Prazo</span><strong>2026-07-31</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível agora</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-verde"></span>
+        <p>O concurso procura exatamente soluções patentáveis com impacto ambiental, circularidade e energias renováveis. O CATMAG combina barreira tecnológica, redução de resíduos e uso de água, e pode se inscrever mesmo antes do CNPJ.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Inventores, empreendedores, micro e pequenas empresas e instituições acadêmicas ou científicas da América Latina.</p>
+            <p class="muted">O CATMAG pode concorrer como grupo de pessoas naturais ou por instituição acadêmica. Aceita invenções com ou sem pedido de patente; o prêmio em dinheiro é reservado à categoria com pedido apresentado.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Sem faixa TRL declarada; exige inovação patentável com impacto ambiental e/ou social.</p>
+            <div class="topic-row"><span>catálise</span><span>química sustentável</span><span>economia circular</span><span>propriedade intelectual</span><span>impacto ambiental</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> US$ 9,5 mil em premiações financeiras, além de assistência pro bono</p>
+            <p><b>Contrapartida:</b> Inscrição gratuita; custos de eventual participação presencial não detalhados como cobertura</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Inscrições até 31/07; pré-seleção até 30/09; finalistas até 31/10; premiação em 30/11/2026.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Inovação ambiental e/ou social patentável em país membro.</li><li>Definir categoria com ou sem pedido de patente.</li><li>Se houver pedido/patente, apresentação entre 01/05/2022 e a data da inscrição.</li><li>Descrição clara, verdadeira e não confidencial nos campos públicos.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Formulário online e anexos exigidos.</li><li>Comprovação do pedido de patente, se aplicável.</li><li>Concordância de todos os inventores quando houver coautoria.</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Confirmar imediatamente se há pedido de patente e sua data.</li><li>Evitar divulgar detalhes técnicos que comprometam novidade ou estratégia de proteção.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Até 30/07: decidir a categoria, validar titularidade e pedido de patente com o NIT do IFCE e concluir uma descrição pública focada em recuperação magnética, reuso e redução de efluentes.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://asipi.org/concurso-innovacion-con-impacto-2026/?lang=es" target="_blank" rel="noopener noreferrer">Concurso Innovación con Impacto 2026</a><a href="https://asipi.org/wp-content/uploads/2026/05/2-Reglamento-Innovacion-de-Impacto-ASIPI-2026.pdf" target="_blank" rel="noopener noreferrer">Reglamento Innovación con Impacto 2026</a></div>
+          <a class="official-link" href="https://asipi.org/concurso-innovacion-con-impacto-2026/?lang=es" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-02"
+      data-type="prêmio" data-coverage="internacional"
+      data-status="aberta" data-seal="verde"
+      data-eligibility="elegivel" data-urgent="false"
+      data-score="92" data-name="19º prêmio mercosul de ciência, tecnologia e inovação">
+      <div class="card-top">
+        <div class="rank">02</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">prêmio</span>
+            <span class="tag">internacional</span>
+            <span class="tag status">Aberta</span>
+            
+          </div>
+          <h3>19º Prêmio Mercosul de Ciência, Tecnologia e Inovação</h3>
+          <p class="funder">RECyT Mercosul / MCTI / CNPq</p>
+        </div>
+        <div class="score score-verde">
+          <strong>92</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>R$ 50 mil — Pesquisador Sênior; R$ 60 mil — Integração (grupo de pesquisa)</strong></div>
+        <div><span>Prazo</span><strong>2026-08-31</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível agora</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-verde"></span>
+        <p>A edição 2026 inclui explicitamente combustíveis sustentáveis e descarbonização dos transportes. O CATMAG já possui validação laboratorial e equipe acadêmica sênior, combinação muito aderente ao formato do prêmio.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Estudantes, jovens pesquisadores, pesquisadores seniores e grupos de pesquisa dos países do Mercosul e associados.</p>
+            <p class="muted">Os três professores doutores e a equipe do IFCE têm aderência às categorias Pesquisador Sênior ou Integração, sujeito às regras completas de autoria e nacionalidade.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Trabalho científico ou tecnológico; sem faixa TRL declarada.</p>
+            <div class="topic-row"><span>combustíveis sustentáveis</span><span>descarbonização</span><span>transição energética</span><span>materiais</span><span>química sustentável</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Prêmios de R$ 20 mil a R$ 60 mil por categoria</p>
+            <p><b>Contrapartida:</b> Não informada na notícia oficial; observar o edital integral</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Inscrições abertas até 31/08/2026; demais etapas conforme edital do prêmio.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Trabalho alinhado a descarbonização e transição energética.</li><li>Escolher categoria adequada ao perfil do autor principal e da equipe.</li><li>Atender às regras formais de autoria e supervisão aplicáveis à categoria.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Trabalho técnico-científico conforme o edital.</li><li>Currículos e dados de autoria.</li><li>Documentos de identificação e declarações exigidas.</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>O recurso é premiação ao autor principal, não subvenção para a startup.</li><li>A versão submetida deve preservar a estratégia de propriedade intelectual.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Definir até a primeira semana de agosto se a submissão será em Pesquisador Sênior ou Integração e adaptar resultados experimentais já consolidados para o tema de combustíveis sustentáveis.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://www.gov.br/cnpq/pt-br/assuntos/noticias/premios/premio-mercosul-de-ciencia-tecnologia-e-inovacao-inscricoes-abertas-ate-31-08" target="_blank" rel="noopener noreferrer">Prêmio Mercosul de Ciência, Tecnologia e Inovação 2026</a></div>
+          <a class="official-link" href="https://www.gov.br/cnpq/pt-br/assuntos/noticias/premios/premio-mercosul-de-ciencia-tecnologia-e-inovacao-inscricoes-abertas-ate-31-08" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-03"
+      data-type="aceleração" data-coverage="nacional"
+      data-status="fluxo_continuo" data-seal="verde"
+      data-eligibility="elegivel" data-urgent="false"
+      data-score="90" data-name="catalisa ict">
+      <div class="card-top">
+        <div class="rank">03</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">aceleração</span>
+            <span class="tag">nacional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>Catalisa ICT</h3>
+          <p class="funder">Sebrae</p>
+        </div>
+        <div class="score score-verde">
+          <strong>90</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Apoio em jornada, validação, modelagem, transferência de tecnologia e conexão; valor financeiro não declarado na página atual</strong></div>
+        <div><span>Prazo</span><strong>Sem prazo declarado na página atual</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível agora</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-verde"></span>
+        <p>É uma rota desenhada para o problema central do CATMAG: transformar pesquisa de doutores em deep tech, estruturar o negócio e organizar transferência tecnológica.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Mestres, doutores, pesquisadores e pesquisas com potencial de inovação e geração de negócios de base tecnológica.</p>
+            <p class="muted">Perfil altamente aderente: tecnologia originada no IFCE, equipe de doutores e intenção explícita de criar empresa/licenciar a solução.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Da pesquisa com potencial de inovação até validação e escala; faixa TRL não declarada na página atual.</p>
+            <div class="topic-row"><span>deep tech</span><span>transferência de tecnologia</span><span>empreendedorismo científico</span><span>química</span><span>sustentabilidade</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Não informado</p>
+            <p><b>Contrapartida:</b> A confirmar por etapa da jornada</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>A jornada é organizada por etapas e seleções específicas; confirmar a etapa com inscrição disponível no portal.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Pesquisa com potencial de inovação e aplicação de mercado.</li><li>Vínculo de pesquisador e disponibilidade para a jornada.</li><li>Atender ao edital específico da etapa acessível no portal.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Dados da pesquisa e equipe</li><li>Evidências de validação e mercado</li><li>Informações de propriedade intelectual</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>O portal atual não explicita prazo, valor ou etapa aberta sem interação; confirmar o edital vigente antes da submissão.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Cadastrar o projeto no portal e solicitar orientação sobre a etapa ativa, levando pitch, TRL 4, plano TRL 6 e situação da propriedade intelectual.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://sebrae.com.br/subsites/catalisa-ict" target="_blank" rel="noopener noreferrer">Catalisa ICT</a></div>
+          <a class="official-link" href="https://sebrae.com.br/subsites/catalisa-ict" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-04"
+      data-type="aceleração" data-coverage="regional"
+      data-status="aberta" data-seal="amarelo"
+      data-eligibility="elegivel_com_ressalvas" data-urgent="false"
+      data-score="84" data-name="programa startup ceará — edital nº 10/2026">
+      <div class="card-top">
+        <div class="rank">04</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">aceleração</span>
+            <span class="tag">regional</span>
+            <span class="tag status">Aberta</span>
+            
+          </div>
+          <h3>Programa Startup Ceará — Edital nº 10/2026</h3>
+          <p class="funder">Funcap / Sebrae Ceará</p>
+        </div>
+        <div class="score score-amarelo">
+          <strong>84</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>R$ 18 mil por startup — 1 bolsa BIT de R$ 3 mil/mês por 6 meses</strong></div>
+        <div><span>Prazo</span><strong>2026-08-14</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível com ressalvas</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-amarelo"></span>
+        <p>É a oportunidade regional mais alinhada ao estágio de criação da empresa e à localização em Camocim. A solução encaixa em quatro setores prioritários do edital.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Startups formalizadas, com CNPJ ativo, sede ou filial no Ceará, enquadradas como MEI, ME, EPP ou Empresa Simples de Inovação.</p>
+            <p class="muted">Temas prioritários incluem Energia Verde, Energias Renováveis, Biotecnologia e Indústria de Transformação. O pitch informa, porém, que a startup ainda será estruturada.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Sem faixa TRL explícita; exige solução inovadora com viabilidade técnica, mercado escalável e capacidade de execução em 6 meses.</p>
+            <div class="topic-row"><span>energia verde</span><span>biotecnologia</span><span>indústria de transformação</span><span>aceleração</span><span>Ceará</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> R$ 1,08 milhão para até 60 startups</p>
+            <p><b>Contrapartida:</b> Não financeira declarada; exige dedicação e participação na aceleração</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Inscrições 07/07–14/08; resultado final 11/09; aceleração e bolsas 01/10/2026–31/03/2027.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>CNPJ ativo e sede/filial no Ceará no ato da submissão.</li><li>Representante legal como coordenador técnico.</li><li>Capacidade de executar a solução durante os 6 meses.</li><li>Lean Canvas, pitch público de até 3 minutos e documentação integral.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Cartão CNPJ e ato constitutivo/Inova Simples.</li><li>Certidões de regularidade.</li><li>Lean Canvas, formulário de projeto e pitch.</li><li>Documentos do representante, equipe e bolsista BIT.</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Sem CNPJ ativo no Ceará, a proposta é formalmente inelegível.</li><li>Formalização e certidões precisam estar prontas antes de 14/08; validar viabilidade com o NIT e a equipe.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Em 48 horas, decidir se a formalização é juridicamente e operacionalmente viável; se sim, abrir frente paralela de CNPJ, certidões, Lean Canvas e pitch de 3 minutos.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://montenegro.funcap.ce.gov.br/sugba/edital/819.pdf" target="_blank" rel="noopener noreferrer">Edital Sebrae/CE e Funcap nº 10/2026 — Startup Ceará</a><a href="https://programas.sebraestartups.com.br/in/startupceara" target="_blank" rel="noopener noreferrer">Plataforma de inscrição — Startup Ceará</a></div>
+          <a class="official-link" href="https://montenegro.funcap.ce.gov.br/sugba/edital/819.pdf" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-05"
+      data-type="subvenção econômica" data-coverage="nacional"
+      data-status="fluxo_continuo" data-seal="amarelo"
+      data-eligibility="elegivel_com_ressalvas" data-urgent="false"
+      data-score="82" data-name="embrapii + sebrae — inovação para pequenos negócios e startups">
+      <div class="card-top">
+        <div class="rank">05</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">subvenção econômica</span>
+            <span class="tag">nacional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>EMBRAPII + Sebrae — inovação para pequenos negócios e startups</h3>
+          <p class="funder">EMBRAPII / Sebrae</p>
+        </div>
+        <div class="score score-amarelo">
+          <strong>82</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Até 90% do projeto; cobertura Sebrae da contrapartida de até R$ 150 mil em projeto de uma MPE</strong></div>
+        <div><span>Prazo</span><strong>Sem edital — fluxo contínuo</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível com ressalvas</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-amarelo"></span>
+        <p>É o melhor instrumento contínuo para financiar exatamente as atividades de TRL 4 a 6 descritas no pitch: testes em ambiente relevante, lote piloto e validação com infraestrutura especializada.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Micro e pequenas empresas e startups com faturamento anual de até R$ 4,8 milhões.</p>
+            <p class="muted">Após formalização, o CATMAG pode contratar projeto com unidade especializada para validação em ambiente relevante, lote piloto, certificações e propriedade intelectual.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Da prova de conceito a testes em ambiente relevante e lote piloto; aderente ao avanço TRL 4 → 6.</p>
+            <div class="topic-row"><span>química verde</span><span>bioquímica</span><span>materiais</span><span>bioenergia</span><span>lote piloto</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Sem orçamento global por chamada; contratação por projeto</p>
+            <p><b>Contrapartida:</b> EMBRAPII aporta até 50%; saldo é negociado e o Sebrae cobre até 70% da contrapartida da MPE</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Contato e negociação direta com unidade EMBRAPII; contratação ágil após definição de escopo e termos.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>CNPJ de MPE/startup e faturamento dentro do limite.</li><li>Desafio tecnológico com risco e escopo de PD&amp;I.</li><li>Negociação técnica, financeira e de propriedade intelectual com a unidade.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Cartão CNPJ e dados financeiros</li><li>Escopo técnico e plano de trabalho</li><li>Evidências TRL 4</li><li>Estratégia de propriedade intelectual</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Exige CNPJ e contrapartida residual.</li><li>Titularidade da propriedade intelectual é negociada com a unidade executora.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Após resolver CNPJ e titularidade, solicitar reuniões com SENAI ISI Química Verde e Embrapa Agroenergia levando um pacote técnico de 2 páginas e o plano de 12 meses.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://embrapii.org.br/sebrae/" target="_blank" rel="noopener noreferrer">EMBRAPII e Sebrae — apoio a pequenos negócios e startups</a></div>
+          <a class="official-link" href="https://embrapii.org.br/sebrae/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-06"
+      data-type="subvenção econômica" data-coverage="nacional"
+      data-status="aberta" data-seal="amarelo"
+      data-eligibility="elegivel_com_ressalvas" data-urgent="false"
+      data-score="81" data-name="finep mais inovação brasil — rodada 2 — transição energética">
+      <div class="card-top">
+        <div class="rank">06</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">subvenção econômica</span>
+            <span class="tag">nacional</span>
+            <span class="tag status">Aberta</span>
+            
+          </div>
+          <h3>Finep Mais Inovação Brasil — Rodada 2 — Transição Energética</h3>
+          <p class="funder">Finep / MCTI / FNDCT</p>
+        </div>
+        <div class="score score-amarelo">
+          <strong>81</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>A partir de R$ 5 milhões; limites variam por linha e arranjo no regulamento</strong></div>
+        <div><span>Prazo</span><strong>2026-08-31</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível com ressalvas</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-amarelo"></span>
+        <p>A chamada contém aderência temática quase direta: biocombustíveis e catalisadores para combustíveis sustentáveis. O TRL 4 é compatível com um projeto de PD&amp;I com risco.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Empresas brasileiras, obrigatoriamente em parceria com ICT.</p>
+            <p class="muted">A linha de processos e componentes para combustíveis sustentáveis cita catalisadores. O caminho mais realista é empresa industrial proponente + IFCE como ICT, ou startup formalizada com capacidade de liderar o arranjo.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Projetos de risco tecnológico; confirmar faixa da linha escolhida no Anexo 1.</p>
+            <div class="topic-row"><span>biocombustíveis</span><span>catalisadores</span><span>combustíveis sustentáveis</span><span>transição energética</span><span>PD&amp;I</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> R$ 500 milhões</p>
+            <p><b>Contrapartida:</b> Obrigatória; percentual conforme porte da empresa e regras do arranjo</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Sistema aberto; propostas recebidas até 31/08/2026 às 17h no registro da página oficial.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Empresa proponente formalmente constituída.</li><li>Parceria obrigatória com ICT.</li><li>Projeto com risco tecnológico e enquadramento estrito na linha temática.</li><li>Contrapartida e capacidade técnica-financeira do arranjo.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>FAP e cadastro na plataforma Finep.</li><li>Instrumento de parceria empresa–ICT.</li><li>Plano de trabalho, orçamento, TRL e riscos tecnológicos.</li><li>Documentação societária, fiscal e financeira.</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>A startup ainda não está formalizada e o ticket mínimo é incompatível com uma submissão isolada muito pequena.</li><li>O arranjo recomendado é uma oleoquímica/produtora de biodiesel como proponente e IFCE como ICT.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Até 05/08, abordar 3–5 empresas de biodiesel/oleoquímica para testar interesse em liderar a proposta e solicitar reunião de enquadramento com a Finep.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://www.finep.gov.br/e/chamada-publica/222684/754567" target="_blank" rel="noopener noreferrer">Finep Mais Inovação Brasil — Rodada 2 — Transição Energética</a></div>
+          <a class="official-link" href="https://www.finep.gov.br/e/chamada-publica/222684/754567" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-07"
+      data-type="programa de inovação" data-coverage="nacional"
+      data-status="fluxo_continuo" data-seal="amarelo"
+      data-eligibility="elegivel_com_ressalvas" data-urgent="false"
+      data-score="78" data-name="plataforma inovação para a indústria — ciclo 2026">
+      <div class="card-top">
+        <div class="rank">07</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">programa de inovação</span>
+            <span class="tag">nacional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>Plataforma Inovação para a Indústria — Ciclo 2026</h3>
+          <p class="funder">SENAI / CNI / SESI</p>
+        </div>
+        <div class="score score-amarelo">
+          <strong>78</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Conforme categoria e chamada específica</strong></div>
+        <div><span>Prazo</span><strong>Novas categorias podem ser lançadas ao longo de 2026</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível com ressalvas</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-amarelo"></span>
+        <p>A plataforma é aderente a um catalisador industrial em fase de protótipo e pode viabilizar testes com Instituto SENAI e empresa do setor.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Empresas industriais de todos os portes, incluindo startups de base tecnológica, em parceria com Institutos SENAI.</p>
+            <p class="muted">A solução atende produtividade, sustentabilidade e desenvolvimento de produto/processo industrial; precisa de CNPJ ou empresa parceira e seleção da categoria vigente.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Varia por categoria; adequado a desenvolvimento, demonstração e piloto industrial.</p>
+            <div class="topic-row"><span>inovação industrial</span><span>química</span><span>bioenergia</span><span>sustentabilidade</span><span>produtividade</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Cerca de R$ 190 milhões no ciclo 2026</p>
+            <p><b>Contrapartida:</b> Varia por categoria, porte e regulamento específico</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Portal com inscrições e categorias atualizadas ao longo do ciclo; consultar regulamento e cronograma de cada chamada.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Projeto com aplicação industrial e parceria com unidade SENAI.</li><li>Enquadramento em categoria/chamada vigente.</li><li>Capacidade de contrapartida e execução conforme regulamento.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Pitch técnico</li><li>Escopo, TRL e orçamento</li><li>Dados da empresa e parceiro industrial</li><li>Plano de impacto e mercado</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Valor, prazo e contrapartida dependem da categoria aberta.</li><li>CNPJ ou empresa industrial parceira será necessário.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Solicitar triagem ao SENAI Ceará e ao SENAI ISI Química Verde para identificar a categoria 2026 e o instituto executor mais adequado.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://www.portaldaindustria.com.br/canais/plataforma-inovacao-para-industria/" target="_blank" rel="noopener noreferrer">Plataforma Inovação para a Indústria</a><a href="https://noticias.portaldaindustria.com.br/noticias/inovacao-e-tecnologia/plataforma-inovacao-para-a-industria-contara-com-r-190-milhoes-em-2026/" target="_blank" rel="noopener noreferrer">Plataforma Inovação para a Indústria contará com R$ 190 milhões em 2026</a></div>
+          <a class="official-link" href="https://www.portaldaindustria.com.br/canais/plataforma-inovacao-para-industria/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-08"
+      data-type="subvenção econômica" data-coverage="nacional"
+      data-status="aberta" data-seal="amarelo"
+      data-eligibility="elegivel_com_ressalvas" data-urgent="false"
+      data-score="76" data-name="finep mais inovação brasil — economia circular e cidades sustentáveis">
+      <div class="card-top">
+        <div class="rank">08</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">subvenção econômica</span>
+            <span class="tag">nacional</span>
+            <span class="tag status">Aberta</span>
+            
+          </div>
+          <h3>Finep Mais Inovação Brasil — Economia Circular e Cidades Sustentáveis</h3>
+          <p class="funder">Finep / MCTI / FNDCT</p>
+        </div>
+        <div class="score score-amarelo">
+          <strong>76</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>R$ 5–20 milhões em arranjo simples; até R$ 30 milhões em rede, conforme regulamento</strong></div>
+        <div><span>Prazo</span><strong>2026-08-31</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível com ressalvas</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-amarelo"></span>
+        <p>Há boa aderência aos efeitos de circularidade e redução de efluentes, e o Ceará pode acessar a reserva regional. O enquadramento é menos direto que na chamada de Transição Energética.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Empresas brasileiras com parceria obrigatória de ICT.</p>
+            <p class="muted">O CATMAG pode ser enquadrado por circularidade, redução de consumo de água e resíduos e eficiência de processos químicos; o escopo precisa demonstrar aderência substantiva, não apenas benefício indireto.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>TRL 3–7 nas linhas 1, 2 e 4; TRL 3–8 na linha 3, conforme apresentação da chamada.</p>
+            <div class="topic-row"><span>economia circular</span><span>químicos renováveis</span><span>água</span><span>resíduos industriais</span><span>química sustentável</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> R$ 150 milhões — R$ 105 milhões gerais e R$ 45 milhões reservados a Norte, Nordeste e Centro-Oeste</p>
+            <p><b>Contrapartida:</b> Obrigatória; varia conforme porte e arranjo</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Sistema aberto; submissões até 31/08/2026 às 17h no registro oficial.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Empresa proponente e parceria obrigatória com ICT.</li><li>Enquadramento estrito em linha do Anexo 1.</li><li>Projeto de risco tecnológico com TRL e impactos quantificados.</li><li>Contrapartida e capacidade do arranjo.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>FAP, cadastro Finep e documentos empresariais.</li><li>Acordo empresa–ICT.</li><li>Balanço de massa/água, resíduos evitados e plano de validação.</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Benefício ambiental indireto pode ser insuficiente sem métricas e escopo central de circularidade.</li><li>Exige empresa, ICT, ticket mínimo e contrapartida.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Produzir balanço preliminar de água, lavagem, resíduos e ciclos de reuso; submeter uma consulta objetiva de enquadramento à Finep antes de mobilizar o arranjo completo.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://www.finep.gov.br/e/chamada-publica/222684/755213" target="_blank" rel="noopener noreferrer">Finep Mais Inovação Brasil — Rodada 2 — Economia Circular e Cidades Sustentáveis</a></div>
+          <a class="official-link" href="https://www.finep.gov.br/e/chamada-publica/222684/755213" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-09"
+      data-type="subvenção econômica" data-coverage="nacional"
+      data-status="fluxo_continuo" data-seal="amarelo"
+      data-eligibility="elegivel_com_ressalvas" data-urgent="false"
+      data-score="74" data-name="embrapii + bndes — inova+ indústria digital e sustentável">
+      <div class="card-top">
+        <div class="rank">09</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">subvenção econômica</span>
+            <span class="tag">nacional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>EMBRAPII + BNDES — Inova+ Indústria Digital e Sustentável</h3>
+          <p class="funder">EMBRAPII / BNDES</p>
+        </div>
+        <div class="score score-amarelo">
+          <strong>74</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Até 50% não reembolsável para startups e empresas com ROB inferior a R$ 90 milhões, conforme foco e negociação</strong></div>
+        <div><span>Prazo</span><strong>Sem edital — fluxo contínuo</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível com ressalvas</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-amarelo"></span>
+        <p>As linhas incluem explicitamente indústria química, nanotecnologia, eficiência de materiais, resíduos e água, com TRL compatível com o CATMAG.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Empresas e startups industriais; regras específicas por foco temático.</p>
+            <p class="muted">Focos de Economia Circular e Materiais Avançados cobrem eficiência da indústria química, manejo de resíduos, nanotecnologia e química. Exige empresa formalizada e negociação com unidade habilitada.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>TRL 3–9 nos focos relevantes.</p>
+            <div class="topic-row"><span>economia circular</span><span>materiais avançados</span><span>química</span><span>nanotecnologia</span><span>eficiência industrial</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Contratação por projeto; sem edital e sem orçamento individual fixo na página</p>
+            <p><b>Contrapartida:</b> Saldo negociado entre empresa e unidade EMBRAPII</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Projetos podem ser contratados diretamente; a página informa início médio em cerca de um mês após negociação.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>CNPJ de empresa/startup e desafio industrial de PD&amp;I.</li><li>Enquadramento em foco temático BNDES–EMBRAPII.</li><li>Negociação com unidade habilitada e contrapartida.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Escopo técnico e orçamento</li><li>Evidências de TRL</li><li>Dados da empresa</li><li>Minuta de PI e exploração comercial</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Exige empresa formalizada e contrapartida.</li><li>O enquadramento e percentual final dependem da unidade e do foco temático.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Comparar este instrumento com EMBRAPII–Sebrae após definir orçamento; abordar Embrapa Agroenergia, SENAI ISI Química Verde e Biossintéticos.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://embrapii.org.br/bndes/" target="_blank" rel="noopener noreferrer">EMBRAPII e BNDES — Inova+ Indústria Digital e Sustentável</a></div>
+          <a class="official-link" href="https://embrapii.org.br/bndes/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-10"
+      data-type="inovação aberta" data-coverage="internacional"
+      data-status="fluxo_continuo" data-seal="amarelo"
+      data-eligibility="elegivel_com_ressalvas" data-urgent="false"
+      data-score="74" data-name="shell gamechanger — share your idea">
+      <div class="card-top">
+        <div class="rank">10</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">inovação aberta</span>
+            <span class="tag">internacional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>Shell GameChanger — Share your idea</h3>
+          <p class="funder">Shell</p>
+        </div>
+        <div class="score score-amarelo">
+          <strong>74</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Seed funding, coaching técnico e acesso a mercados; valor definido caso a caso</strong></div>
+        <div><span>Prazo</span><strong>Submissão de ideias em fluxo contínuo</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível com ressalvas</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-amarelo"></span>
+        <p>O CATMAG é uma tecnologia early stage para combustíveis/energia, com uma prova de conceito industrial clara e potencial de reduzir custo e impacto do processo.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Startups e empresas com tecnologias não comprovadas em estágio inicial relevantes para energia.</p>
+            <p class="muted">A aplicação em biodiesel e combustíveis renováveis, TRL 4 e caráter de prova de conceito são aderentes; a página direciona o fluxo a startups/empresas.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Ideias e tecnologias early stage não comprovadas; o TRL 4 é compatível com chamadas históricas do programa.</p>
+            <div class="topic-row"><span>energia</span><span>biocombustíveis</span><span>catalisadores</span><span>prova de conceito</span><span>inovação aberta</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Não informado para o fluxo geral</p>
+            <p><b>Contrapartida:</b> Colaboração técnica e marcos de prova de conceito; condições definidas após seleção</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Envio inicial no portal; triagem, interação com especialistas e decisão de apoio conforme aderência.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Tecnologia nova, valiosa, executável e relevante para o futuro da energia.</li><li>Apresentação inicial sem informação confidencial.</li><li>Entidade empresarial ou rota de formalização para eventual contratação.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Pitch não confidencial</li><li>Plano de prova de conceito</li><li>Hipóteses de mercado e impacto</li><li>Situação da PI</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>O fluxo geral não publica ticket, prazo de decisão ou termos.</li><li>Confirmar aceitação de equipe ainda não incorporada e evitar informação confidencial.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Após alinhar estratégia de patente, submeter uma versão não confidencial com um experimento de prova de conceito de 6–9 meses em biodiesel.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://www.shell.com/what-we-do/technology-and-innovation/innovate-with-shell/share-your-idea.html" target="_blank" rel="noopener noreferrer">Shell GameChanger — Share your idea</a></div>
+          <a class="official-link" href="https://www.shell.com/what-we-do/technology-and-innovation/innovate-with-shell/share-your-idea.html" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-11"
+      data-type="serviço subsidiado" data-coverage="regional"
+      data-status="fluxo_continuo" data-seal="amarelo"
+      data-eligibility="elegivel_com_ressalvas" data-urgent="false"
+      data-score="72" data-name="sebraetec — negócios inovadores">
+      <div class="card-top">
+        <div class="rank">11</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">serviço subsidiado</span>
+            <span class="tag">regional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>Sebraetec — Negócios Inovadores</h3>
+          <p class="funder">Sebrae</p>
+        </div>
+        <div class="score score-amarelo">
+          <strong>72</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Até 90% do valor do serviço tecnológico pode ser subsidiado</strong></div>
+        <div><span>Prazo</span><strong>Conforme disponibilidade do Sebrae Ceará</strong></div>
+        <div><span>Elegibilidade</span><strong>Elegível com ressalvas</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-amarelo"></span>
+        <p>Ataca lacunas não laboratoriais do CATMAG — modelo de licenciamento, validação comercial, PI e preparação para captar — no momento em que a empresa está sendo criada.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Pequenos negócios e startups, desde validação do negócio até operação e preparação para escala.</p>
+            <p class="muted">Muito útil para modelagem de negócio, PI, estratégia comercial e acesso a capital após formalização; disponibilidade deve ser confirmada com o Sebrae Ceará.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Foco em validação de negócio, operação e escala; complementar ao desenvolvimento técnico.</p>
+            <div class="topic-row"><span>modelo de negócio</span><span>propriedade intelectual</span><span>mercado</span><span>aceleração</span><span>captação</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Sem orçamento global divulgado</p>
+            <p><b>Contrapartida:</b> Parcela residual da empresa; percentual e disponibilidade variam por UF</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Atendimento sob demanda, sujeito a diagnóstico, prestador credenciado e disponibilidade estadual.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>CNPJ enquadrado como pequeno negócio/startup.</li><li>Diagnóstico e contratação de serviço elegível na UF.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Cartão CNPJ</li><li>Demanda de consultoria e escopo</li><li>Comprovação de enquadramento</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Exige CNPJ.</li><li>Percentual e oferta concreta precisam ser confirmados no Ceará.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Agendar atendimento no Sebrae Ceará e solicitar diagnóstico para propriedade intelectual, modelo de licenciamento B2B2B e validação com produtores de biodiesel.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://meuatendimento.sebrae.com.br/sites/PortalSebrae/sebraetec/negociosinovadores" target="_blank" rel="noopener noreferrer">Sebraetec — Negócios Inovadores</a></div>
+          <a class="official-link" href="https://meuatendimento.sebrae.com.br/sites/PortalSebrae/sebraetec/negociosinovadores" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-12"
+      data-type="crédito" data-coverage="regional"
+      data-status="fluxo_continuo" data-seal="laranja"
+      data-eligibility="potencial_futuro" data-urgent="false"
+      data-score="69" data-name="fne inovação">
+      <div class="card-top">
+        <div class="rank">12</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">crédito</span>
+            <span class="tag">regional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>FNE Inovação</h3>
+          <p class="funder">Banco do Nordeste</p>
+        </div>
+        <div class="score score-laranja">
+          <strong>69</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Até 100% do investimento para micro, pequena e pequena-média empresa</strong></div>
+        <div><span>Prazo</span><strong>Fluxo contínuo</strong></div>
+        <div><span>Elegibilidade</span><strong>Potencial futuro</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-laranja"></span>
+        <p>A linha é regional e explicitamente financia novos produtos e processos, mas o CATMAG ainda não possui empresa, histórico financeiro ou necessidade de investimento definida.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Empresas de todos os portes, MEI, produtores e organizações na área do FNE.</p>
+            <p class="muted">Após CNPJ e aprovação de crédito, pode financiar bens de capital, implantação do novo processo/produto e capital de giro associado no Ceará.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Sem faixa TRL; requer projeto de investimento em produto, serviço ou processo novo ou significativamente melhorado.</p>
+            <div class="topic-row"><span>inovação</span><span>processo industrial</span><span>produto</span><span>Nordeste</span><span>investimento</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Limite definido em análise de crédito e projeto</p>
+            <p><b>Contrapartida:</b> Pode ser zero nos portes com participação de 100%; sujeito a análise</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Solicitação em agência após cadastro, limite de crédito e apresentação do projeto.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>CNPJ e operação na área do FNE.</li><li>Cadastro e limite de crédito aprovados.</li><li>Projeto técnico-econômico e garantias.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Cadastro empresarial e financeiro</li><li>Projeto de financiamento</li><li>Orçamentos</li><li>Garantias e certidões</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Crédito, garantias e capacidade de pagamento não entram no score do radar e precisam de diagnóstico próprio.</li><li>Modelo de licenciamento de baixo CAPEX pode reduzir a necessidade de dívida.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Após formalização e orçamento do piloto, comparar necessidade de crédito com opções não reembolsáveis antes de assumir dívida.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://www.bnb.gov.br/fne-inovacao" target="_blank" rel="noopener noreferrer">FNE Inovação</a></div>
+          <a class="official-link" href="https://www.bnb.gov.br/fne-inovacao" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-13"
+      data-type="crédito" data-coverage="regional"
+      data-status="fluxo_continuo" data-seal="laranja"
+      data-eligibility="potencial_futuro" data-urgent="false"
+      data-score="68" data-name="finep inovacred via banco do nordeste">
+      <div class="card-top">
+        <div class="rank">13</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">crédito</span>
+            <span class="tag">regional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>Finep Inovacred via Banco do Nordeste</h3>
+          <p class="funder">Banco do Nordeste / Finep</p>
+        </div>
+        <div class="score score-laranja">
+          <strong>68</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Até R$ 30 milhões</strong></div>
+        <div><span>Prazo</span><strong>Fluxo contínuo</strong></div>
+        <div><span>Elegibilidade</span><strong>Potencial futuro</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-laranja"></span>
+        <p>Os itens financiáveis correspondem ao plano TRL 4→6, incluindo materiais, equipamentos, equipe e lote pioneiro. A ausência de CNPJ e estrutura financeira impede acesso imediato.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Micro, pequenas, médias e, no Nordeste, grandes empresas; cooperativas de produção.</p>
+            <p class="muted">Após formalização, pode financiar equipe, equipamentos, materiais de testes/lote pioneiro, consultorias e viagens para o desenvolvimento do CATMAG.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Sem faixa TRL declarada; adequado a desenvolvimento e lote pioneiro.</p>
+            <div class="topic-row"><span>PD&amp;I</span><span>lote piloto</span><span>equipamentos</span><span>materiais</span><span>equipe técnica</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Conforme disponibilidade da linha e análise</p>
+            <p><b>Contrapartida:</b> Conforme condições da operação</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Procura direta ao Banco do Nordeste; até 24 meses de carência e até 96 meses de prazo total.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Empresa formalizada.</li><li>Projeto de inovação com itens indispensáveis.</li><li>Aprovação de crédito e garantias.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Projeto técnico-financeiro</li><li>Orçamentos e cronograma</li><li>Dados financeiros</li><li>Garantias</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>É crédito reembolsável sujeito a análise.</li><li>Financiar apenas após estimar retorno do licenciamento e fluxo de caixa.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Montar orçamento do protótipo/piloto e solicitar simulação somente depois de testar EMBRAPII e subvenções.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://www.bnb.gov.br/finep-inovacred" target="_blank" rel="noopener noreferrer">Finep Inovacred via Banco do Nordeste</a></div>
+          <a class="official-link" href="https://www.bnb.gov.br/finep-inovacred" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-14"
+      data-type="aceleração" data-coverage="nacional"
+      data-status="recorrente_estimada" data-seal="laranja"
+      data-eligibility="potencial_futuro" data-urgent="false"
+      data-score="65" data-name="bndes garagem — negócios de impacto">
+      <div class="card-top">
+        <div class="rank">14</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">aceleração</span>
+            <span class="tag">nacional</span>
+            <span class="tag status">Recorrente — janela estimada</span>
+            
+          </div>
+          <h3>BNDES Garagem — Negócios de Impacto</h3>
+          <p class="funder">BNDES</p>
+        </div>
+        <div class="score score-laranja">
+          <strong>65</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Referência do ciclo atual: prêmios de R$ 32 mil a R$ 160 mil; prêmio regional adicional de R$ 20 mil ou R$ 30 mil</strong></div>
+        <div><span>Prazo</span><strong>Próxima janela estimada para o 2º semestre de 2026; data a confirmar</strong></div>
+        <div><span>Elegibilidade</span><strong>Potencial futuro</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-laranja"></span>
+        <p>A temática e o estágio Criação combinam com o CATMAG, mas a janela ativa do ciclo 2 já encerrou e a próxima seleção ainda é estimada.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Negócios de impacto nos módulos Criação e Tração.</p>
+            <p class="muted">Economia Verde e Descarbonização é tema prioritário e o Ceará acessa o recorte Norte/Nordeste. O próximo edital ainda não foi publicado.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Módulo Criação é o mais compatível com empresa nascente; requisitos exatos dependem do próximo edital.</p>
+            <div class="topic-row"><span>economia verde</span><span>descarbonização</span><span>impacto</span><span>aceleração</span><span>Nordeste</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> R$ 915 mil em prêmios no ciclo atual</p>
+            <p><b>Contrapartida:</b> Participação na aceleração; edital da próxima seleção a confirmar</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>A terceira edição segue até 2028 e prevê 100 soluções por ano; o ciclo 2 já está em execução/finalização.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Negócio de impacto formalizado conforme o próximo edital.</li><li>Aderência temática e disponibilidade para aceleração.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Pitch</li><li>Modelo de impacto</li><li>CNPJ e documentos do negócio</li><li>Evidências de mercado</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Não tratar como edital aberto.</li><li>Valores e regras podem mudar no próximo ciclo.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Cadastrar monitoramento mensal e preparar uma tese de impacto com métricas de água, resíduos, emissões e economia por tonelada de biodiesel.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://garagem.bndes.gov.br/" target="_blank" rel="noopener noreferrer">BNDES Garagem — Negócios de Impacto</a></div>
+          <a class="official-link" href="https://garagem.bndes.gov.br/" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-15"
+      data-type="aceleração" data-coverage="internacional"
+      data-status="recorrente_estimada" data-seal="laranja"
+      data-eligibility="potencial_futuro" data-urgent="false"
+      data-score="63" data-name="breakthrough energy fellows — cohort 7">
+      <div class="card-top">
+        <div class="rank">15</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">aceleração</span>
+            <span class="tag">internacional</span>
+            <span class="tag status">Recorrente — janela estimada</span>
+            
+          </div>
+          <h3>Breakthrough Energy Fellows — Cohort 7</h3>
+          <p class="funder">Breakthrough Energy</p>
+        </div>
+        <div class="score score-laranja">
+          <strong>63</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Financiamento de P&amp;D, currículo, mentoria e rede global; ticket não publicado no portal atual</strong></div>
+        <div><span>Prazo</span><strong>Cohort 7 reabre mais tarde em 2026; data oficial ainda não publicada</strong></div>
+        <div><span>Elegibilidade</span><strong>Potencial futuro</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-laranja"></span>
+        <p>O programa tem precedentes claros em catalisadores, combustíveis e químicos, e o estágio é aderente. A barreira principal é provar impacto climático em escala global.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Inovadores e pesquisadores com tecnologias climáticas de alto impacto; trilhas Innovator e Explorer.</p>
+            <p class="muted">CATMAG é early stage e atua em combustíveis/químicos, mas precisa demonstrar potencial de abatimento climático em escala excepcional e escolher entre spin-off ou trilha acadêmica.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Pré-venture/early stage; Explorer aceita projetos em laboratório e pesquisa aplicada de maior risco.</p>
+            <div class="topic-row"><span>climate tech</span><span>fuels &amp; chemicals</span><span>catálise</span><span>laboratório ao mercado</span><span>deep tech</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Não informado</p>
+            <p><b>Contrapartida:</b> Innovator Fellowship exige compromisso integral de um ano; condições variam por trilha</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Cohort 6 fechou; portal oficial informa reabertura da Cohort 7 ainda em 2026.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Tecnologia com potencial de reduzir/capturar emissões em escala muito elevada.</li><li>Compromisso e estrutura compatíveis com a trilha escolhida.</li><li>Para Innovator, empresa incorporada antes do início do programa.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Concept paper</li><li>Modelo climático de impacto</li><li>Plano de P&amp;D</li><li>Equipe e estratégia de comercialização</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Janela ainda não aberta.</li><li>O limiar de impacto climático pode ser alto demais sem modelo quantitativo robusto.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Construir uma estimativa de CO₂e evitado por tonelada de biodiesel e por penetração de mercado antes da abertura da Cohort 7.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://befellows.smapply.org/?linkId=100000152686525" target="_blank" rel="noopener noreferrer">Breakthrough Energy Fellows — application portal</a><a href="https://www.breakthroughenergy.org/fellows-projects" target="_blank" rel="noopener noreferrer">Breakthrough Energy Fellows — program</a></div>
+          <a class="official-link" href="https://befellows.smapply.org/?linkId=100000152686525" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-16"
+      data-type="crédito" data-coverage="regional"
+      data-status="fluxo_continuo" data-seal="laranja"
+      data-eligibility="potencial_futuro" data-urgent="false"
+      data-score="62" data-name="fne verde">
+      <div class="card-top">
+        <div class="rank">16</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">crédito</span>
+            <span class="tag">regional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>FNE Verde</h3>
+          <p class="funder">Banco do Nordeste</p>
+        </div>
+        <div class="score score-laranja">
+          <strong>62</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Até 100% do investimento para micro e pequena empresa</strong></div>
+        <div><span>Prazo</span><strong>Fluxo contínuo</strong></div>
+        <div><span>Elegibilidade</span><strong>Potencial futuro</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-laranja"></span>
+        <p>O impacto ambiental é aderente, mas a linha financia implantação. O CATMAG ainda está em validação e adota um modelo de licenciamento com baixo CAPEX próprio.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Empresas, produtores, cooperativas e associações na área do FNE.</p>
+            <p class="muted">Mais aderente a uma futura planta piloto, operação própria ou adoção industrial que gere eficiência de materiais, prevenção de poluição e redução de emissões.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Sem faixa TRL; orientado a investimento sustentável implementável.</p>
+            <div class="topic-row"><span>prevenção da poluição</span><span>eficiência de materiais</span><span>emissões</span><span>sustentabilidade</span><span>Nordeste</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Definido na análise da operação</p>
+            <p><b>Contrapartida:</b> Pode ser zero nos portes com participação de 100%; sujeito a análise</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Solicitação após cadastro, limite de crédito e projeto; até 12 anos para investimento não rural, com até 4 anos de carência.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>CNPJ e projeto de investimento sustentável.</li><li>Licenças/regularidade aplicáveis.</li><li>Análise de crédito e garantias.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Projeto ambiental e econômico</li><li>Orçamentos</li><li>Licenças aplicáveis</li><li>Cadastro e garantias</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Melhor para a fase de implantação ou para um parceiro industrial licenciado.</li><li>Crédito e garantias devem ser avaliados separadamente.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Manter como opção para TRL 7–9 ou apresentar a linha a um parceiro industrial que deseje produzir/adotar o catalisador.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://www.bnb.gov.br/fne-verde" target="_blank" rel="noopener noreferrer">FNE Verde</a></div>
+          <a class="official-link" href="https://www.bnb.gov.br/fne-verde" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-17"
+      data-type="grant + equity" data-coverage="internacional"
+      data-status="aberta" data-seal="vermelho"
+      data-eligibility="potencial_futuro" data-urgent="false"
+      data-score="48" data-name="eic accelerator 2026">
+      <div class="card-top">
+        <div class="rank">17</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">grant + equity</span>
+            <span class="tag">internacional</span>
+            <span class="tag status">Aberta</span>
+            
+          </div>
+          <h3>EIC Accelerator 2026</h3>
+          <p class="funder">European Innovation Council</p>
+        </div>
+        <div class="score score-vermelho">
+          <strong>48</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Grant abaixo de € 2,5 milhões + investimento de € 1–10 milhões</strong></div>
+        <div><span>Prazo</span><strong>Short proposal em fluxo contínuo; próximas datas de full proposal: 02/09 e 04/11/2026</strong></div>
+        <div><span>Elegibilidade</span><strong>Potencial futuro</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-vermelho"></span>
+        <p>A ambição deep tech e o mercado global combinam, mas o TRL e a jurisdição tornam o CATMAG inelegível para uma proposta completa agora.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Startups e PMEs de Estados-membros/associados; entidades de terceiros países podem se relocar antes da proposta completa.</p>
+            <p class="muted">O CATMAG está em TRL 4, abaixo do TRL 6–8, e está no Brasil. Pode ser uma rota futura após validação relevante, CNPJ e estratégia de estabelecimento europeu.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>TRL 6–8 para atividades de inovação.</p>
+            <div class="topic-row"><span>deep tech</span><span>química</span><span>combustíveis</span><span>escala global</span><span>investimento</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> € 414 milhões no EIC Accelerator Open e € 220 milhões nos Challenges 2026</p>
+            <p><b>Contrapartida:</b> Capital próprio/coinvestimento pode ser necessário na estrutura; regras completas no programa</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Short proposals avaliadas mensalmente; propostas completas agrupadas nas datas de 2026.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Alcançar TRL 6.</li><li>Startup/PME elegível na UE ou país associado antes da proposta completa.</li><li>Potencial de criar ou romper mercados e escalar globalmente.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Short proposal de 12 páginas</li><li>Pitch deck até 10 slides</li><li>Vídeo de 3 minutos</li><li>FTO, plano financeiro e cartas de intenção na etapa completa</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Não priorizar em 2026.</li><li>Exige avanço a TRL 6 e estabelecimento elegível na Europa.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Usar os próximos 12 meses para TRL 6, cartas de intenção e FTO; reavaliar EIC apenas com estratégia europeia concreta.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en" target="_blank" rel="noopener noreferrer">EIC Accelerator 2026</a></div>
+          <a class="official-link" href="https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-18"
+      data-type="crédito" data-coverage="nacional"
+      data-status="fluxo_continuo" data-seal="vermelho"
+      data-eligibility="potencial_futuro" data-urgent="false"
+      data-score="44" data-name="bndes mais inovação — investimento em inovação">
+      <div class="card-top">
+        <div class="rank">18</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">crédito</span>
+            <span class="tag">nacional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>BNDES Mais Inovação — Investimento em inovação</h3>
+          <p class="funder">BNDES</p>
+        </div>
+        <div class="score score-vermelho">
+          <strong>44</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Financiamento direto a partir de R$ 10 milhões no Norte/Nordeste; até 100% dos itens financiáveis</strong></div>
+        <div><span>Prazo</span><strong>Fluxo contínuo</strong></div>
+        <div><span>Elegibilidade</span><strong>Potencial futuro</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-vermelho"></span>
+        <p>A política financia PD&amp;I ambiental e plantas pioneiras, mas o CATMAG ainda não tem empresa, escala de investimento ou maturidade para uma operação direta desse porte.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Pessoas jurídicas privadas ou públicas sediadas no Brasil.</p>
+            <p class="muted">Aderente a PD&amp;I ambiental e planta pioneira, porém incompatível com o estágio pré-CNPJ e o porte atual do projeto. Pode servir a um parceiro industrial ou à escala futura.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Investimento em PD&amp;I, difusão tecnológica e plantas pioneiras; não publica faixa TRL.</p>
+            <div class="topic-row"><span>PD&amp;I</span><span>planta pioneira</span><span>meio ambiente</span><span>resíduos</span><span>Nordeste</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Orçamento do programa não usado como potencial individual</p>
+            <p><b>Contrapartida:</b> Pode financiar até 100%; operação sujeita a crédito, risco e garantias</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Habilitação no Portal do Cliente BNDES ou solicitação via agente financeiro.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Pessoa jurídica sediada no Brasil.</li><li>Projeto mínimo de R$ 10 milhões no Nordeste para apoio direto.</li><li>Habilitação, análise de crédito e garantias.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Plano de investimento</li><li>Documentos societários e financeiros</li><li>Licenças e garantias</li><li>Plano de PD&amp;I</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Não usar ticket/condições financeiras para o score; a baixa aderência decorre de natureza jurídica e estágio.</li><li>Considerar via parceiro industrial na escala.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Apresentar como rota futura a fabricantes de catalisadores ou oleoquímicas que queiram implantar planta pioneira no Nordeste.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/programa-bndes-mais-inovacao-investimento" target="_blank" rel="noopener noreferrer">BNDES Mais Inovação — Investimento em inovação</a></div>
+          <a class="official-link" href="https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/programa-bndes-mais-inovacao-investimento" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    
+
+    <article class="opportunity-card" id="opp-19"
+      data-type="incentivo fiscal" data-coverage="nacional"
+      data-status="fluxo_continuo" data-seal="vermelho"
+      data-eligibility="potencial_futuro" data-urgent="false"
+      data-score="35" data-name="lei do bem">
+      <div class="card-top">
+        <div class="rank">19</div>
+        <div class="card-heading">
+          <div class="tags">
+            <span class="tag">incentivo fiscal</span>
+            <span class="tag">nacional</span>
+            <span class="tag status">Fluxo contínuo</span>
+            
+          </div>
+          <h3>Lei do Bem</h3>
+          <p class="funder">MCTI</p>
+        </div>
+        <div class="score score-vermelho">
+          <strong>35</strong>
+          <span>aderência</span>
+        </div>
+      </div>
+      <div class="card-summary-grid">
+        <div><span>Valor / apoio</span><strong>Dedução adicional de até 60%, com acréscimos por pesquisadores e patente; outros benefícios fiscais previstos</strong></div>
+        <div><span>Prazo</span><strong>Fruição anual; prestação de informações no FormP&amp;D conforme calendário do MCTI</strong></div>
+        <div><span>Elegibilidade</span><strong>Potencial futuro</strong></div>
+      </div>
+      <div class="match-note">
+        <span class="signal signal-vermelho"></span>
+        <p>A atividade é PD&amp;I elegível em tese, mas a natureza jurídica e fiscal atual tornam o instrumento impraticável para o CATMAG no curto prazo.</p>
+      </div>
+      <details open>
+        <summary>Ver análise completa</summary>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Quem pode participar</h4>
+            <p>Pessoas jurídicas no regime de Lucro Real, regulares e com atividades de PD&amp;I no Brasil.</p>
+            <p class="muted">Não aplicável a uma startup ainda não constituída e provavelmente sem Lucro Real/lucro fiscal. Pode ser útil a um futuro licenciado industrial que execute PD&amp;I com CATMAG.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Estágio e temas</h4>
+            <p>Pesquisa básica dirigida, pesquisa aplicada e desenvolvimento experimental.</p>
+            <div class="topic-row"><span>incentivo fiscal</span><span>PD&amp;I</span><span>química</span><span>patente</span><span>parceria com ICT</span></div>
+          </div>
+          <div class="detail-block">
+            <h4>Condições financeiras</h4>
+            <p><b>Chamada:</b> Benefício depende dos dispêndios elegíveis e situação fiscal da empresa</p>
+            <p><b>Contrapartida:</b> A empresa realiza os dispêndios e mantém documentação técnica, contábil e fiscal</p>
+          </div>
+          <div class="detail-block">
+            <h4>Cronograma</h4>
+            <p>Dispêndios no ano-base e declaração posterior no FormP&amp;D.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Requisitos-chave</h4>
+            <ul><li>Regime de Lucro Real.</li><li>Regularidade fiscal.</li><li>Dispêndios próprios em PD&amp;I e documentação contemporânea.</li></ul>
+          </div>
+          <div class="detail-block">
+            <h4>Documentos-chave</h4>
+            <ul><li>Memória técnica do projeto</li><li>Segregação contábil dos dispêndios</li><li>Folhas, notas e contratos</li><li>Informações FormP&amp;D</li></ul>
+          </div>
+          
+          <div class="detail-block caution">
+            <h4>Ressalvas críticas</h4>
+            <ul><li>Mais útil ao parceiro industrial/licenciado do que à startup nascente.</li><li>Não contabilizar subvenção não reembolsável como dispêndio próprio incentivável.</li></ul>
+          </div>
+        
+          <div class="detail-block next-step">
+            <h4>Próximo passo recomendado</h4>
+            <p>Incluir cláusulas de cooperação e documentação de PD&amp;I nos futuros contratos com indústria para permitir que o parceiro avalie a Lei do Bem.</p>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="source-links"><a href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/lei-do-bem/paginas/o-que-e-a-lei-do-bem" target="_blank" rel="noopener noreferrer">O que é a Lei do Bem</a></div>
+          <a class="official-link" href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/lei-do-bem/paginas/o-que-e-a-lei-do-bem" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a>
+        </div>
+      </details>
+    </article>
+    </div>
+      <div class="no-results" id="noResults">Nenhuma oportunidade corresponde a esta combinação de filtros.</div>
+    </section>
+
+    <section class="section" id="metodologia">
+      <div class="section-head"><div><div class="eyebrow">Leitura responsável</div><h2>Como interpretar</h2></div><p>O radar reduz falsos positivos: uma oportunidade só entra com fonte oficial e status verificável. Janelas encerradas não são apresentadas como abertas.</p></div>
+      <div class="method-grid">
+        <div class="method-card"><h3>Score de aderência</h3><p>O score considera somente elegibilidade formal, aderência ao tema e compatibilidade com o estágio TRL. Valor, modalidade, preferência financeira e capacidade de contrapartida ficam para o diagnóstico aprofundado.</p><div class="scale"><div><b style="color:var(--green)">85–100</b>Prioridade máxima</div><div><b style="color:var(--yellow)">70–84</b>Alta com ressalvas</div><div><b style="color:var(--orange)">55–69</b>Exige ajuste</div><div><b style="color:var(--red)">&lt;55</b>Rota futura</div></div></div>
+        <div class="method-card"><h3>Leitura financeira</h3><p>O total potencial é conservador: soma apenas os dois tickets mínimos de R$ 5 milhões das chamadas Finep de alta aderência e R$ 78 mil de premiações/bolsa conhecidas. Orçamentos globais, crédito, equity e apoios percentuais não foram somados.</p><p>Os valores não são promessa de aprovação. A seleção depende de mérito, documentação, orçamento, contrapartida, disponibilidade e concorrência.</p></div>
+        <div class="method-card"><h3>O que já está forte</h3><ul><li>Equipe técnica sênior e multidisciplinar.</li><li>TRL 4 com roteiro claro até TRL 6.</li><li>Aplicação objetiva em biodiesel/oleoquímica.</li><li>Recuperação magnética, reuso e potencial redução de água e efluentes.</li><li>Seleção no Centelha 3 Ceará como sinal externo de validação.</li></ul></div>
+        <div class="method-card"><h3>Gaps a fechar</h3><ul><li>CNPJ, CNAE, sede e governança da spin-off.</li><li>Titularidade, inventores, depósito de patente e licença.</li><li>Parceiro industrial e cartas de intenção.</li><li>Orçamento e contrapartida do plano TRL 4→6.</li><li>KPIs técnicos, econômicos, ambientais e climáticos comparativos.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="section" id="fontes">
+      <div class="section-head"><div><div class="eyebrow">Rastreabilidade</div><h2>Fontes oficiais</h2></div><p>Links consultados em 29/07/2026. Sempre confira o edital integral e eventuais retificações antes de submeter.</p></div>
+      <ul class="sources-list"><li><span>SRC-01</span><div><b>IFCE Camocim aprova CATMAG-25 no Programa Centelha 3</b><small>IFCE</small></div>
+        <a href="https://portal.ifce.edu.br/campus/camocim/noticias/professor-do-ifce-camocim-aprova-projeto-no-programa-centelha-3-e-impulsiona-inovacao-sustentavel/" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-02</span><div><b>Concurso Innovación con Impacto 2026</b><small>ASIPI</small></div>
+        <a href="https://asipi.org/concurso-innovacion-con-impacto-2026/?lang=es" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-03</span><div><b>Reglamento Innovación con Impacto 2026</b><small>ASIPI</small></div>
+        <a href="https://asipi.org/wp-content/uploads/2026/05/2-Reglamento-Innovacion-de-Impacto-ASIPI-2026.pdf" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-04</span><div><b>Prêmio Mercosul de Ciência, Tecnologia e Inovação 2026</b><small>CNPq / MCTI</small></div>
+        <a href="https://www.gov.br/cnpq/pt-br/assuntos/noticias/premios/premio-mercosul-de-ciencia-tecnologia-e-inovacao-inscricoes-abertas-ate-31-08" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-05</span><div><b>Catalisa ICT</b><small>Sebrae</small></div>
+        <a href="https://sebrae.com.br/subsites/catalisa-ict" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-06</span><div><b>Edital Sebrae/CE e Funcap nº 10/2026 — Startup Ceará</b><small>Funcap / Sebrae Ceará</small></div>
+        <a href="https://montenegro.funcap.ce.gov.br/sugba/edital/819.pdf" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-07</span><div><b>Plataforma de inscrição — Startup Ceará</b><small>Sebrae Startups</small></div>
+        <a href="https://programas.sebraestartups.com.br/in/startupceara" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-08</span><div><b>EMBRAPII e Sebrae — apoio a pequenos negócios e startups</b><small>EMBRAPII / Sebrae</small></div>
+        <a href="https://embrapii.org.br/sebrae/" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-09</span><div><b>Finep Mais Inovação Brasil — Rodada 2 — Transição Energética</b><small>Finep / MCTI / FNDCT</small></div>
+        <a href="https://www.finep.gov.br/e/chamada-publica/222684/754567" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-10</span><div><b>Plataforma Inovação para a Indústria</b><small>SENAI / CNI / SESI</small></div>
+        <a href="https://www.portaldaindustria.com.br/canais/plataforma-inovacao-para-industria/" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-11</span><div><b>Plataforma Inovação para a Indústria contará com R$ 190 milhões em 2026</b><small>Agência de Notícias da Indústria</small></div>
+        <a href="https://noticias.portaldaindustria.com.br/noticias/inovacao-e-tecnologia/plataforma-inovacao-para-a-industria-contara-com-r-190-milhoes-em-2026/" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-12</span><div><b>Finep Mais Inovação Brasil — Rodada 2 — Economia Circular e Cidades Sustentáveis</b><small>Finep / MCTI / FNDCT</small></div>
+        <a href="https://www.finep.gov.br/e/chamada-publica/222684/755213" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-13</span><div><b>EMBRAPII e BNDES — Inova+ Indústria Digital e Sustentável</b><small>EMBRAPII / BNDES</small></div>
+        <a href="https://embrapii.org.br/bndes/" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-14</span><div><b>Shell GameChanger — Share your idea</b><small>Shell</small></div>
+        <a href="https://www.shell.com/what-we-do/technology-and-innovation/innovate-with-shell/share-your-idea.html" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-15</span><div><b>Sebraetec — Negócios Inovadores</b><small>Sebrae</small></div>
+        <a href="https://meuatendimento.sebrae.com.br/sites/PortalSebrae/sebraetec/negociosinovadores" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-16</span><div><b>FNE Inovação</b><small>Banco do Nordeste</small></div>
+        <a href="https://www.bnb.gov.br/fne-inovacao" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-17</span><div><b>Finep Inovacred via Banco do Nordeste</b><small>Banco do Nordeste / Finep</small></div>
+        <a href="https://www.bnb.gov.br/finep-inovacred" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-18</span><div><b>BNDES Garagem — Negócios de Impacto</b><small>BNDES</small></div>
+        <a href="https://garagem.bndes.gov.br/" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-19</span><div><b>Breakthrough Energy Fellows — application portal</b><small>Breakthrough Energy</small></div>
+        <a href="https://befellows.smapply.org/?linkId=100000152686525" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-20</span><div><b>Breakthrough Energy Fellows — program</b><small>Breakthrough Energy</small></div>
+        <a href="https://www.breakthroughenergy.org/fellows-projects" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-21</span><div><b>FNE Verde</b><small>Banco do Nordeste</small></div>
+        <a href="https://www.bnb.gov.br/fne-verde" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-22</span><div><b>EIC Accelerator 2026</b><small>European Innovation Council</small></div>
+        <a href="https://eic.ec.europa.eu/eic-funding-opportunities/eic-accelerator_en" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-23</span><div><b>BNDES Mais Inovação — Investimento em inovação</b><small>BNDES</small></div>
+        <a href="https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/programa-bndes-mais-inovacao-investimento" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li>
+<li><span>SRC-24</span><div><b>O que é a Lei do Bem</b><small>MCTI</small></div>
+        <a href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/lei-do-bem/paginas/o-que-e-a-lei-do-bem" target="_blank" rel="noopener noreferrer">Acessar ↗</a></li></ul>
+    </section>
+
+    <section class="section" id="limitacoes">
+      <div class="section-head"><div><div class="eyebrow">Transparência</div><h2>Limitações e confirmações</h2></div></div>
+      <div class="method-card"><ul><li>Não foi fornecido arquivo independente do logo do cliente; o relatório usa wordmark tipográfico CATMAG.</li><li>CNPJ, porte, CNAE, regime tributário e faturamento não foram confirmados. O pitch afirma que a startup será estruturada.</li><li>Titularidade, inventores, depósito de patente e liberdade de operação não foram informados e são decisivos para concursos e licenciamento.</li><li>Não há orçamento detalhado, parceiro industrial, cartas de intenção, métricas comparativas ou capacidade de contrapartida informados.</li><li>O valor potencial não soma orçamentos globais de programas, crédito, equity ou apoios percentuais e não converte moeda estrangeira.</li><li>Oportunidades recorrentes aparecem explicitamente como estimativas; regras e datas devem ser reconfirmadas quando o próximo edital for publicado.</li><li>Scores medem apenas elegibilidade formal, aderência temática e aderência de estágio; não representam chance de aprovação.</li></ul></div>
+    </section>
+
+    <section class="cta">
+      <div class="cta-panel"><div><div class="eyebrow">Próxima etapa</div><h2>Transformar o radar em submissões viáveis.</h2><p>A MonyU pode aprofundar elegibilidade, estruturar o arranjo empresa–ICT, montar o checklist documental e converter as oportunidades prioritárias em planos de captação executáveis.</p></div><a class="cta-button" href="https://wa.me/5585991577137?text=Ol%C3%A1%21%20Recebi%20meu%20Radar%20de%20Oportunidades%20CATMAG%20e%20quero%20avan%C3%A7ar%20para%20o%20diagn%C3%B3stico%20de%20elegibilidade%20e%20a%20estrutura%C3%A7%C3%A3o%20da%20capta%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Quero avançar para o diagnóstico de elegibilidade</a></div>
+    </section>
+  </main>
+  <footer><div><span>© 2026 MonyU — Todos os direitos reservados.</span><span>Radar CATMAG · Fontes verificadas em 29/07/2026</span></div></footer>
+  <script>
+    (() => {
+      const cards = [...document.querySelectorAll('.opportunity-card')];
+      const search = document.getElementById('search');
+      const coverage = document.getElementById('coverage');
+      const status = document.getElementById('status');
+      const seal = document.getElementById('seal');
+      const chips = [...document.querySelectorAll('[data-filter-type]')];
+      const urgent = document.getElementById('urgent');
+      const count = document.getElementById('resultCount');
+      const noResults = document.getElementById('noResults');
+      let selectedType = '';
+      let urgentOnly = false;
+      const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+      function apply() {
+        const q = normalize(search.value.trim());
+        let visible = 0;
+        cards.forEach(card => {
+          const haystack = normalize(card.textContent);
+          const show = (!q || haystack.includes(q))
+            && (!selectedType || card.dataset.type === selectedType)
+            && (!coverage.value || card.dataset.coverage === coverage.value)
+            && (!status.value || card.dataset.status === status.value)
+            && (!seal.value || card.dataset.seal === seal.value)
+            && (!urgentOnly || card.dataset.urgent === 'true');
+          card.classList.toggle('hidden', !show);
+          visible += show ? 1 : 0;
+        });
+        count.textContent = `${visible} oportunidade${visible === 1 ? '' : 's'} exibida${visible === 1 ? '' : 's'}`;
+        noResults.style.display = visible ? 'none' : 'block';
+      }
+      [search, coverage, status, seal].forEach(el => el.addEventListener(el === search ? 'input' : 'change', apply));
+      chips.forEach(chip => chip.addEventListener('click', () => {
+        if (chip === urgent) return;
+        chips.filter(c => c !== urgent).forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        selectedType = chip.dataset.filterType || '';
+        apply();
+      }));
+      urgent.addEventListener('click', () => {
+        urgentOnly = !urgentOnly;
+        urgent.classList.toggle('active', urgentOnly);
+        urgent.dataset.urgentOnly = String(urgentOnly);
+        apply();
+      });
+    })();
+  </script>
+</body>
+</html>
