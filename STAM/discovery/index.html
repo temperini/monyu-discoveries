@@ -91,6 +91,149 @@ table{color:#ddd} td{border-color:#444} tr:nth-child(even) td{background:#252525
  .menu.open{display:flex}
 }
 @media(max-width:520px){.grid-4{grid-template-columns:1fr} .section{padding:28px 18px} .hero{padding-left:16px;padding-right:16px}}
+
+
+/* === QA visual final: contraste, estados e consistência === */
+:root{
+  --brand-pink:#FF0055;
+  --brand-pink-accessible:#BE003D;
+  --brand-pink-hover:#91002D;
+  --brand-pink-light:#FFB2B8;
+  --brand-pink-score:#FF506E;
+  --focus:#FFB2B8;
+}
+
+/* Marca: #FF0055 permanece como acento institucional; em superfícies
+   preenchidas usamos o token escuro da própria paleta para manter texto branco AA. */
+.btn{
+  background:var(--brand-pink-accessible);
+  color:#FFFFFF !important;
+  border:1px solid #FF506E;
+  box-shadow:inset 0 3px 0 var(--brand-pink);
+  font-size:13px;
+  line-height:1.35;
+}
+.btn:hover{
+  background:var(--brand-pink-hover);
+  border-color:#FFB2B8;
+}
+.btn:active{
+  transform:translateY(1px);
+}
+.btn.ghost{
+  background:transparent;
+  color:#FFFFFF !important;
+  border:1px solid #8A8A8A;
+  box-shadow:none;
+}
+.btn.ghost:hover{
+  background:#2A2A2A;
+  border-color:#C7C7C7;
+}
+
+/* Chips e nós: nada de texto escuro sobre o rosa institucional. */
+.opp-id,
+.back-top{
+  background:var(--brand-pink-accessible);
+  color:#FFFFFF !important;
+}
+.opp-id{
+  border:1px solid #FF506E;
+}
+.back-top{
+  border:1px solid #FF506E;
+}
+.back-top:hover{
+  background:var(--brand-pink-hover);
+}
+
+/* Destaques pequenos sobre fundo escuro usam tons acessíveis. */
+.section .kicker,
+.section a:not(.btn),
+.refs-list a{
+  color:var(--brand-pink-light);
+}
+.score-mini,
+.rank,
+.section .stat b{
+  color:var(--brand-pink-score);
+}
+
+/* Badges: texto escuro em superfície clara; risco com combinação própria. */
+.badge{
+  color:#242424;
+  background:#FFFFFF;
+  border-color:#767676;
+  font-size:10px;
+  line-height:1.35;
+  font-weight:700;
+}
+.badge.warn{
+  color:#713500;
+  background:#FFF7ED;
+  border-color:#C44A00;
+}
+
+/* Gráficos usam superfície branca: força rótulos para tinta escura,
+   evitando herança acidental do tema escuro dentro de SVG. */
+.figure svg text,
+.top-card svg text{
+  fill:#222222 !important;
+  font-family:Montserrat,Arial,sans-serif;
+}
+.figure .figcap{
+  color:#666666;
+}
+
+/* Estados de teclado visíveis em todos os controles. */
+.btn:focus-visible,
+.back-top:focus-visible,
+.menu-btn:focus-visible,
+.menu a:focus-visible,
+.section a:focus-visible,
+.brand:focus-visible{
+  outline:3px solid var(--focus);
+  outline-offset:3px;
+}
+
+/* Menu móvel e navegação: contraste e área de clique. */
+.menu a{
+  min-height:36px;
+  display:inline-flex;
+  align-items:center;
+}
+.menu-btn{
+  min-height:40px;
+  color:#FFFFFF;
+  border-color:#777777;
+}
+.menu-btn:hover{
+  background:#2A2A2A;
+  border-color:#BDBDBD;
+}
+
+/* Textos auxiliares no tema escuro. */
+.refs-list li{
+  color:#C7C7C7;
+}
+.section .note,
+.section .small{
+  color:#C7C7C7;
+}
+
+/* Reduz risco de cortes em telas pequenas. */
+img,svg{max-width:100%}
+.hero-actions{align-items:stretch}
+@media(max-width:520px){
+  .hero-actions .btn{
+    width:100%;
+    text-align:center;
+  }
+  .hero h1{
+    overflow-wrap:anywhere;
+  }
+}
+
 </style></head>
 <body>
 <header class="hero" id="topo">
