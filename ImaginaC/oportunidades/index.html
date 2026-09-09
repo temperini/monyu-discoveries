@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#000000" />
+<meta name="description" content="Radar Executivo de Captação da Imagina C — MonyU Funding Intelligence." />
+<title>Imagina C — Radar Executivo de Captação | MonyU</title>
+<style>
+:root {
+  --bg:#000; --surface:#101010; --surface2:#1A1A1A; --surface3:#242424;
+  --text:#E2E2E2; --muted:#9B9B9B; --pink:#FF0055; --orange:#FF7300; --yellow:#FFCC00;
+  --light:#F5F5F5; --dark:#161616; --line:rgba(255,255,255,.14); --radius:14px;
+  --max:1240px; --g:clamp(18px,3vw,36px); --shadow:0 18px 70px rgba(255,0,85,.09);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:92px} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Montserrat,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55;overflow-x:hidden}
+a{color:inherit} button,input,select{font:inherit}
+::selection{background:var(--pink);color:white}
+.container{width:min(var(--max),calc(100% - 2*var(--g)));margin:auto}
+.grid{display:grid;gap:clamp(14px,2vw,24px)} .muted{color:var(--muted)} .pink{color:var(--pink)} .orange{color:var(--orange)} .yellow{color:var(--yellow)}
+.eyebrow{display:flex;gap:10px;align-items:center;font-size:.72rem;font-weight:900;letter-spacing:.13em;text-transform:uppercase;color:var(--pink);margin-bottom:16px}
+.eyebrow:before{content:"";width:34px;height:3px;border-radius:5px;background:linear-gradient(90deg,var(--pink),var(--orange))}
+.section{padding:clamp(68px,9vw,112px) 0;border-top:1px solid rgba(255,255,255,.08);position:relative}
+.section.light{background:var(--light);color:var(--dark)}
+h1,h2,h3,p{margin-top:0} h1{font-size:clamp(3.5rem,9vw,7.8rem);line-height:.85;letter-spacing:-.065em;margin-bottom:24px} h2{font-size:clamp(2.1rem,5.2vw,4.6rem);line-height:.95;letter-spacing:-.05em;margin-bottom:20px} h3{font-size:clamp(1.05rem,2vw,1.45rem);letter-spacing:-.02em;margin-bottom:10px}
+.lead{font-size:clamp(1rem,2vw,1.25rem);color:#cfcfcf;max-width:830px}
+.light .lead{color:#555}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;height:74px;z-index:50;background:rgba(0,0,0,.76);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.1)}
+.nav .inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:max-content} .brand-logo{width:78px;height:auto;display:flex} .brand small{font-size:.62rem;color:#8d8d8d;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+.navlinks{display:flex;align-items:center;gap:5px;overflow:auto;scrollbar-width:none} .navlinks::-webkit-scrollbar{display:none}
+.navlinks a{padding:9px 10px;border-radius:7px;text-decoration:none;font-size:.71rem;font-weight:800;color:#aaa;white-space:nowrap;transition:.25s} .navlinks a:hover,.navlinks a.active{color:#fff;background:#171717}
+.navlinks a.active{box-shadow:inset 0 -2px var(--pink)}
+.actions{display:flex;gap:8px;align-items:center} .icon-btn{width:39px;height:39px;border-radius:10px;border:1px solid var(--line);background:#111;color:#fff;display:grid;place-items:center;cursor:pointer;transition:.25s} .icon-btn:hover{transform:translateY(-2px);border-color:var(--pink)}
+.mobile-btn{display:none}
+
+/* hero */
+.hero{min-height:100svh;display:grid;align-items:end;padding:140px 0 68px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:60vw;height:60vw;max-width:860px;max-height:860px;border-radius:50%;background:radial-gradient(circle,rgba(255,0,85,.2),transparent 65%);right:-20vw;top:-18vw;filter:blur(2px);animation:pulse 8s ease-in-out infinite}
+.hero:after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,black,transparent 80%);pointer-events:none}
+@keyframes pulse{50%{transform:scale(1.08);opacity:.6}}
+.hero .content{position:relative;z-index:2}
+.hero-kicker{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);padding:8px 12px;border-radius:999px;background:#0b0b0b;font-size:.72rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:#c9c9c9;margin-bottom:26px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 22px var(--pink)}
+.signal-bars{display:flex;gap:10px;align-items:center;margin:28px 0} .signal-bars span{height:7px;border-radius:8px;display:block} .signal-bars span:nth-child(1){width:260px;background:var(--pink)} .signal-bars span:nth-child(2){width:180px;background:var(--orange)} .signal-bars span:nth-child(3){width:95px;background:var(--yellow)}
+.hero-bottom{display:grid;grid-template-columns:1.35fr .65fr;gap:36px;align-items:end;margin-top:34px}
+.hero-meta{display:flex;justify-content:flex-end;gap:16px;flex-wrap:wrap} .meta-card{padding:16px 18px;border:1px solid var(--line);background:#0b0b0b;border-radius:12px;min-width:150px} .meta-card b{display:block;color:#fff} .meta-card small{color:#777}
+
+/* cards / metrics */
+.metrics{grid-template-columns:repeat(4,1fr);margin-top:42px} .metric{padding:25px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line);min-height:150px;position:relative;overflow:hidden} .metric:after{content:"";position:absolute;width:100px;height:100px;border-radius:50%;right:-34px;top:-34px;background:radial-gradient(circle,var(--accent),transparent 70%);opacity:.22} .metric .value{font-size:clamp(2.3rem,5vw,4rem);font-weight:900;letter-spacing:-.06em;color:var(--accent);line-height:1} .metric .label{margin-top:9px;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase} .metric p{font-size:.79rem;color:#8c8c8c;margin:9px 0 0}
+.market-grid{grid-template-columns:repeat(3,1fr);margin-top:26px} .market{padding:18px;border:1px solid var(--line);background:var(--surface2);border-radius:12px;display:flex;gap:13px;align-items:flex-start} .market .ic{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#151515;color:var(--accent);flex:0 0 auto} .market p{font-size:.78rem;color:#929292;margin:3px 0 0}
+.callout{padding:24px;border:1px solid var(--line);background:linear-gradient(135deg,#141414,#0b0b0b);border-radius:var(--radius);box-shadow:var(--shadow)}
+
+/* opportunities */
+.toolbar{display:grid;grid-template-columns:1.4fr repeat(3,.7fr);gap:10px;margin:28px 0 20px} .control{background:#111;border:1px solid var(--line);color:#ddd;padding:12px 13px;border-radius:9px;outline:none} .control:focus{border-color:var(--yellow);box-shadow:0 0 0 2px rgba(255,204,0,.12)}
+.opp-grid{grid-template-columns:repeat(2,1fr)} .opp-card{border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:22px;position:relative;transition:.28s;overflow:hidden} .opp-card:hover{transform:translateY(-4px);border-color:rgba(255,0,85,.55);box-shadow:0 18px 50px rgba(0,0,0,.3)} .opp-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start} .opp-fit{font-size:1.35rem;font-weight:900;color:var(--accent);white-space:nowrap} .opp-fit small{font-size:.62rem;color:#777;display:block;text-align:right;letter-spacing:.08em} .tagrow{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0} .tag{font-size:.64rem;padding:6px 8px;border:1px solid var(--line);border-radius:999px;color:#aaa} .tag.hot{color:white;border-color:rgba(255,0,85,.45);background:rgba(255,0,85,.08)} .deadline{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:11px 12px;background:#0a0a0a;border-radius:9px;margin:15px 0} .deadline b{font-size:.8rem} .countdown{font-size:.72rem;color:var(--yellow);font-weight:800;text-align:right} .opp-card p{color:#a8a8a8;font-size:.83rem} .opp-link{display:inline-flex;gap:8px;align-items:center;margin-top:8px;color:#fff;text-decoration:none;font-size:.77rem;font-weight:900;border-bottom:1px solid var(--pink);padding-bottom:3px}
+.fitbar{height:5px;background:#222;border-radius:10px;margin-top:10px;overflow:hidden} .fitbar span{height:100%;display:block;border-radius:10px;background:linear-gradient(90deg,var(--orange),var(--pink));width:0;transition:width 1.1s cubic-bezier(.22,1,.36,1)}
+
+/* chart */
+.chart-card{padding:22px;border-radius:var(--radius);background:var(--surface);border:1px solid var(--line)} .chart-head{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:22px} .legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.7rem;color:#9a9a9a} .legend span{display:flex;align-items:center;gap:6px} .legend i{width:8px;height:8px;border-radius:50%;display:inline-block}
+#fitChart{width:100%;min-height:380px;display:block}
+.bar-row{display:grid;grid-template-columns:minmax(140px,1.15fr) 4fr 52px;gap:14px;align-items:center;margin:10px 0} .bar-label{font-size:.75rem;color:#c8c8c8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis} .bar-track{height:14px;background:#1b1b1b;border-radius:9px;overflow:hidden} .bar-fill{height:100%;border-radius:9px;width:0;transition:width 1s cubic-bezier(.22,1,.36,1);position:relative;background:linear-gradient(90deg,var(--orange),var(--pink))} .bar-value{font-weight:900;font-size:.78rem;color:#fff}
+
+/* project mothers */
+.project-grid{grid-template-columns:repeat(2,1fr)} .project{padding:28px;border:1px solid var(--line);background:var(--surface2);border-radius:16px;min-height:360px;position:relative;overflow:hidden} .project:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--accent)} .project .num{font-size:.69rem;font-weight:900;letter-spacing:.12em;color:var(--accent);text-transform:uppercase} .project h3{font-size:1.55rem;margin:16px 0 10px} .route-pills{display:flex;gap:7px;flex-wrap:wrap;margin:20px 0} .route-pills span{font-size:.67rem;padding:7px 9px;border-radius:999px;background:#111;border:1px solid var(--line)} .project .prove{font-size:.78rem;color:#999;border-top:1px solid var(--line);padding-top:15px}
+
+/* timeline */
+.timeline{display:grid;grid-template-columns:repeat(8,1fr);gap:0;margin:44px 0 12px;position:relative} .timeline:before{content:"";position:absolute;left:4%;right:4%;top:20px;height:2px;background:#d8d8d8} .t-item{text-align:center;position:relative;padding-top:45px} .t-dot{position:absolute;top:13px;left:50%;transform:translateX(-50%);width:15px;height:15px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(0,0,0,.04)} .t-item b{font-size:.74rem;display:block} .t-item small{font-size:.65rem;color:#777}
+.task-list{margin-top:38px} .task{display:grid;grid-template-columns:54px 1fr;gap:16px;padding:18px 0;border-bottom:1px solid #ddd} .task-num{font-weight:900;font-size:1.35rem;color:var(--pink)} .task p{font-size:.82rem;color:#666;margin:4px 0 0}
+
+/* funding stack */
+.stack{display:grid;gap:14px} .lane{display:grid;grid-template-columns:46px 1fr 1.2fr;gap:16px;align-items:center;padding:18px;border-bottom:1px solid var(--line)} .lane-n{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#000;font-weight:900} .lane small{color:#777} .lane .desc{color:#aaa;font-size:.81rem}
+
+/* eligibility */
+.checks{grid-template-columns:repeat(2,1fr)} .check{padding:22px;border:1px solid var(--line);background:var(--surface);border-radius:12px;display:grid;grid-template-columns:46px 1fr;gap:14px} .check .n{font-weight:900;font-size:1.25rem;color:var(--accent)} .check p{font-size:.8rem;color:#8e8e8e;margin:5px 0 0}
+
+/* plan */
+.phase-grid{grid-template-columns:repeat(3,1fr)} .phase{padding:24px;border:1px solid var(--line);border-radius:14px;background:var(--surface2)} .phase .phase-title{display:inline-block;padding:7px 9px;border-radius:999px;background:var(--accent);color:#000;font-size:.66rem;font-weight:900;letter-spacing:.06em} .phase ul{padding-left:18px;color:#b7b7b7;font-size:.82rem} .phase li{margin:10px 0}
+
+/* source */
+.source-grid{grid-template-columns:repeat(2,1fr)} .source{display:flex;gap:11px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #ddd} .source i{width:7px;height:7px;border-radius:50%;background:var(--accent);margin-top:8px;flex:0 0 auto} .source a{color:var(--dark);font-size:.78rem;text-decoration:none;word-break:break-all} .source a:hover{color:var(--pink)}
+
+/* signature */
+.signature{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:50px;padding-top:32px;border-top:1px solid var(--line)} .sig-name{font-family:Georgia,serif;font-style:italic;font-size:2.4rem;color:white;line-height:1} .sig-role{font-size:.69rem;color:var(--pink);font-weight:900;letter-spacing:.1em;margin-top:8px}
+
+
+.brand-logo, .sig-logo{display:block;overflow:hidden}
+.brand-logo svg, .sig-logo svg{display:block;width:100%;height:auto;max-width:100%}
+.brand-logo svg{width:100% !important;height:auto !important}
+.sig-logo{width:min(150px,32vw);flex:0 0 auto}
+.sig-logo svg{width:100% !important;height:auto !important}
+.light .project{background:#fff !important;color:var(--dark) !important;border-color:rgba(0,0,0,.10) !important}
+.light .project p,.light .project .prove{color:#666 !important}
+.light .project .route-pills span{background:#111 !important;color:#f4f4f4 !important;border-color:rgba(0,0,0,.12) !important}
+.light .project .num{color:var(--accent) !important}
+.light .callout{background:#fff !important;border-color:rgba(0,0,0,.10) !important;box-shadow:0 18px 50px rgba(0,0,0,.06)}
+.light .callout p{color:#555}
+.light .task{border-bottom:1px solid #dcdcdc}
+.light .task b{color:#111}
+.light .source{border-bottom:1px solid #ddd}
+.light .source b{color:#111}
+.light .eyebrow{color:var(--pink)}
+.light .eyebrow:before{background:linear-gradient(90deg,var(--pink),var(--orange))}
+#internacional .project .route-pills span{background:#121212 !important;color:#f4f4f4 !important;border-color:rgba(0,0,0,.12) !important}
+#internacional .project p{color:#666 !important}
+#internacional .project h3{color:#111 !important}
+#internacional .project .num{color:var(--accent) !important}
+#plano .signature{padding-bottom:8px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease} .reveal.visible{opacity:1;transform:none}
+
+/* drawer */
+.drawer{position:fixed;inset:74px 0 0 auto;width:min(86vw,360px);background:#080808;border-left:1px solid var(--line);z-index:49;transform:translateX(105%);transition:.3s;padding:20px;overflow:auto} .drawer.open{transform:none} .drawer a{display:block;text-decoration:none;padding:14px 8px;border-bottom:1px solid #171717;font-weight:800;color:#bbb}
+.backtop{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#111;color:#fff;z-index:30;display:grid;place-items:center;text-decoration:none;opacity:0;transform:translateY(10px);transition:.25s} .backtop.show{opacity:1;transform:none}
+
+@media(max-width:1050px){.navlinks{display:none} .mobile-btn{display:grid} .metrics{grid-template-columns:repeat(2,1fr)} .opp-grid,.project-grid{grid-template-columns:1fr} .phase-grid{grid-template-columns:1fr}}
+@media(max-width:760px){
+  :root{--g:18px} .hero{padding-top:110px} .hero-bottom{grid-template-columns:1fr} .hero-meta{justify-content:flex-start} .metrics,.market-grid,.checks,.source-grid{grid-template-columns:1fr} .toolbar{grid-template-columns:1fr 1fr} .toolbar input{grid-column:1/-1} .opp-grid{grid-template-columns:1fr} .timeline{grid-template-columns:repeat(4,1fr);row-gap:38px} .timeline:before{display:none} .lane{grid-template-columns:46px 1fr} .lane .desc{grid-column:2} .signature{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:480px){h1{font-size:3.45rem} .toolbar{grid-template-columns:1fr} .signal-bars span:nth-child(1){width:55vw} .signal-bars span:nth-child(2){width:38vw} .signal-bars span:nth-child(3){width:22vw} .opp-top{flex-direction:column} .opp-fit small{text-align:left} .timeline{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important} .reveal{opacity:1;transform:none}}
+@media print{.nav,.drawer,.backtop,.actions,.toolbar{display:none!important} body{background:white;color:#111} .section,.hero{break-inside:avoid;min-height:auto!important;padding:38px 0} .section{border-top:1px solid #ddd} .opp-card,.metric,.project,.check,.phase,.chart-card,.callout{background:white!important;color:#111!important;border-color:#ddd!important;box-shadow:none!important} .muted,.lead,.opp-card p,.project .prove,.phase ul,.check p{color:#555!important} h1,h2,h3,.sig-name{color:#111!important}}
+</style>
+</head>
+<body>
+<!-- icon symbols -->
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+<symbol id="i-print" viewBox="0 0 24 24"><path d="M7 8V4h10v4M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M7 14h10v6H7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2l1.4 5.1L18 9l-4.6 1.9L12 16l-1.4-5.1L6 9l4.6-1.9zM19 15l.8 2.7L22 19l-2.2 1.3L19 23l-.8-2.7L16 19l2.2-1.3z" fill="currentColor"/></symbol>
+</defs></svg>
+
+<header class="nav">
+  <div class="container inner">
+    <a class="brand" href="#top" aria-label="MonyU — início"><span class="brand-logo" aria-hidden="true">
+<svg version="1.1" viewBox="0 0 1563 938" width="1563" height="938" xmlns="http://www.w3.org/2000/svg">
+<path transform="translate(164,311)" d="m0 0h17l13 4 11 7 7 7 10 13 14 18 10 13 4-2 11-14 13-16 11-14 9-8 12-6 8-2h17l13 4 9 5 10 9 6 9 4 9 2 10v141l-3 12-6 11-10 11-13 8-9 3-7 1-17-1-12-4-10-6-7-7-6-12-2-10 14-19 13-18 4-5 1-3-6 5-9 11-14 14-13 9-11 4h-10l-11-4-11-8-13-12-9-11-6-7-1 1 12 17 14 19 5 7-2 10-6 12-8 8-14 7-16 3h-8l-11-2-14-7-11-10-7-11-4-11-1-5v-142l3-12 5-10 9-10 8-6 11-5z" fill="#FE0058"/>
+<path transform="translate(674,308)" d="m0 0h19l13 4 10 6 10 9 10 10 8 7 34 34 3-1-13-19-6-9 2-9 6-11 11-11 12-7 10-3h20l14 5 10 7 8 8 7 12 3 11 1 10v128l-2 16-5 12-8 10-11 8-12 5-5 1h-19l-13-4-10-6-8-8-8-7-45-45h-2l1 5 16 25 1 2-4 11-6 9-10 10-14 7-8 2h-19l-15-5-10-7-7-7-6-10-4-11-1-6v-143l3-12 6-11 9-10 9-6 12-5z" fill="#FE0058"/>
+<path transform="translate(491,305)" d="m0 0h23l14 2 20 6 21 11 14 11 13 13 10 14 10 21 5 17 2 14v24l-4 20-6 16-8 15-11 14-14 14-10 7-14 8-12 5-13 4-11 2-11 1h-12l-21-3-16-5-17-8-13-9-12-11-8-8-9-13-8-15-6-18-3-17v-27l4-19 6-16 9-16 10-13 13-13 14-10 12-7 19-7z" fill="#FE0058"/>
+<path transform="translate(1171,306)" d="m0 0h8l15 3 11 6 9 8 7 11 4 11 1 6v11l-3 12-7 14-16 27-12 21v7l1 2h7l4-4 15-26 17-29 9-10 11-7 11-4 5-1h13l12 3 11 6 8 7 7 11 4 10 1 5v17l-3 10-7 14-9 15-14 24-12 20-11 13-11 10-14 9-18 8-16 4-8 1h-23l-15-3-15-5-14-7-12-9-8-7-9-11-7-10-8-17-5-18-1-7v-28l4-18 7-17 14-24 17-29 9-15 5-6 13-9 12-4z" fill="#FF7300"/>
+<path transform="translate(920,307)" d="m0 0h9l12 3 12 6 16 15 12 13 5 4 23-23 4-5 10-7 13-5 7-1h9l13 3 10 5 12 11 7 11 4 13v19l-4 13-6 10-11 12-27 27-7 8-4 4-1 55-4 13-7 11-8 8-11 7-13 4h-17l-13-4-11-6-10-10-7-12-3-11-1-55-8-8-7-8-31-31-7-10-5-13-1-4v-19l5-15 7-10 7-7 9-6 12-4z" fill="#FE0058"/>
+<path transform="translate(1327,112)" d="m0 0 14 1 17 6 10 7 10 10 8 14 3 9 1 6v17l-4 14-6 12-11 12-10 7-12 5-9 2h-20l-19-7-11-8-9-10-8-16-2-7-1-8v-11l3-13 8-16 9-10 9-7 10-5 11-3z" fill="#FFCB00"/>
+<path transform="translate(1449,146)" d="m0 0h9l11 4 8 6 7 8 4 9 1 6v10l-3 11-6 8-5 5-5 4-8 3-6 1h-11l-13-5-10-9-6-10-2-10v-8l2-8 5-10 8-8 10-5z" fill="#fc0"/>
+<path transform="translate(1399,226)" d="m0 0h14l9 4 8 6 5 9 2 7v10l-4 11-8 9-10 5-4 1h-10l-10-3-6-4-8-11-2-7v-13l4-10 7-8 10-5z" fill="#fc0"/>
+<path transform="translate(734,626)" d="m0 0h26l9 4 3 5v10l-4 5-2 2 6 5 2 6-1 7-3 5-9 4h-27l-2-1-1-3v-45zm7 8v14h18l4-4v-6l-4-4zm0 22v15h19l4-3v-8l-3-3-2-1z" fill="#0C0004"/>
+<path transform="translate(989,626)" d="m0 0h23l11 4 7 8 3 8v13l-4 10-8 7-9 3h-24l-2-3v-47zm7 8v37h15l8-4 4-7v-15l-5-8-7-3z" fill="#010000"/>
+<path transform="translate(599,626)" d="m0 0h23l11 4 7 8 3 8v13l-4 10-8 7-9 3h-24l-2-3v-47zm7 8v37h15l8-4 4-7v-15l-5-8-7-3z" fill="#010000"/>
+<path transform="translate(542,626)" d="m0 0h5l7 8 12 16 8 10v2h2v-35l1-1h6l2 3v47l-2 3h-6l-12-15-15-20-1 33-2 2h-5l-2-2v-49z" fill="#010000"/>
+<path transform="translate(358,626)" d="m0 0h6l11 14 10 13 6 8 1-33 2-2h5l2 2v49l-2 2h-5l-7-8-13-17-7-9v-2h-2v35l-1 1h-6l-2-4v-45z" fill="#090003"/>
+<path transform="translate(247,626)" d="m0 0h5l9 11 13 17 5 7 1-32 2-3h5l2 2v50l-1 1h-6l-10-12-9-12-8-11-1 32-2 3h-6l-1-1v-50z" fill="#010000"/>
+<path transform="translate(805,625)" d="m0 0 12 2 6 4 6 7 2 6v17l-4 9-8 7-4 2-12 1-10-3-7-6-4-8-1-5v-11l3-10 6-7 8-4zm-2 8-8 4-4 8v15l4 8 7 4h8l6-3 4-5 2-7v-9l-3-9-6-5-3-1z" fill="#040001"/>
+<path transform="translate(675,625)" d="m0 0 12 2 6 4 6 7 2 6v17l-4 9-8 7-4 2-12 1-10-3-7-6-4-8-1-5v-11l3-10 6-7 8-4zm-2 8-8 4-4 8v15l4 8 7 4h8l6-3 4-5 2-7v-9l-3-9-6-5-3-1z" fill="#040001"/>
+<path transform="translate(1255,243)" d="m0 0 5 1 14 8-3 3-22 11h-2v2l5 2 8 5-2 2-57 18-3-1 23-15 10-7-10-6 3-3 22-14z" fill="#fc0"/>
+<path transform="translate(1346,295)" d="m0 0 12 6 5 3v2l-26 13 13 8-1 2-56 18-4-1 30-20h2l-3-3-7-4v-2l16-10z" fill="#fc0"/>
+<path transform="translate(860,626)" d="m0 0h6l3 3 17 36 4 9-2 5h-5l-5-8-1-4-27 1-5 10-1 1h-5l-2-2 1-6 18-38 3-6zm3 11-9 20v2h19l-2-6-7-16z" fill="#040001"/>
+<path transform="translate(1045,626)" d="m0 0h32l2 2-1 5-2 1h-24v14h22l3 1v6l-2 1h-23v15h24l3 2-1 5-1 1h-32l-2-2v-49z"/>
+<path transform="translate(1127,626)" d="m0 0h6l5 8 18 38v6l-7 1-5-10v-2l-27 1-5 10-1 1h-5l-2-2 1-6 14-30 7-14zm2 12-8 18v3h19l-7-17-2-4z" fill="#030001"/>
+<path transform="translate(320,626)" d="m0 0h6l5 8 14 30 4 9-1 5-1 1h-5l-5-9v-3h-28l-3 9-2 3h-5l-2-2 1-7 18-38 3-5zm2 12-9 21h20l-9-21z" fill="#030001"/>
+<path transform="translate(504,626)" d="m0 0h6l9 17 13 28 1 6-2 2h-5l-3-4-3-7-27-1-2 6-4 6h-5l-2-5 16-34 6-13zm2 11-9 20v2h19l-3-9-6-13z" fill="#020000"/>
+<path transform="translate(1181,625)" d="m0 0 10 1 10 5 1 6-4 2-11-5h-8l-5 2-1 2v6l9 4 13 4 6 5 2 5-1 8-5 6-7 3-5 1-13-1-10-5-1-6 1-1 7 1 8 3h9l5-2 1-7-5-3-15-4-6-4-3-3-1-9 4-8 6-4z" fill="#060002"/>
+<path transform="translate(914,625)" d="m0 0 10 1 9 4 2 2v5l-4 2-7-4-4-1h-8l-6 2v7l3 3 17 5 6 4 3 3 1 9-3 6-5 4-9 3-13-1-8-3-4-4 1-5 3-1 8 4 4 1h10l5-3v-6l-5-3-14-4-6-3-4-5-1-6 2-7 8-7z" fill="#060002"/>
+<path transform="translate(1340,137)" d="m0 0 5 1 1 3-1 5 8 7 1 6-2 2-4-1-5-6-8-3-7 1v7l5 5 11 8 2 4v8l-4 6-5 3h-10l-2 6h-5l-1-1 1-8-5-2-7-8 1-4 5-1 4 5 7 4 7 1 3-1 1-6-5-5-8-6-5-6-1-5 3-8 5-4 12-2z"/>
+<path transform="translate(435,625)" d="m0 0 12 2 7 4 1 5-3 3-13-5-9 1-5 3-3 7v15l4 8 7 3h7l9-4h5l1 5-4 4-7 3-11 1-10-3-8-7-4-10v-15l4-10 8-7 5-2z" fill="#040001"/>
+<path transform="translate(183,626)" d="m0 0h31l2 1v6l-2 1h-24v14h22l3 2-1 5-1 1h-23v22l-1 1h-6l-2-2v-49z"/>
+<path transform="translate(1089,626)" d="m0 0h6l2 3v47l-2 3h-6l-2-2v-49z" fill="#010000"/>
+<path transform="translate(967,626)" d="m0 0h6l2 3v47l-2 3h-6l-2-2v-49z" fill="#010000"/>
+<path transform="translate(465,626)" d="m0 0h6l2 2v49l-2 2h-6l-2-3v-47z"/>
+<path transform="translate(225,626)" d="m0 0h6l2 2v49l-2 2h-6l-2-4v-45z" fill="#160007"/>
+<path transform="translate(1448,159)" d="m0 0 4 2v3l7 1 2 2v3h-15v6l13 2 5 5v6l-5 5h-2v5h-4l-1-4h-7l-3-2v-4l11 1 4-2v-4l-13-3-4-4v-7l5-5h2v-5z"/>
+<path transform="translate(1400,239)" d="m0 0 7 3 4 2-1 3h-7l-3 1v4l11 1 4 3v7l-4 4-1 4-3-1v-2h-6l-3-2 1-3h8l3-2-1-3-11-1-3-2-1-6 4-5z"/>
+<path transform="translate(1287,347)" d="m0 0 2 1z" fill="#fc0"/>
+<path transform="translate(1197,295)" d="m0 0" fill="#fc0"/>
+</svg>
+</span><small>Funding Intelligence</small></a>
+    <nav class="navlinks" aria-label="Navegação principal">
+      <a href="#tese">Tese</a><a href="#radar">Radar</a><a href="#sprint">Sprint</a><a href="#projetos">Projetos-mãe</a><a href="#internacional">Internacional</a><a href="#brasil">Brasil</a><a href="#elegibilidade">Elegibilidade</a><a href="#plano">Plano 90d</a><a href="#fontes">Fontes</a>
+    </nav>
+    <div class="actions"><button class="icon-btn" onclick="window.print()" aria-label="Imprimir / salvar PDF"><svg width="18" height="18"><use href="#i-print"/></svg></button><button class="icon-btn mobile-btn" id="menuBtn" aria-label="Abrir menu"><svg width="19" height="19"><use href="#i-menu"/></svg></button></div>
+  </div>
+</header>
+<aside class="drawer" id="drawer" aria-label="Menu mobile">
+  <a href="#tese">01 — Tese executiva</a><a href="#radar">02 — Radar de prioridade</a><a href="#sprint">03 — Sprint de 30 dias</a><a href="#projetos">04 — Projetos-mãe</a><a href="#internacional">05 — Internacional</a><a href="#brasil">06 — Stack Brasil</a><a href="#elegibilidade">07 — Elegibilidade</a><a href="#plano">08 — Plano de ataque</a><a href="#fontes">09 — Fontes oficiais</a>
+</aside>
+
+<main id="top" style="overflow-x:hidden">
+<section class="hero">
+<div class="container content reveal">
+  <div class="hero-kicker"><span class="dot"></span> Radar Executivo de Captação — 08.09.2026</div>
+  <h1>IMAGINA C<br><span class="pink">Funding</span><br>Intelligence</h1>
+  <p class="lead">Brasil + Internacional — oportunidades, rotas de financiamento e plano de ataque executivo para transformar a Imagina C em uma operação contínua de captação.</p>
+  <div class="signal-bars"><span></span><span></span><span></span></div>
+  <div class="hero-bottom">
+    <div><h3>CAPTAÇÃO EM SÉRIE, NÃO UM EDITAL ISOLADO.</h3><p class="muted">Uma arquitetura de funding para posicionar a Imagina C simultaneamente em EdTech, primeira infância, cultura/audiovisual, ESG/clima, impacto social e inovação tecnológica.</p></div>
+    <div class="hero-meta"><div class="meta-card"><small>Preparado por</small><b>Rico — MonyU</b></div><div class="meta-card"><small>Escopo</small><b>Brasil + Global</b></div></div>
+  </div>
+</div>
+</section>
+
+<section id="tese" class="section"><div class="container">
+  <div class="eyebrow reveal">01 | Tese executiva</div>
+  <h2 class="reveal">A Imagina C tem mais de uma porta de entrada.</h2>
+  <p class="lead reveal">O melhor desenho de captação não é procurar “o edital perfeito”. É operar um pipeline contínuo com projetos-mãe reutilizáveis, adaptando narrativa, elegibilidade e orçamento a cada mecanismo.</p>
+  <div class="grid metrics reveal">
+    <article class="metric" style="--accent:var(--pink)"><div class="value">21</div><div class="label">Oportunidades mapeadas</div><p>Prioridades, fluxo contínuo e rotas estruturais.</p></article>
+    <article class="metric" style="--accent:var(--orange)"><div class="value">6</div><div class="label">Rotas de funding</div><p>Grant, prêmio, incentivo, P&D, patrocínio e crédito.</p></article>
+    <article class="metric" style="--accent:var(--yellow)"><div class="value">4</div><div class="label">Projetos-mãe</div><p>Ativos para circular continuamente entre financiadores.</p></article>
+    <article class="metric" style="--accent:var(--pink)"><div class="value">100</div><div class="label">Fit máximo</div><p>HundrED + Khalifa — primeira infância com evidência.</p></article>
+  </div>
+  <div class="eyebrow reveal" style="margin-top:48px;color:var(--orange)">Seis mercados de funding</div>
+  <div class="grid market-grid reveal">
+    <div class="market" style="--accent:var(--pink)"><div class="ic">⌁</div><div><b>EDTECH</b><p>Tecnologia e aprendizagem.</p></div></div>
+    <div class="market" style="--accent:var(--orange)"><div class="ic">◉</div><div><b>PRIMEIRA INFÂNCIA</b><p>0–8 anos e desenvolvimento.</p></div></div>
+    <div class="market" style="--accent:var(--yellow)"><div class="ic">✦</div><div><b>CULTURA</b><p>Audiovisual, música e experiências.</p></div></div>
+    <div class="market" style="--accent:var(--pink)"><div class="ic">≈</div><div><b>ESG / CLIMA</b><p>Educação ambiental e ODS.</p></div></div>
+    <div class="market" style="--accent:var(--orange)"><div class="ic">↗</div><div><b>IMPACTO</b><p>Escala social e redes públicas.</p></div></div>
+    <div class="market" style="--accent:var(--yellow)"><div class="ic">◎</div><div><b>INOVAÇÃO</b><p>P&D, IA e propriedade intelectual.</p></div></div>
+  </div>
+  <div class="callout reveal" style="margin-top:26px"><b class="pink">DECISÃO-CHAVE</b><p style="margin:8px 0 0">Construir 3–4 ativos de projeto que já nascem prontos para circular em múltiplos financiadores. Isso reduz custo de proposta, acelera submissões e cria uma esteira recorrente de captação.</p></div>
+</div></section>
+
+<section id="radar" class="section"><div class="container">
+  <div class="eyebrow reveal">02 | Radar de prioridade</div>
+  <h2 class="reveal">Onde agir primeiro</h2>
+  <p class="lead reveal">Filtre por mercado, geografia e aderência. Os prazos são os do radar executivo de 08/09/2026 e devem ser reconfirmados antes da submissão.</p>
+  <div class="toolbar reveal">
+    <input id="search" class="control" type="search" placeholder="Buscar oportunidade, tema ou rota…" aria-label="Buscar oportunidades" />
+    <select id="geoFilter" class="control"><option value="">Todas as geografias</option><option>Brasil</option><option>Internacional</option><option>Brasil + Portugal</option><option>Ibero-América</option><option>São Paulo, Brasil</option></select>
+    <select id="typeFilter" class="control"><option value="">Todos os tipos</option></select>
+    <select id="fitFilter" class="control"><option value="0">Qualquer fit</option><option value="95">Fit ≥ 95</option><option value="90">Fit ≥ 90</option><option value="80">Fit ≥ 80</option></select>
+  </div>
+  <div id="oppGrid" class="grid opp-grid"></div>
+  <div class="chart-card reveal" style="margin-top:28px">
+    <div class="chart-head"><div><h3>Top oportunidades por aderência</h3><p class="muted" style="font-size:.8rem;margin:0">Ranking interativo do radar atual.</p></div><div class="legend"><span><i style="background:var(--pink)"></i> alta prioridade</span><span><i style="background:var(--orange)"></i> estratégica</span></div></div>
+    <div id="fitChart" role="img" aria-label="Gráfico de aderência das principais oportunidades"></div>
+  </div>
+</div></section>
+
+<section id="sprint" class="section light"><div class="container">
+  <div class="eyebrow reveal">03 | Sprint de 30 dias</div>
+  <h2 class="reveal">Setembro e outubro: janela crítica</h2>
+  <p class="lead reveal">O objetivo é não perder oportunidades de alta aderência por falta de material pronto. A mesma base de evidências deve alimentar múltiplas candidaturas.</p>
+  <div class="timeline reveal">
+    <div class="t-item" style="--accent:var(--pink)"><span class="t-dot"></span><b>15/09</b><small>GESA</small></div><div class="t-item" style="--accent:var(--orange)"><span class="t-dot"></span><b>21/09</b><small>Floresta+</small></div><div class="t-item" style="--accent:var(--yellow)"><span class="t-dot"></span><b>24/09</b><small>EdTech</small></div><div class="t-item" style="--accent:var(--pink)"><span class="t-dot"></span><b>25/09</b><small>FSA</small></div><div class="t-item" style="--accent:var(--orange)"><span class="t-dot"></span><b>30/09</b><small>MAPFRE</small></div><div class="t-item" style="--accent:var(--yellow)"><span class="t-dot"></span><b>01/10</b><small>Ibermúsicas</small></div><div class="t-item" style="--accent:var(--pink)"><span class="t-dot"></span><b>13/10</b><small>Rouanet Favelas</small></div><div class="t-item" style="--accent:var(--orange)"><span class="t-dot"></span><b>31/10</b><small>Rouanet</small></div>
+  </div>
+  <div class="task-list reveal">
+    <div class="task"><div class="task-num">01</div><div><b>Deck institucional de impacto</b><p>Problema, solução, alcance, resultados, time e escala.</p></div></div>
+    <div class="task"><div class="task-num">02</div><div><b>Banco de evidências</b><p>Números, escolas, crianças, municípios, parceiros e depoimentos.</p></div></div>
+    <div class="task"><div class="task-num">03</div><div><b>Budget modular</b><p>Versões de R$ 200 mil, R$ 650 mil, R$ 1,5 mi e projetos maiores.</p></div></div>
+    <div class="task"><div class="task-num">04</div><div><b>Dossiê jurídico</b><p>CNPJ, CNAE, certidões, sede, faturamento, regime tributário e natureza jurídica.</p></div></div>
+    <div class="task"><div class="task-num">05</div><div><b>Portfólio audiovisual</b><p>Personagens, vídeos, jogos, músicas, quadrinhos, licenças e direitos.</p></div></div>
+    <div class="task"><div class="task-num">06</div><div><b>Narrativa internacional</b><p>Versão em inglês com impacto, scalability e evidence.</p></div></div>
+  </div>
+</div></section>
+
+<section id="projetos" class="section"><div class="container">
+  <div class="eyebrow reveal">04 | Arquitetura de captação</div>
+  <h2 class="reveal">Quatro projetos-mãe. Muitas saídas.</h2>
+  <div class="grid project-grid">
+    <article class="project reveal" style="--accent:var(--pink)"><div class="num">Projeto-mãe 01</div><h3>IMAGINA C EARLY LEARNING IMPACT</h3><p class="muted">Metodologia brasileira de aprendizagem lúdica, protagonismo infantil e desenvolvimento integral para crianças de 0 a 8 anos, com evidências de implementação e escala.</p><div class="route-pills"><span>HundrED + Khalifa</span><span>GESAwards</span><span>EdTech Awards</span><span>HundrED Global</span><span>DRK Foundation</span></div><div class="prove"><b class="pink">O que provar:</b> impacto mensurável, inovação pedagógica, experiência da criança, replicabilidade, sustentabilidade financeira e escala.</div></article>
+    <article class="project reveal" style="--accent:var(--orange)"><div class="num">Projeto-mãe 02</div><h3>UNIVERSO CULTURAL IMAGINA C</h3><p class="muted">Personagens, música, audiovisual, literatura, quadrinhos, jogos e experiências culturais voltadas à infância — um ativo de propriedade intelectual com múltiplas saídas de financiamento.</p><div class="route-pills"><span>Lei Rouanet</span><span>MAPFRE</span><span>Vale</span><span>Petrobras</span><span>Ibermúsicas</span><span>FSA Brasil–Portugal</span></div><div class="prove"><b class="orange">O que provar:</b> qualidade artística, alcance de público, acessibilidade, democratização, força de IP, circulação e internacionalização.</div></article>
+    <article class="project reveal" style="--accent:var(--yellow)"><div class="num">Projeto-mãe 03</div><h3>CRIANÇAS QUE TRANSFORMAM O PLANETA</h3><p class="muted">Programa escalável de educação ambiental, clima, água, consumo consciente e protagonismo infantil, combinando conteúdo, formação e mobilização territorial.</p><div class="route-pills"><span>Floresta+ Amazônia</span><span>MAPFRE</span><span>Petrobras</span><span>Lei Rouanet</span><span>Patrocínio ESG</span></div><div class="prove"><b class="yellow">Modelo de entrada:</b> empresa quando elegível; OSC parceira quando exigido; patrocínio quando houver ativação ESG.</div></article>
+    <article class="project reveal" style="--accent:var(--pink)"><div class="num">Projeto-mãe 04</div><h3>IMAGINA C EDTECH / IA</h3><p class="muted">Camada tecnológica da metodologia: plataforma, games, interfaces, dados e IA para personalização da aprendizagem, com P&D estruturado e propriedade intelectual.</p><div class="route-pills"><span>FAPESP PIPE</span><span>EMBRAPII + Sebrae</span><span>Finep Digital</span><span>Finep Inovacred</span><span>BNDES Mais Inovação</span></div><div class="prove"><b class="pink">Condição crítica:</b> a inovação precisa conter risco tecnológico e P&D real; conteúdo educacional isolado não basta para subvenção tecnológica.</div></article>
+  </div>
+</div></section>
+
+<section id="internacional" class="section light"><div class="container">
+  <div class="eyebrow reveal">05 | Internacional</div>
+  <h2 class="reveal">A melhor tese global é primeira infância + evidência.</h2>
+  <p class="lead reveal">O histórico de implementação da Imagina C pode ser convertido em reputação, prêmio e expansão internacional — desde que os resultados estejam documentados.</p>
+  <div class="grid project-grid" style="margin-top:34px">
+    <article class="project reveal" style="--accent:var(--pink);background:white;color:var(--dark)"><div class="num">Fit 100/100</div><h3>HundrED + Khalifa</h3><p style="color:#666">US$ 100 mil por vencedor de categoria. Foco em programas/metodologias para crianças de 0–8 anos.</p><div class="route-pills"><span>Impacto</span><span>Escala</span><span>Early Learning</span></div></article>
+    <article class="project reveal" style="--accent:var(--orange);background:white;color:var(--dark)"><div class="num">Fit 99/100</div><h3>HundrED Global Collection</h3><p style="color:#666">Prestígio global para inovação educacional já implementada e com escala demonstrável.</p><div class="route-pills"><span>Reputação</span><span>Global</span><span>Evidence</span></div></article>
+    <article class="project reveal" style="--accent:var(--yellow);background:white;color:var(--dark)"><div class="num">Fit 98/100</div><h3>GESAwards</h3><p style="color:#666">EdTech global, visibilidade, PR, networking, mentoria e conexão com parceiros.</p><div class="route-pills"><span>EdTech</span><span>Startup</span><span>Scale</span></div></article>
+    <article class="project reveal" style="--accent:var(--pink);background:white;color:var(--dark)"><div class="num">Fit 99/100</div><h3>Ibermúsicas — Infâncias</h3><p style="color:#666">Canções originais para as infâncias, com possibilidade direta de conexão entre personagens, música e meio ambiente.</p><div class="route-pills"><span>Cultura</span><span>Música</span><span>Ibero-América</span></div></article>
+  </div>
+  <div class="callout reveal" style="margin-top:28px;background:#121212;color:white"><b class="yellow">RECOMENDAÇÃO</b><p style="margin:8px 0 0">Tratar HundrED + Khalifa como candidatura premium: escrever em inglês, quantificar impacto, estruturar evidências e demonstrar como o modelo escala sem perder qualidade pedagógica.</p></div>
+</div></section>
+
+<section id="brasil" class="section"><div class="container">
+  <div class="eyebrow reveal">06 | Brasil</div>
+  <h2 class="reveal">Combinar incentivo, subvenção, patrocínio e crédito.</h2>
+  <p class="lead reveal">O stack ideal reduz dependência de uma única fonte e combina dinheiro não reembolsável com mecanismos de escala.</p>
+  <div class="stack reveal" style="margin-top:34px">
+    <div class="lane" style="--accent:var(--pink)"><div class="lane-n">1</div><div><b>INCENTIVO CULTURAL</b><br><small>Lei Rouanet / ProAC</small></div><div class="desc">Transformar conteúdo e propriedade intelectual em projeto captável.</div></div>
+    <div class="lane" style="--accent:var(--orange)"><div class="lane-n">2</div><div><b>PATROCÍNIO</b><br><small>MAPFRE / Vale / Petrobras / BB</small></div><div class="desc">Captação corporativa e presença de marca.</div></div>
+    <div class="lane" style="--accent:var(--yellow)"><div class="lane-n">3</div><div><b>P&D NÃO REEMBOLSÁVEL</b><br><small>PIPE / EMBRAPII / Finep</small></div><div class="desc">Tecnologia, IA, games e propriedade intelectual.</div></div>
+    <div class="lane" style="--accent:var(--pink)"><div class="lane-n">4</div><div><b>CRÉDITO DE INOVAÇÃO</b><br><small>Inovacred / BNDES</small></div><div class="desc">Escala, infraestrutura e expansão.</div></div>
+    <div class="lane" style="--accent:var(--orange)"><div class="lane-n">5</div><div><b>TRIBUTÁRIO</b><br><small>Lei do Bem</small></div><div class="desc">Reduzir custo líquido de P&D quando elegível.</div></div>
+  </div>
+  <div class="callout reveal" style="margin-top:30px"><b class="pink">STACK RECOMENDADO</b><h3 style="margin-top:12px">1. captar → 2. provar → 3. escalar → 4. financiar</h3><p class="muted">Exemplo: Rouanet/patrocínio financia o ativo cultural; PIPE/EMBRAPII financia a tecnologia; prêmio internacional valida reputação; crédito entra quando há receita e escala para suportar retorno.</p></div>
+</div></section>
+
+<section id="elegibilidade" class="section"><div class="container">
+  <div class="eyebrow reveal">07 | Elegibilidade e risco</div>
+  <h2 class="reveal">Antes de submeter: validar o veículo jurídico.</h2>
+  <p class="lead reveal">Aderência temática não significa elegibilidade automática. Várias chamadas exigem natureza jurídica, sede, faturamento, parceiro ou regime tributário específico.</p>
+  <div class="grid checks" style="margin-top:34px">
+    <div class="check reveal" style="--accent:var(--pink)"><div class="n">01</div><div><b>CNPJ e natureza jurídica</b><p>Empresa, OSC, produtora independente, ICT ou pessoa física?</p></div></div>
+    <div class="check reveal" style="--accent:var(--pink)"><div class="n">02</div><div><b>Sede e território</b><p>Algumas chamadas exigem sede no local de execução.</p></div></div>
+    <div class="check reveal" style="--accent:var(--orange)"><div class="n">03</div><div><b>Faturamento e porte</b><p>EMBRAPII/Sebrae e linhas de crédito usam faixas de receita.</p></div></div>
+    <div class="check reveal" style="--accent:var(--orange)"><div class="n">04</div><div><b>Regime tributário</b><p>Lei do Bem exige condições específicas e documentação adequada.</p></div></div>
+    <div class="check reveal" style="--accent:var(--yellow)"><div class="n">05</div><div><b>Propriedade intelectual</b><p>Personagens, músicas, vídeos, jogos e marcas precisam estar documentados.</p></div></div>
+    <div class="check reveal" style="--accent:var(--yellow)"><div class="n">06</div><div><b>Parceiros obrigatórios</b><p>Finep pode exigir ICT; FSA exige coprodução; grants sociais podem exigir OSC.</p></div></div>
+  </div>
+  <div class="callout reveal" style="margin-top:26px"><b class="yellow">REGRA MONYU</b><p style="margin:8px 0 0">Nenhuma oportunidade deve entrar no funil de submissão sem um check de elegibilidade rápido. Isso evita gastar horas em propostas juridicamente inviáveis.</p></div>
+</div></section>
+
+<section id="plano" class="section"><div class="container">
+  <div class="eyebrow reveal">08 | Plano de ataque</div>
+  <h2 class="reveal">90 dias para transformar radar em pipeline.</h2>
+  <p class="lead reveal">A meta não é “acompanhar editais”. É instalar uma operação contínua de funding com ativos reaproveitáveis, calendário e decisão rápida.</p>
+  <div class="grid phase-grid" style="margin-top:34px">
+    <div class="phase reveal" style="--accent:var(--pink)"><span class="phase-title">AGORA | 0–15 DIAS</span><ul><li>Aplicar GESAwards e EdTech Awards.</li><li>Validar FSA, MAPFRE e Finep Digital.</li><li>Definir parceiro OSC para Floresta+ se houver fit territorial.</li><li>Organizar dossiê jurídico e banco de evidências.</li></ul></div>
+    <div class="phase reveal" style="--accent:var(--orange)"><span class="phase-title">CONSOLIDAR | 15–45 DIAS</span><ul><li>Submeter Ibermúsicas e chamadas culturais elegíveis.</li><li>Protocolar projeto-mãe na Lei Rouanet.</li><li>Desenhar candidatura HundrED + Khalifa em inglês.</li><li>Escolher rota tecnológica: PIPE, EMBRAPII ou Finep.</li></ul></div>
+    <div class="phase reveal" style="--accent:var(--yellow)"><span class="phase-title">ESCALAR | 45–90 DIAS</span><ul><li>Montar calendário permanente de patrocínios e grants.</li><li>Preparar pacote para Vale, Petrobras, BB e MAPFRE.</li><li>Estruturar KPIs de impacto para premiações globais.</li><li>Definir meta anual de funding por projeto-mãe.</li></ul></div>
+  </div>
+  <div class="signature reveal"><div><div class="sig-name">Rico</div><div class="sig-role">RICO — MONYU</div><div class="muted" style="font-size:.76rem;margin-top:8px">Funding Intelligence · #TemMoneyNaMesa · #BoraCaptar</div></div><div class="sig-logo">
+<svg version="1.1" viewBox="0 0 1563 938" width="1563" height="938" xmlns="http://www.w3.org/2000/svg">
+<path transform="translate(164,311)" d="m0 0h17l13 4 11 7 7 7 10 13 14 18 10 13 4-2 11-14 13-16 11-14 9-8 12-6 8-2h17l13 4 9 5 10 9 6 9 4 9 2 10v141l-3 12-6 11-10 11-13 8-9 3-7 1-17-1-12-4-10-6-7-7-6-12-2-10 14-19 13-18 4-5 1-3-6 5-9 11-14 14-13 9-11 4h-10l-11-4-11-8-13-12-9-11-6-7-1 1 12 17 14 19 5 7-2 10-6 12-8 8-14 7-16 3h-8l-11-2-14-7-11-10-7-11-4-11-1-5v-142l3-12 5-10 9-10 8-6 11-5z" fill="#FE0058"/>
+<path transform="translate(674,308)" d="m0 0h19l13 4 10 6 10 9 10 10 8 7 34 34 3-1-13-19-6-9 2-9 6-11 11-11 12-7 10-3h20l14 5 10 7 8 8 7 12 3 11 1 10v128l-2 16-5 12-8 10-11 8-12 5-5 1h-19l-13-4-10-6-8-8-8-7-45-45h-2l1 5 16 25 1 2-4 11-6 9-10 10-14 7-8 2h-19l-15-5-10-7-7-7-6-10-4-11-1-6v-143l3-12 6-11 9-10 9-6 12-5z" fill="#FE0058"/>
+<path transform="translate(491,305)" d="m0 0h23l14 2 20 6 21 11 14 11 13 13 10 14 10 21 5 17 2 14v24l-4 20-6 16-8 15-11 14-14 14-10 7-14 8-12 5-13 4-11 2-11 1h-12l-21-3-16-5-17-8-13-9-12-11-8-8-9-13-8-15-6-18-3-17v-27l4-19 6-16 9-16 10-13 13-13 14-10 12-7 19-7z" fill="#FE0058"/>
+<path transform="translate(1171,306)" d="m0 0h8l15 3 11 6 9 8 7 11 4 11 1 6v11l-3 12-7 14-16 27-12 21v7l1 2h7l4-4 15-26 17-29 9-10 11-7 11-4 5-1h13l12 3 11 6 8 7 7 11 4 10 1 5v17l-3 10-7 14-9 15-14 24-12 20-11 13-11 10-14 9-18 8-16 4-8 1h-23l-15-3-15-5-14-7-12-9-8-7-9-11-7-10-8-17-5-18-1-7v-28l4-18 7-17 14-24 17-29 9-15 5-6 13-9 12-4z" fill="#FF7300"/>
+<path transform="translate(920,307)" d="m0 0h9l12 3 12 6 16 15 12 13 5 4 23-23 4-5 10-7 13-5 7-1h9l13 3 10 5 12 11 7 11 4 13v19l-4 13-6 10-11 12-27 27-7 8-4 4-1 55-4 13-7 11-8 8-11 7-13 4h-17l-13-4-11-6-10-10-7-12-3-11-1-55-8-8-7-8-31-31-7-10-5-13-1-4v-19l5-15 7-10 7-7 9-6 12-4z" fill="#FE0058"/>
+<path transform="translate(1327,112)" d="m0 0 14 1 17 6 10 7 10 10 8 14 3 9 1 6v17l-4 14-6 12-11 12-10 7-12 5-9 2h-20l-19-7-11-8-9-10-8-16-2-7-1-8v-11l3-13 8-16 9-10 9-7 10-5 11-3z" fill="#FFCB00"/>
+<path transform="translate(1449,146)" d="m0 0h9l11 4 8 6 7 8 4 9 1 6v10l-3 11-6 8-5 5-5 4-8 3-6 1h-11l-13-5-10-9-6-10-2-10v-8l2-8 5-10 8-8 10-5z" fill="#fc0"/>
+<path transform="translate(1399,226)" d="m0 0h14l9 4 8 6 5 9 2 7v10l-4 11-8 9-10 5-4 1h-10l-10-3-6-4-8-11-2-7v-13l4-10 7-8 10-5z" fill="#fc0"/>
+<path transform="translate(734,626)" d="m0 0h26l9 4 3 5v10l-4 5-2 2 6 5 2 6-1 7-3 5-9 4h-27l-2-1-1-3v-45zm7 8v14h18l4-4v-6l-4-4zm0 22v15h19l4-3v-8l-3-3-2-1z" fill="#0C0004"/>
+<path transform="translate(989,626)" d="m0 0h23l11 4 7 8 3 8v13l-4 10-8 7-9 3h-24l-2-3v-47zm7 8v37h15l8-4 4-7v-15l-5-8-7-3z" fill="#010000"/>
+<path transform="translate(599,626)" d="m0 0h23l11 4 7 8 3 8v13l-4 10-8 7-9 3h-24l-2-3v-47zm7 8v37h15l8-4 4-7v-15l-5-8-7-3z" fill="#010000"/>
+<path transform="translate(542,626)" d="m0 0h5l7 8 12 16 8 10v2h2v-35l1-1h6l2 3v47l-2 3h-6l-12-15-15-20-1 33-2 2h-5l-2-2v-49z" fill="#010000"/>
+<path transform="translate(358,626)" d="m0 0h6l11 14 10 13 6 8 1-33 2-2h5l2 2v49l-2 2h-5l-7-8-13-17-7-9v-2h-2v35l-1 1h-6l-2-4v-45z" fill="#090003"/>
+<path transform="translate(247,626)" d="m0 0h5l9 11 13 17 5 7 1-32 2-3h5l2 2v50l-1 1h-6l-10-12-9-12-8-11-1 32-2 3h-6l-1-1v-50z" fill="#010000"/>
+<path transform="translate(805,625)" d="m0 0 12 2 6 4 6 7 2 6v17l-4 9-8 7-4 2-12 1-10-3-7-6-4-8-1-5v-11l3-10 6-7 8-4zm-2 8-8 4-4 8v15l4 8 7 4h8l6-3 4-5 2-7v-9l-3-9-6-5-3-1z" fill="#040001"/>
+<path transform="translate(675,625)" d="m0 0 12 2 6 4 6 7 2 6v17l-4 9-8 7-4 2-12 1-10-3-7-6-4-8-1-5v-11l3-10 6-7 8-4zm-2 8-8 4-4 8v15l4 8 7 4h8l6-3 4-5 2-7v-9l-3-9-6-5-3-1z" fill="#040001"/>
+<path transform="translate(1255,243)" d="m0 0 5 1 14 8-3 3-22 11h-2v2l5 2 8 5-2 2-57 18-3-1 23-15 10-7-10-6 3-3 22-14z" fill="#fc0"/>
+<path transform="translate(1346,295)" d="m0 0 12 6 5 3v2l-26 13 13 8-1 2-56 18-4-1 30-20h2l-3-3-7-4v-2l16-10z" fill="#fc0"/>
+<path transform="translate(860,626)" d="m0 0h6l3 3 17 36 4 9-2 5h-5l-5-8-1-4-27 1-5 10-1 1h-5l-2-2 1-6 18-38 3-6zm3 11-9 20v2h19l-2-6-7-16z" fill="#040001"/>
+<path transform="translate(1045,626)" d="m0 0h32l2 2-1 5-2 1h-24v14h22l3 1v6l-2 1h-23v15h24l3 2-1 5-1 1h-32l-2-2v-49z"/>
+<path transform="translate(1127,626)" d="m0 0h6l5 8 18 38v6l-7 1-5-10v-2l-27 1-5 10-1 1h-5l-2-2 1-6 14-30 7-14zm2 12-8 18v3h19l-7-17-2-4z" fill="#030001"/>
+<path transform="translate(320,626)" d="m0 0h6l5 8 14 30 4 9-1 5-1 1h-5l-5-9v-3h-28l-3 9-2 3h-5l-2-2 1-7 18-38 3-5zm2 12-9 21h20l-9-21z" fill="#030001"/>
+<path transform="translate(504,626)" d="m0 0h6l9 17 13 28 1 6-2 2h-5l-3-4-3-7-27-1-2 6-4 6h-5l-2-5 16-34 6-13zm2 11-9 20v2h19l-3-9-6-13z" fill="#020000"/>
+<path transform="translate(1181,625)" d="m0 0 10 1 10 5 1 6-4 2-11-5h-8l-5 2-1 2v6l9 4 13 4 6 5 2 5-1 8-5 6-7 3-5 1-13-1-10-5-1-6 1-1 7 1 8 3h9l5-2 1-7-5-3-15-4-6-4-3-3-1-9 4-8 6-4z" fill="#060002"/>
+<path transform="translate(914,625)" d="m0 0 10 1 9 4 2 2v5l-4 2-7-4-4-1h-8l-6 2v7l3 3 17 5 6 4 3 3 1 9-3 6-5 4-9 3-13-1-8-3-4-4 1-5 3-1 8 4 4 1h10l5-3v-6l-5-3-14-4-6-3-4-5-1-6 2-7 8-7z" fill="#060002"/>
+<path transform="translate(1340,137)" d="m0 0 5 1 1 3-1 5 8 7 1 6-2 2-4-1-5-6-8-3-7 1v7l5 5 11 8 2 4v8l-4 6-5 3h-10l-2 6h-5l-1-1 1-8-5-2-7-8 1-4 5-1 4 5 7 4 7 1 3-1 1-6-5-5-8-6-5-6-1-5 3-8 5-4 12-2z"/>
+<path transform="translate(435,625)" d="m0 0 12 2 7 4 1 5-3 3-13-5-9 1-5 3-3 7v15l4 8 7 3h7l9-4h5l1 5-4 4-7 3-11 1-10-3-8-7-4-10v-15l4-10 8-7 5-2z" fill="#040001"/>
+<path transform="translate(183,626)" d="m0 0h31l2 1v6l-2 1h-24v14h22l3 2-1 5-1 1h-23v22l-1 1h-6l-2-2v-49z"/>
+<path transform="translate(1089,626)" d="m0 0h6l2 3v47l-2 3h-6l-2-2v-49z" fill="#010000"/>
+<path transform="translate(967,626)" d="m0 0h6l2 3v47l-2 3h-6l-2-2v-49z" fill="#010000"/>
+<path transform="translate(465,626)" d="m0 0h6l2 2v49l-2 2h-6l-2-3v-47z"/>
+<path transform="translate(225,626)" d="m0 0h6l2 2v49l-2 2h-6l-2-4v-45z" fill="#160007"/>
+<path transform="translate(1448,159)" d="m0 0 4 2v3l7 1 2 2v3h-15v6l13 2 5 5v6l-5 5h-2v5h-4l-1-4h-7l-3-2v-4l11 1 4-2v-4l-13-3-4-4v-7l5-5h2v-5z"/>
+<path transform="translate(1400,239)" d="m0 0 7 3 4 2-1 3h-7l-3 1v4l11 1 4 3v7l-4 4-1 4-3-1v-2h-6l-3-2 1-3h8l3-2-1-3-11-1-3-2-1-6 4-5z"/>
+<path transform="translate(1287,347)" d="m0 0 2 1z" fill="#fc0"/>
+<path transform="translate(1197,295)" d="m0 0" fill="#fc0"/>
+</svg>
+</div></div>
+</div></section>
+
+<section id="fontes" class="section light"><div class="container">
+  <div class="eyebrow reveal">09 | Links oficiais</div>
+  <h2 class="reveal">Fontes para execução.</h2>
+  <p class="lead reveal">Prazos, regras e elegibilidade devem ser reconfirmados no momento da submissão.</p>
+  <div class="grid source-grid reveal" style="margin-top:30px">
+    <div class="source" style="--accent:var(--pink)"><i></i><div><b>GESAwards 2026</b><br><a href="https://gesawards.io/apply" target="_blank" rel="noopener noreferrer">https://gesawards.io/apply</a></div></div><div class="source" style="--accent:var(--orange)"><i></i><div><b>Floresta+ Amazônia</b><br><a href="https://www.florestamaisamazonia.org.br/editais/edital-de-apoio-a-projetos-locais/" target="_blank" rel="noopener noreferrer">https://www.florestamaisamazonia.org.br/editais/edital-de-apoio-a-projetos-locais/</a></div></div><div class="source" style="--accent:var(--yellow)"><i></i><div><b>EdTech Awards 2027</b><br><a href="https://www.edtechdigest.com/the-edtech-awards/" target="_blank" rel="noopener noreferrer">https://www.edtechdigest.com/the-edtech-awards/</a></div></div><div class="source" style="--accent:var(--pink)"><i></i><div><b>FSA Brasil–Portugal</b><br><a href="https://www.gov.br/ancine/pt-br/assuntos/noticias/publicada-a-nova-edicao-de-edital-de-coproducao-com-portugal" target="_blank" rel="noopener noreferrer">https://www.gov.br/ancine/pt-br/assuntos/noticias/publicada-a-nova-edicao-de-edital-de-coproducao-com-portugal</a></div></div><div class="source" style="--accent:var(--orange)"><i></i><div><b>MAPFRE Incentivados</b><br><a href="https://mapfre.hubdoincentivo.com.br/" target="_blank" rel="noopener noreferrer">https://mapfre.hubdoincentivo.com.br/</a></div></div><div class="source" style="--accent:var(--yellow)"><i></i><div><b>Finep — Tecnologias Digitais</b><br><a href="https://www.finep.gov.br/chamadas-publicas/chamadapublica/779" target="_blank" rel="noopener noreferrer">https://www.finep.gov.br/chamadas-publicas/chamadapublica/779</a></div></div><div class="source" style="--accent:var(--pink)"><i></i><div><b>Ibermúsicas Infâncias</b><br><a href="https://www.ibermusicas.org/index.php/convocatorias/" target="_blank" rel="noopener noreferrer">https://www.ibermusicas.org/index.php/convocatorias/</a></div></div><div class="source" style="--accent:var(--orange)"><i></i><div><b>Rouanet nas Favelas 2</b><br><a href="https://www.gov.br/cultura/pt-br/assuntos/editais/inscricoes-abertas/programa-rouanet-nas-favelas-2/programa-rouanet-nas-favelas-2" target="_blank" rel="noopener noreferrer">https://www.gov.br/cultura/pt-br/assuntos/editais/inscricoes-abertas/programa-rouanet-nas-favelas-2/programa-rouanet-nas-favelas-2</a></div></div><div class="source" style="--accent:var(--yellow)"><i></i><div><b>Lei Rouanet 2026</b><br><a href="https://www.gov.br/cultura/pt-br/assuntos/acoes-programas-e-politicas/lei-rouanet-1" target="_blank" rel="noopener noreferrer">https://www.gov.br/cultura/pt-br/assuntos/acoes-programas-e-politicas/lei-rouanet-1</a></div></div><div class="source" style="--accent:var(--pink)"><i></i><div><b>HundrED + Khalifa</b><br><a href="https://hundred.org/en/collections/spotlight-on-early-learning-impact" target="_blank" rel="noopener noreferrer">https://hundred.org/en/collections/spotlight-on-early-learning-impact</a></div></div><div class="source" style="--accent:var(--orange)"><i></i><div><b>HundrED Global Collection</b><br><a href="https://hundred.org/en" target="_blank" rel="noopener noreferrer">https://hundred.org/en</a></div></div><div class="source" style="--accent:var(--yellow)"><i></i><div><b>DRK Foundation</b><br><a href="https://www.drkfoundation.org/apply/" target="_blank" rel="noopener noreferrer">https://www.drkfoundation.org/apply/</a></div></div><div class="source" style="--accent:var(--pink)"><i></i><div><b>FAPESP PIPE</b><br><a href="https://fapesp.br/pipe/pipe" target="_blank" rel="noopener noreferrer">https://fapesp.br/pipe/pipe</a></div></div><div class="source" style="--accent:var(--orange)"><i></i><div><b>EMBRAPII + Sebrae</b><br><a href="https://conteudo.embrapii.org.br/sebrae" target="_blank" rel="noopener noreferrer">https://conteudo.embrapii.org.br/sebrae</a></div></div><div class="source" style="--accent:var(--yellow)"><i></i><div><b>Finep Inovacred</b><br><a href="https://www.finep.gov.br/apoio-e-financiamento-externa/programas-e-linhas/inovacred-empresa-e-ict-s" target="_blank" rel="noopener noreferrer">https://www.finep.gov.br/apoio-e-financiamento-externa/programas-e-linhas/inovacred-empresa-e-ict-s</a></div></div><div class="source" style="--accent:var(--pink)"><i></i><div><b>BNDES Mais Inovação</b><br><a href="https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/bndes-mais-inovacao-investimento-automatico" target="_blank" rel="noopener noreferrer">https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/bndes-mais-inovacao-investimento-automatico</a></div></div><div class="source" style="--accent:var(--orange)"><i></i><div><b>ProAC ICMS</b><br><a href="https://www.cultura.sp.gov.br/sec_cultura/Fomento/ProAC_ICMS" target="_blank" rel="noopener noreferrer">https://www.cultura.sp.gov.br/sec_cultura/Fomento/ProAC_ICMS</a></div></div><div class="source" style="--accent:var(--yellow)"><i></i><div><b>Banco do Brasil — Patrocínios</b><br><a href="https://www.bb.com.br/site/patrocinios/" target="_blank" rel="noopener noreferrer">https://www.bb.com.br/site/patrocinios/</a></div></div><div class="source" style="--accent:var(--pink)"><i></i><div><b>Petrobras — Patrocínios</b><br><a href="https://gestaodepatrocinios.petrobras.com.br/" target="_blank" rel="noopener noreferrer">https://gestaodepatrocinios.petrobras.com.br/</a></div></div><div class="source" style="--accent:var(--orange)"><i></i><div><b>Vale — Patrocínio</b><br><a href="https://saladeimprensa.vale.com/pt/patrocinio" target="_blank" rel="noopener noreferrer">https://saladeimprensa.vale.com/pt/patrocinio</a></div></div><div class="source" style="--accent:var(--yellow)"><i></i><div><b>Lei do Bem</b><br><a href="https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/lei-do-bem/paginas/o-que-e-a-lei-do-bem" target="_blank" rel="noopener noreferrer">https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/lei-do-bem/paginas/o-que-e-a-lei-do-bem</a></div></div><div class="source" style="--accent:var(--pink)"><i></i><div><b>SALIC — Sistema de Apoio às Leis de Incentivo à Cultura</b><br><a href="https://salic.cultura.gov.br" target="_blank" rel="noopener noreferrer">https://salic.cultura.gov.br</a></div></div>
+  </div>
+</div></section>
+</main>
+<a href="#top" class="backtop" id="backtop" aria-label="Voltar ao topo">↑</a>
+
+<script>
+const OPPS = [{"name": "GESAwards 2026 — Global EdTech Startup Awards", "short": "GESAwards 2026", "deadline": "2026-09-15", "deadline_label": "15/09/2026", "fit": 98, "route": "EdTech global", "action": "Inscrição imediata", "type": "Prêmio / competição", "geo": "Internacional", "value": "Prêmios + visibilidade", "status": "Ativa", "link": "https://gesawards.io/apply", "objective": "Selecionar e dar projeção internacional a startups de educação com soluções inovadoras, viáveis e escaláveis.", "audience": "Startups EdTech em estágio inicial ou de crescimento, de qualquer país.", "notes": "Match excepcional para metodologia, jogos, experiências digitais e solução EdTech da Imagina C."}, {"name": "Floresta+ Amazônia — Edital de Apoio a Projetos Locais nº 01/2026", "short": "Floresta+ Amazônia", "deadline": "2026-09-21", "deadline_label": "21/09/2026", "fit": 94, "route": "Clima / primeira infância", "action": "Via OSC elegível", "type": "Grant climático", "geo": "Brasil", "value": "R$ 200 mil a R$ 650 mil", "status": "Ativa", "link": "https://www.florestamaisamazonia.org.br/editais/edital-de-apoio-a-projetos-locais/", "objective": "Apoiar iniciativas na Amazônia Legal em sociobiodiversidade, clima, educação ambiental, comunicação comunitária e proteção social.", "audience": "OSCs/ONGs sem fins lucrativos representativas das comunidades beneficiárias.", "notes": "Aderência temática alta; entrada direta depende de natureza jurídica. Rota recomendada: parceria elegível."}, {"name": "The EdTech Awards 2027 — EdTech Digest", "short": "EdTech Awards 2027", "deadline": "2026-09-24", "deadline_label": "24/09/2026", "fit": 96, "route": "Reputação global", "action": "Candidatura", "type": "Prêmio / reconhecimento", "geo": "Internacional", "value": "Reconhecimento global", "status": "Ativa", "link": "https://www.edtechdigest.com/the-edtech-awards/", "objective": "Reconhecer as melhores soluções, empresas, produtos e lideranças do ecossistema global de tecnologia educacional.", "audience": "Empresas e soluções educacionais.", "notes": "Categorias altamente aderentes: Early Childhood, Games for Learning, Content Provider, Curriculum/Instruction e Mobile App."}, {"name": "FSA — Coprodução Brasil–Portugal 2026", "short": "FSA Brasil–Portugal", "deadline": "2026-09-25", "deadline_label": "25/09/2026", "fit": 88, "route": "Audiovisual", "action": "Validar produtora", "type": "Audiovisual / coprodução", "geo": "Brasil + Portugal", "value": "≈ R$ 2 milhões na parcela brasileira", "status": "Ativa", "link": "https://www.gov.br/ancine/pt-br/assuntos/noticias/publicada-a-nova-edicao-de-edital-de-coproducao-com-portugal", "objective": "Estimular coproduções audiovisuais internacionais entre produtoras brasileiras e portuguesas.", "audience": "Produtoras brasileiras independentes elegíveis em coprodução com empresa portuguesa.", "notes": "Oportunidade estratégica para transformar personagens e universo narrativo da Imagina C em propriedade audiovisual internacional."}, {"name": "Edital MAPFRE 2026 — Projetos Incentivados", "short": "MAPFRE Incentivados", "deadline": "2026-09-30", "deadline_label": "30/09/2026", "fit": 97, "route": "Patrocínio incentivado", "action": "Submeter", "type": "Patrocínio / incentivo fiscal", "geo": "Brasil", "value": "Valor não informado", "status": "Ativa", "link": "https://mapfre.hubdoincentivo.com.br/", "objective": "Selecionar projetos para investimento social privado da MAPFRE por meio de leis de incentivo fiscal.", "audience": "Pessoas jurídicas elegíveis conforme o mecanismo incentivado utilizado.", "notes": "Especialmente forte para Lei Rouanet, FIA, cultura da infância, educação ambiental, inclusão e sustentabilidade."}, {"name": "MCTI/FINEP/FNDCT — Finep Mais Inovação Brasil, Rodada 2 — Tecnologias Digitais", "short": "Finep — Tecnologias Digitais", "deadline": "2026-09-30", "deadline_label": "30/09/2026", "fit": 85, "route": "P&D / IA", "action": "ICT + escala", "type": "Subvenção econômica", "geo": "Brasil", "value": "R$ 300 milhões disponíveis", "status": "Ativa", "link": "https://www.finep.gov.br/chamadas-publicas/chamadapublica/779", "objective": "Financiar projetos empresariais de P&D com elevado conteúdo tecnológico em áreas digitais estratégicas.", "audience": "Empresas brasileiras com projeto de P&D e participação obrigatória de ICT.", "notes": "Aderência via IA, software, dados e proteção digital de crianças; exige incerteza tecnológica real e projeto de P&D robusto."}, {"name": "Prêmio Ibermúsicas de Criação de Canções para as Infâncias 2026", "short": "Ibermúsicas Infâncias", "deadline": "2026-10-01", "deadline_label": "01/10/2026", "fit": 99, "route": "Música / infância", "action": "Dupla internacional", "type": "Prêmio cultural", "geo": "Ibero-América", "value": "US$ 2.000 por canção", "status": "Ativa", "link": "https://www.ibermusicas.org/index.php/convocatorias/", "objective": "Promover criação colaborativa de novas canções voltadas às infâncias e fortalecer a cooperação cultural ibero-americana.", "audience": "Compositores e autores de países participantes, em dupla com artista de outro país membro.", "notes": "Combinação direta com personagens, infância, ecologia e meio ambiente."}, {"name": "Programa Rouanet nas Favelas 2 — MinC / Vale / CUFA", "short": "Rouanet nas Favelas 2", "deadline": "2026-10-13", "deadline_label": "13/10/2026", "fit": 98, "route": "Cultura / território", "action": "Checar sede", "type": "Incentivo cultural", "geo": "Brasil", "value": "Até R$ 200 mil por projeto", "status": "Ativa", "link": "https://www.gov.br/cultura/pt-br/assuntos/editais/inscricoes-abertas/programa-rouanet-nas-favelas-2/programa-rouanet-nas-favelas-2", "objective": "Financiar iniciativas culturais realizadas em favelas e periferias urbanas brasileiras.", "audience": "Pessoas jurídicas com ou sem fins lucrativos, conforme regras de sede e execução.", "notes": "Cita expressamente cultura da infância. Match temático muito alto; elegibilidade territorial é crítica."}, {"name": "Lei Rouanet — Programa Nacional de Apoio à Cultura", "short": "Lei Rouanet 2026", "deadline": "2026-10-31", "deadline_label": "31/10/2026", "fit": 98, "route": "Cultura", "action": "Protocolar", "type": "Incentivo fiscal", "geo": "Brasil", "value": "Captação conforme orçamento aprovado", "status": "Ativa", "link": "https://www.gov.br/cultura/pt-br/assuntos/acoes-programas-e-politicas/lei-rouanet-1", "objective": "Viabilizar projetos culturais por meio de incentivo fiscal federal.", "audience": "Proponentes culturais elegíveis conforme regras do Pronac.", "notes": "Rota estrutural para Universo Cultural Imagina C, experiências, literatura, quadrinhos, formação e projetos audiovisuais enquadráveis."}, {"name": "HundrED + Khalifa Award — Spotlight on Early Learning Impact", "short": "HundrED + Khalifa", "deadline": "2026-12-31", "deadline_label": "31/12/2026", "fit": 100, "route": "Primeira infância", "action": "Candidatura premium", "type": "Prêmio internacional", "geo": "Internacional", "value": "US$ 100 mil por vencedor de categoria", "status": "Ativa", "link": "https://hundred.org/en/collections/spotlight-on-early-learning-impact", "objective": "Identificar soluções e pesquisas de alto impacto para aprendizagem e desenvolvimento de crianças do nascimento aos 8 anos.", "audience": "Indivíduos, equipes e organizações, inclusive empresas e organizações sem fins lucrativos, de qualquer país.", "notes": "Uma das melhores oportunidades do radar. A candidatura deve enfatizar evidência de impacto, inovação, sustentabilidade e escala."}, {"name": "HundrED Global Collection 2028", "short": "HundrED Global Collection", "deadline": "2027-05-01", "deadline_label": "01/05/2027", "fit": 99, "route": "Prestígio global", "action": "Preparar evidências", "type": "Reconhecimento internacional", "geo": "Internacional", "value": "Reconhecimento global", "status": "Ativa", "link": "https://hundred.org/en", "objective": "Selecionar as 100 inovações educacionais mais relevantes, impactantes e escaláveis do mundo.", "audience": "Inovações educacionais implementadas na prática.", "notes": "Excelente ativo de reputação internacional; exige histórico de implementação e escala demonstrável."}, {"name": "Draper Richards Kaplan Foundation — Social Impact Funding", "short": "DRK Foundation", "deadline": "", "deadline_label": "Fluxo contínuo", "fit": 78, "route": "Impacto social", "action": "Avaliar maturidade", "type": "Grant / investimento", "geo": "Internacional", "value": "Até US$ 300 mil", "status": "Ativa", "link": "https://www.drkfoundation.org/apply/", "objective": "Financiar e acelerar empreendimentos sociais capazes de gerar impacto sistêmico em grande escala.", "audience": "Empreendimentos sociais de alto impacto em estágio relativamente inicial.", "notes": "Tematicamente forte; ponto de atenção é maturidade. Pode fazer mais sentido para uma nova unidade/spin-off de impacto."}, {"name": "FAPESP PIPE — Pesquisa Inovativa em Pequenas Empresas", "short": "FAPESP PIPE", "deadline": "", "deadline_label": "Fluxo contínuo", "fit": 93, "route": "P&D EdTech", "action": "Estruturar projeto", "type": "Grant de inovação", "geo": "São Paulo, Brasil", "value": "Fase 1 até R$ 300 mil; Fase 2 até R$ 1,5 mi", "status": "Ativa", "link": "https://fapesp.br/pipe/pipe", "objective": "Apoiar pesquisa científica e tecnológica inovadora executada por pequenas empresas no Estado de São Paulo.", "audience": "Pequenas empresas com até 250 empregados e sede/unidade real de pesquisa no Estado de São Paulo.", "notes": "Projeto sugerido: plataforma adaptativa de aprendizagem lúdica com IA, narrativa e personagens para educação infantil e anos iniciais."}, {"name": "EMBRAPII + SEBRAE — Projetos de Inovação para Startups e Pequenas Empresas", "short": "EMBRAPII + Sebrae", "deadline": "", "deadline_label": "Fluxo contínuo", "fit": 96, "route": "P&D / desenvolvimento tecnológico", "action": "Contratar unidade EMBRAPII", "type": "Recursos não reembolsáveis", "geo": "Brasil", "value": "Pode custear até 90% do projeto", "status": "Ativa", "link": "https://conteudo.embrapii.org.br/sebrae", "objective": "Reduzir risco tecnológico e custo de desenvolvimento de novos produtos, processos e serviços inovadores.", "audience": "Startups e pequenas empresas inovadoras elegíveis conforme porte/faturamento.", "notes": "Provavelmente a rota mais ágil para financiar a transformação tecnológica da Imagina C, se o porte for elegível."}, {"name": "Finep Inovacred", "short": "Finep Inovacred", "deadline": "", "deadline_label": "Fluxo contínuo", "fit": 78, "route": "Crédito de inovação", "action": "Simular operação", "type": "Financiamento reembolsável", "geo": "Brasil", "value": "Operações de até ~R$ 30 milhões", "status": "Ativa", "link": "https://www.finep.gov.br/apoio-e-financiamento-externa/programas-e-linhas/inovacred-empresa-e-ict-s", "objective": "Financiar projetos de inovação para desenvolvimento ou melhoria de produtos, processos e serviços.", "audience": "Empresas e pessoas jurídicas privadas elegíveis.", "notes": "Útil para tecnologia, plataforma, equipamentos interativos e expansão quando grant/subvenção não for suficiente."}, {"name": "BNDES Mais Inovação — Investimento Automático", "short": "BNDES Mais Inovação", "deadline": "", "deadline_label": "Programa ativo", "fit": 72, "route": "Crédito / escala", "action": "Avaliar capacidade de dívida", "type": "Financiamento reembolsável", "geo": "Brasil", "value": "Até R$ 15 milhões por cliente/12 meses", "status": "Ativa", "link": "https://www.bndes.gov.br/wps/portal/site/home/financiamento/produto/bndes-mais-inovacao-investimento-automatico", "objective": "Financiar investimentos empresariais associados à inovação, transformação digital e modernização tecnológica.", "audience": "Empresas elegíveis que contratem por instituição financeira credenciada.", "notes": "Mais útil em fase de expansão nacional, infraestrutura tecnológica ou escala comercial."}, {"name": "ProAC ICMS — Estado de São Paulo", "short": "ProAC ICMS", "deadline": "", "deadline_label": "Fluxo contínuo", "fit": 93, "route": "Cultura incentivada", "action": "Estruturar projeto", "type": "Incentivo fiscal", "geo": "São Paulo, Brasil", "value": "Conforme enquadramento e captação", "status": "Ativa", "link": "https://www.cultura.sp.gov.br/sec_cultura/Fomento/ProAC_ICMS", "objective": "Financiar projetos culturais por patrocínio incentivado com ICMS devido por empresas paulistas.", "audience": "Proponentes culturais que atendam às regras do Estado de São Paulo.", "notes": "Boa rota para projetos culturais com execução relevante no Estado de São Paulo."}, {"name": "Banco do Brasil — Banco Permanente de Oportunidades de Patrocínio", "short": "Banco do Brasil — Patrocínios", "deadline": "", "deadline_label": "Fluxo contínuo", "fit": 86, "route": "Patrocínio corporativo", "action": "Planejar antecedência", "type": "Patrocínio", "geo": "Brasil", "value": "Valor negociado", "status": "Ativa", "link": "https://www.bb.com.br/site/patrocinios/", "objective": "Receber projetos para avaliação de patrocínio institucional do Banco do Brasil.", "audience": "Proponentes e realizadores compatíveis com a política de patrocínio.", "notes": "Interessante para circuitos educacionais, ativações ESG, exposições, eventos e experiências em escala."}, {"name": "Petrobras — Seleção Direta de Patrocínios", "short": "Petrobras — Patrocínios", "deadline": "", "deadline_label": "Fluxo contínuo", "fit": 87, "route": "Patrocínio corporativo", "action": "Planejar antecedência", "type": "Patrocínio", "geo": "Brasil", "value": "Valor não informado", "status": "Ativa", "link": "https://gestaodepatrocinios.petrobras.com.br/", "objective": "Receber projetos para análise direta de patrocínio corporativo.", "audience": "Projetos compatíveis com a política de patrocínio Petrobras.", "notes": "Possíveis teses: cultura da infância, educação ambiental, experiência interativa e ciência para crianças."}, {"name": "Vale — Seleção Direta de Patrocínio", "short": "Vale — Patrocínio", "deadline": "", "deadline_label": "Janela anual / fluxo", "fit": 91, "route": "Patrocínio cultural", "action": "Projeto incentivado", "type": "Patrocínio", "geo": "Brasil", "value": "Valor não informado", "status": "Ativa", "link": "https://saladeimprensa.vale.com/pt/patrocinio", "objective": "Apoiar projetos culturais e institucionais compatíveis com a estratégia de patrocínio da Vale.", "audience": "Projetos elegíveis segundo as regras da Vale, incluindo projetos incentivados.", "notes": "Combina muito bem com projeto Imagina C previamente aprovado na Lei Rouanet."}, {"name": "Lei do Bem — Incentivo Fiscal a P&D", "short": "Lei do Bem", "deadline": "", "deadline_label": "Uso anual", "fit": 70, "route": "Incentivo tributário", "action": "Validar regime tributário", "type": "Incentivo fiscal de P&D", "geo": "Brasil", "value": "Benefício conforme despesas elegíveis", "status": "Ativa", "link": "https://www.gov.br/mcti/pt-br/acompanhe-o-mcti/lei-do-bem/paginas/o-que-e-a-lei-do-bem", "objective": "Reduzir carga tributária de empresas que realizam atividades de pesquisa, desenvolvimento e inovação tecnológica.", "audience": "Empresas que atendam às condições legais, incluindo regime tributário aplicável e P&D tecnológico documentado.", "notes": "Rota condicional; depende do regime tributário e da caracterização técnica de P&D."}];
+const grid = document.getElementById('oppGrid');
+const search = document.getElementById('search');
+const geoFilter = document.getElementById('geoFilter');
+const typeFilter = document.getElementById('typeFilter');
+const fitFilter = document.getElementById('fitFilter');
+
+[...new Set(OPPS.map(o=>o.type))].sort().forEach(t=>{ const op=document.createElement('option');op.value=t;op.textContent=t;typeFilter.appendChild(op); });
+
+function daysTo(deadline){
+  if(!deadline) return null;
+  const end=new Date(deadline+'T23:59:59');
+  const now=new Date();
+  return Math.ceil((end-now)/(1000*60*60*24));
+}
+function fitColor(fit){ return fit>=95?'var(--pink)':fit>=85?'var(--orange)':'var(--yellow)'; }
+function renderOpps(){
+  const q=search.value.trim().toLowerCase(); const geo=geoFilter.value; const type=typeFilter.value; const minFit=+fitFilter.value;
+  const list=OPPS.filter(o=>{
+    const hay=(o.name+' '+o.route+' '+o.type+' '+o.notes+' '+o.objective).toLowerCase();
+    return (!q||hay.includes(q)) && (!geo||o.geo===geo) && (!type||o.type===type) && o.fit>=minFit;
+  }).sort((a,b)=>b.fit-a.fit);
+  grid.innerHTML=list.map(o=>{
+    const d=daysTo(o.deadline); let cd='';
+    if(d===null) cd=o.deadline_label; else if(d<0) cd='Prazo encerrado'; else if(d===0) cd='Encerra hoje'; else cd=d+' dia'+(d===1?'':'s')+' restante'+(d===1?'':'s');
+    return `<article class="opp-card reveal visible" style="--accent:${fitColor(o.fit)}">
+      <div class="opp-top"><div><h3>${o.short}</h3><div class="tagrow"><span class="tag hot">${o.type}</span><span class="tag">${o.geo}</span><span class="tag">${o.route}</span></div></div><div class="opp-fit">${o.fit}<small>FIT / 100</small><div class="fitbar"><span data-fit="${o.fit}"></span></div></div></div>
+      <div class="deadline"><b>${o.deadline_label}</b><span class="countdown">${cd}</span></div>
+      <p><b style="color:#ddd">Objetivo:</b> ${o.objective}</p><p><b style="color:#ddd">Público:</b> ${o.audience}</p><p><b style="color:#ddd">Valor:</b> ${o.value}</p><p>${o.notes}</p>
+      <a class="opp-link" href="${o.link}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial <svg width="15" height="15"><use href="#i-arrow"/></svg></a>
+    </article>`;
+  }).join('');
+  requestAnimationFrame(()=>document.querySelectorAll('.fitbar span').forEach(el=>el.style.width=el.dataset.fit+'%'));
+}
+function renderChart(){
+  const top=[...OPPS].sort((a,b)=>b.fit-a.fit).slice(0,10);
+  document.getElementById('fitChart').innerHTML=top.map(o=>`<div class="bar-row" title="${o.name}"><div class="bar-label">${o.short}</div><div class="bar-track"><div class="bar-fill" data-w="${o.fit}"></div></div><div class="bar-value">${o.fit}</div></div>`).join('');
+  requestAnimationFrame(()=>document.querySelectorAll('.bar-fill').forEach((el,i)=>setTimeout(()=>el.style.width=el.dataset.w+'%',60*i)));
+}
+[search,geoFilter,typeFilter,fitFilter].forEach(el=>el.addEventListener('input',renderOpps));
+renderOpps(); renderChart();
+
+// reveal observer
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// active nav + back-to-top
+const sections=[...document.querySelectorAll('main section[id]')];
+const links=[...document.querySelectorAll('.navlinks a')];
+const so=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));}}),{rootMargin:'-35% 0px -55% 0px'});
+sections.forEach(s=>so.observe(s));
+const back=document.getElementById('backtop'); window.addEventListener('scroll',()=>back.classList.toggle('show',scrollY>700),{passive:true});
+
+// mobile drawer
+const btn=document.getElementById('menuBtn'),drawer=document.getElementById('drawer');
+btn.addEventListener('click',()=>drawer.classList.toggle('open')); drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
+</script>
+</body></html>
